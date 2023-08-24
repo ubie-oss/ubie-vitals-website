@@ -1,0 +1,67 @@
+---
+title: "タイポグラフィ"
+description: "Web を構成する基礎的な要素はテキストです。Web デザインの根幹をタイポグラフィは占めています。"
+layout: "@layouts/PostLayout.astro"
+---
+
+import HeadingList from "@components/astro/figures/typography/HeadingList.astro";
+import BodyList from "@components/astro/figures/typography/BodyList.astro";
+import TagList from "@components/astro/figures/typography/TagList.astro";
+import ButtonList from "@components/astro/figures/typography/ButtonList.astro";
+import NoteList from "@components/astro/figures/typography/NoteList.astro";
+
+## Font Face
+
+通常のテキストには `A P-OTF UD Shin Go Pr6N / M` を、ボールドには `A P-OTF UD Shin Go Pr6N / DB` を用います。
+
+## Font Size Scale
+
+次のスケールを用います。ただし、このスケールから直接サイズを選ぶことはありません。後述のセマンティックな定義を使用します。
+
+<img
+  src="/assets/images/figures/typography/font-size-scale.svg"
+  width="816"
+  height="74"
+  alt="10px 12px 13px 14px 16p 18px 20px 24px 28px"
+/>
+
+## Line Height
+
+170% を基本とし、必要に応じて 150% や 140% を用います。
+
+## Semantic Type Settings
+
+実際のプロダクトではタイプ、サイズ、行間の組み合わせからなるセマンティックな定義を選択しデザインします。
+
+タイプは Body、Heading、Note、Button、Tag の 5 つが存在します。テキスト全般は原則 Body を使用してください。ただし、見出しや補足分、その他 UI に他の定義が存在します。
+Body と Note の行間はデフォルト 170%です。定義は複数あり、レイアウトの都合にあわせて`*-narrow`（150%）、`*-tight`（140%）を使い分けてください。
+
+### Body
+
+本文をはじめ、Heading や Note に相当しないものは Body を使用します。
+
+<BodyList />
+
+### Heading
+
+ページタイトルやセクションの見出しに使用します。
+
+<HeadingList />
+
+### Note
+
+本文に対する補足や、キャプションなど小さく添えるテキストに使用します。また、免責事項など必要な文章であるものの、ユーザーが積極的に読まないような長文にも使われます。
+
+<NoteList />
+
+### Button
+
+Button などアクションを促す UI のラベルに使う
+
+<ButtonList />
+
+### Tag
+
+属性や分類を表す短いキーワード等に使用します。
+
+<TagList />

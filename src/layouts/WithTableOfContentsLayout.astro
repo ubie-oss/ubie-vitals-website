@@ -1,0 +1,35 @@
+---
+import TableOfContents from '@components/react/TableOfContents';
+---
+
+<div class="wrapper">
+  <div class="contents">
+    <slot />
+  </div>
+  <div class="menu">
+    <TableOfContents client:only />
+  </div>
+</div>
+
+<style>
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    width: fit-content;
+    padding: 20px;
+    padding-right: 20px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .contents {
+    flex: 0 1 800px;
+  }
+
+  .menu {
+    flex: 1 1 auto;
+    max-width: 200px;
+    padding-top: 96px;
+  }
+</style>

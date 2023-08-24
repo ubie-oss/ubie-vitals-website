@@ -1,0 +1,71 @@
+---
+type Prop = {
+  name: string;
+  type: string;
+  defaultValue: string;
+  required: boolean;
+  description: string;
+};
+
+interface Props {
+  propsArray: Prop[];
+}
+
+const { propsArray } = Astro.props;
+---
+
+{
+  propsArray.length === 0 ? (
+    <p>Propsの説明がありません</p>
+  ) : (
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Prop Name</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>required</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {propsArray.map((prop) => (
+          <tr>
+            <td>{prop.name}</td>
+            <td>
+              {Array.isArray(prop.type) ? (
+                prop.type.map((type) => {
+                  return <code>{type}</code>;
+                })
+              ) : (
+                <code>{prop.type}</code>
+              )}
+            </td>
+            <td>{prop.defaultValue || '-'}</td>
+            <td>{prop.required ? 'YES' : 'NO'}</td>
+            <td>{prop.description || '-'}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  )
+}
+
+<style>
+  table {
+    text-align: left;
+  }
+
+  th,
+  td {
+    padding: 10px;
+  }
+
+  tr {
+    border-bottom: 1px solid black;
+  }
+
+  td > code {
+    margin: 3px;
+  }
+</style>

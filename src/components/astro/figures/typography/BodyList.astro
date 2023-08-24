@@ -1,0 +1,6 @@
+---
+// 内部で使っているアイコンコンポーネントが、mdxから直のロードだとエラーとなる
+import BodyListReact from "../../../react/figures/typography/BodyList";
+---
+
+<BodyListReact client:only />
