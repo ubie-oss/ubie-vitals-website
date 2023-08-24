@@ -6,11 +6,19 @@ import { getKeys } from '@utils/client/object';
 import type { FC } from 'react';
 
 const { size } = DesignToken;
-const sizeArray = getKeys(size).map((key) => {
-  return {
-    key,
-    token: size[key],
-  };
+const sizeArray = getKeys(size)
+  .map((key) => {
+    return {
+      key,
+      token: size[key],
+    };
+  })
+  .sort((a, b) => {
+    return a.token.original.value - b.token.original.value;
+  });
+
+console.dir(sizeArray, {
+  depth: null,
 });
 
 const deletePrefix = (str: string): string => {
