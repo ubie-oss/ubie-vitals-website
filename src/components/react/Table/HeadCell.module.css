@@ -1,0 +1,7 @@
+.cell {
+    padding: var(--size-spacing-xs) ;
+    font-size: var(--text-body-sm-size);
+    line-height: var(--text-body-sm-tight-line);
+    color: var(--color-ubie-black-500);
+    text-align: left;
+}

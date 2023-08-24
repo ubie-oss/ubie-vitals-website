@@ -1,0 +1,16 @@
+---
+title: 'Spacing'
+layout: '@layouts/PostLayout.astro'
+---
+
+import TokenList from '@components/react/figures/spacing/TokenList';
+
+間隔（Spacing）は、要素と要素の関係を表します。一定のリズムで要素を配置すればグループや類似性を表し、距離を増減することで要素同士の関連度を表現できます。
+
+16pxを基準（=`md`）としてremやsemanticsの値を命名しています。
+
+4の倍数を基本としたスケールを基にしています。ジャンプ率を確保するために`xl`以降は8の倍数刻みとなります。
+
+![Spacingのスケール](/assets/images/figures/spacing/scale.svg)
+
+<TokenList client:load />

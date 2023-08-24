@@ -8,7 +8,7 @@ const { title, description } = Astro.props.frontmatter;
 <BaseLayout title={`${title} | Design`}>
   <main>
     <WithTableOfContentsLayout>
-      <article>
+      <article class="markdown">
         <h1>{title}</h1>
         {description && <p>{description}</p>}
         <slot />
@@ -16,3 +16,10 @@ const { title, description } = Astro.props.frontmatter;
     </WithTableOfContentsLayout>
   </main>
 </BaseLayout>
+
+<style>
+  .markdown img {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+</style>
