@@ -16,5 +16,7 @@ export default defineConfig({
     ssr: {
       external: ['@ubie-inc/ofro-elements']
     }
-  }
+  },
+  site: 'https://ubie-vitals.github.io',
+  base: '/ubie-vitals-website',
 });
