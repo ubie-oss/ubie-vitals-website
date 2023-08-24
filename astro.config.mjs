@@ -12,4 +12,6 @@ export default defineConfig({
       [rehypeAutolinkHeadings, { behavior: 'append' }],
     ]
   })],
+  site: 'https://ubie-vitals.github.io',
+  base: '/ubie-vitals-website',
 });
