@@ -42,7 +42,7 @@ const TokenList: FC = () => (
         <HeadCell scope="column">name</HeadCell>
         <HeadCell scope="column">px</HeadCell>
         <HeadCell scope="column">rem</HeadCell>
-        <HeadCell scope="column">Usage</HeadCell>
+        <HeadCell scope="column">Description</HeadCell>
         <HeadCell scope="column">Copy</HeadCell>
       </HeadRow>
     </THead>
