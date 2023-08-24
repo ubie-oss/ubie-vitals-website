@@ -11,9 +11,8 @@ const NoteList: FC = () => (
     <Grid minimum="352px" role="list">
       <li>
         <ExampleText
-          title="sm"
-          sizeKey="note-sm-size"
-          lineKey="note-sm-line"
+          type="note"
+          size="sm"
           src="/assets/images/figures/typography/example-note-sm.svg"
           alt="Note/smでテキストを表示した場合のサンプル"
           width="352"
@@ -23,9 +22,9 @@ const NoteList: FC = () => (
 
       <li>
         <ExampleText
-          title="sm-narrow"
-          sizeKey="note-sm-narrow-size"
-          lineKey="note-sm-narrow-line"
+          type="note"
+          size="sm"
+          leading="narrow"
           src="/assets/images/figures/typography/example-note-sm-narrow.svg"
           alt="Note/sm-narrowでテキストを表示した場合のサンプル"
           width="342"
@@ -35,9 +34,9 @@ const NoteList: FC = () => (
 
       <li>
         <ExampleText
-          title="sm-tight"
-          sizeKey="note-sm-tight-size"
-          lineKey="note-sm-tight-line"
+          type="note"
+          size="sm"
+          leading="tight"
           src="/assets/images/figures/typography/example-note-sm-tight.svg"
           alt="Note/sm-tightでテキストを表示した場合のサンプル"
           width="342"
@@ -49,9 +48,8 @@ const NoteList: FC = () => (
     <Grid minimum="352px" role="list">
       <li>
         <ExampleText
-          title="md"
-          sizeKey="note-md-size"
-          lineKey="note-md-line"
+          type="note"
+          size="md"
           src="/assets/images/figures/typography/example-note-md.svg"
           alt="Note/mdでテキストを表示した場合のサンプル"
           width="352"
@@ -61,9 +59,9 @@ const NoteList: FC = () => (
 
       <li>
         <ExampleText
-          title="md-narrow"
-          sizeKey="note-md-narrow-size"
-          lineKey="note-md-narrow-line"
+          type="note"
+          size="md"
+          leading="narrow"
           src="/assets/images/figures/typography/example-note-md-narrow.svg"
           alt="Note/md-narrowでテキストを表示した場合のサンプル"
           width="342"
@@ -73,9 +71,9 @@ const NoteList: FC = () => (
 
       <li>
         <ExampleText
-          title="md-tight"
-          sizeKey="note-md-tight-size"
-          lineKey="note-md-tight-line"
+          type="note"
+          size="md"
+          leading="tight"
           src="/assets/images/figures/typography/example-note-md-tight.svg"
           alt="Note/sm-tightでテキストを表示した場合のサンプル"
           width="342"
@@ -87,9 +85,8 @@ const NoteList: FC = () => (
     <Grid minimum="352px" role="list">
       <li>
         <ExampleText
-          title="lg"
-          sizeKey="note-lg-size"
-          lineKey="note-lg-line"
+          type="note"
+          size="lg"
           src="/assets/images/figures/typography/example-note-lg.svg"
           alt="Note/lgでテキストを表示した場合のサンプル"
           width="350"
@@ -99,9 +96,9 @@ const NoteList: FC = () => (
 
       <li>
         <ExampleText
-          title="lg-narrow"
-          sizeKey="note-lg-narrow-size"
-          lineKey="note-lg-narrow-line"
+          type="note"
+          size="lg"
+          leading="narrow"
           src="/assets/images/figures/typography/example-note-lg-narrow.svg"
           alt="Note/lg-narrowでテキストを表示した場合のサンプル"
           width="348"
@@ -111,9 +108,9 @@ const NoteList: FC = () => (
 
       <li>
         <ExampleText
-          title="lg-tight"
-          sizeKey="note-lg-tight-size"
-          lineKey="note-lg-tight-line"
+          type="note"
+          size="lg"
+          leading="tight"
           src="/assets/images/figures/typography/example-note-lg-tight.svg"
           alt="Note/sm-tightでテキストを表示した場合のサンプル"
           width="348"
