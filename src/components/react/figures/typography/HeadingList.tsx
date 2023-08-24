@@ -1,13 +1,12 @@
-import Grid from "@components/react/Grid";
-import ExampleText from "./ExapmleText";
-import type { FC } from "react";
+import Grid from '@components/react/Grid';
+import ExampleText from './ExampleText';
+import type { FC } from 'react';
 
 const BodyTable: FC = () => {
   return (
     <>
       <small>
-        ※各サンプルの下部のコードは <code>font-size</code> /{" "}
-        <code>line-height</code> です
+        ※各サンプルの下部のコードは <code>font-size</code> / <code>line-height</code> です
       </small>
 
       <Grid role="list" minimum="432px" space="40px">
