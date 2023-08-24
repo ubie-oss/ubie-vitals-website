@@ -1,0 +1,26 @@
+---
+title: 'RadioCard'
+exampleKey: 'radio-card'
+layout: '../../layouts/ComponentLayout.astro'
+description: '* Accessibilityに配慮したラジオボタン。TimeQuestionContentのような、選択した後自動で遷移しないタイプのラジオボタン（選択してもなにもおきないボタン）に使用する。'
+---
+
+import { RadioCard } from '@ubie-inc/ofro-elements';
+
+テキストフィールドを提供します
+
+# サンプル
+
+```jsx
+
+```
+
+<RadioCard client:only="react" value="foo" name="radio" id="foo">
+  項目1
+</RadioCard>
+<RadioCard client:only="react" value="bar" name="radio" id="bar">
+  項目2
+</RadioCard>
+<RadioCard client:only="react" value="fuga" name="radio" hasMarginBottom={false} id="fuga">
+  項目3
+</RadioCard>

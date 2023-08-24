@@ -1,0 +1,61 @@
+---
+title: 'Icon'
+exampleKey: 'icon'
+layout: '@layouts/ComponentLayout.astro'
+description: '視覚的な「手がかり」をアイコンは提供します。正しく使用した場合、視認性の向上が期待できます。'
+---
+
+## Usage
+
+アイコンのバリエーションは[アイコンの一覧](/design/icons)を参照してください。
+
+CSS でスタイリングをすることができます:
+
+- `font-size` で大きさを変更
+- `color` で色を変更
+
+## Accessibility
+
+### テキスト情報を付与する
+
+`<Icon>` 自体にはテキスト情報が含まれていません。
+そのため、スクリーンリーダーのようなテキストに依存した環境ではアイコンの意味がユーザーに伝わりません。
+`<Icon>` のみを含むボタンを実装した場合、ユーザーには理解できないボタンが提示されてしまうかもしれません。
+
+これを解決するにはアイコンを利用する親要素に `aria-label` や `aria-labelledby` 属性を付与します。テキストによりユーザーに内容を伝達します。
+
+```jsx
+<Button aria-lable="閉じる">
+  <CloseAIcon />
+</Button>
+```
+
+<small>※ `<Icon>` そのものにはテキスト情報を付与しません</small>
+
+`<Icon>` とテキストを併用しても良いでしょう。
+
+```jsx
+<Button>
+  <CloseAIcon /> 閉じる
+</Button>
+```
+
+参考: [ユビー AI 受診相談でほんとうに起きていた怖い話 - アイコンをボタンやリンクに使うときは](https://docs.google.com/presentation/d/1phP267dInvtrxTBQhlrxYkoTOTHJbKq6nTD5ljD-xSI/edit#slide=id.g107361d2158_0_251)
+
+### コントラストを確保する
+
+テキストと同様に、コントラストを確保し視覚的にアイコンを見やすくしましょう。特にアイコン単体で使うような場合、必ずコントラストを確保すべきです。
+アイコンが見づらいものである場合、その機能も果たせなくなっているはずです。
+
+WCAG では隣接した色とのコントラスト比を 3:1 以上とすることを推奨しています。
+
+参考:
+
+- [Web Content Accessibility Guidelines (WCAG) 2.1 - 達成基準 1.4.11 非テキストのコントラスト](https://waic.jp/translations/WCAG21/#non-text-contrast)
+
+## Related resources
+
+- [アイコン](/design/icons)
+- [ubie-oss/ubie-icons](https://github.com/ubie-oss/ubie-icons)
+- [Figma - Ubie Icons](https://www.figma.com/file/6dWoWbMuEHiVN5qi1ybDAa/Ubie-Icons?type=design&node-id=0%3A1&mode=design&t=yddL2kJ5U8BIO59w-1)
+- [ユビー AI 受診相談でほんとうに起きていた怖い話 - アイコンをボタンやリンクに使うときは](https://docs.google.com/presentation/d/1phP267dInvtrxTBQhlrxYkoTOTHJbKq6nTD5ljD-xSI/edit#slide=id.g107361d2158_0_251)

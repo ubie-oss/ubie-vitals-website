@@ -1,0 +1,15 @@
+.item {
+    font-size: var(--text-body-sm-size);
+    line-height: var(--text-body-sm-narrow-line);
+    list-style: none;
+}
+
+.link {
+    display: block;
+    padding: var(--size-spacing-sm)  0 var(--size-spacing-sm) calc(var(--nest) * var(--size-spacing-sm));
+    text-decoration: none;
+}
+
+.child {
+    padding-left: 0;
+}

@@ -1,0 +1,10 @@
+.cell {
+    padding: var(--size-spacing-xs);
+    font-size: var(--text-body-sm-size);
+    line-height: var(--text-body-sm-tight-line);
+    white-space: nowrap;
+}
+
+.cell.header {
+    font-weight: bold;
+}

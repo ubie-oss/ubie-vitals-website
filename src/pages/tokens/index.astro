@@ -1,0 +1,27 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <main class="wrapper">
+    <h1>Tokens</h1>
+
+    <ul>
+      <li><a href="/tokens/typography">Typography</a></li>
+      <li><a href="/tokens/spacing">Spacing</a></li>
+      <li><a href="/tokens/color">Color</a></li>
+      <li><a href="/tokens/radius">Radius</a></li>
+      <li><a href="/tokens/icons">Icons</a></li>
+    </ul>
+  </main>
+</BaseLayout>
+
+<style>
+  .wrapper {
+    max-width: 800px;
+    padding-right: var(--size-spacing-lg);
+    padding-left: var(--size-spacing-lg);
+    margin-right: auto;
+    margin-left: auto;
+  }
+</style>

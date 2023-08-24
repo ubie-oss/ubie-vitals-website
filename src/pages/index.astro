@@ -1,0 +1,87 @@
+---
+import '@unocss/reset/sanitize/sanitize.css';
+import '@unocss/reset/sanitize/assets.css';
+import '../styles/global.css';
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <main class="main">
+      <h1>
+        <img
+          class="logo"
+          src="/assets/images/ubie-vitals-logo.svg"
+          alt="Ubie Vitals"
+          width="345"
+          height="75"
+          decoding="async"
+        />
+      </h1>
+      <ul class="linkList">
+        <li class="linkListItem"><a href="">Design Principles (WIP)</a></li>
+        <li class="linkListItem"><a href="/tokens">Tokens</a></li>
+        <li class="linkListItem"><a href="/components">Components</a></li>
+      </ul>
+    </main>
+  </body>
+</html>
+
+<style>
+  body {
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: #fff;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 720px;
+    min-height: 100vh;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  h1 {
+    margin-top: 0;
+    font-size: var(--text-heading-xl-size);
+    font-feature-settings: 'palt' 1;
+    color: var(--color-ubie-black-900);
+  }
+
+  .linkList {
+    display: flex;
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .linkListItem {
+    padding-left: 0;
+  }
+
+  .linkListItem > a {
+    font-weight: bold;
+    color: var(--color-black);
+    text-underline-offset: 3px;
+  }
+
+  @media (hover: hover) {
+    .linkListItem > a:hover {
+      color: var(--color-primary);
+    }
+  }
+
+  .linkListItem > a:active {
+    text-decoration: none;
+  }
+</style>

@@ -1,0 +1,47 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableWrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.rowHead {
+    background-color: var(--color-background-gray);
+}
+
+.cellHead {
+    padding: var(--size-spacing-xs) ;
+    font-size: var(--text-body-sm-size);
+    line-height: var(--text-body-sm-tight-line);
+    color: var(--color-ubie-black-500);
+    text-align: left;
+}
+
+.cell {
+    padding: var(--size-spacing-xs);
+    font-size: var(--text-body-sm-size);
+    line-height: var(--text-body-sm-tight-line);
+    white-space: nowrap;
+}
+
+.cellCopy {
+    white-space: nowrap;
+}
+
+.colorChip {
+    display: inline-flex;
+    width: 30px;
+    height: 19px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+}
+
+.colorName {
+    display: flex;
+    gap: var(--size-spacing-xs);
+    align-items: center;
+    font-weight: bold;
+}

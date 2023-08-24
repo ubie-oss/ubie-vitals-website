@@ -1,0 +1,6 @@
+---
+// 内部で使っているアイコンコンポーネントが、mdxから直のロードだとエラーとなる
+import TagListReact from "../../../react/figures/typography/TagList";
+---
+
+<TagListReact client:only />

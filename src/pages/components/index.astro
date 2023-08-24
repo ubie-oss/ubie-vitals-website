@@ -1,0 +1,55 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import WithMenu from '@layouts/WithMenu.astro';
+import ComponentsMenu from '@components/ComponentsMenu.astro';
+const allComponentPosts = await Astro.glob('./*.mdx');
+---
+
+<BaseLayout>
+  <WithMenu>
+    <ComponentsMenu slot="menu" />
+
+    <div class="wrapper">
+      <h1>Components</h1>
+      <ul class="list">
+        {
+          allComponentPosts.map((post) => (
+            <li class="item">
+              <a href={post.url}>{post.frontmatter.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </WithMenu>
+</BaseLayout>
+
+<style>
+  .wrapper {
+    padding-right: var(--size-spacing-lg);
+    padding-left: var(--size-spacing-lg);
+  }
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 0;
+    list-style: none;
+  }
+
+  .item {
+    width: 300px;
+    height: 100px;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+  }
+
+  .item > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+</style>

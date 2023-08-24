@@ -1,0 +1,52 @@
+@import url('@unocss/reset/sanitize/sanitize.css');
+@import url('@unocss/reset/sanitize/assets.css');
+@import url('@ubie/design-tokens/dist/tokens.css');
+
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Helvetica Neue',Arial,'Hiragino Kaku Gothic ProN','Hiragino Sans',Meiryo,sans-serif;
+    font-size: var(--text-body-md-size);
+    line-height: var(--text-body-md-line);
+    color: var(--color-text-main);
+    background-color: #fcfcfc;
+    -webkit-font-smoothing: antialiased
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-feature-settings: 'palt' 1;
+    letter-spacing: 0.01em;
+}
+
+p {
+    max-width: 40em;
+}
+
+code {
+    display: inline-block;
+    padding: 2px 0.5ch;
+    font-family: SFMono-Medium, "SF Mono", "Segoe UI Mono", "Roboto Mono", "Ubuntu Mono", Menlo, Consolas, Courier, monospace;
+    font-size: 0.85em;
+    line-height: var(--text-body-sm-tight-line);
+    color: var(--color-ubie-black-700);
+    background-color: var(--color-background-gray);
+    border-radius: var(--radius-sm);;
+}
+
+ul {
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+}
+
+li {
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+}

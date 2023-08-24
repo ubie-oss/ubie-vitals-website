@@ -1,0 +1,23 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: var(--size-spacing-xs) var(--size-spacing-md) calc(var(--size-spacing-xs) - 0.125rem);
+    font-weight: bold;
+    color: var(--color-primary);
+    background: none;
+    backdrop-filter: blur(10px);
+    border: none;
+
+}
+
+@media (hover:hover) {
+    .button:hover {
+        background-color: var(--color-ubie-black-100);
+    }
+}
+
+.button:active {
+    background-color: var(--color-ubie-black-200);
+}
