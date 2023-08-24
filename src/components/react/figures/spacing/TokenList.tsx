@@ -17,8 +17,6 @@ const deletePrefix = (str: string): string => {
   return str.replace(/^spacing-/, '');
 };
 
-console.log(sizeArray);
-
 const descriptions: { [key in keyof typeof size]: string } = {
   'spacing-xxs': '極小の値',
   'spacing-xs': 'タグ内のpadding、アイコンとテキストのmarginなど、小さめの余白',
