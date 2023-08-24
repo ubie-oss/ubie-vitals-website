@@ -12,9 +12,4 @@ export default defineConfig({
       [rehypeAutolinkHeadings, { behavior: 'append' }],
     ]
   })],
-  vite: {
-    ssr: {
-      external: ['@ubie-inc/ofro-elements']
-    }
-  }
 });

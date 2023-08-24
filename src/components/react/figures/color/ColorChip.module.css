@@ -7,13 +7,15 @@
 
 .tile {
     display: flex;
+    gap: var(--size-spacing-md);
     align-items: flex-end;
+    justify-content: center;
     height: 160px;
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-md)
 }
 
 .tile > * {
-    flex-grow: 1;
+    flex: 0 0 auto;
 }
 
 .contrastExamples {

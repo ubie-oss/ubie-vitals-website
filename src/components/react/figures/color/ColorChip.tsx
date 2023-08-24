@@ -1,6 +1,6 @@
 import ButtonCopy from '@components/react/CopyButton';
 import DesignToken from '@ubie/design-tokens';
-import { Stack } from '@ubie-inc/ofro-elements';
+// import { Stack } from '@ubie-inc/ofro-elements';
 import { validateContrast, convertHexWithAlpha, convertDisplayName } from '@utils/client';
 import { v1 } from 'uuid';
 import styles from './ColorChip.module.css';
@@ -27,20 +27,12 @@ const ColorChip: FC<Props> = ({ token }) => {
   return (
     <div className={styles.outline} aria-describedby={`${chipId}-heading`}>
       <div className={styles.tile} style={{ backgroundColor: token.value }}>
-        <Stack
-          direction="row"
-          spacing="md"
-          justifyContent="center"
-          alignItems="center"
-          className={styles.contrastExamples}
-        >
-          <Stack direction="row" spacing="xs" alignItems="center" as="p" className={styles.textBlack}>
-            A<ColorChipValidationIndicator valid={blackIsValid.AA.normal}></ColorChipValidationIndicator>
-          </Stack>
-          <Stack direction="row" spacing="xs" alignItems="center" as="p" className={styles.textWhite}>
-            A<ColorChipValidationIndicator valid={whiteIsValid.AA.normal}></ColorChipValidationIndicator>
-          </Stack>
-        </Stack>
+        <p className={styles.textBlack}>
+          A<ColorChipValidationIndicator valid={blackIsValid.AA.normal}></ColorChipValidationIndicator>
+        </p>
+        <p className={styles.textWhite}>
+          A<ColorChipValidationIndicator valid={whiteIsValid.AA.normal}></ColorChipValidationIndicator>
+        </p>
       </div>
 
       <p id={`${chipId}-heading`} className={styles.colorName}>
