@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import WithTableOfContentsLayout from './WithTableOfContentsLayout.astro';
+import Markdown from './Markdown.astro';
 
 const { title, description } = Astro.props.frontmatter;
 ---
@@ -8,18 +9,13 @@ const { title, description } = Astro.props.frontmatter;
 <BaseLayout title={`${title} | Design`}>
   <main>
     <WithTableOfContentsLayout>
-      <article class="markdown">
-        <h1>{title}</h1>
-        {description && <p>{description}</p>}
-        <slot />
+      <article>
+        <Markdown>
+          <h1>{title}</h1>
+          {description && <p>{description}</p>}
+          <slot />
+        </Markdown>
       </article>
     </WithTableOfContentsLayout>
   </main>
 </BaseLayout>
-
-<style>
-  .markdown img {
-    margin-top: 60px;
-    margin-bottom: 60px;
-  }
-</style>

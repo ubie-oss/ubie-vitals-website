@@ -1,0 +1,48 @@
+---
+
+---
+
+<div class="markdown">
+  <slot />
+</div>
+
+<style>
+  .markdown :global(h1) {
+    font-size: var(--text-heading-xl-size);
+    line-height: var(--text-heading-xl-line);
+  }
+
+  .markdown :global(h2),
+  .markdown :global(h3) {
+    margin-top: var(--size-spacing-xl);
+    margin-bottom: var(--size-spacing-lg);
+    font-size: var(--text-heading-md-size);
+    line-height: var(--text-heading-md-line);
+  }
+
+  .markdown :global(h2) {
+    padding-left: var(--size-spacing-md);
+    border-left: 3px solid var(--color-primary);
+  }
+
+  .markdown :global(p) {
+    margin-top: var(--size-spacing-md);
+    margin-bottom: var(--size-spacing-md);
+  }
+
+  .markdown :global(ul) {
+    padding-left: var(--size-spacing-lg);
+  }
+
+  .markdown :global(li) {
+    list-style: disc;
+  }
+
+  .markdown :global(li + li) {
+    margin-top: var(--size-spacing-xs);
+  }
+
+  .markdown :global(li > ul) {
+    padding-bottom: var(--size-spacing-xs);
+  }
+</style>
