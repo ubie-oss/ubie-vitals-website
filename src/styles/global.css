@@ -24,13 +24,15 @@ h6 {
     letter-spacing: 0.01em;
 }
 
-p {
+p,
+ul {
     max-width: 40em;
 }
 
 code {
     display: inline-block;
     padding: 2px 0.5ch;
+    margin: 0 2px;
     font-family: SFMono-Medium, "SF Mono", "Segoe UI Mono", "Roboto Mono", "Ubuntu Mono", Menlo, Consolas, Courier, monospace;
     font-size: 0.85em;
     line-height: var(--text-body-sm-tight-line);
@@ -49,4 +51,19 @@ li {
     padding-left: 0;
     margin: 0;
     list-style: none;
+}
+
+kbd {
+    display: inline-block;
+    padding-right: 0.5ch;
+    padding-left: 0.5ch;
+    margin: 0 2px;
+    font-family: SFMono-Medium, "SF Mono", "Segoe UI Mono", "Roboto Mono", "Ubuntu Mono", Menlo, Consolas, Courier, monospace;
+    font-size: 0.85em;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    background-color: var(--color-ubie-black-100);
+    border: 1px solid var(--color-ubie-black-400);
+    border-radius: var(--radius-xs);
+    box-shadow: 1px 1px 0 rgb(255 255 255) inset, 0 1px 0 0 rgb(0 0 0 / 5%);
 }
