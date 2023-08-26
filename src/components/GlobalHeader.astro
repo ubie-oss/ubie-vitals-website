@@ -1,5 +1,5 @@
 ---
-
+import { siteUrl } from '@utils/client';
 ---
 
 <header class="header">
@@ -16,9 +16,9 @@
 
   <nav aria-label="Global Navigation">
     <ul class="linkList">
-      <li class="linkListItem"><a href="">Design Principles（WIP）</a></li>
-      <li class="linkListItem"><a href="/tokens">Tokens</a></li>
-      <li class="linkListItem"><a href="/components">Components</a></li>
+      <li class="linkListItem"><a href={siteUrl()}>Design Principles（WIP）</a></li>
+      <li class="linkListItem"><a href={siteUrl('/tokens')}>Tokens</a></li>
+      <li class="linkListItem"><a href={siteUrl('/components')}>Components</a></li>
     </ul>
   </nav>
 </header>

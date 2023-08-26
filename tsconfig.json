@@ -10,7 +10,8 @@
       "@styles/*": ["src/styles/*"],
       "@utils/*": ["src/utils/*"],
       "@types": ["src/types/index.ts"],
-      "@types/*": ["src/types/*"]
+      "@types/*": ["src/types/*"],
+      "@constants": ["constants.ts"]
     }
   },
 }
