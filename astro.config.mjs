@@ -13,11 +13,6 @@ export default defineConfig({
       [rehypeAutolinkHeadings, { behavior: 'append' }],
     ]
   })],
-  vite: {
-    ssr: {
-      external: ['@ubie-inc/ofro-elements']
-    }
-  },
   site: 'https://ubie-vitals.github.io',
   base: SITE_URL_BASE,
 });

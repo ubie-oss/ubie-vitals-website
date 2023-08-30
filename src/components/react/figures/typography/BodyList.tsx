@@ -1,21 +1,19 @@
-import Grid from "@components/react/Grid";
-import ExampleText from "./ExapmleText";
-import type { FC } from "react";
+import Grid from '@components/react/Grid';
+import ExampleText from './ExampleText';
+import type { FC } from 'react';
 
 const BodyList: FC = () => {
   return (
     <>
       <small>
-        ※各サンプルの下部のコードは <code>font-size</code> /{" "}
-        <code>line-height</code> です
+        ※各サンプルの下部のコードは <code>font-size</code> / <code>line-height</code> です
       </small>
 
       <Grid minimum="352px" role="list">
         <li>
           <ExampleText
-            title="sm"
-            sizeKey="body-sm-size"
-            lineKey="body-sm-line"
+            type="body"
+            size="sm"
             src="/assets/images/figures/typography/example-text-body-sm.svg"
             alt="Body/smでテキストを表示した場合のサンプル"
             width="352"
@@ -25,9 +23,9 @@ const BodyList: FC = () => {
 
         <li>
           <ExampleText
-            title="sm-narrow"
-            sizeKey="body-sm-narrow-size"
-            lineKey="body-sm-narrow-line"
+            type="body"
+            size="sm"
+            leading="narrow"
             src="/assets/images/figures/typography/example-text-body-sm-narrow.svg"
             alt="Body/sm-narrowでテキストを表示した場合のサンプル"
             width="352"
@@ -37,9 +35,9 @@ const BodyList: FC = () => {
 
         <li>
           <ExampleText
-            title="sm-tight"
-            sizeKey="body-sm-tight-size"
-            lineKey="body-sm-tight-line"
+            type="body"
+            size="sm"
+            leading="narrow"
             src="/assets/images/figures/typography/example-text-body-sm-tight.svg"
             alt="Body/sm-tightでテキストを表示した場合のサンプル"
             width="352"
@@ -51,9 +49,8 @@ const BodyList: FC = () => {
       <Grid minimum="352" role="list">
         <li>
           <ExampleText
-            title="md"
-            sizeKey="body-md-size"
-            lineKey="body-md-line"
+            type="body"
+            size="md"
             src="/assets/images/figures/typography/example-text-body-md.svg"
             alt="Body/mdでテキストを表示した場合のサンプル"
             width="352"
@@ -63,9 +60,9 @@ const BodyList: FC = () => {
 
         <li>
           <ExampleText
-            title="md-narrow"
-            sizeKey="body-md-narrow-size"
-            lineKey="body-md-narrow-line"
+            type="body"
+            size="md"
+            leading="narrow"
             src="/assets/images/figures/typography/example-text-body-md-narrow.svg"
             alt="Body/md-narrowでテキストを表示した場合のサンプル"
             width="352"
@@ -75,9 +72,9 @@ const BodyList: FC = () => {
 
         <li>
           <ExampleText
-            title="md-tight"
-            sizeKey="body-md-tight-size"
-            lineKey="body-md-tight-line"
+            type="body"
+            size="md"
+            leading="narrow"
             src="/assets/images/figures/typography/example-text-body-md-tight.svg"
             alt="Body/md-tightでテキストを表示した場合のサンプル"
             width="352"
@@ -89,9 +86,8 @@ const BodyList: FC = () => {
       <Grid role="list" minimum="352px">
         <li>
           <ExampleText
-            title="lg"
-            sizeKey="body-lg-size"
-            lineKey="body-lg-line"
+            type="body"
+            size="lg"
             src="/assets/images/figures/typography/example-text-body-lg.svg"
             alt="Body/lgでテキストを表示した場合のサンプル"
             width="352"
@@ -101,9 +97,9 @@ const BodyList: FC = () => {
 
         <li>
           <ExampleText
-            title="lg-narrow"
-            sizeKey="body-lg-narrow-size"
-            lineKey="body-lg-narrow-line"
+            type="body"
+            size="lg"
+            leading="narrow"
             src="/assets/images/figures/typography/example-text-body-lg-narrow.svg"
             alt="Body/lg-narrowでテキストを表示した場合のサンプル"
             width="352"
@@ -113,9 +109,9 @@ const BodyList: FC = () => {
 
         <li>
           <ExampleText
-            title="lg-tight"
-            sizeKey="body-lg-tight-size"
-            lineKey="body-lg-tight-line"
+            type="body"
+            size="lg"
+            leading="tight"
             src="/assets/images/figures/typography/example-text-body-lg-tight.svg"
             alt="Body/lg-tightでテキストを表示した場合のサンプル"
             width="352"

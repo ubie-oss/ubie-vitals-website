@@ -1,21 +1,22 @@
 ---
 import ComponentsMenu from '@components/ComponentsMenu.astro';
-import Example from '@components/Example.astro';
-import PropsTable from '@components/PropsTable.astro';
+// import Example from '@components/Example.astro';
+// import PropsTable from '@components/PropsTable.astro';
+import LinkToStorybook from '@components/react/LinkToStorybook';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import WithMenu from '@layouts/WithMenu.astro';
 import WithTableOfContentsLayout from '@layouts/WithTableOfContentsLayout.astro';
-import { extractPropsFromFile, getAllExampleUrlAndCode, buildComponentPath } from '@utils/server';
+// import { extractPropsFromFile, getAllExampleUrlAndCode, buildComponentPath } from '@utils/server';
 import Markdown from './Markdown.astro';
 
 const { frontmatter } = Astro.props;
-const { title, description, exampleKey } = frontmatter;
+const { title, description, storybookHref } = frontmatter;
 
-const filePath = buildComponentPath(exampleKey);
+// const filePath = buildComponentPath(exampleKey);
 
-const propsArray = extractPropsFromFile(filePath);
+// const propsArray = extractPropsFromFile(filePath);
 
-const exampleUrlAndCodes = getAllExampleUrlAndCode(exampleKey);
+// const exampleUrlAndCodes = getAllExampleUrlAndCode(exampleKey);
 ---
 
 <BaseLayout title={title}>
@@ -28,7 +29,7 @@ const exampleUrlAndCodes = getAllExampleUrlAndCode(exampleKey);
           <Markdown>
             <h1 id={title}>{title}</h1>
             <p>{description}</p>
-            <section>
+            <!-- <section>
               <h2 id="サンプル">サンプル</h2>
               {
                 exampleUrlAndCodes.map((urlAndCode) => (
@@ -38,11 +39,19 @@ const exampleUrlAndCodes = getAllExampleUrlAndCode(exampleKey);
                   </section>
                 ))
               }
-            </section>
-            <section>
+            </section> -->
+            <!-- <section>
               <h2 id="Props">Props</h2>
               <PropsTable propsArray={propsArray as any} />
-            </section>
+            </section> -->
+            {
+              storybookHref != null && (
+                <>
+                  <h2 id="Exapmle">Example</h2>
+                  <LinkToStorybook href={storybookHref} />
+                </>
+              )
+            }
             <slot />
           </Markdown>
         </article>

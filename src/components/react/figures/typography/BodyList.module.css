@@ -1,9 +1,9 @@
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(352px, 100%), 1fr));
-    grid-gap: var(--size-spacing-sm);
-    padding-left: 0;
-    margin-top: var(--size-spacing-xl);
-    margin-bottom: var(--size-spacing-xl);
-    list-style: none;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(352px, 100%), 1fr));
+  grid-gap: var(--size-spacing-sm);
+  padding-left: 0;
+  margin-top: var(--size-spacing-xl);
+  margin-bottom: var(--size-spacing-xl);
+  list-style: none;
+}
