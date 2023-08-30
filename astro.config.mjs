@@ -10,7 +10,23 @@ export default defineConfig({
   integrations: [react(), mdx({
     rehypePlugins: [
       rehypeSlug,
-      [rehypeAutolinkHeadings, { behavior: 'append' }],
+      [rehypeAutolinkHeadings, {
+        behavior: 'append',
+        properties: {
+          className: ['linkHeading']
+        },
+        content: {
+          type: 'element',
+          tagName: 'span',
+          properties: {
+            className: ['linkHeadingIcon']
+          },
+          children: [{
+            type: 'text',
+            value: '#'
+          }]
+        }
+      }],
     ]
   })],
   site: 'https://ubie-vitals.github.io',

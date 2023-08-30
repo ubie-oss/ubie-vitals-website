@@ -30,11 +30,8 @@
     margin-bottom: var(--size-spacing-md);
   }
 
-  .markdown :global(ul) {
+  .markdown :global(:where(ul)) {
     padding-left: var(--size-spacing-lg);
-  }
-
-  .markdown :global(li) {
     list-style: disc;
   }
 
@@ -43,6 +40,33 @@
   }
 
   .markdown :global(li > ul) {
-    padding-bottom: var(--size-spacing-xs);
+    margin-top: var(--size-spacing-xs);
+    margin-bottom: var(--size-spacing-xs);
+  }
+
+  .markdown :global(.linkHeading) {
+    text-decoration: none;
+    opacity: 0.01;
+  }
+
+  .markdown :global(:is(h1, h2, h3, h4, h5, h6):hover .linkHeading) {
+    opacity: 1;
+  }
+
+  .markdown :global(.linkHeading):focus {
+    text-decoration: underline;
+    opacity: 1;
+  }
+
+  @media (hover: hover) {
+    .markdown :global(.linkHeading):hover {
+      text-decoration: underline;
+    }
+  }
+
+  .markdown :global(.linkHeadingIcon) {
+    margin-left: var(--size-spacing-xxs);
+    color: var(--color-text-sub);
+    text-decoration: none;
   }
 </style>

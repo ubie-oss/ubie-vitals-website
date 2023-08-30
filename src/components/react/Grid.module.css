@@ -2,4 +2,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(var(--minimum), 100%), 1fr));
   grid-gap: var(--space);
+
+  /* 子要素に<li>要素があった場合用 */
+  list-style: none;
 }
