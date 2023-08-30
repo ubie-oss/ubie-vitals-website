@@ -2,14 +2,66 @@
 title: 'Text'
 exampleKey: 'text'
 layout: '../../layouts/ComponentLayout.astro'
-description: 'Tokensを基礎としたテキストスタイルを提供'
+description: 'Design Systemに則ったTypographyのスタイルを提供'
 storybookHref: 'https://fantastic-couscous-79444fe5.pages.github.io/?path=/docs/stories-text--docs'
 ---
 
+## Introduction
+
+[Typography トークン](../../tokens/typography)に基づいたスタイルを提供します。
+
 ## Usage
 
-## Accessibility
+- テキストのスタイルに困った場合、シンプルに `<Text>` でテキストを囲ってください
+  - `props` を指定しなくとも、本文で使用するスタイル（`type='body'`、`size='md'`）がデフォルトで適用されています
+- デフォルトでは、`<p>` 要素としてレンダリングされます
+
+### `<p>` 要素が適さない場合
+
+- テキストのマークアップとして、`<p>` 要素は大きく困ることはないはずです
+- ただし、いくつかのケースで問題があります
+  - （ケースとして、ほとんどないと思いますが）`<p>` 要素に `<p>` 要素を内包できないため、そのままでは `<Text>` 同士のネストができません
+    - ネストした場合、ブラウザの修復により構造が崩れる可能性があります
+- `<button>` のような、フローコンテンツを子に持てない要素が存在します[^phrasing]
+- 解決策として、`as` propでレンダリングされる要素を変更します
+
+[^phrasing]: (記述コンテンツ - コンテンツカテゴリー - HTML: ハイパーテキストマークアップ言語 | MDN)[https://developer.mozilla.org/ja/docs/Web/HTML/Content_categories#%E8%A8%98%E8%BF%B0%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84]
+
+### ブロックレベル要素が適さない場合
+
+- `<p>` はブロックレベル要素[^block]のため水平方向の領域を占有します
+- デザイン上、不都合がある可能性があります
+- いくつかの解決策が考えられます
+  - `as` propでインラインレベルの要素に変更
+  - CSSで `display: inline` などを指定
+  - `<Text>` の親要素の `display` に `flex` や `grid` を指定
+
+[^block]: [Block-level content (ブロックレベルコンテンツ) - Block-level content (ブロックレベルコンテンツ) - MDN Web Docs 用語集: ウェブ関連用語の定義 | MDN | MDN](https://developer.mozilla.org/ja/docs/Glossary/Block-level_content)
+
+### 「テキスト」に使えるマークアップ
+
+代表的なもの列挙します。
+`<div>` や `<span>` を使う前に、以下のマークアップを検討してください。
+
+- 見出し
+  - `<h1>` 〜 `<h6>`
+- 注釈など
+  - `<small>`（単純に「小さい文字」ではないため注意）
+- 強調
+  - `<strong>`
+  - `<b>`
+- 引用
+  - `<blockquote>`
+  - `<q>`
+- ルビ
+  - `<ruby>`
+  - `<rt>`
+  - `<rp>`
+- 日時
+  - `<time>`
+- 省略
+  - `<abbr>`
 
 ## Related resources
 
-- [Tokens/Typography](/tokens/typography)
+- [コンテンツカテゴリー - HTML: ハイパーテキストマークアップ言語 | MDN](https://developer.mozilla.org/ja/docs/Web/HTML/Content_categories)
