@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import { siteUrl } from '@utils/client';
 ---
 
 <BaseLayout>
@@ -7,11 +8,17 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     <h1>Tokens</h1>
 
     <ul>
-      <li><a href="/ubie-vitals-website/tokens/typography">Typography</a></li>
-      <li><a href="/ubie-vitals-website/tokens/spacing">Spacing</a></li>
-      <li><a href="/ubie-vitals-website/tokens/color">Color</a></li>
-      <li><a href="/ubie-vitals-website/tokens/radius">Radius</a></li>
-      <li><a href="/ubie-vitals-website/tokens/icons">Icons</a></li>
+      <li><a href={siteUrl('/tokens/typography')}>Typography</a></li>
+      <li><a href={siteUrl('/tokens/spacing')}>Spacing</a></li>
+      <li>
+        <a href={siteUrl('/tokens/color')}>Color</a>
+        <ul>
+          <li><a href={siteUrl('/tokens/color/primitive')}>Primitive</a></li>
+          <li><a href={siteUrl('/tokens/color/semantic')}>Semantic</a></li>
+        </ul>
+      </li>
+      <li><a href={siteUrl('/tokens/radius')}>Radius</a></li>
+      <li><a href={siteUrl('/tokens/icons')}>Icons</a></li>
     </ul>
   </main>
 </BaseLayout>

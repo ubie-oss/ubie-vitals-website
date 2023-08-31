@@ -2,17 +2,22 @@
 title: 'Stack'
 exampleKey: 'stack'
 layout: '../../layouts/ComponentLayout.astro'
-description: '一定のリズムで要素を積み上げてレイアウトします。'
+description: '一方向に一定のリズムで要素を積み上げてレイアウト'
 storybookHref: 'https://fantastic-couscous-79444fe5.pages.github.io/?path=/docs/stories-stack--docs'
 ---
 
+## Introduction
+
+- 要素をStackしてレイアウトします
+- 同じマージン間隔を取るため、規則性が生まれます
+- リストやフォームといったUIに利用できます
+
 ## Usage
 
-- 垂直方向に、一定のリズムを持つレイアウト
-  - リスト
-  - フォームなど
-- Figma 上で垂直方向の Auto Layout が指定されていた場合、`<Stack>` が役に立ちます
-  - 後に、要素が増減したとしてもコード変更なしに対応することができます
+- デフォルトでは垂直方向にStackします。水平方向にStackしたい場合は`direction='row'`を指定してください
+- Figma上で垂直/水平方向のAuto Layoutが指定されていた場合、`<Stack>`が最適です
+- 後に、子要素が増減したとしても、最小限のコード変更で対応することができます。`<Stack>`の子要素を増やすだけで済みます
+- 子要素の折り返しには対応していないため、`direction='row'`の場合は注意してください。横幅が足りなくなる可能性があります
 
 ## Accessibility
 
@@ -25,5 +30,3 @@ storybookHref: 'https://fantastic-couscous-79444fe5.pages.github.io/?path=/docs/
   <li>...</li>
 </Stack>
 ```
-
-## Related resources

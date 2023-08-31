@@ -39,7 +39,7 @@ const ColorChip: FC<Props> = ({ token }) => {
         {name}
       </p>
 
-      <ul>
+      <ul className={styles.valueList}>
         <li className={styles.valueListItem}>
           <div className={styles.value}>
             <p className={styles.valueTypeName}>HEX</p>

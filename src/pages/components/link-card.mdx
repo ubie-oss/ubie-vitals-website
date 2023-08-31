@@ -2,8 +2,31 @@
 title: 'LinkCard'
 exampleKey: 'link-card'
 layout: '@layouts/ComponentLayout.astro'
-description: ''
 storybookHref: 'https://fantastic-couscous-79444fe5.pages.github.io/?path=/docs/stories-linkcard--docs'
+description: '表現力豊かで、遷移先の内容を把握可能なリンクを提供'
 ---
 
-テキストフィールドを提供します
+## Introduction
+
+- タイトル以外にも、アイコンや説明などの情報/表現を含んだリンクを提供します
+- リンク先の情報を事前に提示できるため、ユーザーが内容を把握しやすくなります
+- 複数のリンクカードが列挙されていた場合に、それぞれを差別化しやすい特徴があります
+- エリアを大きくとるため、タップがしやすいメリットがあります
+- コンポーネントの全体がリンクとして扱われます
+- いわゆる「カード」の形をしています
+
+## Usage
+
+- `description` や `icon` propには、遷移先のページと関連する情報を提示します
+  - 無関係の内容を記載すると、遷移後にユーザーが混乱する可能性があります
+- `description`（遷移先に関わるコンテンツ）は必須です。もし `description` が必要ないのであれば、別のタップエリアが確保されたリストなどが適しているかも知れません
+- 広すぎるエリアへ `<LinkCard>` を配置してはいけません。長文の `description` の場合は読みづらくなります
+
+## Accessibility
+
+### Keyboard Interaction
+
+- <kbd>Tab</kbd> キーでフォーカスすることができます
+- ネィティブの `<a>` と同様の操作が可能です
+  - フォーカスを受け取り、<kbd>Enter</kbd>キーで押下できます
+  - <kbd>Space</kbd>キーでは操作できません

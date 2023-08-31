@@ -79,11 +79,17 @@
     opacity: 1;
 }
 
+.valueList {
+    padding-left: 0;
+    list-style: none;
+}
+
 .value {
     position: relative;
     display: flex;
     flex-wrap: wrap;
     gap: var(--size-spacing-xxs) var(--size-spacing-md);
+    align-items: center;
     padding: var(--size-spacing-xs) 0
 }
 

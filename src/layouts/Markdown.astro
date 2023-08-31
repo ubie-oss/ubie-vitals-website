@@ -1,0 +1,72 @@
+---
+
+---
+
+<div class="markdown">
+  <slot />
+</div>
+
+<style>
+  .markdown :global(h1) {
+    font-size: var(--text-heading-xl-size);
+    line-height: var(--text-heading-xl-line);
+  }
+
+  .markdown :global(h2),
+  .markdown :global(h3) {
+    margin-top: var(--size-spacing-xl);
+    margin-bottom: var(--size-spacing-lg);
+    font-size: var(--text-heading-md-size);
+    line-height: var(--text-heading-md-line);
+  }
+
+  .markdown :global(h2) {
+    padding-left: var(--size-spacing-md);
+    border-left: 3px solid var(--color-primary);
+  }
+
+  .markdown :global(p) {
+    margin-top: var(--size-spacing-md);
+    margin-bottom: var(--size-spacing-md);
+  }
+
+  .markdown :global(:where(ul)) {
+    padding-left: var(--size-spacing-lg);
+    list-style: disc;
+  }
+
+  .markdown :global(li + li) {
+    margin-top: var(--size-spacing-xs);
+  }
+
+  .markdown :global(li > ul) {
+    margin-top: var(--size-spacing-xs);
+    margin-bottom: var(--size-spacing-xs);
+  }
+
+  .markdown :global(.linkHeading) {
+    text-decoration: none;
+    opacity: 0.01;
+  }
+
+  .markdown :global(:is(h1, h2, h3, h4, h5, h6):hover .linkHeading) {
+    opacity: 1;
+  }
+
+  .markdown :global(.linkHeading):focus {
+    text-decoration: underline;
+    opacity: 1;
+  }
+
+  @media (hover: hover) {
+    .markdown :global(.linkHeading):hover {
+      text-decoration: underline;
+    }
+  }
+
+  .markdown :global(.linkHeadingIcon) {
+    margin-left: var(--size-spacing-xxs);
+    color: var(--color-text-sub);
+    text-decoration: none;
+  }
+</style>

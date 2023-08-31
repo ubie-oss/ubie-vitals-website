@@ -2,6 +2,54 @@
 title: 'Checkbox'
 exampleKey: 'checkbox'
 layout: '@layouts/ComponentLayout.astro'
-description: ''
 storybookHref: 'https://fantastic-couscous-79444fe5.pages.github.io/?path=/docs/stories-checkbox--docs'
+description: '複数選択、または選択/未選択の切り替え'
 ---
+
+## Usage
+
+- 同じグループとなる項目には、同じ `name` 属性の値を設定します
+- 複数の選択肢を扱う場合、できる限り項目のグルーピングとキャプションの記述をしてください
+- 単体での利用の場合、キャプションをつけなくても良い場合があります。Checkboxを使った設定の意図を、ラベルが十分に説明している場合のみ、キャプションは省略可能です
+  - 例: 「ニュースレータの受け取り」オプション、「利用規約への同意」オプションなど
+
+### グルーピングとキャプション
+
+`<fieldset>` 及び `<legend>` を使用してください
+
+```jsx
+<fieldset>
+  <Text as="legend" type="heading" size="xs">
+    支払いオプション
+  </Text>
+
+  <Checkbox>翌日配送</Checkbox>
+  <Checkbox>ラッピング</Checkbox>
+</fieldset>
+```
+
+`role=group` と `aria-labelledby` でも対応可能です。
+
+```jsx
+<div role="group" aria-labelledby="heading-payament-options">
+  <Text id="heading-payament-options" as="legend" type="heading" size="xs">
+    支払いオプション
+  </Text>
+
+  <Checkbox>翌日配送</Checkbox>
+  <Checkbox>ラッピング</Checkbox>
+</div>
+```
+
+ただし、この方法はすべてのブラウザと支援技術に対応しているわけではありません
+
+## `<RadioCard>`(Radio Button) or `<Checkbox>`
+
+[Radio Button or Checkbox | RadioCard](./radio-card#radiocardradio-button-or-checkbox)
+
+## Accessibility
+
+### Keyboard Interaction
+
+- <kbd>Tab</kbd>キーでフォーカスできます
+- <kbd>Space</kbd>キーで選択/未選択を切り替えることができます

@@ -1,12 +1,12 @@
 ---
-
+import { siteUrl } from '@utils/client';
 ---
 
 <header class="header">
   <a href="/ubie-vitals-website/">
     <img
       class="logo"
-      src="/assets/images/ubie-vitals-logo.svg"
+      src={siteUrl('/assets/images/ubie-vitals-logo.svg')}
       alt="Ubie Vitals ロゴ"
       width="345"
       height="75"
@@ -16,9 +16,9 @@
 
   <nav aria-label="Global Navigation">
     <ul class="linkList">
-      <li class="linkListItem"><a href="">Design Principles（WIP）</a></li>
-      <li class="linkListItem"><a href="/ubie-vitals-website/tokens">Tokens</a></li>
-      <li class="linkListItem"><a href="/ubie-vitals-website/components">Components</a></li>
+      <li class="linkListItem"><a href={siteUrl()}>Design Principles（WIP）</a></li>
+      <li class="linkListItem"><a href={siteUrl('/tokens')}>Tokens</a></li>
+      <li class="linkListItem"><a href={siteUrl('/components')}>Components</a></li>
     </ul>
   </nav>
 </header>
