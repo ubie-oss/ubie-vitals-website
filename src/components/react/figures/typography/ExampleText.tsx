@@ -20,10 +20,6 @@ interface Props {
   height: string;
 }
 
-console.dir(text, {
-  depth: null,
-});
-
 const ExampleText: FC<Props> = ({ type, size, leading, src, alt, width, height }) => {
   const sizeKey = `${type}-${size}-size` as keyof typeof text;
   const lineKey = leading
