@@ -12,7 +12,11 @@ interface Props {
   children: ReactNode;
 }
 
-const Table: FC<Props> = ({ children }) => <table className={styles.table}>{children}</table>;
+const Table: FC<Props> = ({ children }) => (
+  <div className={styles.wrapper}>
+    <table className={styles.table}>{children}</table>
+  </div>
+);
 
 export { HeadRow, Row, Th, TBody, Cell, THead, HeadCell };
 
