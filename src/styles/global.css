@@ -11,7 +11,7 @@
         font-size: var(--text-body-md-size);
         line-height: var(--text-body-md-line);
         color: var(--color-text-main);
-        background-color: #fcfcfc;
+        background-color: var(--color-ubie-white);
         -webkit-font-smoothing: antialiased
     }
     
@@ -24,12 +24,7 @@
         font-feature-settings: 'palt' 1;
         letter-spacing: 0.01em;
     }
-    
-    p,
-    ul {
-        max-width: 40em;
-    }
-    
+
     code {
         display: inline-block;
         padding: 2px 0.5ch;
@@ -65,4 +60,19 @@
         border: 2px solid var(--color-ubie-black-500);
         border-radius: var(--radius-sm);
     }
+
+    a {
+        color: var(--color-text-link);
+        text-underline-offset: .125em
+    }
+
+    a:active {
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: var(--color-primary-darken)
+    }
+}
+
 }
