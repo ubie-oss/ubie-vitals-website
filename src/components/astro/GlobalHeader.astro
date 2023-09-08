@@ -1,6 +1,4 @@
 ---
-import { siteUrl } from '@utils/client';
-
 interface Props {
   globalNavigationId: string;
 }
@@ -17,13 +15,13 @@ const { globalNavigationId } = Astro.props;
     aria-controls={globalNavigationId}
     aria-expanded="false"
   >
-    <img src="/ubie-vitals-website/assets/images/icon-drawer.svg" alt="" width="16" height="16" />
+    <img src="/assets/images/icon-drawer.svg" alt="" width="16" height="16" />
   </button>
 
-  <a href="/ubie-vitals-website/">
+  <a href="/">
     <img
       class="logo"
-      src={siteUrl('/assets/images/ubie-vitals-logo.svg')}
+      src="/assets/images/ubie-vitals-logo.svg"
       alt="Ubie Vitals ロゴ"
       width="345"
       height="75"

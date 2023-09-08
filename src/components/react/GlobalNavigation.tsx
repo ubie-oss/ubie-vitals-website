@@ -1,6 +1,5 @@
 import { useStore } from '@nanostores/react';
 import { $isMobileGlobalNavigationOpen } from '@store/navigation';
-import { siteUrl } from '@utils/client';
 import clsx from 'clsx';
 import FocusTrap from 'focus-trap-react';
 import styles from './GlobalNavigation.module.css';
@@ -34,10 +33,7 @@ const GlobalNavigation: FC<Props> = ({ currentPath, allComponentPostData }) => {
           </div>
           <ul>
             <li>
-              <a
-                className={clsx(styles.link, { [styles.current]: isCurrent('/principles') })}
-                href={siteUrl('/principles')}
-              >
+              <a className={clsx(styles.link, { [styles.current]: isCurrent('/principles') })} href="/principles">
                 Principles
               </a>
             </li>
@@ -47,7 +43,7 @@ const GlobalNavigation: FC<Props> = ({ currentPath, allComponentPostData }) => {
                 <li>
                   <a
                     className={clsx(styles.link, { [styles.current]: isCurrent('/tokens/typography') })}
-                    href={siteUrl('/tokens/typography')}
+                    href="/tokens/typography"
                   >
                     Typography
                   </a>
@@ -55,7 +51,7 @@ const GlobalNavigation: FC<Props> = ({ currentPath, allComponentPostData }) => {
                 <li>
                   <a
                     className={clsx(styles.link, { [styles.current]: isCurrent('/tokens/color/semantic') })}
-                    href={siteUrl('/tokens/color/semantic')}
+                    href="/tokens/color/semantic"
                   >
                     Semantic Color
                   </a>
@@ -63,7 +59,7 @@ const GlobalNavigation: FC<Props> = ({ currentPath, allComponentPostData }) => {
                 <li>
                   <a
                     className={clsx(styles.link, { [styles.current]: isCurrent('/tokens/color/primitive') })}
-                    href={siteUrl('/tokens/color/primitive')}
+                    href="/tokens/color/primitive"
                   >
                     Primitive Color
                   </a>
@@ -71,7 +67,7 @@ const GlobalNavigation: FC<Props> = ({ currentPath, allComponentPostData }) => {
                 <li>
                   <a
                     className={clsx(styles.link, { [styles.current]: isCurrent('/tokens/spacing') })}
-                    href={siteUrl('/tokens/spacing')}
+                    href="/tokens/spacing"
                   >
                     Spacing
                   </a>
@@ -79,7 +75,7 @@ const GlobalNavigation: FC<Props> = ({ currentPath, allComponentPostData }) => {
                 <li>
                   <a
                     className={clsx(styles.link, { [styles.current]: isCurrent('/tokens/radius') })}
-                    href={siteUrl('/tokens/radius')}
+                    href="/tokens/radius"
                   >
                     Radius
                   </a>
@@ -92,7 +88,7 @@ const GlobalNavigation: FC<Props> = ({ currentPath, allComponentPostData }) => {
                 <li>
                   <a
                     className={clsx(styles.link, { [styles.current]: isCurrent('/elements/icons') })}
-                    href={siteUrl('/elements/icons')}
+                    href="/elements/icons"
                   >
                     Icons
                   </a>
