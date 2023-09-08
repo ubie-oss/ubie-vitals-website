@@ -17,10 +17,6 @@ const sizeArray = getKeys(size)
     return a.token.original.value - b.token.original.value;
   });
 
-console.dir(sizeArray, {
-  depth: null,
-});
-
 const deletePrefix = (str: string): string => {
   return str.replace(/^spacing-/, '');
 };
