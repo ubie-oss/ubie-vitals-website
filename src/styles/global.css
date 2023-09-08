@@ -4,15 +4,17 @@
 
 @layer elements {
     html, body {
-        height: 100%;
-        padding: 0;
-        margin: 0;
         font-family: 'Helvetica Neue',Arial,'Hiragino Kaku Gothic ProN','Hiragino Sans',Meiryo,sans-serif;
         font-size: var(--text-body-md-size);
         line-height: var(--text-body-md-line);
         color: var(--color-text-main);
-        background-color: var(--color-ubie-white);
         -webkit-font-smoothing: antialiased
+    }
+
+    body {
+        min-height: 100vh;
+        min-height: 100dvh;
+        background-color: var(--color-ubie-white);
     }
     
     h1,
@@ -36,18 +38,18 @@
         background-color: var(--color-background-gray);
         border-radius: var(--radius-sm);;
     }
-    
+
     ul {
         padding-left: 0;
         margin: 0;
         list-style: none;
     }
-    
+
     li {
         padding-left: 0;
         margin: 0;
     }
-    
+
     kbd {
         display: inline-block;
         padding-right: 0.5ch;
