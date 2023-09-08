@@ -5,7 +5,7 @@ import LinkToStorybook from '@components/react/LinkToStorybook';
 import PostLayout from '@layouts/PostLayout.astro';
 import WithTableOfContentsLayout from '@layouts/WithTableOfContentsLayout.astro';
 // import { extractPropsFromFile, getAllExampleUrlAndCode, buildComponentPath } from '@utils/server';
-import Markdown from './Markdown.astro';
+import Markdown from '../components/astro/Markdown.astro';
 
 const { frontmatter } = Astro.props;
 const { title, description, storybookHref } = frontmatter;
