@@ -1,7 +1,7 @@
 .list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(80px, 100%), 1fr));
-    grid-gap: 2.5rem;
+    grid-gap: var(--size-spacing-md) var(--size-spacing-lg);
     list-style: none;
 }
 
@@ -13,7 +13,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 80px;
+    width: 100%;
+    aspect-ratio: 1 / 0.96;
     font-size: 36px;
     color: var(--color-primary);
     border: 1px solid var(--color-border);

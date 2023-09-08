@@ -13,23 +13,40 @@ import TableOfContents from '@components/react/TableOfContents';
 
 <style>
   .wrapper {
+    container-type: inline-size;
     display: flex;
     flex-direction: row;
     gap: 80px;
-    width: fit-content;
-    padding: 20px;
-    padding-right: 20px;
+    justify-content: center;
+    padding: var(--size-spacing-xxl) var(--size-spacing-lg) 0;
     margin-right: auto;
     margin-left: auto;
   }
 
+  @media screen and (width >= 640px) {
+    .wrapper {
+      padding: var(--size-spacing-xxl) var(--size-spacing-xl) 0;
+    }
+  }
+
   .contents {
-    flex: 0 1 800px;
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 800px;
   }
 
   .menu {
-    flex: 1 1 auto;
-    max-width: 200px;
-    padding-top: 96px;
+    display: none;
+  }
+
+  /* 最低行幅 + メニュー + gap */
+
+  /* FIXME: 数値が適当 */
+  @container (min-width: calc(35em + 200px + 80px)) {
+    .menu {
+      display: block;
+      flex: 1 1 auto;
+      max-width: 200px;
+    }
   }
 </style>
