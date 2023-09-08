@@ -42,6 +42,6 @@
 }
 
 .copy:focus,
-.item:hover .copy, {
+.item:hover .copy {
     opacity: 1;
 }
