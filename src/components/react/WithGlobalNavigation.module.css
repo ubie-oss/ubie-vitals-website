@@ -35,6 +35,7 @@
 @media (width >= 768px) {
     .menu {
         position: static;
+        z-index: initial;
         display: block;
         flex: 0 0 auto;
         width: initial;
