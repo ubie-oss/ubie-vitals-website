@@ -6,6 +6,6 @@ const blueTokens = Object.values(DesignTokens.color).filter((c) => {
   return c.name?.includes('UbieBlue');
 });
 
-const BlueList: FC = () => <ColorListBase tokens={blueTokens}></ColorListBase>;
+const ColorListBlue: FC = () => <ColorListBase tokens={blueTokens}></ColorListBase>;
 
-export default BlueList;
+export default ColorListBlue;
