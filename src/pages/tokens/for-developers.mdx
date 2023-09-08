@@ -1,0 +1,20 @@
+---
+title: 'For Developers'
+layout: '@layouts/PostLayout.astro'
+---
+
+## Ubie Design Tokens for VS Code
+
+Tokensの自動補完をしてくれるVS Codeの機能拡張です。マーケットプレイスからインストールできます。
+
+[Ubie Design Tokens for VS Code - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Ubie.ubie-design-tokens-for-vscode)
+
+インストール後、CSS（もしくはSass）ファイルを開き`--`とタイプするとTokenの候補が表示されます。候補を選択すると、`var()`に内包されCSSカスタムプロパティとして値が挿入されます。
+
+また、CSSカスタムプロパティをホバーすると、その値の詳細が表示さるようになります。
+
+![動画: 途中までカスタムプロパティを入力することで候補が表示される流れ](/assets/images/vscode-plugin-screenshot-autocomplete.gif)
+
+![動画; カスタムプロパティをホバーし、詳細な値が表示されている](/assets/images/vscode-plugin-screenshot-hover.gif)
+
+ソースコード: [ubie-oss/design-tokens-for-vscode: VS Code extension for building with the Ubie Design System.](https://github.com/ubie-oss/design-tokens-for-vscode)
