@@ -1,10 +1,8 @@
 ---
-import ComponentsMenu from '@components/ComponentsMenu.astro';
 // import Example from '@components/Example.astro';
 // import PropsTable from '@components/PropsTable.astro';
 import LinkToStorybook from '@components/react/LinkToStorybook';
-import BaseLayout from '@layouts/BaseLayout.astro';
-import WithMenu from '@layouts/WithMenu.astro';
+import PostLayout from '@layouts/PostLayout.astro';
 import WithTableOfContentsLayout from '@layouts/WithTableOfContentsLayout.astro';
 // import { extractPropsFromFile, getAllExampleUrlAndCode, buildComponentPath } from '@utils/server';
 import Markdown from './Markdown.astro';
@@ -19,58 +17,48 @@ const { title, description, storybookHref } = frontmatter;
 // const exampleUrlAndCodes = getAllExampleUrlAndCode(exampleKey);
 ---
 
-<BaseLayout title={title}>
-  <WithMenu>
-    <ComponentsMenu slot="menu" />
-
-    <main class="wrapper">
-      <WithTableOfContentsLayout>
-        <article>
-          <Markdown>
-            <h1 id={title}>{title}</h1>
-            <p>{description}</p>
-            <!-- <section>
-              <h2 id="Example">
-                Example<a class="linkHeading" href="#Example"><span class="linkHeadingIcon">#</span></a>
-              </h2>
-              {
-                exampleUrlAndCodes.map((urlAndCode) => (
-                  <section>
-                    <h3 id="Demo">
-                      Demo
-                      <a class="linkHeading" href="#Demo">
-                        <span class="linkHeadingIcon">#</span>
-                      </a>
-                    </h3>
-                    <Example urlAndCode={urlAndCode} />
-                  </section>
-                ))
-              }
-            </section> -->
-            <!-- <section>
-              <h2 id="Props">
-                Props<a class="linkHeading" href="#Props"><span class="linkHeadingIcon">#</span></a>
-              </h2>
-              <PropsTable propsArray={propsArray as any} />
-            </section> -->
-            {
-              storybookHref != null && (
-                <>
-                  <h2 id="Exapmle">Example</h2>
-                  <LinkToStorybook href={storybookHref} />
-                </>
-              )
-            }
-            <slot />
-          </Markdown>
-        </article>
-      </WithTableOfContentsLayout>
-    </main>
-  </WithMenu>
-</BaseLayout>
-
-<style>
-  .wrapper {
-    width: 100%;
+<PostLayout
+  frontmatter={{
+    title,
+    description,
+  }}
+>
+  <!-- <section>
+    <h2 id="Example">
+      Example<a class="linkHeading" href="#Example"><span class="linkHeadingIcon">#</span></a>
+    </h2>
+    {
+      exampleUrlAndCodes.map((urlAndCode) => (
+        <section>
+          <h3 id="Demo">
+            Demo
+            <a class="linkHeading" href="#Demo">
+              <span class="linkHeadingIcon">#</span>
+            </a>
+          </h3>
+          <Example urlAndCode={urlAndCode} />
+        </section>
+      ))
+    }
+  </section> -->
+  <!-- <section>
+    <h2 id="Props">
+      Props<a class="linkHeading" href="#Props"><span class="linkHeadingIcon">#</span></a>
+    </h2>
+    <PropsTable propsArray={propsArray as any} />
+  </section> -->
+  {
+    storybookHref != null && (
+      <>
+        <h2 id="exapmle">
+          Example
+          <a class="linkHeading" href="#exapmle">
+            <span class="linkHeadingIcon">#</span>
+          </a>
+        </h2>
+        <LinkToStorybook href={storybookHref} />
+      </>
+    )
   }
-</style>
+  <slot />
+</PostLayout>

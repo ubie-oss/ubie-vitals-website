@@ -1,0 +1,126 @@
+---
+import { siteUrl } from '@utils/client';
+
+interface Props {
+  globalNavigationId: string;
+}
+
+const { globalNavigationId } = Astro.props;
+---
+
+<header class="header">
+  <button
+    type="button"
+    class="openMobileGlobalNavigationButton"
+    data-js-open-mobile-global-navigation-button
+    aria-label="メニューを開く"
+    aria-controls={globalNavigationId}
+    aria-expanded="false"
+  >
+    <img src="/ubie-vitals-website/assets/images/icon-drawer.svg" alt="" width="16" height="16" />
+  </button>
+
+  <a href="/ubie-vitals-website/">
+    <img
+      class="logo"
+      src={siteUrl('/assets/images/ubie-vitals-logo.svg')}
+      alt="Ubie Vitals ロゴ"
+      width="345"
+      height="75"
+      decoding="async"
+    />
+  </a>
+
+  <!-- <form action="http://www.google.co.jp/search" method="get">
+    <input type="hidden" name="hl" value="ja" />
+    <input type="hidden" name="sitesearch" value="ubie-oss.github.io/ubie-vitals-website/" />
+    <input type="search" />
+    <button>検索</button>
+  </form> -->
+</header>
+
+<script>
+  import { $isMobileGlobalNavigationOpen } from '@store/navigation';
+
+  (() => {
+    const openMobileGlobalNavigationButton = document.querySelector('[data-js-open-mobile-global-navigation-button]');
+
+    if (!openMobileGlobalNavigationButton) {
+      return;
+    }
+
+    const openClickExpandMobileGlobalNavigationButton = () => {
+      $isMobileGlobalNavigationOpen.set(true);
+    };
+
+    openMobileGlobalNavigationButton.addEventListener('click', openClickExpandMobileGlobalNavigationButton);
+
+    $isMobileGlobalNavigationOpen.subscribe((value) => {
+      openMobileGlobalNavigationButton.setAttribute('aria-expanded', value.toString());
+    });
+
+    const mediaQuery = window.matchMedia('(min-width: 768px)');
+    window.addEventListener('resize', () => {
+      if (mediaQuery.matches) {
+        $isMobileGlobalNavigationOpen.set(false);
+      }
+    });
+  })();
+</script>
+
+<style>
+  .header {
+    display: flex;
+    gap: var(--size-spacing-md);
+    align-items: center;
+    height: 60px;
+    padding: 0 12px;
+    border-bottom: 1px solid var(--color-ubie-black-200);
+  }
+
+  @media (width >= 768px) {
+    .header {
+      height: 80px;
+      padding: 0 20px;
+    }
+  }
+
+  .openMobileGlobalNavigationButton {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+  }
+
+  @media (hover: hover) {
+    .openMobileGlobalNavigationButton:hover {
+      background-color: var(--color-ubie-black-100);
+    }
+  }
+
+  .openMobileGlobalNavigationButton:active {
+    background-color: var(--color-ubie-black-200);
+  }
+
+  .openMobileGlobalNavigationButton > img {
+    width: 28px;
+    height: auto;
+    color: var(--color-ubie-black-900);
+  }
+
+  @media (width >= 768px) {
+    .openMobileGlobalNavigationButton {
+      display: none;
+    }
+  }
+
+  .logo {
+    width: auto;
+    height: 30px;
+  }
+
+  @media (width >= 768px) {
+    height: 35px;
+  }
+</style>

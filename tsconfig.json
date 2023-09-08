@@ -11,7 +11,8 @@
       "@utils/*": ["src/utils/*"],
       "@types": ["src/types/index.ts"],
       "@types/*": ["src/types/*"],
-      "@constants": ["constants.ts"]
+      "@constants": ["constants.ts"],
+      "@store/*": ["src/store/*"],
     }
   },
 }
