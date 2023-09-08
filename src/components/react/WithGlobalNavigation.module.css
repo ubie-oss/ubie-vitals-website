@@ -1,7 +1,17 @@
 .wrapper,
 .menu,
 .contents {
-    min-height: 100%;
+    min-height: calc(100vh - var(--header-height-mobile));
+    min-height: calc(100dvh - var(--header-height-mobile));
+}
+
+@media(width >= 768px) {
+    .wrapper,
+    .menu,
+    .contents {
+        min-height: calc(100vh - var(--header-height));
+        min-height: calc(100dvh - var(--header-height));
+    }
 }
 
 .wrapper {
