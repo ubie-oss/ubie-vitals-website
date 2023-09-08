@@ -2,6 +2,11 @@
 @import url('@unocss/reset/sanitize/assets.css');
 @import url('@ubie/design-tokens/dist/tokens.css');
 
+:root {
+    --header-height-mobile: 60px;
+    --header-height: 80px;
+}
+
 @layer elements {
     html, body {
         font-family: 'Helvetica Neue',Arial,'Hiragino Kaku Gothic ProN','Hiragino Sans',Meiryo,sans-serif;
