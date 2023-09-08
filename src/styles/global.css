@@ -89,4 +89,14 @@
     border: none !important;
     opacity: 0 !important;
 }
+
+.scrollable {
+    width: 100%;
+    overflow: auto;
+}
+
+.scrollable img {
+    width: initial;
+    max-width: initial;
+    height: initial;
 }
