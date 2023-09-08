@@ -61,3 +61,13 @@ export const extractHeadingsFromMain = (): Heading[] => {
   });
   return headings;
 };
+
+export const pickHeadingIds = (headings: Heading[]): string[] => {
+  return headings.flatMap((heading) => {
+    if (heading.children) {
+      return [heading.id, ...pickHeadingIds(heading.children)];
+    } else {
+      return [heading.id];
+    }
+  });
+};
