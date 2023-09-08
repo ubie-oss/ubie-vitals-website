@@ -1,3 +1,6 @@
+.code {
+    font-size: 12px;
+}
 
 .outline {
     padding: var(--size-spacing-xs) var(--size-spacing-xs) 0;
@@ -63,6 +66,7 @@
     color: var(--color-ubie-white);
 }
 
+
 .valueListItem + .valueListItem {
     border-top: 1px solid var(--color-border);
 }
@@ -79,7 +83,7 @@
     opacity: 1;
 }
 
-.valueList {
+.outline .valueList {
     padding-left: 0;
     list-style: none;
 }

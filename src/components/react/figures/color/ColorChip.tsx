@@ -2,7 +2,6 @@ import ButtonCopy from '@components/react/CopyButton';
 import DesignToken from '@ubie/design-tokens';
 // import { Stack } from '@ubie-inc/ofro-elements';
 import { validateContrast, convertHexWithAlpha, convertDisplayName } from '@utils/client';
-import { v1 } from 'uuid';
 import styles from './ColorChip.module.css';
 import ColorChipValidationIndicator from './ColorChipValidationIndicator';
 import type { DesignToken as Token } from '@types';
@@ -22,20 +21,18 @@ const ColorChip: FC<Props> = ({ token }) => {
 
   const name = convertDisplayName(token.name);
 
-  const chipId = v1();
-
   return (
-    <div className={styles.outline} aria-describedby={`${chipId}-heading`}>
+    <div className={styles.outline} aria-describedby={`${token.name}-heading`}>
       <div className={styles.tile} style={{ backgroundColor: token.value }}>
         <p className={styles.textBlack}>
-          A<ColorChipValidationIndicator valid={blackIsValid.AA.normal}></ColorChipValidationIndicator>
+          A <ColorChipValidationIndicator valid={blackIsValid.AA.normal}></ColorChipValidationIndicator>
         </p>
         <p className={styles.textWhite}>
-          A<ColorChipValidationIndicator valid={whiteIsValid.AA.normal}></ColorChipValidationIndicator>
+          A <ColorChipValidationIndicator valid={whiteIsValid.AA.normal}></ColorChipValidationIndicator>
         </p>
       </div>
 
-      <p id={`${chipId}-heading`} className={styles.colorName}>
+      <p id={`${token.name}-heading`} className={styles.colorName}>
         {name}
       </p>
 
@@ -44,7 +41,7 @@ const ColorChip: FC<Props> = ({ token }) => {
           <div className={styles.value}>
             <p className={styles.valueTypeName}>HEX</p>
 
-            <code>{convertHexWithAlpha(token.original.value)}</code>
+            <code className={styles.code}>{convertHexWithAlpha(token.original.value)}</code>
             <ButtonCopy className={styles.copy} text={convertHexWithAlpha(token.original.value)}></ButtonCopy>
           </div>
         </li>
@@ -52,7 +49,7 @@ const ColorChip: FC<Props> = ({ token }) => {
           <div className={styles.value}>
             <p className={styles.valueTypeName}>CSS Variables</p>
 
-            <code>{cssVariables}</code>
+            <code className={styles.code}>{cssVariables}</code>
             <ButtonCopy className={styles.copy} text={`var(${cssVariables})`}></ButtonCopy>
           </div>
         </li>
@@ -60,7 +57,7 @@ const ColorChip: FC<Props> = ({ token }) => {
           <div className={styles.value}>
             <p className={styles.valueTypeName}>JavaScript Object</p>
 
-            <code>{jsonPath}</code>
+            <code className={styles.code}>{jsonPath}</code>
             <ButtonCopy className={styles.copy} text={`var(${jsonPath})`}></ButtonCopy>
           </div>
         </li>
