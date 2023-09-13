@@ -8,6 +8,7 @@
 
 <style>
   .markdown :global(h1) {
+    margin-top: 0;
     font-size: var(--text-heading-xl-size);
     line-height: var(--text-heading-xl-line);
   }
@@ -21,16 +22,30 @@
   }
 
   .markdown :global(h2) {
+    position: relative;
     padding-left: var(--size-spacing-md);
-    border-left: 3px solid var(--color-primary);
   }
 
-  .markdown :global(p) {
+  .markdown :global(h2)::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 4px;
+    height: 1.5em;
+    content: '';
+    background: var(--color-primary);
+    border-radius: 2px;
+    transform: translateY(-50%);
+  }
+
+  .markdown :global(:where(p)) {
+    max-width: 40em;
     margin-top: var(--size-spacing-md);
     margin-bottom: var(--size-spacing-md);
   }
 
   .markdown :global(:where(ul)) {
+    max-width: 40em;
     padding-left: var(--size-spacing-lg);
     list-style: disc;
   }
@@ -42,6 +57,11 @@
   .markdown :global(li > ul) {
     margin-top: var(--size-spacing-xs);
     margin-bottom: var(--size-spacing-xs);
+    list-style: circle;
+  }
+
+  .markdown :global(li > ul > li > ul) {
+    list-style: square;
   }
 
   .markdown :global(.linkHeading) {

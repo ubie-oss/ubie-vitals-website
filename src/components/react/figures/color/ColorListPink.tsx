@@ -2,10 +2,10 @@ import DesignTokens from '@ubie/design-tokens';
 import ColorListBase from './ColorListBase';
 import type { FC } from 'react';
 
-const blueTokens = Object.values(DesignTokens.color).filter((c) => {
+const pinkTokens = Object.values(DesignTokens.color).filter((c) => {
   return c.name?.includes('UbiePink');
 });
 
-const BlueList: FC = () => <ColorListBase tokens={blueTokens}></ColorListBase>;
+const ColorListPink: FC = () => <ColorListBase tokens={pinkTokens}></ColorListBase>;
 
-export default BlueList;
+export default ColorListPink;

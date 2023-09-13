@@ -17,10 +17,6 @@ const radiusArray = getKeys(radius)
     return parseInt(a.token.value, 10) - parseInt(b.token.value, 10);
   });
 
-console.dir(radiusArray, {
-  depth: null,
-});
-
 const deletePrefix = (str: string): string => {
   return str.replace(/^spacing-/, '');
 };

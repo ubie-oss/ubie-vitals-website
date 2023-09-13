@@ -1,0 +1,24 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import IconList from '@components/react/IconList';
+---
+
+<BaseLayout title="Icon">
+  <main class="wrapper">
+    <article>
+      <h1 class="heading">Icons</h1>
+      <IconList client:only />
+    </article>
+  </main>
+</BaseLayout>
+
+<style>
+  .wrapper {
+    padding: var(--size-spacing-xxl) var(--size-spacing-lg) 0;
+  }
+
+  .heading {
+    margin-top: 0;
+    margin-bottom: var(--size-spacing-lg);
+  }
+</style>

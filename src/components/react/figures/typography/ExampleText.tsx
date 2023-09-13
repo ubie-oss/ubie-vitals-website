@@ -1,6 +1,5 @@
 import CopyButton from '@components/react/CopyButton';
 import DesignTokens from '@ubie/design-tokens';
-import { siteUrl } from '@utils/client';
 import { convertToTypographyCSS, convertToTypographyReact } from './scripts';
 import type { FC } from 'react';
 
@@ -19,10 +18,6 @@ interface Props {
   width: string;
   height: string;
 }
-
-console.dir(text, {
-  depth: null,
-});
 
 const ExampleText: FC<Props> = ({ type, size, leading, src, alt, width, height }) => {
   const sizeKey = `${type}-${size}-size` as keyof typeof text;
@@ -43,7 +38,7 @@ const ExampleText: FC<Props> = ({ type, size, leading, src, alt, width, height }
         </p>
       )}
 
-      <img src={siteUrl(src)} alt={alt} width={width} height={height} />
+      <img src={src} alt={alt} width={width} height={height} />
 
       <p>
         <code>{text[sizeKey].value}</code> / <code>{text[lineKey].value}</code>
