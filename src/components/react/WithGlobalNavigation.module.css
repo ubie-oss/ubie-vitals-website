@@ -1,5 +1,4 @@
 .wrapper,
-.menu,
 .contents {
     min-height: calc(100vh - var(--header-height-mobile));
     min-height: calc(100dvh - var(--header-height-mobile));
@@ -7,7 +6,6 @@
 
 @media(width >= 768px) {
     .wrapper,
-    .menu,
     .contents {
         min-height: calc(100vh - var(--header-height));
         min-height: calc(100dvh - var(--header-height));
@@ -26,6 +24,8 @@
     display: none;
     height: 100vh;
     height: 100dvh;
+    overflow: auto;
+    box-shadow: 0 15px 16px 0 rgb(0 0 0 / 3%), 0 6px 12px 0 rgb(0 0 0 / 4%), 0 3px 8px 0 rgb(0 0 0 / 5%), 0 1px 4px 0 rgb(0 0 0 / 7%);
 }
 
 .menu.mobileOpen {
@@ -34,14 +34,15 @@
 
 @media (width >= 768px) {
     .menu {
-        position: static;
+        position: sticky;
+        top: var(--header-height);
         z-index: initial;
         display: block;
         flex: 0 0 auto;
         width: initial;
-        height: auto;
-        min-height: 100%;
-        overflow: initial;
+        height: calc(100vh - var(--header-height));
+        height: calc(100dvh - var(--header-height));
+        box-shadow: none;
     }
 }
 
