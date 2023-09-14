@@ -1,26 +1,70 @@
 ---
 title: 'RadioCard'
 exampleKey: 'radio-card'
-layout: '../../layouts/ComponentLayout.astro'
-description: '* Accessibilityに配慮したラジオボタン。TimeQuestionContentのような、選択した後自動で遷移しないタイプのラジオボタン（選択してもなにもおきないボタン）に使用する。'
+layout: '@layouts/ComponentLayout.astro'
+description: 'Accessibilityに配慮したカード状のラジオボタン'
+storybookHref: 'https://fantastic-couscous-79444fe5.pages.github.io/?path=/docs/stories-radiocard--docs'
 ---
 
-import { RadioCard } from '@ubie-inc/ofro-elements';
+## Introduction
 
-テキストフィールドを提供します
+- TimeQuestionContentのような、選択した後自動で遷移しないタイプのラジオボタン（選択してもなにもおきないボタン）に使用
+- いわゆる「カード」の形をしています
 
-# サンプル
+## Usage
+
+- 同じグループとなる項目には、同じ `name` 属性の値を設定します
+- 項目のグルーピングとキャプションの記述をしてください
+
+## `<RadioCard>`(Radio Button) or `<Checkbox>`
+
+- 「値を選ぶ」ことに対して、どちらも要求を満たすことができます
+- `<RadioCard>`は、複数の選択肢の中からひとつを選択します
+- `<RadioCard>`は、一度選択したら、空に戻すことができません
+- `<Checkbox>`は、2つの使用方法があります
+  - 複数の選択肢から、複数を選択します
+  - もしくは、ひとつの選択肢の選択を切り替えます
+- `<Checkbox>`は、値を空に戻すことができます
+
+## Accessibility
+
+### 項目をグルーピングし、タイトルをつける
+
+できる限り見出しをつけてください。選択肢を列挙しただけでは、何を意味する設定なのかをユーザーは理解でいないかもしれません。
+
+基本的には `<fieldset>` 要素がを使います[^mdn-fieldset]。`<legend>` を組み合わせることでタイトルを付与できます。
+
+[^mdn-fieldset]: [フィールドセット要素 - HTML: ハイパーテキストマークアップ言語 | MDN](https://developer.mozilla.org/ja/docs/Web/HTML/Element/fieldset)
 
 ```jsx
+<fieldset>
+  <legend>今日の期限</legend>
 
+  <RadioCard id="good" name="condition">
+    良い
+  </RadioCard>
+  <RadioCard id="bad" name="condition">
+    悪い
+  </RadioCard>
+</fieldset>
 ```
 
-<RadioCard client:only="react" value="foo" name="radio" id="foo">
-  項目1
-</RadioCard>
-<RadioCard client:only="react" value="bar" name="radio" id="bar">
-  項目2
-</RadioCard>
-<RadioCard client:only="react" value="fuga" name="radio" hasMarginBottom={false} id="fuga">
-  項目3
-</RadioCard>
+`<RadioCard>` 自体が一つのコンテンツとして独立している場合、`<section>` 要素で囲んでも良いでしょう。その場合、必ず見出し（`<hx>`） を添えてください。
+
+```jsx
+<section>
+  <h2>今日の期限</h2>
+
+  <RadioCard id="good" name="condition">
+    良い
+  </RadioCard>
+  <RadioCard id="bad" name="condition">
+    悪い
+  </RadioCard>
+</section>
+```
+
+## Keyboard Interaction
+
+- <kbd>Tab</kbd>キーでフォーカスすることができます
+- カーソルキーの上下で選択を切り替えることができます

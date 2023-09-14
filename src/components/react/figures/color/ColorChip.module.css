@@ -1,3 +1,6 @@
+.code {
+    font-size: 12px;
+}
 
 .outline {
     padding: var(--size-spacing-xs) var(--size-spacing-xs) 0;
@@ -7,13 +10,15 @@
 
 .tile {
     display: flex;
+    gap: var(--size-spacing-md);
     align-items: flex-end;
+    justify-content: center;
     height: 160px;
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-md)
 }
 
 .tile > * {
-    flex-grow: 1;
+    flex: 0 0 auto;
 }
 
 .contrastExamples {
@@ -61,6 +66,7 @@
     color: var(--color-ubie-white);
 }
 
+
 .valueListItem + .valueListItem {
     border-top: 1px solid var(--color-border);
 }
@@ -77,11 +83,17 @@
     opacity: 1;
 }
 
+.outline .valueList {
+    padding-left: 0;
+    list-style: none;
+}
+
 .value {
     position: relative;
     display: flex;
     flex-wrap: wrap;
     gap: var(--size-spacing-xxs) var(--size-spacing-md);
+    align-items: center;
     padding: var(--size-spacing-xs) 0
 }
 

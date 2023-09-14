@@ -1,8 +1,67 @@
 ---
-title: "Input"
-exampleKey: "input"
-layout: "@layouts/ComponentLayout.astro"
-description: "テキストフィールドを提供します"
+title: 'Input'
+exampleKey: 'input'
+layout: '@layouts/ComponentLayout.astro'
+description: 'テキストを入力可能なテキストフィールド'
+storybookHref: 'https://fantastic-couscous-79444fe5.pages.github.io/?path=/docs/stories-input--docs'
 ---
 
-# ホゲホゲ
+## Usage
+
+### Placeholder
+
+- Placeholderに重要なメッセージを含めてはいけません
+- 何かしらの値を入力した時点で表示されなくなります
+- 事前に値が入力されていた場合も表示されません
+- 基本的には使わない方が良いでしょう
+
+### `type` Attribute
+
+`type` Attributeを指定することで、特定の値をユーザーが入力しやすくなります。
+列挙していない`type` の値は `<Input>` では対応していません。
+
+- `text`
+  - デフォルトの値です
+- `mail`
+  - メールアドレスの入力に適しています
+  - ブラウザによっては、メールアドレス入力に適したキーボードが表示されます
+- `number`
+  - 数値を入力するための`type`です
+  - 上下の入力ボタンが表示され、あらかじめ決められた数値刻みで値を上下させることができます
+  - 癖が強いため、後述の節を確認してください
+- `password`
+  - 入力値が別の文字に置き換えられ秘匿されます
+  - 入力値が確認できないと、操作が困難なケースがあります。`type=text`に切り替えられる機能とセットで提供してください
+- `tel`
+  - 電話番号を入力するためのものです
+  - 電話番号に適したキーボードが表示される可能性があります
+- `url`
+  - URLを入力させる場合に使用します
+  - URLに適したキーボードが表示される可能性があります
+
+### 数字の入力に `type="number"` は使わない
+
+- 数字
+- E表記（例: `1E+9`）を受け入れてしまいます
+  - 桁数が大きくなった場合、自動でE表記に変換されます
+- 別の解決策として `inputmode="numeric"` とバリデーションの組み合わせがあげられます
+  - モバイル環境において、 `inputmode="numeric"` は数字キーボードを表示します
+
+## Accessibility
+
+- 必ず`<label htmlFor="...">` とセットで実装してください
+  - `<label>` をクリックすることで、入力欄にフォーカスが当たります。タップエリアが拡張されます
+  - スクリーンリーダーの場合、入力欄がフォーカスされた場合に、`<label>` の内容が読み上げられます[^read-label]
+- `<label>` の代わりに `aria-labelledby` で他要素のテキストを参照することもできます（`<label>`の方が望ましいです）
+
+[^read-label]: [［デモ : NVDA］ラベルがあるテキストフィールド【AccessiブルGoGo! #6 】](https://www.youtube.com/watch?v=etXSj1TnJuE)
+
+## Keyboard Interaction
+
+- <kbd>Tab</kbd> キーでフォーカスすることができます
+
+## Related resources
+
+- [4.10.5.1.12 Number state (type=number) - HTML Standard](https://html.spec.whatwg.org/multipage/input.html#when-number-is-not-appropriate)
+- [&lt;input type=&quot;number&quot;&gt; - HTML: ハイパーテキストマークアップ言語 | MDN](https://developer.mozilla.org/ja/docs/Web/HTML/Element/input)
+- [&lt;input type=&quot;number&quot;&gt; - HTML: ハイパーテキストマークアップ言語 | MDN](https://developer.mozilla.org/ja/docs/Web/HTML/Element/input/number#number_%E5%85%A5%E5%8A%9B%E6%AC%84%E3%81%AE%E4%BD%BF%E7%94%A8)

@@ -9,12 +9,24 @@ export default defineConfig({
   integrations: [react(), mdx({
     rehypePlugins: [
       rehypeSlug,
-      [rehypeAutolinkHeadings, { behavior: 'append' }],
+      [rehypeAutolinkHeadings, {
+        behavior: 'append',
+        properties: {
+          className: ['linkHeading']
+        },
+        content: {
+          type: 'element',
+          tagName: 'span',
+          properties: {
+            className: ['linkHeadingIcon']
+          },
+          children: [{
+            type: 'text',
+            value: '#'
+          }]
+        }
+      }],
     ]
   })],
-  vite: {
-    ssr: {
-      external: ['@ubie-inc/ofro-elements']
-    }
-  }
+  site: 'https://ubie-vitals.github.io',
 });

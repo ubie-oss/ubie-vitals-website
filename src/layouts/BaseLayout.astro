@@ -2,26 +2,57 @@
 import '@unocss/reset/sanitize/sanitize.css';
 import '@unocss/reset/sanitize/assets.css';
 import '@ubie/design-tokens/dist/tokens.css';
-import '../styles/global.css';
+import '@styles/global.css';
+import type { PostData } from '@types';
 
-import GlobalHeader from '../components/GlobalHeader.astro';
+import GlobalHeader from '@components/astro/GlobalHeader.astro';
+import WithGlobalNavigation from '@components/react/WithGlobalNavigation';
+
+const currentPath = new URL(Astro.request.url).pathname;
+const allComponentMdx = await Astro.glob('../pages/components/*.mdx');
+
+const allComponentPostData: PostData[] = allComponentMdx.map((componentMdx) => {
+  return {
+    title: componentMdx.frontmatter.title ? componentMdx.frontmatter.title : '',
+    url: componentMdx.url ? componentMdx.url : '',
+  };
+});
 
 interface Props {
   title?: string;
 }
 
 const { title } = Astro.props;
+
+const globalNavigationId = 'vitals-global-navigation';
 ---
 
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     {title ? <title>{title} | Ubie Vitals</title> : <title>Ubie Vitals</title>}
     <link rel="icon" href="/assets/images/favicon.ico" />
   </head>
   <body>
-    <GlobalHeader />
+    <GlobalHeader globalNavigationId={globalNavigationId} />
 
-    <slot />
+    <WithGlobalNavigation
+      globalNavigationId={globalNavigationId}
+      currentPath={currentPath}
+      allComponentPostData={allComponentPostData}
+      client:load
+    >
+      <slot />
+
+      <footer class="footer">© Ubie, Inc.</footer>
+    </WithGlobalNavigation>
   </body>
 </html>
+
+<style>
+  .footer {
+    padding: var(--size-spacing-xxl) var(--size-spacing-sm);
+    text-align: center;
+  }
+</style>

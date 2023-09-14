@@ -9,7 +9,12 @@ interface Props {
   role?: string;
 }
 
-const Grid: FC<Props> = ({ children, minimum = '250px', space = DesignToken.size['spacing-lg'].toString(), role }) => {
+const Grid: FC<Props> = ({
+  children,
+  minimum = '250px',
+  space = DesignToken.size['spacing-lg'].value.toString(),
+  role,
+}) => {
   const cssCariables = {
     '--minimum': minimum,
     '--space': space,

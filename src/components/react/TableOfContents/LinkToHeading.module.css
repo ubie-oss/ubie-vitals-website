@@ -5,9 +5,35 @@
 }
 
 .link {
+    position: relative;
     display: block;
-    padding: var(--size-spacing-sm)  0 var(--size-spacing-sm) calc(var(--nest) * var(--size-spacing-sm));
+    padding: var(--size-spacing-xxs)  0 var(--size-spacing-xxs) calc(var(--nest) * var(--size-spacing-xs) + var(--size-spacing-xs));
+    color: var(--color-ubie-black-500);
     text-decoration: none;
+    border-left: 1px solid var(--color-border);
+}
+
+@media (hover: hover) {
+    .link:hover {
+        color: var(--color-text-main);
+    }
+}
+
+.link.reading {
+    color: var(--color-text-main);
+}
+
+.link.reading::before {
+    position: absolute;
+    top: 50%;
+    left: -1px;
+    display: block;
+    width: 3px;
+    height: 0.75em;
+    content: '';
+    background-color: var(--color-ubie-black-900);
+    border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
+    transform: translateY(-50%);
 }
 
 .child {

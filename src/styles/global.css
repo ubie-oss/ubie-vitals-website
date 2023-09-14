@@ -2,51 +2,108 @@
 @import url('@unocss/reset/sanitize/assets.css');
 @import url('@ubie/design-tokens/dist/tokens.css');
 
-html, body {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    font-family: 'Helvetica Neue',Arial,'Hiragino Kaku Gothic ProN','Hiragino Sans',Meiryo,sans-serif;
-    font-size: var(--text-body-md-size);
-    line-height: var(--text-body-md-line);
-    color: var(--color-text-main);
-    background-color: #fcfcfc;
-    -webkit-font-smoothing: antialiased
+:root {
+    --header-height-mobile: 60px;
+    --header-height: 80px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-feature-settings: 'palt' 1;
-    letter-spacing: 0.01em;
+@layer elements {
+    html, body {
+        font-family: 'Helvetica Neue',Arial,'Hiragino Kaku Gothic ProN','Hiragino Sans',Meiryo,sans-serif;
+        font-size: var(--text-body-md-size);
+        line-height: var(--text-body-md-line);
+        color: var(--color-text-main);
+        -webkit-font-smoothing: antialiased
+    }
+
+    body {
+        min-height: 100vh;
+        min-height: 100dvh;
+        background-color: var(--color-ubie-white);
+    }
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-feature-settings: 'palt' 1;
+        letter-spacing: 0.01em;
+    }
+
+    code {
+        display: inline-block;
+        padding: 2px 0.5ch;
+        margin: 0 2px;
+        font-family: SFMono-Medium, "SF Mono", "Segoe UI Mono", "Roboto Mono", "Ubuntu Mono", Menlo, Consolas, Courier, monospace;
+        font-size: 0.85em;
+        line-height: var(--text-body-sm-tight-line);
+        color: var(--color-ubie-black-700);
+        background-color: var(--color-background-gray);
+        border-radius: var(--radius-sm);;
+    }
+
+    ul {
+        padding-left: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    li {
+        padding-left: 0;
+        margin: 0;
+    }
+
+    kbd {
+        display: inline-block;
+        padding-right: 0.5ch;
+        padding-left: 0.5ch;
+        margin: 0 2px;
+        font-family: SFMono-Medium, "SF Mono", "Segoe UI Mono", "Roboto Mono", "Ubuntu Mono", Menlo, Consolas, Courier, monospace;
+        font-size: 0.85em;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        border: 2px solid var(--color-ubie-black-500);
+        border-radius: var(--radius-sm);
+    }
+
+    a {
+        color: var(--color-text-link);
+        text-underline-offset: .125em
+    }
+
+    a:active {
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: var(--color-primary-darken)
+    }
 }
 
-p {
-    max-width: 40em;
+.visuallyHidden {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    display: block !important;
+    width: 4px !important;
+    height: 4px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    visibility: visible !important;
+    border: none !important;
+    opacity: 0 !important;
 }
 
-code {
-    display: inline-block;
-    padding: 2px 0.5ch;
-    font-family: SFMono-Medium, "SF Mono", "Segoe UI Mono", "Roboto Mono", "Ubuntu Mono", Menlo, Consolas, Courier, monospace;
-    font-size: 0.85em;
-    line-height: var(--text-body-sm-tight-line);
-    color: var(--color-ubie-black-700);
-    background-color: var(--color-background-gray);
-    border-radius: var(--radius-sm);;
+.scrollable {
+    width: 100%;
+    overflow: auto;
 }
 
-ul {
-    padding-left: 0;
-    margin: 0;
-    list-style: none;
-}
-
-li {
-    padding-left: 0;
-    margin: 0;
-    list-style: none;
+.scrollable img {
+    width: initial;
+    max-width: initial;
+    height: initial;
 }

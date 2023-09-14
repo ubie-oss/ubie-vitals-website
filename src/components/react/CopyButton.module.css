@@ -2,12 +2,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 40px;
-    padding: var(--size-spacing-xs) var(--size-spacing-md) calc(var(--size-spacing-xs) - 0.125rem);
+    min-height: 32px;
+    padding: var(--size-spacing-xxs) var(--size-spacing-xs) calc(var(--size-spacing-xxs) - 0.125rem);
     font-weight: bold;
     color: var(--color-primary);
-    background: none;
-    backdrop-filter: blur(10px);
+    background-color: rgb(255 255 255 / 75%);
     border: none;
 
 }

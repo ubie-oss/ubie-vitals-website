@@ -1,0 +1,23 @@
+.link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 120px;
+    color: var(--color-text-main);
+    text-underline-offset: 3px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+
+.link:active {
+    color: var(--color-text-main);
+    background-color: var(--color-ubie-blue-100);
+    border-color: var(--color-primary);
+
+}
+
+.link:hover {
+    border-color: var(--color-primary)
+}
