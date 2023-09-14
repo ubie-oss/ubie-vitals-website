@@ -13,7 +13,8 @@ interface Props {
 
 const GlobalNavigation: FC<Props> = ({ currentPath, allComponentPostData }) => {
   const isCurrent = (path: string): boolean => {
-    return currentPath.endsWith(path);
+    // In the production build, trailing "/" is added to the end of the string. Remove "/" to unify formatting.
+    return currentPath.replace(/\/$/, '') === path;
   };
 
   const onClickClose = () => {
