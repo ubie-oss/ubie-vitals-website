@@ -41,7 +41,7 @@ const IconList: FC = () => {
     <ul className={styles.list}>
       {iconArray.map((Icon, index) => (
         <li className={styles.item} key={index}>
-          <div className={styles.icon} aria-label={`アイコン${index}`}>
+          <div className={styles.icon} aria-label={`アイコン${index}`} role="img">
             <Icon key={Icon.name} />
           </div>
           {/* <p className={styles.name}>{<IconName name={convertToDisplayName(Icon.name)}></IconName>}</p> */}
