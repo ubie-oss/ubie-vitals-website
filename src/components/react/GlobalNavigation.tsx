@@ -80,6 +80,14 @@ const GlobalNavigation: FC<Props> = ({ currentPath, allComponentPostData }) => {
                     Radius
                   </a>
                 </li>
+                <li>
+                  <a
+                    className={clsx(styles.link, { [styles.current]: isCurrent('/tokens/for-developers') })}
+                    href="/tokens/for-developers"
+                  >
+                    For Developers
+                  </a>
+                </li>
               </ul>
             </li>
             <li className={styles.category}>
