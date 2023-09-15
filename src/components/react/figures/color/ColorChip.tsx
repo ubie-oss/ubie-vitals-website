@@ -1,7 +1,7 @@
 import ButtonCopy from '@components/react/CopyButton';
 import DesignToken from '@ubie/design-tokens';
 // import { Stack } from '@ubie-inc/ofro-elements';
-import { validateContrast, convertHexWithAlpha, convertDisplayName } from '@utils/client';
+import { validateContrast, convertHexWithPercentage, convertDisplayName, deleteAlpha } from '@utils/client';
 import styles from './ColorChip.module.css';
 import ColorChipValidationIndicator from './ColorChipValidationIndicator';
 import type { DesignToken as Token } from '@types';
@@ -16,10 +16,11 @@ const ColorChip: FC<Props> = ({ token }) => {
 
   const jsonPath = `DesignToken.${token.path?.[0]}['${token.path?.[1]}']`;
 
-  const blackIsValid = validateContrast(DesignToken.color['ubie-black-700'].original.value, token.original.value);
-  const whiteIsValid = validateContrast(DesignToken.color['ubie-white'].original.value, token.original.value);
+  const blackIsValid = validateContrast(token.original.value, DesignToken.color['text-main'].value);
 
-  const name = convertDisplayName(token.name);
+  const whiteIsValid = validateContrast(token.original.value, DesignToken.color['ubie-white'].original.value);
+
+  const name = convertDisplayName(token.name ?? '');
 
   return (
     <div className={styles.outline} aria-describedby={`${token.name}-heading`}>
@@ -41,8 +42,8 @@ const ColorChip: FC<Props> = ({ token }) => {
           <div className={styles.value}>
             <p className={styles.valueTypeName}>HEX</p>
 
-            <code className={styles.code}>{convertHexWithAlpha(token.original.value)}</code>
-            <ButtonCopy className={styles.copy} text={convertHexWithAlpha(token.original.value)}></ButtonCopy>
+            <code className={styles.code}>{convertHexWithPercentage(token.original.value)}</code>
+            <ButtonCopy className={styles.copy} text={deleteAlpha(token.original.value)}></ButtonCopy>
           </div>
         </li>
         <li className={styles.valueListItem}>
