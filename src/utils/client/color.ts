@@ -11,7 +11,7 @@ type RGBA = {
 type HEX = `#${string}`;
 
 /**
- * 2つの色がW3Cのコントラスト基準に適合するかをチェック
+ * Check if the two colors meet the W3C contrast criteria
  * @param backgroundColor HEX
  * @param forgroundColor HEX
  */
