@@ -29,7 +29,6 @@ export const validateContrast = (
   };
 } => {
   const contrast = calcContrastConsideringAlpha(backgroundColor, forgroundColor);
-  console.log(contrast);
   return {
     AA: {
       normal: contrast > 4.5,
@@ -124,9 +123,6 @@ export const hexToRGBA = (hex: HEX): RGBA => {
  * @returns number
  */
 export const calcContrastConsideringAlpha = (backgroundHex: HEX, forgroundHex: HEX): number => {
-  console.log('backgroundHex', backgroundHex);
-  console.log('forgroundHex', forgroundHex);
-
   const backgroundArray = rgba(backgroundHex);
   const forgroundArray = rgba(forgroundHex);
 
