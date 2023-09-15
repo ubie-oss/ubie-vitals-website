@@ -1,5 +1,5 @@
 import CopyButton from '@components/react/CopyButton';
-import { convertHexWithAlpha, convertDisplayName } from '@utils/client';
+import { convertHexWithPercentage, convertDisplayName } from '@utils/client';
 import styles from './BaseGrid.module.css';
 import type { DesignToken } from '@types';
 import type { FC } from 'react';
@@ -40,7 +40,7 @@ const BaseGrid: FC<Props> = ({ colors }) => (
               </div>
             </th>
             <td className={styles.cell}>
-              <code>{convertHexWithAlpha(color.token.value)}</code>
+              <code>{convertHexWithPercentage(color.token.value)}</code>
             </td>
             <td className={styles.cell}>{color.description ? color.description : '-'}</td>
             <td className={styles.cellCopy}>

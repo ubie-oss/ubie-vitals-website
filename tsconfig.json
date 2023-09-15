@@ -13,6 +13,10 @@
       "@types/*": ["src/types/*"],
       "@constants": ["constants.ts"],
       "@store/*": ["src/store/*"],
-    }
+    },
+    "types": [
+      "vitest/importMeta"
+    ]
   },
+  "paths": { "*": ["@types/*"]}
 }

@@ -13,7 +13,8 @@
     "lint:js:fix": "eslint --fix src/**/*.{astro,ts,tsx}",
     "lint:css": "stylelint src/**/*.{astro,module.css,css}",
     "lint:css:fix": "stylelint --fix src/**/*.{astro,module.css,css}",
-    "prettier:astro": "prettier --write src/**/*.astro"
+    "prettier:astro": "prettier --write src/**/*.astro",
+    "test": "vitest"
   },
   "dependencies": {
     "@astrojs/mdx": "^0.19.7",
@@ -28,6 +29,8 @@
     "@unocss/reset": "^0.54.1",
     "astro": "^2.10.1",
     "clsx": "^2.0.0",
+    "color-blend": "^4.0.0",
+    "color-rgba": "^2.4.0",
     "focus-trap-react": "^10.2.1",
     "nanostores": "^0.9.3",
     "react": "^18.2.0",
@@ -59,7 +62,8 @@
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-recess-order": "^4.3.0",
     "stylelint-config-standard": "^34.0.0",
-    "stylelint-prettier": "^4.0.2"
+    "stylelint-prettier": "^4.0.2",
+    "vitest": "^0.34.2"
   },
   "main": "index.js",
   "repository": {
