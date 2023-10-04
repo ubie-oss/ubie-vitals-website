@@ -75,7 +75,7 @@ const { globalNavigationId } = Astro.props;
     gap: var(--size-spacing-md);
     align-items: center;
     height: var(--header-height-mobile);
-    padding: 0 12px;
+    padding: 0 var(--size-spacing-xs);
     background-color: var(--color-ubie-white);
     border-bottom: 1px solid var(--color-ubie-black-200);
   }
@@ -83,7 +83,7 @@ const { globalNavigationId } = Astro.props;
   @media (width >= 768px) {
     .header {
       height: var(--header-height);
-      padding: 0 20px;
+      padding: 0 var(--size-spacing-md);
     }
   }
 
@@ -119,12 +119,12 @@ const { globalNavigationId } = Astro.props;
 
   .logo {
     width: auto;
-    height: 30px;
+    height: 2rem;
   }
 
   @media (width >= 768px) {
     .logo {
-      height: 35px;
+      height: 2.5rem;
     }
   }
 </style>

@@ -25,6 +25,8 @@ interface Props {
 const { title } = Astro.props;
 
 const globalNavigationId = 'vitals-global-navigation';
+const description =
+  "Ubie Vitals is a design system based on four design principles to ensure that Ubie's products reach all users";
 ---
 
 <html lang="ja">
@@ -32,6 +34,12 @@ const globalNavigationId = 'vitals-global-navigation';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     {title ? <title>{title} | Ubie Vitals</title> : <title>Ubie Vitals</title>}
+    <meta name="description" content={description} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://vitals.ubie.life/assets/images/og-image.png" />
+    <meta name="twitter:title" content="Ubie Vitals" />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="/assets/images/favicon.ico" />
   </head>
   <body>
