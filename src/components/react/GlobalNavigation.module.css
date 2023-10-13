@@ -69,6 +69,10 @@
     background-color: var(--color-ubie-black-200);
 }
 
+.link:visited {
+    color: var(--color-ubie-black-500);
+}
+
 .link.current {
     color: var(--color-ubie-black);
     background-color: var(--color-ubie-blue-100);

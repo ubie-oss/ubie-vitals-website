@@ -19,6 +19,10 @@
     }
 }
 
+.link:visited {
+    color: var(--color-ubie-black-500);
+}
+
 .link.reading {
     color: var(--color-text-main);
 }
