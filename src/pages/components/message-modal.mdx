@@ -1,0 +1,40 @@
+---
+title: 'Message Modal'
+layout: '@layouts/PostLayout.astro'
+---
+
+import ModalDialogNecessary from '@sharedDocuments/modalDialog/ModalDialogNecessary.md';
+import HeaderText from '@sharedDocuments/modalDialog/HeaderText.md';
+import HeaderTextActionModal from '@sharedDocuments/modalDialog/HeaderTextActionModal.md';
+import ButtonLabel from '@sharedDocuments/modalDialog/ButtonLabel.md';
+import HeaderProps from '@sharedDocuments/modalDialog/HeaderProps.md';
+
+## Introduction(あとでdescriptionへ移動)
+
+メッセージへユーザーをフォーカスさせるためのダイアログ
+
+## Feature
+
+- 確実に読ませたいコンテンツを表示
+- ユーザーの操作を中断させるため、**アンチパターン**。利用はよく考えてください
+  - ユーザーが、条件反射で表示されたダイアログを閉じてしまうケースもあります
+
+## Usage
+
+### モーダルダイアログは必要？
+
+<ModalDialogNecessary />
+
+### Header Text
+
+<HeaderText />
+
+コンテンツの確認を促す文言や内容を端的に要約した文言をタイトルに設定します。
+
+### Button Label
+
+TODO: 具体的を見ながら書く
+
+### `header` and `aria-labelledby`
+
+<HeaderProps />

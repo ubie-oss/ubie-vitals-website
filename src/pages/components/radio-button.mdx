@@ -1,19 +1,15 @@
 ---
-title: 'RadioCard'
-exampleKey: 'radio-card'
-layout: '@layouts/ComponentLayout.astro'
-description: 'Accessibilityに配慮したカード状のラジオボタン'
-storybookHref: 'https://fantastic-couscous-79444fe5.pages.github.io/?path=/docs/stories-radiocard--docs'
+title: 'RadioButton'
+layout: '@layouts/PostLayout.astro'
 ---
 
 import SelectingFormComponents from '@sharedDocuments/form/SelectingFormComponents.md';
 
-## Feature
+## Introduction（後でmetaデータに移動）
 
-- TimeQuestionContentのような、選択した後自動で遷移しないタイプのラジオボタン（選択してもなにもおきないボタン）に使用します
-- いわゆる「カード」の形をしています
-  - クリック/タップ領域が大きく、比較的操作が容易です
-  - その代わり、領域を占有するデメリットも存在します
+リストの中から1つの項目を選択
+
+## Feature
 
 <SelectingFormComponents />
 
@@ -33,19 +29,19 @@ import SelectingFormComponents from '@sharedDocuments/form/SelectingFormComponen
 <fieldset>
   <legend>今日の期限</legend>
 
-  <RadioCard name="condition">良い</RadioCard>
-  <RadioCard name="condition">悪い</RadioCard>
+  <RadioButton name="condition">良い</RadioButton>
+  <RadioButton name="condition">悪い</RadioButton>
 </fieldset>
 ```
 
-`<RadioCard>` を内包する選択肢が1つのコンテンツとして独立している場合、`<section>` 要素で囲んでも良いでしょう。その場合、必ず見出し（`<hx>`） を添えてください。
+`<RadioButton>` を内包する選択肢が1つのコンテンツとして独立している場合、`<section>` 要素で囲んでも良いでしょう。その場合、必ず見出し（`<hx>`） を添えてください。
 
 ```jsx
 <section>
   <h2>本日の体調</h2>
 
-  <RadioCard name="condition">良い</RadioCard>
-  <RadioCard name="condition">悪い</RadioCard>
+  <RadioButton name="condition">良い</RadioButton>
+  <RadioButton name="condition">悪い</RadioButton>
 </section>
 ```
 
