@@ -18,7 +18,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@astrojs/mdx": "^1.1.1",
+    "@astrojs/mdx": "^1.1.2",
     "@astrojs/prism": "^3.0.0",
     "@astrojs/react": "^3.0.3",
     "@astrojs/renderer-react": "^0.5.0",
@@ -28,11 +28,11 @@
     "@ubie/design-tokens": "^0.1.4",
     "@ubie/ubie-icons": "^0.5.0",
     "@unocss/reset": "^0.56.5",
-    "astro": "^3.2.4",
+    "astro": "^3.3.0",
     "clsx": "^2.0.0",
     "color-blend": "^4.0.0",
     "color-rgba": "^3.0.0",
-    "focus-trap-react": "^10.2.2",
+    "focus-trap-react": "^10.2.3",
     "nanostores": "^0.9.3",
     "react": "^18.2.0",
     "react-docgen": "^6.0.4",
