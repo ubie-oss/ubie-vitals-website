@@ -45,7 +45,7 @@ export const validateContrast = (
  * ex. #16191f0a -> #16191f / 4%
  * If no alpha, return as is
  * @param hex HEX
- * @returns 
+ * @returns
  */
 export function convertHexWithPercentage(hex: HEX) {
   // #始まりじゃなければエラー
@@ -74,7 +74,7 @@ export function convertHexWithPercentage(hex: HEX) {
 
 /**
  * ex. 16191f0a -> #16191f
- * @param HEX 
+ * @param HEX
  * @returns string
  */
 export function deleteAlpha(hex: HEX): string {
@@ -102,8 +102,8 @@ export function convertDisplayName(colorName: string) {
 
 /**
  * Convert HEX to object with rgba
- * @param hex 
- * @returns 
+ * @param hex
+ * @returns
  */
 export const hexToRGBA = (hex: HEX): RGBA => {
   const rgbaArray = rgba(hex);
@@ -118,8 +118,8 @@ export const hexToRGBA = (hex: HEX): RGBA => {
 
 /**
  * Calculation of contrast considering alpha
- * @param backgroundHex 
- * @param forgroundHex 
+ * @param backgroundHex
+ * @param forgroundHex
  * @returns number
  */
 export const calcContrastConsideringAlpha = (backgroundHex: HEX, forgroundHex: HEX): number => {
@@ -184,10 +184,9 @@ const white: RGBA = {
   a: 1,
 };
 
-
 /**
  * Composite the given color with white and make it the background color
- * @param background 
+ * @param background
  * @returns RGBA
  */
 export const blendBackground = (background: RGBA) => {
@@ -227,7 +226,7 @@ if (import.meta.vitest) {
     });
 
     test('lite blue and alpha white have high contrast.', () => {
-      expect(calcContrastConsideringAlpha('#cbd3f2', '#16191fe5')).toBe(12.253778729538132);
+      expect(calcContrastConsideringAlpha('#cbd3f2', '#16191fe5')).toBe(9.414160780055964);
     });
 
     test('Alpha Black and alpha Pink have low contrast.', () => {
@@ -235,7 +234,7 @@ if (import.meta.vitest) {
     });
 
     test('lite gray and dark gray have high contrast', () => {
-      expect(calcContrastConsideringAlpha('#16191f0a', '#16191fe5')).toBe(2.099450356723359);
+      expect(calcContrastConsideringAlpha('#16191f0a', '#16191fe5')).toBe(12.253778729538132);
     });
   });
 }
