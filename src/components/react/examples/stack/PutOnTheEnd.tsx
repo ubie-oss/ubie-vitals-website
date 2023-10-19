@@ -1,9 +1,9 @@
 import { Stack } from '@ubie/ubie-ui';
 import type { FC } from 'react';
 
-const Default: FC = () => {
+const PutOnTheEnd: FC = () => {
   return (
-    <Stack spacing="md">
+    <Stack spacing="md" alignItems="flex-end">
       <p style={{ margin: 0 }}>テスト</p>
       <p style={{ margin: 0 }}>テスト</p>
       <p style={{ margin: 0 }}>テスト</p>
@@ -12,4 +12,4 @@ const Default: FC = () => {
   );
 };
 
-export default Default;
+export default PutOnTheEnd;

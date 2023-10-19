@@ -1,22 +1,36 @@
-import { LinkCard } from '@ubie/ubie-ui';
-import type { FC } from 'react';
+import { RadioCard, Stack } from '@ubie/ubie-ui';
+import { useState, useCallback } from 'react';
+import type { FC, ChangeEventHandler } from 'react';
 
 const Default: FC = () => {
+  const options = ['option1', 'option2', 'option3'];
+
+  const [selectedItem, setSelectedItem] = useState(options[0]);
+
+  const onChange: ChangeEventHandler<HTMLInputElement> = useCallback((event) => {
+    setSelectedItem(event.target.value);
+  }, []);
+
   return (
-    <>
-      <LinkCard
-        title="タイトル"
-        href="/"
-        description="これはこのカードの遷移先の説明です。これはこのカードの遷移先の説明です。これはこのカードの遷移先の説明です。これはこのカードの遷移先の説明です。これはこのカードの遷移先の説明です。"
-      />
-      <div style={{ marginTop: '1rem' }}>
-        <LinkCard
-          title="タイトル"
-          href="/"
-          description="これはこのカードの遷移先の説明です。これはこのカードの遷移先の説明です。これはこのカードの遷移先の説明です。これはこのカードの遷移先の説明です。これはこのカードの遷移先の説明です。"
-        />
-      </div>
-    </>
+    <Stack spacing="md">
+      {options.map((option) => (
+        <RadioCard
+          name="options"
+          value={option}
+          onChange={onChange}
+          checked={selectedItem === option}
+          id={option}
+          key={option}
+        >
+          {option}
+        </RadioCard>
+      ))}
+
+      <dl>
+        <dt>Values</dt>
+        <dd>{selectedItem}</dd>
+      </dl>
+    </Stack>
   );
 };
 

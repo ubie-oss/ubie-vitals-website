@@ -19,6 +19,17 @@ const toCamelCase = (str: string): string => {
     .join('');
 };
 
+// defaultを先頭に持ってくるソート関数, Exampleの項目を受け取る
+const sortDefaultFirst = (a: Example, b: Example): number => {
+  if (a.name === 'default') {
+    return -1;
+  }
+  if (b.name === 'default') {
+    return 1;
+  }
+  return 0;
+};
+
 // expampleKeyとしてstackを投げると
 // src/pages/components/examples/stack/* を検索する
 export const getAllExample = (exampleKey: string): Example[] => {
@@ -28,17 +39,20 @@ export const getAllExample = (exampleKey: string): Example[] => {
 
   const files = fs.readdirSync(exampleDir);
 
-  return files.map((file) => {
-    const filePath = path.join(exapmleComponentDir, file).replace('.astro', '.tsx');
+  const examples = files.map((file) => {
+    const filePath = path.join(exapmleComponentDir, toCamelCase(file).replace('.astro', '.tsx'));
     const code = fs.readFileSync(filePath, 'utf-8');
 
     // .astroを外してURLに組み立てる
     const url = path.join(exampleUrl, file.replace('.astro', ''));
 
-    const name = file.replace('.astro', '');
+    const name = file.replace('.astro', '').replaceAll('-', ' ');
 
     return { name, url, code };
   });
+
+  // 'default'を先頭に持ってくる
+  return examples.sort(sortDefaultFirst);
 };
 
 // ubie-uiにおいて、LinkButtonはButtonと同一ディレクトリに存在する
