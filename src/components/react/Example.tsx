@@ -6,21 +6,21 @@ import type { Example } from '@utils/server';
 import type { FC } from 'react';
 
 interface Props {
-  exampleUrlAndFilePath: Example;
+  example: Example;
 }
 
-const Example: FC<Props> = ({ exampleUrlAndFilePath }) => {
+const Example: FC<Props> = ({ example }) => {
   return (
     <div className={styles.example}>
-      <a className={styles.externalLink} href={exampleUrlAndFilePath.url} target="_blank" rel="noreferrer">
+      <a className={styles.externalLink} href={example.url} target="_blank" rel="noreferrer">
         Open Window
       </a>
 
       <div className={styles.demo}>
         <iframe
           className={styles.demoFrame}
-          src={exampleUrlAndFilePath.url}
-          title={`${exampleUrlAndFilePath.name} example`}
+          src={example.url}
+          title={`${example.name} example`}
           loading="lazy"
         ></iframe>
       </div>
@@ -34,9 +34,9 @@ const Example: FC<Props> = ({ exampleUrlAndFilePath }) => {
             margin: '0',
           }}
         >
-          {exampleUrlAndFilePath.code}
+          {example.code}
         </SyntaxHighlighter>
-        <CopyButton className={styles.copy} text={exampleUrlAndFilePath.code} />
+        <CopyButton className={styles.copy} text={example.code} />
       </div>
     </div>
   );

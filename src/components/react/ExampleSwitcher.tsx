@@ -37,7 +37,7 @@ const ExampleSwitcher: FC<Props> = ({ examples }) => {
           ))}
         </Stack>
 
-        {currentExample && <Example exampleUrlAndFilePath={currentExample} />}
+        {currentExample && <Example example={currentExample} />}
       </Stack>
     </>
   );
