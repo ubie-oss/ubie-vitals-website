@@ -5,7 +5,7 @@ const EXAPMLES_DIR = 'src/pages/components/examples';
 const EXAPMLES_COMPONENT_DIR = 'src/components/react/examples';
 const EXAPMLES_URL = '/components/examples';
 
-export type exampleUrlAndFilePath = {
+export type Example = {
   url: string;
   code: string;
   name: string;
@@ -21,8 +21,7 @@ const toCamelCase = (str: string): string => {
 
 // expampleKeyとしてstackを投げると
 // src/pages/components/examples/stack/* を検索する
-// マッチしたディレクトリから、例えば /components/examples/stack/multiple.astro と src/components/examples/stack/multiple.tsx を組み立てて返す
-export const getAllExampleUrlAndCode = (exampleKey: string): exampleUrlAndFilePath[] => {
+export const getAllExample = (exampleKey: string): Example[] => {
   const exampleDir = path.join(EXAPMLES_DIR, exampleKey);
   const exapmleComponentDir = path.join(EXAPMLES_COMPONENT_DIR, exampleKey);
   const exampleUrl = path.join(EXAPMLES_URL, exampleKey);

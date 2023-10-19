@@ -2,7 +2,7 @@
 import PropsTable from '@components/astro/PropsTable.astro';
 import ExampleSwitcher from '@components/react/ExampleSwitcher';
 import PostLayout from '@layouts/PostLayout.astro';
-import { extractPropsFromFile, getAllExampleUrlAndCode, buildComponentPath } from '@utils/server';
+import { extractPropsFromFile, getAllExample, buildComponentPath } from '@utils/server';
 
 const { frontmatter } = Astro.props;
 const { title, description, exampleKey } = frontmatter;
@@ -11,7 +11,7 @@ const filePath = buildComponentPath(exampleKey);
 
 const propsArray = extractPropsFromFile(filePath);
 
-const exampleUrlAndCodes = getAllExampleUrlAndCode(exampleKey);
+const examples = getAllExample(exampleKey);
 ---
 
 <PostLayout
@@ -25,7 +25,7 @@ const exampleUrlAndCodes = getAllExampleUrlAndCode(exampleKey);
       Example<a class="linkHeading" href="#Example"><span class="linkHeadingIcon">#</span></a>
     </h2>
 
-    <ExampleSwitcher exampleUrlAndFilePaths={exampleUrlAndCodes} client:only />
+    <ExampleSwitcher examples={examples} client:only />
 
     <section>
       <h2 id="Props">

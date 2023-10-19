@@ -1,29 +1,29 @@
 import { Button, Stack } from '@ubie/ubie-ui';
 import { useState, useMemo } from 'react';
 import Example from './Example';
-import type { exampleUrlAndFilePath } from '@utils/server';
+import type { Example as ExampleType } from '@utils/server';
 import type { FC } from 'react';
 
 interface Props {
-  exampleUrlAndFilePaths: exampleUrlAndFilePath[];
+  examples: ExampleType[];
 }
 
-const ExampleSwitcher: FC<Props> = ({ exampleUrlAndFilePaths }) => {
+const ExampleSwitcher: FC<Props> = ({ examples }) => {
   const defaultExampleUrl = useMemo(() => {
-    return exampleUrlAndFilePaths[0].url || '';
-  }, [exampleUrlAndFilePaths]);
+    return examples[0].url || '';
+  }, [examples]);
 
   const [current, setCurrent] = useState<string>(defaultExampleUrl);
 
-  const currentExample: exampleUrlAndFilePath | null = useMemo(() => {
-    return exampleUrlAndFilePaths.find(({ url }) => url === current) ?? null;
+  const currentExample: Example | null = useMemo(() => {
+    return examples.find(({ url }) => url === current) ?? null;
   }, [current]);
 
   return (
     <>
       <Stack spacing="md" alignItems="normal">
         <Stack direction="row" spacing="xs">
-          {exampleUrlAndFilePaths.map(({ name, url }) => (
+          {examples.map(({ name, url }) => (
             <Button
               size="small"
               variant={current === url ? 'primary' : 'secondary'}

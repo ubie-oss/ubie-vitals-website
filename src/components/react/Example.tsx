@@ -2,11 +2,11 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import CopyButton from './CopyButton';
 import styles from './Example.module.css';
-import type { exampleUrlAndFilePath } from '@utils/server';
+import type { Example } from '@utils/server';
 import type { FC } from 'react';
 
 interface Props {
-  exampleUrlAndFilePath: exampleUrlAndFilePath;
+  exampleUrlAndFilePath: Example;
 }
 
 const Example: FC<Props> = ({ exampleUrlAndFilePath }) => {
