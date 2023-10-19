@@ -1,18 +1,17 @@
 ---
-// import Example from '@components/Example.astro';
-// import PropsTable from '@components/PropsTable.astro';
-import LinkToStorybook from '@components/react/LinkToStorybook';
+import PropsTable from '@components/astro/PropsTable.astro';
+import ExampleSwitcher from '@components/react/ExampleSwitcher';
 import PostLayout from '@layouts/PostLayout.astro';
-// import { extractPropsFromFile, getAllExampleUrlAndCode, buildComponentPath } from '@utils/server';
+import { extractPropsFromFile, getAllExampleUrlAndCode, buildComponentPath } from '@utils/server';
 
 const { frontmatter } = Astro.props;
-const { title, description, storybookHref } = frontmatter;
+const { title, description, exampleKey } = frontmatter;
 
-// const filePath = buildComponentPath(exampleKey);
+const filePath = buildComponentPath(exampleKey);
 
-// const propsArray = extractPropsFromFile(filePath);
+const propsArray = extractPropsFromFile(filePath);
 
-// const exampleUrlAndCodes = getAllExampleUrlAndCode(exampleKey);
+const exampleUrlAndCodes = getAllExampleUrlAndCode(exampleKey);
 ---
 
 <PostLayout
@@ -21,42 +20,19 @@ const { title, description, storybookHref } = frontmatter;
     description,
   }}
 >
-  <!-- <section>
+  <section>
     <h2 id="Example">
       Example<a class="linkHeading" href="#Example"><span class="linkHeadingIcon">#</span></a>
     </h2>
-    {
-      exampleUrlAndCodes.map((urlAndCode) => (
-        <section>
-          <h3 id="Demo">
-            Demo
-            <a class="linkHeading" href="#Demo">
-              <span class="linkHeadingIcon">#</span>
-            </a>
-          </h3>
-          <Example urlAndCode={urlAndCode} />
-        </section>
-      ))
-    }
-  </section> -->
-  <!-- <section>
-    <h2 id="Props">
-      Props<a class="linkHeading" href="#Props"><span class="linkHeadingIcon">#</span></a>
-    </h2>
-    <PropsTable propsArray={propsArray as any} />
-  </section> -->
-  {
-    storybookHref != null && (
-      <>
-        <h2 id="exapmle">
-          Example
-          <a class="linkHeading" href="#exapmle">
-            <span class="linkHeadingIcon">#</span>
-          </a>
-        </h2>
-        <LinkToStorybook href={storybookHref} />
-      </>
-    )
-  }
-  <slot />
+
+    <ExampleSwitcher exampleUrlAndFilePaths={exampleUrlAndCodes} client:only />
+
+    <section>
+      <h2 id="Props">
+        Props<a class="linkHeading" href="#Props"><span class="linkHeadingIcon">#</span></a>
+      </h2>
+      <PropsTable propsArray={propsArray as any} />
+    </section>
+    <slot />
+  </section>
 </PostLayout>
