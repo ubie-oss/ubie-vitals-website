@@ -12,6 +12,7 @@
       "@types": ["src/types/index.ts"],
       "@types/*": ["src/types/*"],
       "@constants": ["constants.ts"],
+      "@sharedDocuments/*": ["src/sharedDocuments/*"],
       "@store/*": ["src/store/*"],
     },
     "types": [

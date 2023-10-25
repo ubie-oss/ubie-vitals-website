@@ -1,0 +1,51 @@
+---
+title: 'LinkButton'
+exampleKey: 'link-button'
+layout: '@layouts/ComponentLayout.astro'
+description: 'リンクとして機能するボタン'
+---
+
+import Variant from '@sharedDocuments/button/Variant.md';
+import Label from '@sharedDocuments/button/Label.md';
+import Disabled from '@sharedDocuments/button/Disabled.md';
+import SelectingComponent from '@sharedDocuments/button/SelectingComponent.md';
+import Icon from '@sharedDocuments/button/Icon.md';
+
+## Feature
+
+一般には、ボタンはアクションのトリガーとして使用されます。リンクとしても使用されますが、「何かのアクションへの入り口」として使用するのが適切です。
+
+## Usage
+
+### Variant
+
+<Variant />
+
+### Icon
+
+<Icon />
+
+### Label
+
+<Label />
+
+### `disabled`
+
+<Disabled />
+
+### `<Button>` or `<LinkButton>`
+
+<SelectingComponent />
+
+## Accessibility
+
+### ネイティブの `<a>` 要素
+
+- フォーカスを受け取り、<kbd>Enter</kbd>キーで押下できます
+  - `<button>` とは違い、<kbd>Space</kbd>キーはページスクロールとなります
+- スクリーンリーダーがアクセスしやすくなります
+  - ページ内のリンクに直接移動する機能[^rotor]を持つものがあります
+- スクリーンリーダーでリンクであることが読み上げられます[^read-link]
+
+[^rotor]: [MacでVoiceOverローターを使用する - Apple サポート (日本)](https://support.apple.com/ja-jp/guide/voiceover/mchlp2719/10/mac/13.0)
+[^read-link]: [［デモ : NVDA］ボタン（role=button）【AccessiブルGoGo! #4 】](https://www.youtube.com/watch?v=c8qxQoiWe5M)

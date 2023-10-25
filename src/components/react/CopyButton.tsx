@@ -16,11 +16,15 @@ const ButtonCopy: FC<Props> = ({ text, className = '', label = 'COPY' }) => {
   const handleClick = () => {
     copyToClipboard(text);
     setCopied(true);
+
+    setTimeout(() => {
+      setCopied(false);
+    }, 2000);
   };
 
   return (
     <button type="button" className={clsx(styles.button, className)} onClick={handleClick}>
-      {copied ? 'COPIED!' : label}
+      {copied ? 'COPIED' : label}
     </button>
   );
 };

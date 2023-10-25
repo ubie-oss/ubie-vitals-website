@@ -1,0 +1,29 @@
+---
+title: 'Select'
+exampleKey: 'select'
+layout: '@layouts/ComponentLayout.astro'
+description: '複数の選択肢から1つを選ぶ用途で使用されます。内部でネイティブの<select>要素を利用しています'
+---
+
+import SelectingFormComponents from '@sharedDocuments/form/SelectingFormComponents.md';
+import Label from '@sharedDocuments/form/Label.md';
+
+## Usage
+
+<SelectingFormComponents />
+
+<Label />
+
+### Typeahead
+
+ネイティブの`<select>`要素は、キーボードによる検索（Typeahead）に対応しています。もちろん`<Select>`コンポーネントもその機能を有しています。
+選択肢を開いた状態で、押下したキーに準じた選択肢が選択されます（日本語には対応していません）。
+
+できるだけ装飾のない値を`<option>`の`children` propに指定してください。例えば、`【1988】`または`📅1988`ではなく`1988`を`value`の値に指定してください。値の前方に装飾がついている場合、この機能は正しく動作しません。
+
+## Keyboard Interaction
+
+- フォーカスを受け取り、<kbd>Enter</kbd>キーや<kbd>Space</kbd>キーで選択肢を表示することができます
+  - カーソルキーの上下で選択を切り替えることができます
+  - <kbd>Enter</kbd>または<kbd>Space</kbd>で選択を確定できます
+  - <kbd>ESC</kbd>で選択肢を非表示とすることができます

@@ -41,7 +41,9 @@ const { propsArray } = Astro.props;
                 <code>{prop.type}</code>
               )}
             </td>
-            <td>{prop.defaultValue || '-'}</td>
+            <td>
+              <code>{prop.defaultValue || '-'}</code>
+            </td>
             <td>{prop.required ? 'YES' : 'NO'}</td>
             <td>{prop.description || '-'}</td>
           </tr>
@@ -53,16 +55,31 @@ const { propsArray } = Astro.props;
 
 <style>
   table {
+    width: 100%;
     text-align: left;
+    border-collapse: collapse;
   }
 
-  th,
+  thead > tr {
+    background-color: var(--color-background-gray);
+  }
+
+  th {
+    padding: var(--size-spacing-xs);
+    font-size: var(--text-body-sm-size);
+    line-height: var(--text-body-sm-tight-line);
+    color: var(--color-ubie-black-500);
+  }
+
   td {
-    padding: 10px;
+    padding: var(--size-spacing-xs);
+    font-size: var(--text-body-sm-size);
+    line-height: var(--text-body-sm-tight-line);
+    word-break: break-word;
   }
 
-  tr {
-    border-bottom: 1px solid black;
+  tbody > tr > td:first-child {
+    font-weight: bold;
   }
 
   td > code {

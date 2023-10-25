@@ -1,0 +1,40 @@
+---
+title: 'ActionModal'
+exampleKey: 'action-modal'
+layout: '@layouts/ComponentLayout.astro'
+description: 'ユーザーに確認や操作などを求める場合に使用するモーダルダイアログ'
+---
+
+import ModalDialogNecessary from '@sharedDocuments/modalDialog/ModalDialogNecessary.md';
+import HeaderText from '@sharedDocuments/modalDialog/HeaderText.md';
+import HeaderTextActionModal from '@sharedDocuments/modalDialog/HeaderTextActionModal.md';
+import ButtonLabel from '@sharedDocuments/modalDialog/ButtonLabel.md';
+import HeaderProps from '@sharedDocuments/modalDialog/HeaderProps.md';
+
+## Feature
+
+- ユーザーの作業を中断し、強制的にダイアログを表示します
+- 確実に操作させたい/コンテンツを見せたい場合に有効です
+
+## Usage
+
+- 極力1つのモーダルにつき、アクションは1つにとどめましょう
+- 2つのアクションを含めることもできますが、**アンチパターン**です
+
+### モーダルダイアログは必要？
+
+<ModalDialogNecessary />
+
+### Header Text
+
+<HeaderText />
+
+<HeaderTextActionModal />
+
+### Button Label
+
+<ButtonLabel />
+
+### `header` and `aria-labelledby`
+
+<HeaderProps />

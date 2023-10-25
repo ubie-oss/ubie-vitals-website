@@ -1,0 +1,49 @@
+---
+title: 'RadioButton'
+exampleKey: 'radio-button'
+layout: '@layouts/ComponentLayout.astro'
+description: 'リストの中から1つの項目を選択'
+---
+
+import SelectingFormComponents from '@sharedDocuments/form/SelectingFormComponents.md';
+
+## Feature
+
+<SelectingFormComponents />
+
+## Usage
+
+- 同じグループとなる項目には、同じ `name` 属性の値を設定します
+
+### 項目をグルーピングし、タイトルをつける
+
+できる限りタイトルをつけてください。選択肢を列挙しただけでは、何を意味する設定なのかをユーザーは理解でいないかもしれません。
+
+`<fieldset>` 要素を使い[^mdn-fieldset]、`<legend>` を組み合わせることでタイトルを付与できます。
+
+[^mdn-fieldset]: [フィールドセット要素 - HTML: ハイパーテキストマークアップ言語 | MDN](https://developer.mozilla.org/ja/docs/Web/HTML/Element/fieldset)
+
+```jsx
+<fieldset>
+  <legend>今日の期限</legend>
+
+  <RadioButton name="condition">良い</RadioButton>
+  <RadioButton name="condition">悪い</RadioButton>
+</fieldset>
+```
+
+`<RadioButton>` を内包する選択肢が1つのコンテンツとして独立している場合、`<section>` 要素で囲んでも良いでしょう。その場合、必ず見出し（`<hx>`） を添えてください。
+
+```jsx
+<section>
+  <h2>本日の体調</h2>
+
+  <RadioButton name="condition">良い</RadioButton>
+  <RadioButton name="condition">悪い</RadioButton>
+</section>
+```
+
+## Keyboard Interaction
+
+- <kbd>Tab</kbd>キーでフォーカスすることができます
+- カーソルキーの上下で選択を切り替えることができます

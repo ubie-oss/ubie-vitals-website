@@ -1,0 +1,3 @@
+- `disabled`（無効）状態のボタンはコントラストが低くユーザーを混乱させるため、できるだけ使わないようにしてください
+- ユーザーはなぜ無効になっているのかわからないことがあります。無効状態の理由を表示したり、無効ではなくボタン自体を非表示にすることを検討してください。
+- 参考: [権限による表示制御 | デザインパターン（共通） | SmartHR Design System](https://smarthr.design/products/design-patterns/access-control-pattern/)
