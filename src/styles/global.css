@@ -50,7 +50,7 @@ code {
     font-size: 0.85em;
     line-height: 1.1;
     color: var(--color-ubie-black-700);
-    background-color: var(--color-ubie-black-100);
+    background-color: var(--color-background-gray);
     border-radius: var(--radius-sm);
 }
 
