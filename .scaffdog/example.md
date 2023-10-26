@@ -4,8 +4,8 @@ root: '.'
 output: '**/*'
 ignore: []
 questions:
-  exampleKey: What is the exampleKey (e.g., stack)?
-  exampleName: What is the exampleName (e.g., nested)?
+  exampleKey: What is the exampleKey (e.g., link-button)?
+  exampleName: What is the exampleName (e.g., with-icon)?
 ---
 
 # `src/components/react/examples/{{ inputs.exampleKey }}/{{ inputs.exampleName | pascal }}.tsx`

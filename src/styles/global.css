@@ -44,15 +44,13 @@ h6 {
 
 code {
     display: inline-block;
-    padding-right: 0.4ch;
-    padding-left: 0.4ch;
+    padding: 0.2ch 0.4ch 0.1ch;
     margin: 0 2px;
     font-family: SFMono-Medium, "SF Mono", "Segoe UI Mono", "Roboto Mono", "Ubuntu Mono", Menlo, Consolas, Courier, monospace;
     font-size: 0.85em;
     line-height: 1.1;
     color: var(--color-ubie-black-700);
     background-color: var(--color-background-gray);
-    border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
 }
 
