@@ -29,7 +29,7 @@ export default {{ inputs.exampleName | pascal }};
 
 ```typescript
 ---
-import ExampleLayout from '@layouts/exampleLayout.astro';
+import ExampleLayout from '@layouts/ExampleLayout.astro';
 import {{ inputs.exampleName | pascal }} from '@components/react/examples/{{ inputs.exampleKey }}/{{ inputs.exampleName | pascal }}';
 ---
 

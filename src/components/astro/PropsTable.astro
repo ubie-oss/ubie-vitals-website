@@ -1,8 +1,8 @@
 ---
 type Prop = {
   name: string;
-  type: string;
-  defaultValue: string;
+  type: string | string[];
+  defaultValue: string | number | null;
   required: boolean;
   description: string;
 };
