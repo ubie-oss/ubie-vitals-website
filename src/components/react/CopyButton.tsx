@@ -1,6 +1,6 @@
-import { copyToClipboard } from '@utils/client';
 import { clsx } from 'clsx';
 import { useState } from 'react';
+import { copyToClipboard } from '@utils/client';
 import styles from './CopyButton.module.css';
 import type { FC } from 'react';
 

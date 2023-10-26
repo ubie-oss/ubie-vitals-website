@@ -1,5 +1,5 @@
-import CopyButton from '@components/react/CopyButton';
 import DesignTokens from '@ubie/design-tokens';
+import CopyButton from '@components/react/CopyButton';
 import { convertToTypographyCSS, convertToTypographyReact } from './scripts';
 import type { FC } from 'react';
 
