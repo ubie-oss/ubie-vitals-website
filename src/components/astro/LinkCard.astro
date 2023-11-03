@@ -1,0 +1,53 @@
+---
+import LinkWithArrow from '@components/astro/LinkWithArrow.astro';
+import Stack from '@components/astro/Stack.astro';
+
+interface Props {
+  href: string;
+  heading: string;
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+}
+
+const { href, heading, as: HeadingElement = 'h2' } = Astro.props;
+---
+
+<section class="linkCard">
+  <Stack spacing="md">
+    <div class="linkCardImageWrapper">
+      <slot name="image" />
+    </div>
+    <HeadingElement class="heading">{heading}</HeadingElement>
+    <slot />
+  </Stack>
+
+  <LinkWithArrow expandClickableArea href={href}>Explore</LinkWithArrow>
+</section>
+
+<style>
+  .linkCard {
+    /* Limit the area of clickable area expansion for LinkWithArrow */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-spacing-md);
+    justify-content: space-between;
+  }
+
+  .linkCardImageWrapper {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.732 / 1;
+    overflow: hidden;
+    border: 1px solid var(--color-ubie-black-200);
+    border-radius: var(--radius-md);
+  }
+
+  .linkCardImageWrapper > :global(img) {
+    object-fit: cover;
+  }
+
+  .heading {
+    font-size: var(--text-heading-md-size);
+    line-height: var(--text-heading-md-line);
+  }
+</style>

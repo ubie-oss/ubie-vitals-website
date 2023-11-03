@@ -18,14 +18,14 @@ import TableOfContents from '@components/react/TableOfContents';
     flex-direction: row;
     gap: 80px;
     justify-content: center;
-    padding: var(--size-spacing-xxl) var(--size-spacing-lg) 0;
+    padding: calc(var(--size-spacing-xxl) + var(--header-height-mobile)) var(--size-spacing-lg) var(--size-spacing-xxl);
     margin-right: auto;
     margin-left: auto;
   }
 
   @media screen and (width >= 640px) {
     .wrapper {
-      padding: var(--size-spacing-xxl) var(--size-spacing-xl) 0;
+      padding: var(--size-spacing-xxl) var(--size-spacing-xl) var(--size-spacing-xxl);
     }
   }
 

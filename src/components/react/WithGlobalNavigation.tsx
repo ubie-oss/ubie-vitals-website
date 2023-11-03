@@ -19,6 +19,16 @@ const WithGlobalNavigation: FC<Props> = ({ allComponentPostData, currentPath, ch
   return (
     <div className={styles.wrapper}>
       <div id={globalNavigationId} className={clsx(styles.menu, { [styles.mobileOpen]: isMobileGlobalNavigationOpen })}>
+        <a className={styles.logoWrapper} href="/">
+          <img
+            className={styles.logo}
+            src="/assets/images/ubie-vitals-logo.svg"
+            alt="Logo: Ubie Vitals"
+            width={345}
+            height={75}
+          />
+        </a>
+
         <GlobalNavigation allComponentPostData={allComponentPostData} currentPath={currentPath} />
       </div>
       <div className={styles.contents}>{children}</div>

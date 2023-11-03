@@ -1,0 +1,125 @@
+---
+import { Image } from 'astro:assets';
+import LogoCombiningComponents from '@assets/images/top/logo-combining-components.svg';
+import { LinkButton } from '@ubie/ubie-ui';
+---
+
+<div class="wrapper">
+  <div class="hero">
+    <div class="heroInner">
+      <div class="heroInnerImage">
+        <Image class="image" src={LogoCombiningComponents} alt="Ubie logo created by combining components" />
+      </div>
+
+      <div class="leadWrapper">
+        <p class="lead">
+          To deliver<br />
+           Ubie's products<br />
+           to all users
+        </p>
+
+        <p class="leadSub">Design Systems for Digital Products</p>
+
+        <div class="buttonWrapper"><LinkButton href="/principles" client:only>Getting Started</LinkButton></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .wrapper {
+    container-type: inline-size;
+  }
+
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(var(--header-height-mobile) + var(--size-spacing-lg)) var(--size-spacing-lg) var(--size-spacing-xxl);
+    background: var(--gradient-brand);
+  }
+
+  .image {
+    width: 284px;
+    height: auto;
+  }
+
+  .buttonWrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (width >= 768px) {
+    .hero {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  .heroInner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-spacing-lg);
+    width: 100%;
+    max-width: 960px;
+    height: auto;
+  }
+
+  .heroInnerImage {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  .leadWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-spacing-md);
+    justify-content: center;
+  }
+
+  .lead {
+    margin: 0;
+    font-size: clamp(1.25rem, 1cqw + 1.25rem, 1.75rem);
+    font-weight: bold;
+    line-height: 1.33;
+  }
+
+  .leadSub {
+    margin: 0;
+    font-size: clamp(1rem, 0.25cqw + 1rem, 1.125rem);
+    font-weight: bold;
+    line-height: var(--text-heading-md-line);
+    color: var(--color-text-sub);
+  }
+
+  @container (min-width: 480px) {
+    .hero {
+      height: 440px;
+    }
+
+    .heroInner {
+      flex-direction: row-reverse;
+    }
+
+    .image {
+      position: relative;
+      top: 0.25em;
+      width: min(100%, 372px);
+    }
+
+    .buttonWrapper {
+      justify-content: flex-start;
+    }
+  }
+
+  @container (min-width: 800px) {
+    .lead {
+      font-size: clamp(1.75rem, 6.25cqw + -1.375rem, 2.625rem);
+    }
+
+    .leadSub {
+      font-size: clamp(1.125rem, 0.893cqw + 0.679rem, 1.25rem);
+    }
+  }
+</style>

@@ -1,13 +1,15 @@
 ---
+import { Image } from 'astro:assets';
+import GitHubMark from '@assets/images/github-mark.svg';
+
 import '@unocss/reset/sanitize/sanitize.css';
 import '@unocss/reset/sanitize/assets.css';
 import '@ubie/design-tokens/dist/tokens.css';
 import '../styles/libs/prism-a11y-dark.css';
 import '@styles/global.css';
 import type { PostData } from '@types';
-
-import GlobalHeader from '@components/astro/GlobalHeader.astro';
 import WithGlobalNavigation from '@components/react/WithGlobalNavigation';
+import GlobalHeader from '@components/astro/GlobalHeader.astro';
 
 const currentPath = new URL(Astro.request.url).pathname;
 const allComponentMdx = await Astro.glob('../pages/components/*.mdx');
@@ -15,15 +17,17 @@ const allComponentMdx = await Astro.glob('../pages/components/*.mdx');
 const allComponentPostData: PostData[] = allComponentMdx.map((componentMdx) => {
   return {
     title: componentMdx.frontmatter.title ? componentMdx.frontmatter.title : '',
+    description: componentMdx.frontmatter.description ? componentMdx.frontmatter.description : '',
     url: componentMdx.url ? componentMdx.url : '',
   };
 });
 
 interface Props {
   title?: string;
+  wideFooter?: boolean;
 }
 
-const { title } = Astro.props;
+const { title, wideFooter = false } = Astro.props;
 
 const globalNavigationId = 'vitals-global-navigation';
 const description =
@@ -54,14 +58,45 @@ const description =
     >
       <slot />
 
-      <footer class="footer">© Ubie, Inc.</footer>
+      <footer class="footer">
+        <div class:list={['footerInner', { wide: wideFooter }]}>
+          © Ubie, Inc.
+
+          <a href="https://github.com/ubie-oss/ubie-vitals-website" class="repositoryLink">
+            <Image src={GitHubMark} alt="GitHub Mark" width={17} />
+             View on GitHub
+          </a>
+        </div>
+      </footer>
     </WithGlobalNavigation>
   </body>
 </html>
 
 <style>
   .footer {
-    padding: var(--size-spacing-xxl) var(--size-spacing-sm);
+    border-top: 1px solid var(--color-ubie-black-200);
+  }
+
+  .footerInner {
+    display: flex;
+    justify-content: space-between;
+    max-width: calc(var(--wrapper-width) + var(--size-spacing-lg) + var(--size-spacing-lg));
+    padding: var(--size-spacing-lg);
+    margin-right: auto;
+    margin-left: auto;
     text-align: center;
+  }
+
+  .footerInner.wide {
+    min-width: 100%;
+    padding-right: var(--size-spacing-xl);
+    padding-left: var(--size-spacing-xl);
+  }
+
+  .repositoryLink {
+    display: inline-flex;
+    gap: var(--size-spacing-xs);
+    align-items: center;
+    font-weight: bold;
   }
 </style>

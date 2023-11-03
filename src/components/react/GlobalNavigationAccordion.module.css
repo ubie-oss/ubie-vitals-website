@@ -1,0 +1,54 @@
+.summary {
+    position: relative;
+    display: block;
+    padding: 0;
+    cursor: pointer;
+}
+
+.summary::-webkit-details-marker {
+    display: none;
+}
+
+.toggle {
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-color: transparent;
+    isolation: isolate;
+    border: none;
+    transform: translateY(-50%);
+}
+
+.toggle::before {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    z-index: -1;
+    display: block;
+    width: 40px;
+    height: 40px;
+    content: '';
+}
+
+@media (hover:hover) {
+    .toggle:hover {
+        background-color: var(--color-ubie-black-100);
+    }
+    
+}
+
+.toggle:active {
+    background-color: var(--color-ubie-black-200);
+}
+
+.toggleIcon {
+    width: 16px;
+    height: 16px;
+}
+
+.toggleIcon.open {
+    transform: rotate(180deg);
+}

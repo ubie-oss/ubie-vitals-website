@@ -1,82 +1,111 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import Stack from '@components/astro/Stack.astro';
+import LinkCard from '@components/astro/LinkCard.astro';
+import { Image } from 'astro:assets';
+import FigureTokens from '@assets/images/top/figure-tokens.png';
+import FigureComponents from '@assets/images/top/figure-components.png';
+import FigureIcons from '@assets/images/top/figure-icons.png';
+import Hero from '@components/astro/top/Hero.astro';
+import CardPrinciples from '@components/astro/top/CardPrinciples.astro';
 ---
 
 <BaseLayout title="">
-  <main class="wrapper">
+  <main>
     <h1 class="visuallyHidden">トップページ</h1>
+    <Hero />
 
-    <p class="lead">すっきり。</p>
-    <p class="leadSub">気軽・かんたん・誠実</p>
+    <div class="wrapper">
+      <Stack spacing="xl">
+        <CardPrinciples />
 
-    <p class="description">
-      Ubieが提供するプロダクトをすべてのユーザーに届けるための、<br />
-       四つのデザイン原則を基礎としたデザインシステム <strong>Ubie Vitals</strong>
-    </p>
+        <div class="cardList">
+          <LinkCard href="/tokens" heading="Tokens">
+            <Image src={FigureTokens} alt="" slot="image" />
+            <p>
+              タイポグラフィ、カラー、スペーシングなど、デザインの最小単位。ユビー「らしさ」を確保するための基本ルールです。
+            </p>
+          </LinkCard>
+
+          <LinkCard href="/components" heading="Components">
+            <Image src={FigureComponents} alt="" slot="image" />
+            <p>組み合わせによる、迅速なプロダクト構築をサポートします。コードサンプルと使用方法を紹介します。</p>
+          </LinkCard>
+
+          <LinkCard href="/elements/icons" heading="Icons">
+            <Image src={FigureIcons} alt="" slot="image" />
+            <p>視覚的にユーザーの視認性をサポートするアイコンの一覧です。</p>
+          </LinkCard>
+        </div>
+      </Stack>
+
+      <hr class="hr" />
+
+      <div class="card">
+        <Stack spacing="lg">
+          <h2 class="cardHeading">Contribute</h2>
+
+          <p>
+            Ubie Vitalsは<a href="https://github.com/ubie-oss/ubie-vitals-website">GitHub</a
+            >で管理されています。課題、質問があればIssueをお寄せください。<br />
+             また、Slackチャンネルの#prj-design-productivityでも問い合わせを受け付けています。
+          </p>
+        </Stack>
+      </div>
+    </div>
   </main>
 </BaseLayout>
 
 <style>
   .wrapper {
-    padding: var(--size-spacing-xxl) var(--size-spacing-xl) var(--size-spacing-xxl);
+    padding: var(--size-spacing-xxl) var(--size-spacing-lg) var(--size-spacing-xxl);
+    margin-right: auto;
+    margin-left: auto;
     container-type: inline-size;
   }
 
   @media (width >= 768px) {
     .wrapper {
-      padding: var(--size-spacing-xxl) var(--size-spacing-xxl) var(--size-spacing-xxl);
+      max-width: calc(var(--wrapper-width) + var(--size-spacing-lg) + var(--size-spacing-lg));
+      padding: var(--size-spacing-xxl) var(--size-spacing-lg);
     }
   }
 
-  .lead {
-    margin-bottom: 0;
-    font-size: 56px;
-    font-weight: bold;
-    line-height: var(--text-heading-xl-line);
+  .cardList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    gap: var(--size-spacing-xl);
   }
 
-  .leadSub {
-    padding-left: 0.125em;
-    margin-top: 0.25em;
-    font-size: 24px;
-    line-height: var(--text-heading-lg-line);
-    color: var(--color-ubie-black-700);
+  .card {
+    /* Limit the area of clickable area expansion for LinkWithArrow */
+    position: relative;
+    padding: 32px var(--size-spacing-xl);
+    background-color: var(--color-ubie-black-100);
+    border-radius: var(--radius-lg);
   }
 
-  .description {
-    margin-top: 2em;
+  .cardHeading {
+    margin: 0;
+    font-size: var(--text-heading-md-size);
+    line-height: var(--text-heading-md-line);
   }
 
-  @container (width >= 540px) {
-    .lead {
-      font-size: 80px;
-    }
-
-    .leadSub {
-      margin-top: 0.125em;
-      font-size: 34px;
-    }
-
-    .description {
-      margin-top: 3em;
-    }
+  .cardHeading.primary {
+    color: var(--color-primary);
   }
 
-  @container (width >= 960px) {
-    .lead {
-      margin-top: 0.75em;
-      font-size: 128px;
-    }
+  .hr {
+    margin-top: var(--size-spacing-xl);
+    margin-bottom: var(--size-spacing-xl);
+    border: none;
+    border-top: 1px solid var(--color-ubie-black-200);
+  }
 
-    .leadSub {
-      margin-top: 0;
-      font-size: 54px;
-    }
-
-    .description {
-      margin-top: 4em;
-      font-size: var(--text-body-xl-size);
-      line-height: var(--text-body-xl-line);
+  @media (width >= 768px) {
+    .hr {
+      margin-top: var(--size-spacing-xxl);
+      margin-bottom: var(--size-spacing-xxl);
     }
   }
 </style>
