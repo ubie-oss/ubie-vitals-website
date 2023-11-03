@@ -19,5 +19,16 @@ export type DesignToken = {
 
 export type PostData = {
   title: string;
+  description: string;
   url: string;
+  thumbnail?: string;
 };
+
+export type Spacing = 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+
+export const BreakPoint = {
+  mobile: '320px',
+  tablet: '640px',
+  desktop: '768px',
+} as const;
+export type BreakPoint = keyof typeof BreakPoint;
