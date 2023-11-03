@@ -3,7 +3,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import IconList from '@components/react/IconList';
 ---
 
-<BaseLayout title="Icon">
+<BaseLayout title="Icon" wideFooter>
   <main class="wrapper">
     <article>
       <h1 class="heading">Icons</h1>
@@ -14,7 +14,15 @@ import IconList from '@components/react/IconList';
 
 <style>
   .wrapper {
-    padding: var(--size-spacing-xxl) var(--size-spacing-lg) 0;
+    padding: calc(var(--size-spacing-xxl) + var(--header-height-mobile)) var(--size-spacing-lg) var(--size-spacing-xxl);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @media (width >= 768px) {
+    .wrapper {
+      padding: var(--size-spacing-xxl) var(--size-spacing-xl) var(--size-spacing-xxl);
+    }
   }
 
   .heading {
