@@ -1,0 +1,39 @@
+---
+import { Icon } from 'astro-icon';
+
+interface Props {
+  href: string;
+  expandClickableArea?: boolean;
+}
+
+const { href, expandClickableArea = false } = Astro.props;
+---
+
+<a class:list={['link', { expandClickableArea }]} href={href}>
+  <slot />
+  <Icon class="icon" name="icon-arrow-right" alt="" width="22" height="22" />
+</a>
+
+<style>
+  .link {
+    display: inline-flex;
+    gap: var(--size-spacing-xxs);
+    align-items: center;
+    font-weight: bold;
+  }
+
+  .link.expandClickableArea::before {
+    position: absolute;
+    inset: 0;
+    content: '';
+  }
+
+  .link.expandClickableArea:active::before {
+    background-color: var(--color-ubie-black-200);
+  }
+
+  .icon {
+    position: relative;
+    top: 0.125em;
+  }
+</style>
