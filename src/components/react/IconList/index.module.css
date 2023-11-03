@@ -4,7 +4,3 @@
     grid-gap: var(--size-spacing-md) var(--size-spacing-lg);
     list-style: none;
 }
-
-.item {
-    position: relative;
-}

@@ -9,7 +9,7 @@ const IconList: FC = () => {
   return (
     <ul className={styles.list}>
       {iconArray.map((Icon, index) => (
-        <li className={styles.item} key={index}>
+        <li key={index}>
           <IconWrapper index={index}>
             <Icon />
           </IconWrapper>

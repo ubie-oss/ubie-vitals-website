@@ -1,3 +1,7 @@
+.wrapper {
+    position: relative;
+}
+
 .icon {
     display: flex;
     align-items: center;
@@ -17,6 +21,7 @@
     font-size: var(--text-body-sm-size);
     font-weight: bold;
     line-height: var(--text-body-sm-line);
+    color: var(--color-text-sub)
 }
 
 .copy {
@@ -27,7 +32,7 @@
 }
 
 .copy:focus,
-.item:hover .copy {
+.wrapper:hover .copy {
     opacity: 1;
 }
 

@@ -22,7 +22,7 @@ const IconWrapper: FC<Props> = ({ children, index }) => {
   if (!name) return null;
 
   return (
-    <>
+    <div className={styles.wrapper}>
       <div className={styles.icon} aria-label={`アイコン ${name}`} role="img">
         {children}
       </div>
@@ -34,7 +34,7 @@ const IconWrapper: FC<Props> = ({ children, index }) => {
         ))}
       </p>
       <CopyButton label="React" text={convertToIconComponentName(name)} className={styles.copy} />
-    </>
+    </div>
   );
 };
 
