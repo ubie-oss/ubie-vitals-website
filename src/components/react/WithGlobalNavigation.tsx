@@ -24,8 +24,8 @@ const WithGlobalNavigation: FC<Props> = ({ allComponentPostData, currentPath, ch
             className={styles.logo}
             src="/assets/images/ubie-vitals-logo.svg"
             alt="Logo: Ubie Vitals"
-            width={345}
-            height={75}
+            width={1640}
+            height={226}
           />
         </a>
 
