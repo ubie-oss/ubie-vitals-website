@@ -1,9 +1,6 @@
 .wrapper {
     width: 100%;
-    overflow: auto;
-}
-
-.table {
     margin-top: 60px;
     margin-bottom: 60px;
+    overflow: auto;
 }
