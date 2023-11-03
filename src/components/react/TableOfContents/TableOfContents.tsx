@@ -1,5 +1,5 @@
-import { extractHeadingsFromMain, pickHeadingIds } from '@utils/client';
 import { useEffect, useState } from 'react';
+import { extractHeadingsFromMain, pickHeadingIds } from '@utils/client';
 import LinkToHeading from './LinkToHeading';
 import styles from './TableOfContents.module.css';
 import type { Heading } from '@utils/client';

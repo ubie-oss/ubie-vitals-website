@@ -1,6 +1,6 @@
 import { useStore } from '@nanostores/react';
-import { $isMobileGlobalNavigationOpen } from '@store/navigation';
 import clsx from 'clsx';
+import { $isMobileGlobalNavigationOpen } from '@store/navigation';
 import GlobalNavigation from './GlobalNavigation';
 import styles from './WithGlobalNavigation.module.css';
 import type { PostData } from '@types';

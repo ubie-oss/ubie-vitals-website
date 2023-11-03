@@ -1,5 +1,5 @@
-import ButtonCopy from '@components/react/CopyButton';
 import DesignToken from '@ubie/design-tokens';
+import ButtonCopy from '@components/react/CopyButton';
 import { validateContrast, convertHexWithPercentage, convertDisplayName, deleteAlpha } from '@utils/client';
 import styles from './ColorChip.module.css';
 import ColorChipValidationIndicator from './ColorChipValidationIndicator';

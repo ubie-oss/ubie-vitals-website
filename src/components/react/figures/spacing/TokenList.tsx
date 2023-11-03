@@ -1,6 +1,6 @@
+import DesignToken from '@ubie/design-tokens';
 import CopyButton from '@components/react/CopyButton';
 import Table, { Row, TBody, THead, Cell, HeadCell, HeadRow } from '@components/react/Table';
-import DesignToken from '@ubie/design-tokens';
 import { pascalCaseToCSSVariables } from '@utils/client/css';
 import { getKeys } from '@utils/client/object';
 import type { FC } from 'react';

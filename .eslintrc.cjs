@@ -33,6 +33,7 @@ module.exports = {
             alwaysTryTypes: true,
             project: './tsconfig.json',
         },
+        "import/resolver": 'typescript'
     },
     rules: {
         'import/order': [
@@ -51,7 +52,7 @@ module.exports = {
             },
         ],
         'unused-imports/no-unused-imports': 'error',
-        'import/no-unresolved': 'off',
+        'import/no-unresolved': 2,
     },
     overrides: [
         {
