@@ -7,9 +7,9 @@ import '@unocss/reset/sanitize/assets.css';
 import '@ubie/design-tokens/dist/tokens.css';
 import '../styles/libs/prism-a11y-dark.css';
 import '@styles/global.css';
-import type { PostData } from '@types';
-import WithGlobalNavigation from '@components/react/WithGlobalNavigation';
 import GlobalHeader from '@components/astro/GlobalHeader.astro';
+import WithGlobalNavigation from '@components/react/WithGlobalNavigation';
+import type { PostData } from '@types';
 
 const currentPath = new URL(Astro.request.url).pathname;
 const allComponentMdx = await Astro.glob('../pages/components/*.mdx');

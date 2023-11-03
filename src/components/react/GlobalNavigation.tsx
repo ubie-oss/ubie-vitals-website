@@ -1,6 +1,6 @@
 import { useStore } from '@nanostores/react';
-import { $isMobileGlobalNavigationOpen } from '@store/navigation';
 import FocusTrap from 'focus-trap-react';
+import { $isMobileGlobalNavigationOpen } from '@store/navigation';
 import styles from './GlobalNavigation.module.css';
 import GlobalNavigationAccordion from './GlobalNavigationAccordion.tsx';
 import GlobalNavigationLink from './GlobalNavigationLink';

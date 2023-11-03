@@ -1,6 +1,6 @@
-import TriDown from '@icons/icon-tri-down.svg';
 import clsx from 'clsx';
 import { useState, useMemo } from 'react';
+import TriDown from '@icons/icon-tri-down.svg';
 import style from './GlobalNavigationAccordion.module.css';
 import GlobalNavigationLinkRoot from './GlobalNavigationLinkRoot';
 import type { FC, ReactNode, MouseEvent } from 'react';
