@@ -1,5 +1,5 @@
 import CopyButton from '@components/react/CopyButton';
-import { convertHexWithPercentage, convertDisplayName } from '@utils/client';
+import { convertHexWithPercentage, convertDisplayName, deleteAlpha } from '@utils/client';
 import styles from './BaseGrid.module.css';
 import type { DesignToken } from '@types';
 import type { FC } from 'react';
@@ -44,7 +44,7 @@ const BaseGrid: FC<Props> = ({ colors }) => (
             </td>
             <td className={styles.cell}>{color.description ? color.description : '-'}</td>
             <td className={styles.cellCopy}>
-              <CopyButton label="HEX" text={color.token.value}></CopyButton>
+              <CopyButton label="HEX" text={deleteAlpha(color.token.value)}></CopyButton>
               <CopyButton label="CSS" text={`var(--${color.token.path?.[0]}-${color.token.path?.[1]})`}></CopyButton>
               <CopyButton
                 label="JS"
