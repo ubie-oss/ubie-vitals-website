@@ -30,6 +30,7 @@
     "@ubie/ubie-ui": "^0.0.1",
     "@unocss/reset": "^0.56.5",
     "astro": "^3.3.2",
+    "astro-icon": "^0.8.1",
     "clsx": "^2.0.0",
     "color-blend": "^4.0.0",
     "color-rgba": "^3.0.0",
