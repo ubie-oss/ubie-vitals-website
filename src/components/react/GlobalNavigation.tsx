@@ -1,8 +1,10 @@
 import { useStore } from '@nanostores/react';
-import clsx from 'clsx';
 import FocusTrap from 'focus-trap-react';
 import { $isMobileGlobalNavigationOpen } from '@store/navigation';
 import styles from './GlobalNavigation.module.css';
+import GlobalNavigationAccordion from './GlobalNavigationAccordion.tsx';
+import GlobalNavigationLink from './GlobalNavigationLink';
+import GlobalNavigationLinkRoot from './GlobalNavigationLinkRoot';
 import type { PostData } from '@types';
 import type { FC } from 'react';
 
@@ -32,89 +34,64 @@ const GlobalNavigation: FC<Props> = ({ currentPath, allComponentPostData }) => {
               <img className={styles.closeButtonImage} src="/assets/images/icon-close-a.svg" alt="" />
             </button>
           </div>
-          <ul>
+          <ul className={styles.linkList}>
             <li>
-              <a className={clsx(styles.link, { [styles.current]: isCurrent('/principles') })} href="/principles">
+              <GlobalNavigationLinkRoot current={isCurrent('/principles')} href="/principles">
                 Principles
-              </a>
+              </GlobalNavigationLinkRoot>
             </li>
-            <li className={styles.category}>
-              <span className={styles.categoryHeading}>TOKENS</span>
+
+            <GlobalNavigationAccordion title="Tokens" titleHref="/tokens" currentPath={currentPath}>
               <ul>
                 <li>
-                  <a
-                    className={clsx(styles.link, { [styles.current]: isCurrent('/tokens/typography') })}
-                    href="/tokens/typography"
-                  >
+                  <GlobalNavigationLink current={isCurrent('/tokens/typography')} href="/tokens/typography">
                     Typography
-                  </a>
+                  </GlobalNavigationLink>
                 </li>
                 <li>
-                  <a
-                    className={clsx(styles.link, { [styles.current]: isCurrent('/tokens/color/semantic') })}
-                    href="/tokens/color/semantic"
-                  >
+                  <GlobalNavigationLink current={isCurrent('/tokens/color/semantic')} href="/tokens/color/semantic">
                     Semantic Color
-                  </a>
+                  </GlobalNavigationLink>
                 </li>
                 <li>
-                  <a
-                    className={clsx(styles.link, { [styles.current]: isCurrent('/tokens/color/primitive') })}
-                    href="/tokens/color/primitive"
-                  >
+                  <GlobalNavigationLink current={isCurrent('/tokens/color/primitive')} href="/tokens/color/primitive">
                     Primitive Color
-                  </a>
+                  </GlobalNavigationLink>
                 </li>
                 <li>
-                  <a
-                    className={clsx(styles.link, { [styles.current]: isCurrent('/tokens/spacing') })}
-                    href="/tokens/spacing"
-                  >
+                  <GlobalNavigationLink current={isCurrent('/tokens/spacing')} href="/tokens/spacing">
                     Spacing
-                  </a>
+                  </GlobalNavigationLink>
                 </li>
                 <li>
-                  <a
-                    className={clsx(styles.link, { [styles.current]: isCurrent('/tokens/radius') })}
-                    href="/tokens/radius"
-                  >
+                  <GlobalNavigationLink current={isCurrent('/tokens/radius')} href="/tokens/radius">
                     Radius
-                  </a>
+                  </GlobalNavigationLink>
                 </li>
                 <li>
-                  <a
-                    className={clsx(styles.link, { [styles.current]: isCurrent('/tokens/for-developers') })}
-                    href="/tokens/for-developers"
-                  >
+                  <GlobalNavigationLink current={isCurrent('/tokens/for-developers')} href="/tokens/for-developers">
                     For Developers
-                  </a>
+                  </GlobalNavigationLink>
                 </li>
               </ul>
-            </li>
-            <li className={styles.category}>
-              <span className={styles.categoryHeading}>ELEMENTS</span>
-              <ul>
-                <li>
-                  <a
-                    className={clsx(styles.link, { [styles.current]: isCurrent('/elements/icons') })}
-                    href="/elements/icons"
-                  >
-                    Icons
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li className={styles.category}>
-              <span className={styles.categoryHeading}>COMPONENTS</span>
+            </GlobalNavigationAccordion>
+
+            <GlobalNavigationAccordion title="Components" titleHref="/components" currentPath={currentPath}>
               <ul>
                 {allComponentPostData.map((postData) => (
                   <li key={postData.url}>
-                    <a className={clsx(styles.link, { [styles.current]: isCurrent(postData.url) })} href={postData.url}>
+                    <GlobalNavigationLink href={postData.url} current={isCurrent(postData.url)}>
                       {postData.title}
-                    </a>
+                    </GlobalNavigationLink>
                   </li>
                 ))}
               </ul>
+            </GlobalNavigationAccordion>
+
+            <li>
+              <GlobalNavigationLinkRoot href="/elements/icons" current={isCurrent('/elements/icons')}>
+                Icons
+              </GlobalNavigationLinkRoot>
             </li>
           </ul>
         </div>

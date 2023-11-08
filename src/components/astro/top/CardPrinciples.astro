@@ -1,0 +1,83 @@
+---
+import Stack from '@components/astro/Stack.astro';
+import LinkWithArrow from '@components/astro/LinkWithArrow.astro';
+import { Image } from 'astro:assets';
+import FigurePrinciples from '@assets/images/top/figure-principles.svg';
+---
+
+<div class="wrapper">
+  <div class="card primary">
+    <Stack spacing="lg">
+      <h2 class="cardHeading primary">Design Principles</h2>
+      <p>
+        デザイン上において目指すべき指針を言語化したものがDesign Principles（デザイン原則）です。<b
+          >誰でも、効率よく、迷わずに</b
+        >、Ubieらしい表現をするための基礎です。
+      </p>
+      <LinkWithArrow href="/principles" expandClickableArea>Learn More</LinkWithArrow>
+    </Stack>
+
+    <div class="imgWrapper">
+      <Image
+        class="img"
+        src={FigurePrinciples}
+        alt="４つのデザイン原則が表示されている。「気軽」「かんたん」「誠実」「スッキリ」"
+      />
+    </div>
+  </div>
+</div>
+
+<style>
+  .wrapper {
+    container-type: inline-size;
+  }
+
+  .card {
+    /* Limit the area of clickable area expansion for LinkWithArrow */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-spacing-sm);
+    padding: 32px var(--size-spacing-lg) var(--size-spacing-sm);
+    background-color: var(--color-ubie-black-100);
+    border-radius: var(--radius-lg);
+  }
+
+  .card.primary {
+    background-color: var(--color-ubie-blue-100);
+  }
+
+  .cardHeading {
+    margin: 0;
+    font-size: var(--text-heading-md-size);
+    line-height: var(--text-heading-md-line);
+  }
+
+  .cardHeading.primary {
+    color: var(--color-primary);
+  }
+
+  .imgWrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .img {
+    max-width: min(240px, 100%);
+  }
+
+  @container (width >= 520px) {
+    .card {
+      flex-direction: row;
+      padding: 32px var(--size-spacing-xl);
+    }
+
+    .imgWrapper {
+      flex-shrink: 0;
+    }
+
+    img {
+      width: initial;
+    }
+  }
+</style>

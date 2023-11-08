@@ -1,0 +1,131 @@
+---
+import type { Spacing, BreakPoint } from '@types';
+import { camelCase } from '@utils/client';
+
+interface Props {
+  spacing: Spacing | Partial<Record<BreakPoint, Spacing>>;
+}
+
+const { spacing } = Astro.props;
+
+const arrayOfclass: string[] = (() => {
+  const array = ['stack'];
+
+  if (typeof spacing === 'string') {
+    array.push(spacing);
+    return array;
+  }
+
+  Object.entries(spacing).map(([key, value]) => {
+    array.push(`${key}${camelCase(value)}`);
+  });
+
+  return array;
+})();
+---
+
+<div class:list={arrayOfclass}>
+  <slot />
+</div>
+
+<style>
+  .stack {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stack.xxs,
+  .stack.mobileXxs {
+    gap: var(--size-spacing-xxs);
+  }
+
+  .stack.xs,
+  .stack.mobileXs {
+    gap: var(--size-spacing-xs);
+  }
+
+  .stack.sm,
+  .stack.mobileSm {
+    gap: var(--size-spacing-sm);
+  }
+
+  .stack.md,
+  .stack.mobileMd {
+    gap: var(--size-spacing-md);
+  }
+
+  .stack.lg,
+  .stack.mobileLg {
+    gap: var(--size-spacing-lg);
+  }
+
+  .stack.xl,
+  .stack.mobileXl {
+    gap: var(--size-spacing-xl);
+  }
+
+  .stack.xxl,
+  .stack.mobileXxl {
+    gap: var(--size-spacing-xxl);
+  }
+
+  @media (width >= 640px) {
+    .stack.tabletXxs {
+      gap: var(--size-spacing-xxs);
+    }
+
+    .stack.tabletXs {
+      gap: var(--size-spacing-xs);
+    }
+
+    .stack.tabletSm {
+      gap: var(--size-spacing-sm);
+    }
+
+    .stack.tabletMd {
+      gap: var(--size-spacing-md);
+    }
+
+    .stack.tabletLg {
+      gap: var(--size-spacing-lg);
+    }
+
+    .stack.tabletXl {
+      gap: var(--size-spacing-xl);
+    }
+
+    .stack.tabletXxl {
+      gap: var(--size-spacing-xxl);
+    }
+  }
+
+  @media (width >= 768px) {
+    .stack.desktopXxs {
+      gap: var(--size-spacing-xxs);
+    }
+
+    .stack.desktopXs {
+      gap: var(--size-spacing-xs);
+    }
+
+    .stack.desktopSm {
+      gap: var(--size-spacing-sm);
+    }
+
+    .stack.desktopMd {
+      gap: var(--size-spacing-md);
+    }
+
+    .stack.desktopLg {
+      gap: var(--size-spacing-lg);
+    }
+
+    .stack.desktopXl {
+      gap: var(--size-spacing-xl);
+    }
+
+    .stack.desktopXxl {
+      gap: var(--size-spacing-xxl);
+    }
+  }
+</style>

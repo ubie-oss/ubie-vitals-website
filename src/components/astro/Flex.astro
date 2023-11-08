@@ -1,0 +1,53 @@
+---
+import { camelCase } from '@utils/client';
+
+interface Props {
+  spacing?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+  align?: 'center' | 'start' | 'end';
+  justify?: 'center' | 'start' | 'end';
+}
+
+const { spacing, align = 'start', justify = 'start' } = Astro.props;
+---
+
+<div class:list={['flex', spacing, `align${camelCase(align)}`, `justify${camelCase(justify)}`]}>
+  <slot />
+</div>
+
+<style>
+  .flex {
+    display: flex;
+  }
+
+  .flex.alingStart {
+    align-items: start;
+  }
+
+  .flex.xxs {
+    gap: var(--size-spacing-xxs);
+  }
+
+  .flex.xs {
+    gap: var(--size-spacing-xs);
+  }
+
+  .flex.sm {
+    gap: var(--size-spacing-sm);
+  }
+
+  .flex.md {
+    gap: var(--size-spacing-md);
+  }
+
+  .flex.lg {
+    gap: var(--size-spacing-lg);
+  }
+
+  .flex.xl {
+    gap: var(--size-spacing-xl);
+  }
+
+  .flex.xxl {
+    gap: var(--size-spacing-xxl);
+  }
+</style>

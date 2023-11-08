@@ -1,8 +1,9 @@
+/// <reference path="../.astro/types.d.ts" />
 /// <reference types="astro/client" />
 
-import "react";
+import 'react';
 
-declare module "react" {
+declare module 'react' {
   interface CSSProperties {
     [key: `--${string}`]: string; // ハイフン二つ始まりの文字列なら何でもOK
   }

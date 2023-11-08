@@ -6,7 +6,7 @@ interface Props {
 const { globalNavigationId } = Astro.props;
 ---
 
-<header class="header">
+<nav class="header" data-js-mobile-header>
   <button
     type="button"
     class="openMobileGlobalNavigationButton"
@@ -23,19 +23,20 @@ const { globalNavigationId } = Astro.props;
       class="logo"
       src="/assets/images/ubie-vitals-logo.svg"
       alt="Ubie Vitals ロゴ"
-      width="345"
-      height="75"
+      width="1640"
+      height="226"
       decoding="async"
     />
   </a>
 
+  <!-- TODO: サイトがクローリングされたら実装 -->
   <!-- <form action="http://www.google.co.jp/search" method="get">
     <input type="hidden" name="hl" value="ja" />
-    <input type="hidden" name="sitesearch" value="ubie-oss.github.io/ubie-vitals-website/" />
-    <input type="search" />
+    <input type="hidden" name="sitesearch" value="vitals.ubie.life/" />
+    <input type="search" name="q" />
     <button>検索</button>
   </form> -->
-</header>
+</nav>
 
 <script>
   import { $isMobileGlobalNavigationOpen } from '@store/navigation';
@@ -63,27 +64,45 @@ const { globalNavigationId } = Astro.props;
         $isMobileGlobalNavigationOpen.set(false);
       }
     });
+
+    // header background
+    const mobileHeader = document.querySelector('[data-js-mobile-header]');
+
+    const headerIsScrolled = () => {
+      if (window.scrollY > 0) {
+        mobileHeader?.classList.add('scrolled');
+      } else {
+        mobileHeader?.classList.remove('scrolled');
+      }
+    };
+
+    document.addEventListener('scroll', headerIsScrolled, { passive: true });
+    headerIsScrolled();
   })();
 </script>
 
 <style>
   .header {
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 10000;
     display: flex;
     gap: var(--size-spacing-md);
     align-items: center;
+    width: 100%;
     height: var(--header-height-mobile);
     padding: 0 var(--size-spacing-xs);
-    background-color: var(--color-ubie-white);
     border-bottom: 1px solid var(--color-ubie-black-200);
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  .header.scrolled {
+    background-color: var(--color-ubie-white);
   }
 
   @media (width >= 768px) {
     .header {
-      height: var(--header-height);
-      padding: 0 var(--size-spacing-md);
+      display: none;
     }
   }
 
@@ -119,12 +138,6 @@ const { globalNavigationId } = Astro.props;
 
   .logo {
     width: auto;
-    height: 2rem;
-  }
-
-  @media (width >= 768px) {
-    .logo {
-      height: 2.5rem;
-    }
+    height: 1.2rem;
   }
 </style>
