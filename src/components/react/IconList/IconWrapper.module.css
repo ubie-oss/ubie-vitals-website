@@ -21,7 +21,8 @@
     font-size: var(--text-body-sm-size);
     font-weight: bold;
     line-height: var(--text-body-sm-line);
-    color: var(--color-text-sub)
+    color: var(--color-text-sub);
+    text-align: center;
 }
 
 .copy {
