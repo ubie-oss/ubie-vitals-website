@@ -9,6 +9,7 @@
       "@components/*": ["src/components/*"],
       "@icons/*": ["src/icons/*"],
       "@layouts/*": ["src/layouts/*"],
+      "@metadata/*": ["src/metadata/*"],
       "@styles/*": ["src/styles/*"],
       "@utils/*": ["src/utils/*"],
       "@types": ["src/types/index.ts"],

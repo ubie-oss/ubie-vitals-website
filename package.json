@@ -3,9 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
+    "dev": "npm run script:extract-icon-names && astro dev",
+    "start": "npm run script:extract-icon-names && astro dev",
+    "build": "npm run script:extract-icon-names && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check && tsc --noEmit",
@@ -14,6 +14,7 @@
     "lint:css": "stylelint src/**/*.{astro,module.css,css}",
     "lint:css:fix": "stylelint --fix src/**/*.{astro,module.css,css}",
     "prettier:astro": "prettier --write src/**/*.astro",
+    "script:extract-icon-names": "node ./scripts/extractIconNames.js",
     "test": "vitest"
   },
   "dependencies": {
