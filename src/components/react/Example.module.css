@@ -1,56 +1,51 @@
-.example {
-    position: relative;
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    border: 1px solid var(--color-ubie-black-200);
-    border-radius: 6px;
-}
-
-.externalLink {
-    position: absolute;
-    top: 4px;
-    right: 4px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 32px;
-    padding: var(--size-spacing-xxs) var(--size-spacing-xs) calc(var(--size-spacing-xxs) - 0.125rem);
-    font-weight: bold;
-    color: var(--color-primary);
-    background-color: rgb(255 255 255 / 75%);
-    border: none;
-}
-
-.externalLink:active {
-    background-color: var(--color-ubie-black-200);
-}
-
-@media (hover:hover) {
-    .externalLink:hover {
-        background-color: var(--color-ubie-black-100);
-    }
-}
-
-.code {
-    position: relative;
-}
-
-.codePrism {
-    margin: 0 !important;
-}
-
-.copy {
-    position: absolute;
-    top: 4px;
-    right: 4px;
-}
-
 .demo {
-    height: 300px
+  position: relative;
+  height: 300px;
+  border: 1px solid var(--color-ubie-black-200);
+  border-radius: var(--radius-sm);
 }
 
 .demoFrame {
-    width: 100%;
-    min-height: 100%;
+  width: 100%;
+  min-height: 100%;
+}
+
+.externalLink {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: var(--size-spacing-xxs) var(--size-spacing-xs) calc(var(--size-spacing-xxs) - 0.125rem);
+  font-weight: bold;
+  color: var(--color-primary);
+  background-color: rgb(255 255 255 / 75%);
+  border: none;
+}
+
+.externalLink:active {
+  background-color: var(--color-ubie-black-200);
+}
+
+@media (hover: hover) {
+  .externalLink:hover {
+    background-color: var(--color-ubie-black-100);
+  }
+}
+
+.code {
+  position: relative;
+  margin-top: var(--size-spacing-sm);
+}
+
+.codePrism {
+  margin: 0 !important;
+}
+
+.copy {
+  position: absolute;
+  top: 4px;
+  right: 4px;
 }
