@@ -17,6 +17,10 @@ const ColorListUI: FC = () => {
           description: 'Text Mainに対して副次的なテキスト',
         },
         {
+          token: color['border'],
+          description: '区切り線や枠線など各種罫線',
+        },
+        {
           token: color['text-white'],
           description: 'Primaryなど、色付きボタンの上に置くテキスト',
         },
