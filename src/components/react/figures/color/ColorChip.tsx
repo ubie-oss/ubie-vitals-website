@@ -1,6 +1,12 @@
 import DesignToken from '@ubie/design-tokens';
 import ButtonCopy from '@components/react/CopyButton';
-import { validateContrast, convertHexWithPercentage, convertDisplayName, deleteAlpha } from '@utils/client';
+import {
+  validateContrast,
+  convertHexWithPercentage,
+  convertDisplayName,
+  deleteAlpha,
+  createColorTokenJsCode,
+} from '@utils/client';
 import styles from './ColorChip.module.css';
 import ColorChipValidationIndicator from './ColorChipValidationIndicator';
 import type { DesignToken as Token } from '@types';
@@ -13,7 +19,7 @@ interface Props {
 const ColorChip: FC<Props> = ({ token }) => {
   const cssVariables = `--${token.path?.[0]}-${token.path?.[1]}`;
 
-  const jsonPath = `DesignToken.${token.path?.[0]}['${token.path?.[1]}']`;
+  const jsPath = createColorTokenJsCode(token);
 
   const blackIsValid = validateContrast(token.original.value, DesignToken.color['text-main'].value);
 
@@ -57,8 +63,8 @@ const ColorChip: FC<Props> = ({ token }) => {
           <div className={styles.value}>
             <p className={styles.valueTypeName}>JavaScript Object</p>
 
-            <code className={styles.code}>{jsonPath}</code>
-            <ButtonCopy className={styles.copy} text={`var(${jsonPath})`}></ButtonCopy>
+            <code className={styles.code}>{jsPath}</code>
+            <ButtonCopy className={styles.copy} text={jsPath}></ButtonCopy>
           </div>
         </li>
       </ul>
