@@ -1,11 +1,11 @@
-import DesignToken from '@ubie/design-tokens';
+import DesignTokens from '@ubie/design-tokens';
 import CopyButton from '@components/react/CopyButton';
 import Table, { Row, TBody, THead, Cell, HeadCell, HeadRow } from '@components/react/Table';
 import { pascalCaseToCSSVariables } from '@utils/client/css';
 import { getKeys } from '@utils/client/object';
 import type { FC } from 'react';
 
-const { radius } = DesignToken;
+const { radius } = DesignTokens;
 const radiusArray = getKeys(radius)
   .map((key) => {
     return {
@@ -51,7 +51,7 @@ const TokenList: FC = () => (
               label="CSS"
             ></CopyButton>
             <CopyButton
-              text={`DesignToken.${radius.token.path?.[0]}['${radius.token.path?.[1]}']`}
+              text={`DesignTokens.${radius.token.path?.[0]}['${radius.token.path?.[1]}']`}
               label="JS"
             ></CopyButton>
           </Cell>

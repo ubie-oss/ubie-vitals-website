@@ -1,4 +1,4 @@
-import DesignToken from '@ubie/design-tokens';
+import DesignTokens from '@ubie/design-tokens';
 import ColorChip from './ColorChip';
 import Grid from '../../Grid';
 import type { DesignToken as Token } from '@types';
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const ColorListBase: FC<Props> = ({ tokens }) => (
-  <Grid minimum="200px" space={DesignToken.size['spacing-sm'].value}>
+  <Grid minimum="200px" space={DesignTokens.size['spacing-sm'].value}>
     {tokens.map((token, index) => {
       return <ColorChip token={token} key={index} />;
     })}

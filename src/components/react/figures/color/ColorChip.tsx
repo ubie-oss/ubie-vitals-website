@@ -1,4 +1,4 @@
-import DesignToken from '@ubie/design-tokens';
+import DesignTokens from '@ubie/design-tokens';
 import ButtonCopy from '@components/react/CopyButton';
 import {
   validateContrast,
@@ -21,9 +21,9 @@ const ColorChip: FC<Props> = ({ token }) => {
 
   const jsPath = createColorTokenJsCode(token);
 
-  const blackIsValid = validateContrast(token.original.value, DesignToken.color['text-main'].value);
+  const blackIsValid = validateContrast(token.original.value, DesignTokens.color['text-main'].value);
 
-  const whiteIsValid = validateContrast(token.original.value, DesignToken.color['ubie-white'].original.value);
+  const whiteIsValid = validateContrast(token.original.value, DesignTokens.color['ubie-white'].original.value);
 
   const name = convertDisplayName(token.name ?? '');
 
