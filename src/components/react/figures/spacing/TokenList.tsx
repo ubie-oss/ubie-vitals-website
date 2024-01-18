@@ -1,11 +1,11 @@
-import DesignToken from '@ubie/design-tokens';
+import DesignTokens from '@ubie/design-tokens';
 import CopyButton from '@components/react/CopyButton';
 import Table, { Row, TBody, THead, Cell, HeadCell, HeadRow } from '@components/react/Table';
 import { pascalCaseToCSSVariables } from '@utils/client/css';
 import { getKeys } from '@utils/client/object';
 import type { FC } from 'react';
 
-const { size } = DesignToken;
+const { size } = DesignTokens;
 const sizeArray = getKeys(size)
   .map((key) => {
     return {
@@ -54,7 +54,10 @@ const TokenList: FC = () => (
               text={`var(${pascalCaseToCSSVariables(size.token.name ? size.token.name : '')})`}
               label="CSS"
             ></CopyButton>
-            <CopyButton text={`DesignToken.${size.token.path?.[0]}['${size.token.path?.[1]}']`} label="JS"></CopyButton>
+            <CopyButton
+              text={`DesignTokens.${size.token.path?.[0]}['${size.token.path?.[1]}']`}
+              label="JS"
+            ></CopyButton>
           </Cell>
         </Row>
       ))}
