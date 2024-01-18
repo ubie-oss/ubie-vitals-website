@@ -15,7 +15,8 @@
     "lint:css:fix": "stylelint --fix src/**/*.{astro,module.css,css}",
     "prettier:astro": "prettier --write src/**/*.astro",
     "script:extract-icon-names": "node ./scripts/extractIconNames.js",
-    "test": "vitest"
+    "test": "vitest",
+    "generate:exapmle": "npx scaffdog generate example"
   },
   "dependencies": {
     "@astrojs/check": "^0.3.1",
@@ -29,7 +30,7 @@
     "@types/react-syntax-highlighter": "^15.5.9",
     "@ubie/design-tokens": "^0.1.4",
     "@ubie/ubie-icons": "^0.6.1",
-    "@ubie/ubie-ui": "^0.0.1",
+    "@ubie/ubie-ui": "file:../ubie-ui",
     "@unocss/reset": "^0.57.1",
     "astro": "^3.4.3",
     "astro-icon": "^0.8.1",
