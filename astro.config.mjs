@@ -1,6 +1,7 @@
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 import { defineConfig } from 'astro/config';
+import icon from "astro-icon";
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 
@@ -27,6 +28,6 @@ export default defineConfig({
         }
       }],
     ]
-  })],
+  }), icon()],
   site: 'https://ubie-vitals.github.io',
 });
