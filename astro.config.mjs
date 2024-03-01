@@ -30,4 +30,9 @@ export default defineConfig({
     ]
   }), icon()],
   site: 'https://ubie-vitals.github.io',
+  vite: {
+    ssr: {
+      noExternal: ['@ubie/ubie-icons', '@ubie/ubie-ui']
+    }
+  }
 });
