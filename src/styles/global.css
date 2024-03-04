@@ -91,6 +91,10 @@ p {
   margin: 0;
 }
 
+figure {
+  margin: 0;
+}
+
 .visuallyHidden {
   position: fixed !important;
   top: 0 !important;
