@@ -1,0 +1,18 @@
+.callout {
+  display: flex;
+  gap: var(--size-spacing-md);
+  padding: var(--size-spacing-md);
+  background-color: var(--color-background-primary);
+  border-radius: var(--radius-md);
+}
+
+.icon {
+  font-size: 32px;
+  line-height: 1;
+  color: var(--color-primary);
+}
+
+.content p {
+  padding-top: 6px;
+  margin: 0;
+}

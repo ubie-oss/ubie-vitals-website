@@ -1,0 +1,8 @@
+<Stack spacing="xs">
+  // [!code word:isInvalid]
+  <Label  htmlFor="error-field">フィールド</Label>
+  <Input id="error-field" isInvalid />
+  <ErrorMessage>0〜99の範囲で入力してください</ErrorMessage> // [!code ++]
+  <ErrorMessage>半角数字を入力してください</ErrorMessage> // [!code ++]
+  <HelperMessage>説明文です</HelperMessage>
+</Stack>

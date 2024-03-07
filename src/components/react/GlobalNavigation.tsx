@@ -76,6 +76,18 @@ const GlobalNavigation: FC<Props> = ({ currentPath, allComponentPostData }) => {
               </ul>
             </GlobalNavigationAccordion>
 
+            <GlobalNavigationAccordion title="Layouts" titleHref="/layouts" currentPath={currentPath}>
+              <ul>
+                {allComponentPostData.map((postData) => (
+                  <li key={postData.url}>
+                    <GlobalNavigationLink href={postData.url} current={isCurrent(postData.url)}>
+                      {postData.title}
+                    </GlobalNavigationLink>
+                  </li>
+                ))}
+              </ul>
+            </GlobalNavigationAccordion>
+
             <GlobalNavigationAccordion title="Components" titleHref="/components" currentPath={currentPath}>
               <ul>
                 {allComponentPostData.map((postData) => (

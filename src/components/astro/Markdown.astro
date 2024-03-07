@@ -42,7 +42,7 @@
     transform: translateY(-50%);
   }
 
-  :where(.markdown) :global(:where(p)) {
+  :where(.markdown) > :global(:where(:is(p, div))) {
     margin-top: var(--size-spacing-md);
     margin-bottom: var(--size-spacing-md);
   }
@@ -75,6 +75,10 @@
 
   .markdown :global(:is(h1, h2, h3, h4, h5, h6):hover .linkHeading) {
     opacity: 1;
+  }
+
+  .markdown :global(pre + pre) {
+    margin-top: var(--size-spacing-md);
   }
 
   .markdown :global(.linkHeading):focus {

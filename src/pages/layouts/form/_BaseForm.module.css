@@ -1,0 +1,17 @@
+.heading {
+  font-size: var(--text-heading-md-size);
+  font-weight: bold;
+  line-height: var(--text-heading-md-line);
+}
+
+.subHeading {
+  margin: 0;
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-line);
+  color: var(--color-text-sub);
+}
+
+.fieldset {
+  padding: 0;
+  border: none;
+}

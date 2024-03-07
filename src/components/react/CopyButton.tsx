@@ -1,3 +1,4 @@
+import { CopyIcon, CheckAIcon } from '@ubie/ubie-icons';
 import { clsx } from 'clsx';
 import { useState } from 'react';
 import { copyToClipboard } from '@utils/client';
@@ -10,7 +11,7 @@ interface Props {
   label?: string;
 }
 
-const ButtonCopy: FC<Props> = ({ text, className = '', label = 'COPY' }) => {
+const ButtonCopy: FC<Props> = ({ text, className = '', label }) => {
   const [copied, setCopied] = useState(false);
 
   const handleClick = () => {
@@ -23,8 +24,8 @@ const ButtonCopy: FC<Props> = ({ text, className = '', label = 'COPY' }) => {
   };
 
   return (
-    <button type="button" className={clsx(styles.button, className)} onClick={handleClick}>
-      {copied ? 'COPIED' : label}
+    <button type="button" className={clsx(styles.button, className)} onClick={handleClick} title={label}>
+      {copied ? <CheckAIcon /> : label ? label : <CopyIcon />}
     </button>
   );
 };

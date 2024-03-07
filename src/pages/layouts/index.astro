@@ -1,0 +1,93 @@
+---
+import LinkWithArrow from '@components/astro/LinkWithArrow.astro';
+import Stack from '@components/astro/Stack.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import type { PostData } from '@types';
+
+const allComponentMdx = await Astro.glob('./**/*.mdx');
+
+const allComponentPostData: PostData[] = allComponentMdx.map((componentMdx) => {
+  return {
+    title: componentMdx.frontmatter.title ? componentMdx.frontmatter.title : '',
+    description: componentMdx.frontmatter.description ? componentMdx.frontmatter.description : '',
+    url: componentMdx.url ? componentMdx.url : '',
+  };
+});
+---
+
+<BaseLayout title="Components">
+  <main class="wrapper">
+    <Stack spacing="xl">
+      <Stack spacing="sm">
+        <h1 class="title">Tokens</h1>
+        <p>
+          タイポグラフィ、カラー、スペーシングなど、デザインの最小単位。ユビー「らしさ」を確保するための基本ルールです。
+        </p>
+      </Stack>
+      <ul class="list">
+        {
+          allComponentPostData.map((postData) => (
+            <li class="item">
+              <Stack spacing="sm">
+                <p class="itemTitle">{postData.title}</p>
+                <p class="itemDesccription">{postData.description}</p>
+              </Stack>
+              <LinkWithArrow expandClickableArea href={postData.url}>
+                Learn More
+              </LinkWithArrow>
+            </li>
+          ))
+        }
+      </ul>
+    </Stack>
+  </main>
+</BaseLayout>
+
+<style>
+  .wrapper {
+    max-width: calc(var(--wrapper-width) + var(--size-spacing-lg) + var(--size-spacing-lg));
+    padding: calc(var(--size-spacing-xxl) + var(--header-height-mobile)) var(--size-spacing-lg) var(--size-spacing-xxl);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @media (width >= 768px) {
+    .wrapper {
+      padding: var(--size-spacing-xxl) var(--size-spacing-lg) var(--size-spacing-xxl);
+    }
+  }
+
+  title {
+    font-size: var(--text-heading-xl-size);
+    line-height: var(--text-heading-xl-line);
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: var(--size-spacing-lg);
+  }
+
+  .item {
+    /* Limit the area of clickable area expansion for LinkWithArrow */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-spacing-sm);
+    justify-content: space-between;
+    padding: var(--size-spacing-lg);
+    background-color: var(--color-ubie-black-100);
+    border-radius: var(--radius-md);
+  }
+
+  .itemTitle {
+    font-size: var(--text-heading-sm-size);
+    font-weight: bold;
+    line-height: var(--text-heading-sm-line);
+  }
+
+  .itemDesccription {
+    font-size: var(--text-body-sm-size);
+    line-height: var(--text-body-sm-line);
+  }
+</style>

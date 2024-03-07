@@ -1,0 +1,47 @@
+.codesBlock {
+  position: relative;
+  background-color: #24292e;
+  border-radius: var(--radius-sm);
+}
+
+.copy {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  height: 40px;
+  padding: 0 var(--size-spacing-sm);
+  padding-top: 2px;
+  font-size: var(--text-button-md-size);
+  font-weight: bold;
+  line-height: var(--text-button-md-line);
+  color: rgb(255 255 255 / 60%);
+  background-color: transparent;
+  border: none;
+  transition:
+    color 0.1s ease-in-out,
+    background-color 0.1s ease-in-out;
+}
+
+.tabButton:hover:not(.current) {
+  color: var(--color-ubie-white);
+  background-color: rgb(255 255 255 / 10%);
+}
+
+.tabButton:active:not(.current) {
+  color: var(--color-ubie-white);
+  background-color: rgb(255 255 255 / 20%);
+}
+
+.tabButton.current {
+  color: var(--color-ubie-white);
+}

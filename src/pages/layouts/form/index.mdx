@@ -1,0 +1,225 @@
+---
+title: 'Form'
+layout: '@layouts/PostLayout.astro'
+---
+
+import { WithCode } from '@components/react/WithCode/index.ts';
+import { Callout } from '@components/react/Callout.tsx';
+
+<Callout>
+  サンプルコードでは、ロジックを省略しています
+</Callout>
+
+## 基本となるフォームのレイアウト
+
+import { BaseForm } from './_BaseForm.tsx';
+import BaseFormRaw from './_BaseForm.tsx?raw';
+import BaseFormCssRaw from './_BaseForm.module.css?raw';
+
+<WithCode client:load code={[
+  {
+    filename: 'BaseForm.tsx',
+    lang: 'jsx',
+    code: BaseFormRaw,
+  },
+  {
+    filename: 'BaseForm.module.css',
+    lang: 'css',
+    code: BaseFormCssRaw,
+  }
+]}>
+  <BaseForm />
+</WithCode>
+
+### ヘルパーテキスト
+
+入力フィールドへ説明がある場合に使用します`<Stack>`の子、かつ入力フィールドのすぐ下に`<HelperMessage>`を追加してください。
+
+
+```jsx
+import { HelperMessage } from '@ubie/ubie-ui';  // [!code ++]
+
+<Stack spacing="xs">
+  <Label htmlFor="field1">フィールド</Label>
+  <Input value={value} id="field1" />
+  <HelperMessage>半角数字、0〜99の間で入力してください</HelperMessage>  // [!code ++]
+  <HelperMessage>２つ目の説明</HelperMessage>  // [!code ++]
+</Stack>
+```
+
+### エラー表示
+
+`prop`で対応している場合は、入力フィールド（例では`<Input>`）に`isInvalid`を追加します。そして、`<Stack>`の子に`<ErrorMessage>`を追加してください。
+
+import { Error } from './_Error.tsx';
+import ErrorRaw from './_ErrorRaw.txt?raw';
+
+<WithCode client:load code={ErrorRaw}>
+  <Error />
+</WithCode>
+
+
+`<HelperMessage>`が存在する場合は、（エラーがあることを迅速に伝えるため）`<ErrorMessage>`を先に記述してください。 `<ErrorMessage>`は複数配置することができます。
+
+## やや複雑なレイアウト
+
+### 横並びのテキストフィールド（生年月日など）
+
+import { Oneline } from './_Oneline.tsx';
+import OnelineRaw from './_Oneline.tsx?raw';
+import OnelineCssRaw from './_Oneline.module.css?raw';
+
+<WithCode client:load code={[
+  { filename: 'Oneline.tsx', lang: 'tsx', code: OnelineRaw },
+  { filename: 'Oneline.module.css', lang: 'css', code: OnelineCssRaw },
+]}>
+  <Oneline />
+</WithCode>
+
+この例では、固有のスタイルを適用するために`<Label>`コンポーネントではなく`<label>`要素を使用しています。レスポンシブデザインの考慮はしていないため、横幅に注意してください。
+
+CSSの`grid-template-columns`の値を説明します。`80px`は`<Input>`の幅を指定しています。`auto`は`<Label>`の幅にあたり、指定された文字列の長さに合わせて伸縮します。`1fr`は余ったスペースを専有します。
+
+<p class="tag">カスタマイズ</p>
+
+- **項目を追加したい場合**は`.tsx`と`.css`の修正が必要です。まず、`.tsx`へ`<label>`と`<Input>`のペアを追加してください。次に、`.css`の`.wrapper`の`grid-template-columns`行へ、`1fr`の**前に**`80px auto`を追加してください。
+  ```jsx
+  <div className={styles.wrapper}>
+    ...
+    <Input id="one-date" />
+    <label className={styles.label} htmlFor="one-date">
+      日
+    </label>
+    <Input id="one-add" /> // [!code ++]
+    <label className={styles.label} htmlFor="one-add"> // [!code ++]
+      追加 // [!code ++]
+    </label> // [!code ++]
+  </div>
+  ```
+  ```css
+    .wrapper {
+    ...
+    grid-template-columns: 80px auto 80px auto 80px auto 80px auto 1fr;
+    ...
+  }
+  ```
+- **`<Input>`の幅を変えたい場合**は、CSSの`grid-template-columns`プロパティに記述された`80px`を修正してください
+  ```css
+  /* [!code word:120] */
+  .wrapper {
+    ...
+    grid-template-columns: 120px auto 80px auto 80px auto 1fr;
+    ...
+  }
+  ```
+- **全体を右寄せにしたい場合**は、CSSの`grid-template-columns`プロパティに記述された`1fr`を削除し、`justify-content: end;`を追加してください
+  ```css
+  .wrapper {
+    ...
+    grid-template-columns: 80px auto 80px auto 80px auto;
+    justify-content: end;
+  }
+  ```
+
+### 2カラム
+
+import { ColumnTwo } from './_ColumnTwo.tsx';
+import ColumnTwoRaw from './_ColumnTwo.tsx?raw';
+import ColumnTwoCssRaw from './_ColumnTwo.module.css?raw';
+
+<WithCode client:load code={[
+  { filename: 'ColumnTwo.tsx', lang: 'tsx', code: ColumnTwoRaw },
+  { filename: 'ColumnTwo.module.css', lang: 'css', code: ColumnTwoCssRaw },
+]}>
+  <ColumnTwo />
+</WithCode>
+
+<p class="tag">カスタマイズ</p>
+
+行を増やしたい場合は、`<Stack>`でまとまった入力項目を増やしてください。2カラムのまま、自動で行が増えていきます。
+
+
+
+## 入力フィールドのバリエーション
+
+### テキストフィールド
+
+import { ExampleTextField } from './_ExampleTextField.tsx';
+import ExampleTextFieldRaw from './_ExampleTextField.tsx?raw';
+
+<WithCode client:load code={ExampleTextFieldRaw}>
+  <ExampleTextField />
+</WithCode>
+
+### テキストエリア
+
+import { ExampleTextArea } from './_ExampleTextArea.tsx';
+import ExampleTextAreaRaw from './_ExampleTextArea.tsx?raw';
+
+<WithCode client:load code={ExampleTextAreaRaw}>
+  <ExampleTextArea />
+</WithCode>
+
+### セレクトボックス
+
+import { ExampleSelect } from './_ExampleSelect.tsx';
+import ExampleSelectRaw from './_ExampleSelect.tsx?raw';
+
+<WithCode client:load code={ExampleSelectRaw}>
+  <ExampleSelect />
+</WithCode>
+
+
+### ラジオボタン
+
+import { ExampleRadioButton } from './_ExampleRadioButton.tsx';
+import ExampleRadioButtonRaw from './_ExampleRadioButton.tsx?raw';
+import ExampleRadioButtonCssRaw from './_ExampleRadioButton.module.css?raw';
+
+<WithCode client:load code={[
+  { filename: 'ExampleRadioButton.tsx', lang: 'tsx', code: ExampleRadioButtonRaw },
+  { filename: 'ExampleRadioButton.module.css', lang: 'css', code: ExampleRadioButtonCssRaw },
+]}>
+  <ExampleRadioButton />
+</WithCode>
+
+
+### ラジオカード
+
+import { ExampleRadioCard } from './_ExampleRadioCard.tsx';
+import ExampleRadioCardRaw from './_ExampleRadioCard.tsx?raw';
+import ExampleRadioCardCssRaw from './_ExampleRadioCard.module.css?raw';
+
+<WithCode client:load code={[
+  { filename: 'ExampleRadioCard.tsx', lang: 'tsx', code: ExampleRadioCardRaw },
+  { filename: 'ExampleRadioCard.module.css', lang: 'css', code: ExampleRadioCardCssRaw },
+]}>
+  <ExampleRadioCard />
+</WithCode>
+
+### ラジオカード（水平レイアウト）
+
+import { ExampleRadioCardHorizontally } from './_ExampleRadioCardHorizontally.tsx';
+import ExampleRadioCardHorizontallyRaw from './_ExampleRadioCardHorizontally.tsx?raw';
+import ExampleRadioCardHorizontallyCssRaw from './_ExampleRadioCardHorizontally.module.css?raw';
+
+<WithCode client:load code={[
+  { filename: 'ExampleRadioCardHorizontally.tsx', lang: 'tsx', code: ExampleRadioCardHorizontallyRaw },
+  { filename: 'ExampleRadioCardHorizontally.module.css', lang: 'css', code: ExampleRadioCardHorizontallyCssRaw },
+]}>
+  <ExampleRadioCardHorizontally />
+</WithCode>
+
+
+### チェックボックス
+
+import { ExampleCheckbox } from './_ExampleCheckbox.tsx';
+import ExampleCheckboxRaw from './_ExampleCheckbox.tsx?raw';
+import ExampleCheckboxCssRaw from './_ExampleCheckbox.module.css?raw';
+
+<WithCode client:load code={[
+  { filename: 'ExampleCheckbox.tsx', lang: 'tsx', code: ExampleCheckboxRaw },
+  { filename: 'ExampleCheckbox.module.css', lang: 'css', code: ExampleCheckboxCssRaw },
+]}>
+  <ExampleCheckbox />
+</WithCode>
