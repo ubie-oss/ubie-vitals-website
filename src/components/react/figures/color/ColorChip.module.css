@@ -1,107 +1,105 @@
 .code {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 .outline {
-    padding: var(--size-spacing-xs) var(--size-spacing-xs) 0;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
+  padding: var(--size-spacing-xs) var(--size-spacing-xs) 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
 }
 
 .tile {
-    display: flex;
-    gap: var(--size-spacing-md);
-    align-items: flex-end;
-    justify-content: center;
-    height: 160px;
-    border-radius: var(--radius-md)
+  display: flex;
+  gap: var(--size-spacing-md);
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+  border-radius: var(--radius-md);
 }
 
 .tile > * {
-    flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .contrastExamples {
-    text-align: center;
+  text-align: center;
 }
 
 .colorName {
-    margin-top: var(--size-spacing-sm);
-    margin-bottom: var(--size-spacing-xxs);
-    font-size: var(--text-heading-sm-size);
-    font-weight: bold;
-    line-height: var(--text-heading-sm-line);
+  margin-top: var(--size-spacing-sm);
+  margin-bottom: var(--size-spacing-xxs);
+  font-size: var(--text-heading-sm-size);
+  font-weight: bold;
+  line-height: var(--text-heading-sm-line);
 }
 
 .textBlack {
-    display: inline-block;
-    font-size: var(--text-body-md-size);
-    font-weight: bold;
-    line-height: 1;
-    color: var(--color-ubie-black-700);
+  display: inline-block;
+  font-size: var(--text-body-md-size);
+  font-weight: bold;
+  line-height: 1;
+  color: var(--color-ubie-black-700);
 }
 
-
 .textBlackLarge {
-    display: inline-block;
-    font-size: 22px;
-    font-weight: bold;
-    line-height: 1;
-    color: var(--color-ubie-black-700);
+  display: inline-block;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 1;
+  color: var(--color-ubie-black-700);
 }
 
 .textWhite {
-    display: inline-block;
-    font-size: var(--text-body-md-size);
-    font-weight: bold;
-    line-height: 1;
-    color: var(--color-ubie-white);
+  display: inline-block;
+  font-size: var(--text-body-md-size);
+  font-weight: bold;
+  line-height: 1;
+  color: var(--color-ubie-white);
 }
 
 .textWhiteLarge {
-    display: inline-block;
-    font-size: 22px;
-    font-weight: bold;
-    line-height: 1;
-    color: var(--color-ubie-white);
+  display: inline-block;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 1;
+  color: var(--color-ubie-white);
 }
 
-
 .valueListItem + .valueListItem {
-    border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-border);
 }
 
 .copy {
-    position: absolute;
-    top: 0;
-    right: 0;
-    opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
 }
 
 .copy:focus,
 .valueListItem:hover .copy {
-    opacity: 1;
+  opacity: 1;
 }
 
 .outline .valueList {
-    padding-left: 0;
-    list-style: none;
+  padding-left: 0;
+  list-style: none;
 }
 
 .value {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--size-spacing-xxs) var(--size-spacing-md);
-    align-items: center;
-    padding: var(--size-spacing-xs) 0
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--size-spacing-xxs) var(--size-spacing-md);
+  align-items: center;
+  padding: var(--size-spacing-xs) 0;
 }
 
 .valueTypeName {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: var(--text-body-sm-size);
-    font-weight: bold;
-    line-height: var(--text-body-sm-tight-line);
-    color: var(--color-ubie-black-500);
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: var(--text-body-sm-size);
+  font-weight: bold;
+  line-height: var(--text-body-sm-tight-line);
+  color: var(--color-ubie-black-500);
 }
