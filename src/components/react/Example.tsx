@@ -1,6 +1,5 @@
-import CopyButton from './CopyButton';
+import Code from './Code';
 import styles from './Example.module.css';
-import SyntaxHighlighter from './SyntaxHighlighter';
 import type { Example } from '@utils/server';
 import type { FC } from 'react';
 
@@ -25,8 +24,7 @@ const Example: FC<Props> = ({ example }) => {
       </div>
 
       <div className={styles.code}>
-        <SyntaxHighlighter lang="jsx">{example.code}</SyntaxHighlighter>
-        <CopyButton className={styles.copy} text={example.code} />
+        <Code lang="tsx">{example.code}</Code>
       </div>
     </div>
   );

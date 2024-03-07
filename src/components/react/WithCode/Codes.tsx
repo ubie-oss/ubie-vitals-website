@@ -1,10 +1,9 @@
 import { Stack } from '@ubie/ubie-ui';
 import { clsx } from 'clsx';
 import { useState } from 'react';
-import styles from './Codes.module.css';
-import CopyButton from '../CopyButton';
-import SyntaxHighlighter from '../SyntaxHighlighter';
-import type { CodeObject } from './WithCode';
+import { Code } from '../Code.jsx';
+import styles from '../WithCode/Codes.module.css';
+import type { CodeObject } from './WithCode.js';
 import type { FC } from 'react';
 
 type Types = { codes: CodeObject[] };
@@ -30,10 +29,7 @@ export const Codes: FC<Types> = ({ codes }) => {
       </Stack>
       {codes.map(({ lang, code }, index) => (
         <div key={index} hidden={current !== index}>
-          <span className={styles.copy}>
-            <CopyButton text={code} />
-          </span>
-          <SyntaxHighlighter lang={lang}>{code}</SyntaxHighlighter>
+          <Code lang={lang}>{code}</Code>
         </div>
       ))}
     </div>

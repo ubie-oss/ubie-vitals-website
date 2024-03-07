@@ -13,7 +13,7 @@ interface Props {
 }
 
 const langs = ['typescript', 'css', 'jsx', 'tsx'];
-type Lang = (typeof langs)[number];
+export type Lang = (typeof langs)[number];
 
 const SyntaxHighligter: FC<Props> = ({ children, lang }) => {
   const [code, setCode] = useState('');

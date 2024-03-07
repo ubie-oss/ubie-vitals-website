@@ -1,22 +1,41 @@
 .button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 32px;
-    padding: var(--size-spacing-xxs) var(--size-spacing-xs) calc(var(--size-spacing-xxs) - 0.125rem);
-    font-weight: bold;
-    color: var(--color-primary);
-    background-color: rgb(255 255 255 / 75%);
-    border: none;
-
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: var(--size-spacing-xxs) var(--size-spacing-xs) calc(var(--size-spacing-xxs) - 0.125rem);
+  font-weight: bold;
+  color: var(--color-primary);
+  background-color: rgb(255 255 255 / 75%);
+  border: none;
+  border-radius: var(--radius-xs);
 }
 
-@media (hover:hover) {
-    .button:hover {
-        background-color: var(--color-ubie-black-100);
-    }
+.button.invert {
+  color: var(--color-text-white);
+  background-color: transparent;
+}
+
+@media (hover: hover) {
+  .button:hover {
+    background-color: var(--color-ubie-black-100);
+  }
+
+  .button.invert:hover {
+    background-color: rgb(255 255 255 / 15%);
+  }
 }
 
 .button:active {
-    background-color: var(--color-ubie-black-200);
+  background-color: var(--color-ubie-black-200);
+}
+
+.button.invert:active {
+  background-color: rgb(255 255 255 / 25%);
+}
+
+.icon {
+  position: relative;
+  top: -1px;
+  font-size: 16px;
 }
