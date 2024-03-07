@@ -29,7 +29,7 @@
     "@types/react-syntax-highlighter": "^15.5.11",
     "@ubie/design-tokens": "^0.1.4",
     "@ubie/ubie-icons": "^0.6.1",
-    "@ubie/ubie-ui": "^0.0.1",
+    "@ubie/ubie-ui": "^0.0.2",
     "@unocss/reset": "^0.58.5",
     "astro": "^4.4.4",
     "astro-icon": "^1.1.0",
@@ -46,11 +46,13 @@
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
     "shikiji": "^0.10.2",
+    "shikiji-transformers": "^0.10.2",
     "typescript": "^5.3.3",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@markuplint/astro-parser": "^4.2.0",
+    "@shikijs/transformers": "^1.1.7",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
     "@typescript-eslint/parser": "^7.0.2",
     "@ubie/prettier-config": "^0.1.0",

@@ -4,6 +4,7 @@ import { defineConfig } from 'astro/config';
 import icon from "astro-icon";
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
+import { transformerNotationHighlight, transformerNotationWordHighlight, transformerNotationDiff } from 'shikiji-transformers'
 
 // https://astro.build/config
 export default defineConfig({
@@ -33,6 +34,11 @@ export default defineConfig({
   vite: {
     ssr: {
       noExternal: ['@ubie/ubie-icons', '@ubie/ubie-ui']
+    }
+  },
+  markdown: {
+    shikiConfig: {
+      transformers: [transformerNotationWordHighlight(), transformerNotationHighlight(), transformerNotationDiff()]
     }
   }
 });

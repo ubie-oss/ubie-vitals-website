@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react';
-import { getHighlighter } from 'shikiji';
-import styles from './SyntaxHighlighter.module.css';
+import { getHighlighter } from 'shiki';
+import {
+  transformerNotationHighlight,
+  transformerNotationWordHighlight,
+  transformerNotationDiff,
+} from 'shikiji-transformers';
 import type { FC } from 'react';
 
 interface Props {
@@ -8,7 +12,7 @@ interface Props {
   lang: Lang;
 }
 
-const langs = ['javascript', 'typescript', 'html', 'css', 'jsx'];
+const langs = ['typescript', 'css', 'jsx', 'tsx'];
 type Lang = (typeof langs)[number];
 
 const SyntaxHighligter: FC<Props> = ({ children, lang }) => {
@@ -22,8 +26,9 @@ const SyntaxHighligter: FC<Props> = ({ children, lang }) => {
       });
 
       const code = highlighter.codeToHtml(children, {
-        lang: 'javascript',
+        lang,
         theme: 'github-dark',
+        transformers: [transformerNotationHighlight(), transformerNotationWordHighlight(), transformerNotationDiff()],
       });
       setCode(code);
     };
@@ -31,7 +36,7 @@ const SyntaxHighligter: FC<Props> = ({ children, lang }) => {
     convert();
   }, [children, lang]);
 
-  return <div className={styles.wrapper} dangerouslySetInnerHTML={{ __html: code }} />;
+  return <div dangerouslySetInnerHTML={{ __html: code }} />;
 };
 
 export default SyntaxHighligter;

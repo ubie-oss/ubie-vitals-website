@@ -47,10 +47,73 @@ code {
   font-family: SFMono-Medium, 'SF Mono', 'Segoe UI Mono', 'Roboto Mono', 'Ubuntu Mono', Menlo, Consolas, Courier,
     monospace;
   font-size: 0.85em;
-  line-height: 1.1;
-  color: var(--color-ubie-black-700);
-  background-color: var(--color-background-gray);
+  line-height: 1.2;
+  color: var(--color-ubie-blue-700);
   border-radius: var(--radius-sm);
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+:is(.shiki, .astro-code) code {
+  width: 100%;
+  padding: 0 var(--size-spacing-sm);
+  margin: 0;
+  line-height: 1.5;
+  color: inherit;
+  background-color: transparent;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+:is(.shiki, .astro-code) {
+  padding: var(--size-spacing-sm) 0;
+  margin: 0;
+  border-radius: var(--radius-sm);
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+:is(.shiki, .astro-code) :is(.line.highlighted, .line.diff) {
+  position: relative;
+  display: inline-block;
+  width: calc(100% + var(--size-spacing-sm) * 2);
+  padding: 0 var(--size-spacing-sm);
+  margin: calc(-1 * var(--size-spacing-sm));
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+:is(.shiki, .astro-code) .line.highlighted {
+  background-color: rgb(187 128 9 / 15%);
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+:is(.shiki, .astro-code) .line.highlighted::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 4px;
+  height: 100%;
+  content: '';
+  background-color: #9e6a03;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+:is(.shiki, .astro-code) .highlighted-word {
+  border: 1px solid #9e6a03;
+  border-radius: var(--radius-xs);
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+:is(.shiki, .astro-code) .diff.add {
+  background-color: rgb(46 160 67 / 15%);
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+:is(.shiki, .astro-code) .diff.add::before {
+  position: absolute;
+  left: 0;
+  padding: 0 2px;
+  color: var(--color-ubie-white);
+  content: '+';
+  background-color: rgb(63 185 80 / 30%);
 }
 
 ul {
