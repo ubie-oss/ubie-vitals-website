@@ -1,5 +1,6 @@
 import { normal } from 'color-blend';
 import rgba from 'color-rgba';
+import type { DesignToken } from '@types';
 
 type RGBA = {
   r: number;
@@ -238,3 +239,7 @@ if (import.meta.vitest) {
     });
   });
 }
+
+export const createColorTokenJsCode = (token: DesignToken): string => {
+  return `DesignTokens.${token.path?.[0]}['${token.path?.[1]}']`;
+};

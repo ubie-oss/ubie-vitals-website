@@ -3,7 +3,7 @@ import type { FC } from 'react';
 
 const MarkupAsList: FC = () => {
   return (
-    <Stack spacing="md" as="li">
+    <Stack spacing="md" as="ul">
       <li>テスト</li>
       <li>テスト</li>
       <li>テスト</li>
