@@ -1,4 +1,4 @@
-import Code from './Code';
+import { Code } from './Code';
 import styles from './Example.module.css';
 import type { Example } from '@utils/server';
 import type { FC } from 'react';
