@@ -27,7 +27,7 @@ export default {{ inputs.exampleName | pascal }};
 
 # `src/pages/components/examples/{{ inputs.exampleKey }}/{{ inputs.exampleName }}.astro`
 
-```typescript
+```astro
 ---
 import ExampleLayout from '@layouts/ExampleLayout.astro';
 import {{ inputs.exampleName | pascal }} from '@components/react/examples/{{ inputs.exampleKey }}/{{ inputs.exampleName | pascal }}';
