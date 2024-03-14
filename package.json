@@ -15,7 +15,8 @@
     "lint:css:fix": "stylelint --fix src/**/*.{astro,module.css,css}",
     "prettier:astro": "prettier --write src/**/*.astro",
     "script:extract-icon-names": "node ./scripts/extractIconNames.js",
-    "test": "vitest"
+    "test": "vitest",
+    "generate:example": "scaffdog generate example"
   },
   "dependencies": {
     "@astrojs/check": "^0.3.1",
