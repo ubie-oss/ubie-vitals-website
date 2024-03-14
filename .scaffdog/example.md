@@ -1,14 +1,14 @@
 ---
 name: example
-root: '.'
-output: '**/*'
+root: 'src'
+output: '.'
 ignore: []
 questions:
-  exampleKey: What is the exampleKey (e.g., link-button)?
-  exampleName: What is the exampleName (e.g., with-icon)?
+  exampleKey: What is the component name (e.g., link-button)?
+  exampleName: What is the example name (e.g., with-icon)?
 ---
 
-# `src/components/react/examples/{{ inputs.exampleKey }}/{{ inputs.exampleName | pascal }}.tsx`
+# `components/react/examples/{{ inputs.exampleKey }}/{{ inputs.exampleName | pascal }}.tsx`
 
 ```typescript
 
@@ -25,9 +25,9 @@ export default {{ inputs.exampleName | pascal }};
 
 ```
 
-# `src/pages/components/examples/{{ inputs.exampleKey }}/{{ inputs.exampleName }}.astro`
+# `pages/components/examples/{{ inputs.exampleKey }}/{{ inputs.exampleName }}.astro`
 
-```typescript
+```astro
 ---
 import ExampleLayout from '@layouts/ExampleLayout.astro';
 import {{ inputs.exampleName | pascal }} from '@components/react/examples/{{ inputs.exampleKey }}/{{ inputs.exampleName | pascal }}';
