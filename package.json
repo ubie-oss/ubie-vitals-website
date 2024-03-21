@@ -90,5 +90,10 @@
     "url": "https://github.com/ubie-oss/ubie-vitals-website/issues"
   },
   "homepage": "https://github.com/ubie-oss/ubie-vitals-website#readme",
-  "description": ""
+  "description": "",
+  "overrides": {
+    "vite": {
+      "rollup": "npm:@rollup/wasm-node"
+    }
+  }
 }
