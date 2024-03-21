@@ -18,30 +18,26 @@ import SelectingFormComponents from '@sharedDocuments/form/SelectingFormComponen
 
 ### 項目をグルーピングし、タイトルをつける
 
-できる限りタイトルをつけてください。選択肢を列挙しただけでは、何を意味する設定なのかをユーザーは理解でいないかもしれません。
+できる限りグルーピングしてラベルをつけてください。選択肢を列挙しただけでは、何を意味する選択肢なのかをユーザーは理解できないかもしれません。
 
-`<fieldset>` 要素を使い[^mdn-fieldset]、`<legend>` を組み合わせることでタイトルを付与できます。
-
-[^mdn-fieldset]: [フィールドセット要素 - HTML: ハイパーテキストマークアップ言語 | MDN](https://developer.mozilla.org/ja/docs/Web/HTML/Element/fieldset)
+`<RadioGroup>`コンポーネントでまとめ、`label` propを指定してください。
 
 ```jsx
-<fieldset>
-  <legend>今日の期限</legend>
-
+<RadioGroup label="今日の気分"> // [!code highlight]
   <RadioButton name="condition">良い</RadioButton>
   <RadioButton name="condition">悪い</RadioButton>
-</fieldset>
+</RadioGroup> // [!code highlight]
 ```
 
-`<RadioButton>` を内包する選択肢が1つのコンテンツとして独立している場合、`<section>` 要素で囲んでも良いでしょう。その場合、必ず見出し（`<hx>`） を添えてください。
+`<RadioButton>` を使用した選択肢が1つのコンテンツとして独立している場合`<section>` 要素で囲んでも良いでしょう。その場合、必ず見出し（`<hx>`） を添えてください。
 
 ```jsx
-<section>
-  <h2>本日の体調</h2>
+<section> // [!code highlight]
+  <h2>本日の体調</h2> // [!code highlight]
 
   <RadioButton name="condition">良い</RadioButton>
   <RadioButton name="condition">悪い</RadioButton>
-</section>
+</section> // [!code highlight]
 ```
 
 ## Keyboard Interaction

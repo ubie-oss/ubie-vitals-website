@@ -77,6 +77,18 @@
     opacity: 1;
   }
 
+  .markdown :global(* + pre) {
+    margin-top: var(--size-spacing-lg);
+  }
+
+  .markdown :global(li > * + pre) {
+    margin-top: var(--size-spacing-xxs);
+  }
+
+  .markdown :global(pre:has(+ *)) {
+    margin-bottom: var(--size-spacing-lg);
+  }
+
   .markdown :global(pre + pre) {
     margin-top: var(--size-spacing-md);
   }
