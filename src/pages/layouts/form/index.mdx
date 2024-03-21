@@ -49,6 +49,23 @@ import { HelperMessage } from '@ubie/ubie-ui';  // [!code ++]
 </Stack>
 ```
 
+ラジオボタンなどでは、`<RadioGroup>`につづけてください
+
+```jsx
+<Stack spacing="xs">
+  <RadioGroup label="ラジオカード">
+    {options.map((option) => (
+      <RadioCard key={option} value={option} name="radio-card">
+        {option}
+      </RadioCard>
+    ))}
+  </RadioGroup>
+
+  <HelperMessage>1つ目の説明</HelperMessage>  // [!code ++]
+  <HelperMessage>２つ目の説明</HelperMessage>  // [!code ++]
+</Stack>
+```
+
 ### エラー表示
 
 `prop`で対応している場合は、入力フィールド（例では`<Input>`）に`isInvalid`を追加します。そして、`<Stack>`の子に`<ErrorMessage>`を追加してください。
@@ -176,12 +193,8 @@ import ExampleSelectRaw from './_ExampleSelect.tsx?raw';
 
 import { ExampleRadioButton } from './_ExampleRadioButton.tsx';
 import ExampleRadioButtonRaw from './_ExampleRadioButton.tsx?raw';
-import ExampleRadioButtonCssRaw from './_ExampleRadioButton.module.css?raw';
 
-<WithCode client:load code={[
-  { filename: 'ExampleRadioButton.tsx', lang: 'tsx', code: ExampleRadioButtonRaw },
-  { filename: 'ExampleRadioButton.module.css', lang: 'css', code: ExampleRadioButtonCssRaw },
-]}>
+<WithCode client:load code={ExampleRadioButtonRaw}>
   <ExampleRadioButton />
 </WithCode>
 
@@ -190,12 +203,8 @@ import ExampleRadioButtonCssRaw from './_ExampleRadioButton.module.css?raw';
 
 import { ExampleRadioCard } from './_ExampleRadioCard.tsx';
 import ExampleRadioCardRaw from './_ExampleRadioCard.tsx?raw';
-import ExampleRadioCardCssRaw from './_ExampleRadioCard.module.css?raw';
 
-<WithCode client:load code={[
-  { filename: 'ExampleRadioCard.tsx', lang: 'tsx', code: ExampleRadioCardRaw },
-  { filename: 'ExampleRadioCard.module.css', lang: 'css', code: ExampleRadioCardCssRaw },
-]}>
+<WithCode client:load code={ExampleRadioCardRaw}>
   <ExampleRadioCard />
 </WithCode>
 
@@ -203,12 +212,8 @@ import ExampleRadioCardCssRaw from './_ExampleRadioCard.module.css?raw';
 
 import { ExampleRadioCardHorizontally } from './_ExampleRadioCardHorizontally.tsx';
 import ExampleRadioCardHorizontallyRaw from './_ExampleRadioCardHorizontally.tsx?raw';
-import ExampleRadioCardHorizontallyCssRaw from './_ExampleRadioCardHorizontally.module.css?raw';
 
-<WithCode client:load code={[
-  { filename: 'ExampleRadioCardHorizontally.tsx', lang: 'tsx', code: ExampleRadioCardHorizontallyRaw },
-  { filename: 'ExampleRadioCardHorizontally.module.css', lang: 'css', code: ExampleRadioCardHorizontallyCssRaw },
-]}>
+<WithCode client:load code={ExampleRadioCardHorizontallyRaw}>
   <ExampleRadioCardHorizontally />
 </WithCode>
 
@@ -217,11 +222,7 @@ import ExampleRadioCardHorizontallyCssRaw from './_ExampleRadioCardHorizontally.
 
 import { ExampleCheckbox } from './_ExampleCheckbox.tsx';
 import ExampleCheckboxRaw from './_ExampleCheckbox.tsx?raw';
-import ExampleCheckboxCssRaw from './_ExampleCheckbox.module.css?raw';
 
-<WithCode client:load code={[
-  { filename: 'ExampleCheckbox.tsx', lang: 'tsx', code: ExampleCheckboxRaw },
-  { filename: 'ExampleCheckbox.module.css', lang: 'css', code: ExampleCheckboxCssRaw },
-]}>
+<WithCode client:load code={ExampleCheckboxRaw}>
   <ExampleCheckbox />
 </WithCode>

@@ -1,4 +1,4 @@
-import { Stack, Input, Select, Button, TextArea, RadioButton, Label, HelperMessage } from '@ubie/ubie-ui';
+import { Stack, Input, Select, Button, TextArea, RadioButton, Label, HelperMessage, RadioGroup } from '@ubie/ubie-ui';
 import styles from './_BaseForm.module.css';
 import type { FC } from 'react';
 
@@ -30,18 +30,13 @@ export const BaseForm: FC = () => (
         <HelperMessage>2000/1/1以降の日付を入力してください</HelperMessage>
       </Stack>
 
-      <fieldset className={styles.fieldset}>
-        <Stack spacing="xs">
-          <Label as="legend">受診理由（任意）</Label>
-          <Stack spacing="xs">
-            {reasons.map((reason) => (
-              <RadioButton key={reason} value={reason} name="deafult">
-                {reason}
-              </RadioButton>
-            ))}
-          </Stack>
-        </Stack>
-      </fieldset>
+      <RadioGroup label="受診理由（任意）">
+        {reasons.map((reason) => (
+          <RadioButton key={reason} value={reason} name="deafult">
+            {reason}
+          </RadioButton>
+        ))}
+      </RadioGroup>
 
       <Stack spacing="xs">
         <Label htmlFor="memo">メモ（任意）</Label>
