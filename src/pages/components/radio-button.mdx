@@ -23,21 +23,20 @@ import SelectingFormComponents from '@sharedDocuments/form/SelectingFormComponen
 `<RadioGroup>`コンポーネントでまとめ、`label` propを指定してください。
 
 ```jsx
-<RadioGroup label="今日の気分"> // [!code highlight]
+<RadioGroup label="今日の気分">
   <RadioButton name="condition">良い</RadioButton>
   <RadioButton name="condition">悪い</RadioButton>
-</RadioGroup> // [!code highlight]
-```
+</RadioGroup>
 
 `<RadioButton>` を使用した選択肢が1つのコンテンツとして独立している場合`<section>` 要素で囲んでも良いでしょう。その場合、必ず見出し（`<hx>`） を添えてください。
 
 ```jsx
-<section> // [!code highlight]
-  <h2>本日の体調</h2> // [!code highlight]
+<section>
+  <h2>本日の体調</h2>
 
   <RadioButton name="condition">良い</RadioButton>
   <RadioButton name="condition">悪い</RadioButton>
-</section> // [!code highlight]
+</section>
 ```
 
 ## Keyboard Interaction
