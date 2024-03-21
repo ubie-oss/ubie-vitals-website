@@ -1,0 +1,17 @@
+---
+title: 'Toggle'
+exampleKey: 'toggle'
+layout: '@layouts/ComponentLayout.astro'
+description: '設定をオンまたはオフに切り替えるためのコンポーネント'
+thumbnail: '/assets/images/components/thumbnail-toggle.svg.svg'
+---
+
+## Feature
+
+- 設定項目が2つの状態のみを持つ場合（例えば、設定の有効/無効）に適しています。
+- ユーザーが行った選択をすぐに反映させるシナリオに適しており、直感的に操作できるように設計されています。
+
+## Usage
+
+- `checked` と `onChange` を使用して値をコントロールして使用してください。
+  - `onChange` で通信を伴うなど待機時間が生まれる場合には、楽観的に状態を更新することが好まれます。
