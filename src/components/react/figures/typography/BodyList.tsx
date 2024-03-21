@@ -37,7 +37,7 @@ const BodyList: FC = () => {
           <ExampleText
             type="body"
             size="sm"
-            leading="narrow"
+            leading="tight"
             src="/assets/images/figures/typography/example-text-body-sm-tight.svg"
             alt="Body/sm-tightでテキストを表示した場合のサンプル"
             width="352"
@@ -74,7 +74,7 @@ const BodyList: FC = () => {
           <ExampleText
             type="body"
             size="md"
-            leading="narrow"
+            leading="tight"
             src="/assets/images/figures/typography/example-text-body-md-tight.svg"
             alt="Body/md-tightでテキストを表示した場合のサンプル"
             width="352"
