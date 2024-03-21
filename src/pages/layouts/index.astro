@@ -5,7 +5,7 @@ import Stack from '@components/astro/Stack.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import type { PostData } from '@types';
 
-const allComponentMdx = await Astro.glob('../components/*.mdx');
+const allComponentMdx = await Astro.glob('../layouts/**/*.mdx');
 
 const allComponentPostData: PostData[] = allComponentMdx.map((componentMdx) => {
   return {
@@ -21,8 +21,8 @@ const allComponentPostData: PostData[] = allComponentMdx.map((componentMdx) => {
   <main class="wrapper">
     <Stack spacing="xl">
       <Stack spacing="sm">
-        <h1 class="title">Components</h1>
-        <p>組み合わせによる、迅速なプロダクト構築をサポートします。コードサンプルと使用方法を紹介します。</p>
+        <h1 class="title">Layouts</h1>
+        <p>複数のコンポーネントを組み合わせて、複雑なレイアウトを構築する実例を紹介します。</p>
       </Stack>
       <ul class="list">
         {
@@ -69,7 +69,9 @@ const allComponentPostData: PostData[] = allComponentMdx.map((componentMdx) => {
 
   .list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(375px, 100%), 1fr));
+
+    /* TODO: If more items are added, make it auto-fit. */
+    grid-template-columns: repeat(auto-fill, minmax(min(375px, 100%), 1fr));
     gap: var(--size-spacing-xl);
   }
 

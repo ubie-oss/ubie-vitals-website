@@ -1,4 +1,4 @@
-import { RadioButton, Stack } from '@ubie/ubie-ui';
+import { RadioGroup, RadioButton, Stack } from '@ubie/ubie-ui';
 import { useState, useCallback } from 'react';
 import type { FC, ChangeEventHandler } from 'react';
 
@@ -13,18 +13,20 @@ const Default: FC = () => {
 
   return (
     <Stack spacing="xs">
-      {options.map((option) => (
-        <RadioButton
-          key={option}
-          value={option}
-          id={option}
-          onChange={onChange}
-          checked={selectedItem === option}
-          name="deafult"
-        >
-          {option}
-        </RadioButton>
-      ))}
+      <RadioGroup label="RadioButton Group">
+        {options.map((option) => (
+          <RadioButton
+            key={option}
+            value={option}
+            id={option}
+            onChange={onChange}
+            checked={selectedItem === option}
+            name="deafult"
+          >
+            {option}
+          </RadioButton>
+        ))}
+      </RadioGroup>
 
       <dl>
         <dt>Values</dt>

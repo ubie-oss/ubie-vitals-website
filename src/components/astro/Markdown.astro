@@ -21,6 +21,10 @@
     line-height: var(--text-heading-md-line);
   }
 
+  .markdown :global(:is(p, ul) + h2) {
+    margin-top: var(--size-spacing-xxl);
+  }
+
   .markdown :global(h2) {
     position: relative;
     padding-left: var(--size-spacing-md);
@@ -38,15 +42,15 @@
     transform: translateY(-50%);
   }
 
-  :where(.markdown) :global(:where(p)) {
-    max-width: 40em;
+  :where(.markdown) > :global(:where(:is(p, div))) {
     margin-top: var(--size-spacing-md);
     margin-bottom: var(--size-spacing-md);
   }
 
   .markdown :global(:where(ul)) {
-    max-width: 40em;
     padding-left: var(--size-spacing-lg);
+    margin-top: var(--size-spacing-md);
+    margin-bottom: var(--size-spacing-md);
     list-style: disc;
   }
 
@@ -73,6 +77,22 @@
     opacity: 1;
   }
 
+  .markdown :global(* + pre) {
+    margin-top: var(--size-spacing-lg);
+  }
+
+  .markdown :global(li > * + pre) {
+    margin-top: var(--size-spacing-xxs);
+  }
+
+  .markdown :global(pre:has(+ *)) {
+    margin-bottom: var(--size-spacing-lg);
+  }
+
+  .markdown :global(pre + pre) {
+    margin-top: var(--size-spacing-md);
+  }
+
   .markdown :global(.linkHeading):focus {
     text-decoration: underline;
     opacity: 1;
@@ -90,9 +110,16 @@
     text-decoration: none;
   }
 
-  /* stylelint-disable-next-line selector-class-pattern */
-  .markdown :global(.astro-code) {
-    padding: var(--size-spacing-sm);
+  .markdown :global(.tag) {
+    display: inline-block;
+    padding: var(--size-spacing-xxs) var(--size-spacing-xs) calc(var(--size-spacing-xxs) - 2px);
+    margin-top: var(--size-spacing-md);
+    margin-bottom: 0;
+    font-size: var(--text-note-md-size);
+    font-weight: bold;
+    line-height: var(--text-note-md-line);
+    color: var(--color-text-white);
+    background-color: var(--color-primary);
     border-radius: var(--radius-sm);
   }
 </style>

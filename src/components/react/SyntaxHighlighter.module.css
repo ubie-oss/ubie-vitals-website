@@ -1,5 +1,0 @@
-.wrapper :global(> .shiki) {
-  padding: var(--size-spacing-sm);
-  margin: 0;
-  border-radius: var(--radius-sm);
-}

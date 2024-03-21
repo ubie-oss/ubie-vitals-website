@@ -13,18 +13,14 @@ thumbnail: '/assets/images/components/thumbnail-checkbox.svg'
 - 単体での利用の場合、キャプションをつけなくても良い場合があります。Checkboxを使った設定の意図を、ラベルが十分に説明している場合のみ、キャプションは省略可能です
   - 例: 「ニュースレータの受け取り」オプション、「利用規約への同意」オプションなど
 
-### グルーピングとキャプション
+### グルーピングとラベル
 
-`<fieldset>` 及び `<legend>` を使用してください
+`<CheckboxGroup>` 及び `label` propを使用してください
 
 ```jsx
-<fieldset>
-  <Text as="legend" type="heading" size="xs">
-    支払いオプション
-  </Text>
-
-  <Checkbox>翌日配送</Checkbox>
-  <Checkbox>ラッピング</Checkbox>
+<CheckboxGroup label="候補日">
+  <Checkbox>3/10</Checkbox>
+  <Checkbox>3/11</Checkbox>
 </fieldset>
 ```
 
@@ -33,15 +29,15 @@ thumbnail: '/assets/images/components/thumbnail-checkbox.svg'
 ```jsx
 <div role="group" aria-labelledby="heading-payament-options">
   <Text id="heading-payament-options" as="legend" type="heading" size="xs">
-    支払いオプション
+    候補日
   </Text>
 
-  <Checkbox>翌日配送</Checkbox>
-  <Checkbox>ラッピング</Checkbox>
+  <Checkbox>3/10</Checkbox>
+  <Checkbox>3/11</Checkbox>
 </div>
 ```
 
-ただし、この方法はすべてのブラウザと支援技術に対応しているわけではありません
+ただし、この方法はすべてのブラウザと支援技術に対応しているわけではありません。`<CheckboxGroup>` を使用することをおすすめします。
 
 ## `<RadioCard>`(Radio Button) or `<Checkbox>`
 

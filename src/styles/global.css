@@ -3,114 +3,182 @@
 @import url('@ubie/design-tokens/dist/tokens.css');
 
 :root {
-    --header-height-mobile: 60px;
-    --header-height: 80px;
-    --gradient-brand: linear-gradient(90deg, rgb(234 119 161 / 10%) 0%, rgb(57 89 204 / 10%) 100%);
-    --wrapper-width: 960px;
+  --header-height-mobile: 60px;
+  --header-height: 80px;
+  --gradient-brand: linear-gradient(90deg, rgb(234 119 161 / 10%) 0%, rgb(57 89 204 / 10%) 100%);
+  --wrapper-width: 960px;
 }
 
-html, body {
-    font-family: 'Helvetica Neue',Arial,'Hiragino Kaku Gothic ProN','Hiragino Sans',Meiryo,sans-serif;
-    font-size: var(--text-body-md-size);
-    line-height: var(--text-body-md-line);
-    color: var(--color-text-main);
-    -webkit-font-smoothing: antialiased
+html,
+body {
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  font-size: var(--text-body-md-size);
+  line-height: var(--text-body-md-line);
+  color: var(--color-text-main);
+  -webkit-font-smoothing: antialiased;
 }
-
 
 html {
-    scroll-padding-top: var(--header-height-mobile);
+  scroll-padding-top: var(--header-height-mobile);
 }
 
 body {
-    min-height: 100vh;
-    min-height: 100dvh;
-    background-color: var(--color-ubie-white);
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--color-ubie-white);
 }
-    
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    margin: 0;
-    font-feature-settings: 'palt' 1;
-    letter-spacing: 0.01em;
+  margin: 0;
+  font-feature-settings: 'palt' 1;
+  letter-spacing: 0.01em;
+  word-break: auto-phrase;
 }
 
 code {
-    display: inline-block;
-    padding: 0.2ch 0.4ch 0.1ch;
-    margin: 0 2px;
-    font-family: SFMono-Medium, "SF Mono", "Segoe UI Mono", "Roboto Mono", "Ubuntu Mono", Menlo, Consolas, Courier, monospace;
-    font-size: 0.85em;
-    line-height: 1.1;
-    color: var(--color-ubie-black-700);
-    background-color: var(--color-background-gray);
-    border-radius: var(--radius-sm);
+  display: inline-block;
+  padding: 0.2ch 0.4ch 0.1ch;
+  margin: 0 2px;
+  font-family: SFMono-Medium, 'SF Mono', 'Segoe UI Mono', 'Roboto Mono', 'Ubuntu Mono', Menlo, Consolas, Courier,
+    monospace;
+  font-size: 0.85em;
+  line-height: 1.2;
+  color: var(--color-ubie-blue-700);
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+:is(.shiki, .astro-code) code {
+  width: 100%;
+  padding: 0 var(--size-spacing-sm);
+  margin: 0;
+  line-height: 1.5;
+  color: inherit;
+  background-color: transparent;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+:is(.shiki, .astro-code) {
+  padding: var(--size-spacing-sm) 0;
+  margin: 0;
+  border-radius: var(--radius-sm);
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+:is(.shiki, .astro-code) :is(.line.highlighted, .line.diff) {
+  position: relative;
+  display: inline-block;
+  width: calc(100% + var(--size-spacing-sm) * 2);
+  padding: 0 var(--size-spacing-sm);
+  margin: calc(-1 * var(--size-spacing-sm));
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+:is(.shiki, .astro-code) .line.highlighted {
+  background-color: rgb(187 128 9 / 15%);
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+:is(.shiki, .astro-code) .line.highlighted::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 4px;
+  height: 100%;
+  content: '';
+  background-color: #9e6a03;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+:is(.shiki, .astro-code) .highlighted-word {
+  border: 1px solid #9e6a03;
+  border-radius: var(--radius-xs);
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+:is(.shiki, .astro-code) .diff.add {
+  background-color: rgb(46 160 67 / 15%);
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+:is(.shiki, .astro-code) .diff.add::before {
+  position: absolute;
+  left: 0;
+  padding: 0 2px;
+  color: var(--color-ubie-white);
+  content: '+';
+  background-color: rgb(63 185 80 / 30%);
 }
 
 ul {
-    padding-left: 0;
-    margin: 0;
-    list-style: none;
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
 }
 
 li {
-    padding-left: 0;
-    margin: 0;
+  padding-left: 0;
+  margin: 0;
 }
 
 kbd {
-    display: inline-block;
-    padding-right: 0.5ch;
-    padding-left: 0.5ch;
-    margin: 0 2px;
-    font-family: SFMono-Medium, "SF Mono", "Segoe UI Mono", "Roboto Mono", "Ubuntu Mono", Menlo, Consolas, Courier, monospace;
-    font-size: 0.85em;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    border: 2px solid var(--color-ubie-black-500);
-    border-radius: var(--radius-sm);
+  display: inline-block;
+  padding-right: 0.5ch;
+  padding-left: 0.5ch;
+  margin: 0 2px;
+  font-family: SFMono-Medium, 'SF Mono', 'Segoe UI Mono', 'Roboto Mono', 'Ubuntu Mono', Menlo, Consolas, Courier,
+    monospace;
+  font-size: 0.85em;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  border: 2px solid var(--color-ubie-black-500);
+  border-radius: var(--radius-sm);
 }
 
 a {
-    color: var(--color-text-link);
-    text-underline-offset: .125em
+  color: var(--color-text-link);
+  text-underline-offset: 0.125em;
 }
 
 a:active {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-
 p {
-    margin: 0;
+  margin: 0;
+}
+
+figure {
+  margin: 0;
 }
 
 .visuallyHidden {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    display: block !important;
-    width: 4px !important;
-    height: 4px !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    overflow: hidden !important;
-    visibility: visible !important;
-    border: none !important;
-    opacity: 0 !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  display: block !important;
+  width: 4px !important;
+  height: 4px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  visibility: visible !important;
+  border: none !important;
+  opacity: 0 !important;
 }
 
 .scrollable {
-    width: 100%;
-    overflow: auto;
+  width: 100%;
+  overflow: auto;
 }
 
 .scrollable img {
-    width: initial;
-    max-width: initial;
-    height: initial;
+  width: initial;
+  max-width: initial;
+  height: initial;
 }
