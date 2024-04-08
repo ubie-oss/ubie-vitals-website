@@ -7,6 +7,10 @@
 </div>
 
 <style>
+  .markdown :global(p:has(+ p)) {
+    margin-bottom: var(--size-spacing-md);
+  }
+
   .markdown :global(h1) {
     margin-top: 0;
     font-size: var(--text-heading-xl-size);
