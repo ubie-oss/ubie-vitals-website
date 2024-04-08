@@ -8,7 +8,6 @@ thumbnail: '/assets/images/components/thumbnail-button.svg'
 
 import Variant from '@sharedDocuments/button/Variant.md';
 import Label from '@sharedDocuments/button/Label.md';
-import Disabled from '@sharedDocuments/button/Disabled.md';
 import SelectingComponent from '@sharedDocuments/button/SelectingComponent.md';
 import Icon from '@sharedDocuments/button/Icon.md';
 
@@ -30,13 +29,30 @@ import Icon from '@sharedDocuments/button/Icon.md';
 
 <Label />
 
-### `disabled`
-
-<Disabled />
-
 ### `<Button>` or `<LinkButton>`
 
 <SelectingComponent />
+
+### フレームワークのLinkコンポーネントを使用する
+
+`render` propsにフレームワークのLinkコンポーネントを指定してください。フレームワーク固有のpropsが必用な場合は、Linkコンポーネントに指定してください。
+
+Next.jsの例:
+
+```jsx
+import Link from 'next/link';
+import { LinkButton } from '@ubie/ubie-ui';
+
+...
+
+export const SomeComponent () => (
+  <LinkButton
+    render={<Link href='/' prefetch={false} />}
+  >
+    リンク
+  </LinkButton>
+)
+```
 
 ## Accessibility
 
