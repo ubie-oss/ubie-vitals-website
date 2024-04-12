@@ -31,7 +31,7 @@
     "@types/react-syntax-highlighter": "^15.5.11",
     "@ubie/design-tokens": "^0.1.4",
     "@ubie/ubie-icons": "^0.6.1",
-    "@ubie/ubie-ui": "^0.0.6",
+    "@ubie/ubie-ui": "^0.0.8",
     "@unocss/reset": "^0.58.5",
     "astro": "^4.4.4",
     "astro-icon": "^1.1.0",
