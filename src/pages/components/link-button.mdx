@@ -54,6 +54,21 @@ export const SomeComponent () => (
 )
 ```
 
+## Disabledなときは、Buttonを非表示にし適切なメッセージを表示する
+
+`LinkButton` はあくまでもLinkであるため、 `disabled` プロパティは存在しません。
+Disabledな `LinkButton` を用いたい場合は、リンクを非表示にして代わりとなるメッセージを表示するようにしてください。
+
+```jsx
+export const SomeComponent () => (
+  {showLinkButton ? (
+    <LinkButton href="/">リンク</LinkButton>
+  ) : (
+    現在このボタンを押すことはできません
+  )}
+)
+```
+
 ## Accessibility
 
 ### ネイティブの `<a>` 要素
