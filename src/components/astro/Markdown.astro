@@ -7,7 +7,7 @@
 </div>
 
 <style>
-  .markdown :global(p:has(+ p)) {
+  :where(.markdown :global(p:has(+ p))) {
     margin-bottom: var(--size-spacing-md);
   }
 

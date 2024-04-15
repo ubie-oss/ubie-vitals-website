@@ -1,0 +1,19 @@
+---
+title: 'Flex'
+exampleKey: 'flex'
+layout: '@layouts/ComponentLayout.astro'
+description: 'display: flexのラッパーコンポーネント'
+thumbnail: '/assets/images/components/thumbnail-flex.svg'
+---
+
+## Feature
+
+フレックスボックス[^flexbox]を使ったレイアウトを構築できます。横並びや両端揃えなど、CSSで記述が少々面倒なレイアウトをコンポーネントのみで対応できます。
+
+[^flexbox]: [フレックスボックスの基本概念 - CSS: カスケーディングスタイルシート | MDN](https://developer.mozilla.org/ja/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)
+
+
+## Usage
+
+- デフォルトの`direction`は`row`です。子要素は横並びになります。`column`に変更することで縦並びにできます
+- `wrap`を有効化することで、子要素が多い場合に自動で折り返しできます。これはレスポンシブレイアウトなどで有用です。
