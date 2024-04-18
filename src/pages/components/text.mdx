@@ -16,14 +16,29 @@ thumbnail: '/assets/images/components/thumbnail-text.svg'
   - `props`を指定しなくとも、本文で使用するスタイル（`type='body'`、`size='md'`）がデフォルトで適用されています
 - デフォルトでは、`<p>`要素としてレンダリングされます
 
+### `<Text>`内の一部を装飾したい
+
+例えば一部の単語を強調したいケースなどがあります。`<Text>`をネストし、`as` propで`span`を指定、装飾したいpropを追加します。
+
+```jsx
+<Text type="note" size="lg">
+  <Text as="span" type="note" size="lg" color="alert" bold>  // [!code ++]
+    Alert:
+  </Text>  // [!code ++]
+  Please fill in all fields
+</Text>
+```
+
+実際の動作例は[text in text](/components/examples/text/text-in-text)を参照してください。
+
 ### `<p>`要素が適さない場合
 
-- テキストのマークアップとして、`<p>`要素は大きく困ることはないはずです
+- 代替のケースで`<p>`要素を使用すれば問題有りません
 - ただし、いくつかのケースで問題があります
-  - （ケースとして、ほとんどないと思いますが）`<p>`要素に`<p>`要素を内包できないため、そのままでは`<Text>`同士のネストができません
+  - `<p>`要素に`<p>`要素を内包できません
     - ネストした場合、ブラウザの修復により構造が崩れる可能性があります
-- `<button>`のような、フローコンテンツを子に持てない要素が存在します[^phrasing]
-- 解決策として、`as`propでレンダリングされる要素を変更します
+  - `<button>`のような、`<p>`などのフローコンテンツを子に持てない要素が存在します[^phrasing]
+  - これらの解決策として、`as` propでレンダリングされる要素を変更します。`span`が良いでしょう
 
 [^phrasing]: (記述コンテンツ - コンテンツカテゴリー - HTML: ハイパーテキストマークアップ言語 | MDN)[https://developer.mozilla.org/ja/docs/Web/HTML/Content_categories#%E8%A8%98%E8%BF%B0%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84]
 
@@ -65,3 +80,5 @@ thumbnail: '/assets/images/components/thumbnail-text.svg'
 ## Related resources
 
 - [コンテンツカテゴリー - HTML: ハイパーテキストマークアップ言語 | MDN](https://developer.mozilla.org/ja/docs/Web/HTML/Content_categories)
+
+
