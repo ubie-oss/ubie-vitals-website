@@ -1,0 +1,18 @@
+---
+title: 'Center'
+exampleKey: 'center'
+layout: '@layouts/ComponentLayout.astro'
+description: '中央配置のコンテナ。子要素を中央揃えすることも可能'
+thumbnail: '/assets/images/components/thumbnail-center.svg'
+---
+
+## Feature
+
+Webの基本は左寄せです。そのため、スポットで中央揃えを用いることで印象的に要素を配置することができます。
+
+`<Center>`は様々な中央揃えをサポートしています。複数の要素をまとめて中央揃えするコンテナとして振る舞ったり、テキストのみを中央揃えしたり、子要素自体をセンタリングしたりすることもできます。
+
+## Usage
+
+- `childrenCenter` propを指定した場合、`<Center>`はフレックスコンテナ（`display: flex`）となります
+- `maxWidth` propを指定しなかった場合、`<Center>`は水平方向を専有します（幅100%）となります。子要素のセンタリングのみを目的とする場合は、`maxWidth` propを指定しないでください
