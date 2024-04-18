@@ -1,7 +1,7 @@
 import { Text } from '@ubie/ubie-ui';
 import type { FC } from 'react';
 
-const InternalStyling: FC = () => {
+const TextInText: FC = () => {
   return (
     <Text type="note" size="lg">
       <Text as="span" type="note" size="lg" color="alert" bold>
@@ -12,4 +12,4 @@ const InternalStyling: FC = () => {
   );
 };
 
-export default InternalStyling;
+export default TextInText;
