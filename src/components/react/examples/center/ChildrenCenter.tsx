@@ -3,11 +3,19 @@ import type { FC } from 'react';
 
 const ChildrenCenter: FC = () => {
   return (
-    <Center childrenCenter>
-      <Box backgroundColor="gray" radius="md" pt="md" pr="md" pb="md" pl="md">
-        Centered Child
-      </Box>
-    </Center>
+    <>
+      <p>&lt;Center&gt; is 100% width</p>
+
+      <Center childrenCenter>
+        <Box backgroundColor="gray" radius="md" pt="md" pr="md" pb="md" pl="md">
+          <p>
+            Child elements is centered.
+            <br />
+            Text is left-aligned(by inheritance).
+          </p>
+        </Box>
+      </Center>
+    </>
   );
 };
 

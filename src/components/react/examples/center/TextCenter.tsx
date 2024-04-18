@@ -1,12 +1,14 @@
-import { Center, Box } from '@ubie/ubie-ui';
+import { Center } from '@ubie/ubie-ui';
 import type { FC } from 'react';
 
 const TextCenter: FC = () => {
   return (
     <Center maxWidth="400px" textCenter>
-      <Box border="gray" pt="md" pr="md" pb="md" pl="md">
-        Center
-      </Box>
+      <p>Text content is centered.</p>
+
+      <div style={{ width: 160, padding: 'var(--size-spacing-md)', backgroundColor: 'var(--color-ubie-black-100)' }}>
+        Child element is not centered.
+      </div>
     </Center>
   );
 };
