@@ -1,11 +1,11 @@
-import { Text, Stack } from '@ubie/ubie-ui';
+import { Text, Flex } from '@ubie/ubie-ui';
 import type { FC } from 'react';
 
 const Heading: FC = () => {
   const headingText = '近くの医療機関から調べる';
 
   return (
-    <Stack spacing="md" direction="row" alignItems="center">
+    <Flex spacing="md" alignItems="center">
       <Text bold type="heading" size="xs">
         xs
         <br />
@@ -31,7 +31,7 @@ const Heading: FC = () => {
         <br />
         {`${headingText}`}
       </Text>
-    </Stack>
+    </Flex>
   );
 };
 
