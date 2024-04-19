@@ -1,4 +1,4 @@
-import { Stack } from '@ubie/ubie-ui';
+import { Flex } from '@ubie/ubie-ui';
 import { clsx } from 'clsx';
 import { useState } from 'react';
 import { Code } from '../Code.jsx';
@@ -13,7 +13,7 @@ export const Codes: FC<Types> = ({ codes }) => {
 
   return (
     <div className={styles.codesBlock}>
-      <Stack direction="row" spacing="xxs">
+      <Flex spacing="xxs">
         {codes.map(({ lang, filename }, index) => (
           <button
             key={index}
@@ -26,7 +26,7 @@ export const Codes: FC<Types> = ({ codes }) => {
             {filename || lang}
           </button>
         ))}
-      </Stack>
+      </Flex>
       {codes.map(({ lang, code }, index) => (
         <div key={index} hidden={current !== index}>
           <Code lang={lang}>{code}</Code>

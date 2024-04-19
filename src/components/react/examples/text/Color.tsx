@@ -1,8 +1,8 @@
-import { Text, Stack } from '@ubie/ubie-ui';
+import { Text, Flex } from '@ubie/ubie-ui';
 import type { FC } from 'react';
 
 const Color: FC = () => (
-  <Stack spacing="md" direction="row">
+  <Flex spacing="md">
     <Text color="main">main</Text>
     <Text color="sub">sub</Text>
     <Text color="link">link</Text>
@@ -14,7 +14,7 @@ const Color: FC = () => (
     <span style={{ background: 'black', padding: '0 0.5em' }}>
       <Text color="white">white</Text>
     </span>
-  </Stack>
+  </Flex>
 );
 
 export default Color;
