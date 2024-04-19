@@ -1,4 +1,4 @@
-import { Text, Stack } from '@ubie/ubie-ui';
+import { Text, Stack, Flex } from '@ubie/ubie-ui';
 import type { FC } from 'react';
 
 const Body: FC = () => {
@@ -10,7 +10,7 @@ const Body: FC = () => {
       <div>
         <dt>Default Leading</dt>
         <dd>
-          <Stack spacing="md" direction="row" alignItems="center">
+          <Flex spacing="md" alignItems="center">
             <Text type="body" size="sm">
               sm
               <br />
@@ -26,14 +26,14 @@ const Body: FC = () => {
               <br />
               {`${bodyText}`}
             </Text>
-          </Stack>
+          </Flex>
         </dd>
       </div>
 
       <div>
         <dt>Narrow Leading</dt>
         <dd>
-          <Stack spacing="md" direction="row" alignItems="center">
+          <Flex spacing="md" alignItems="center">
             <Text leading="narrow" type="body" size="sm">
               sm
               <br />
@@ -49,14 +49,14 @@ const Body: FC = () => {
               <br />
               {`${bodyText}`}
             </Text>
-          </Stack>
+          </Flex>
         </dd>
       </div>
 
       <div>
         <dt>Tight Leading</dt>
         <dd>
-          <Stack spacing="md" direction="row" alignItems="center">
+          <Flex spacing="md" alignItems="center">
             <Text leading="tight" type="body" size="sm">
               sm
               <br />
@@ -72,7 +72,7 @@ const Body: FC = () => {
               <br />
               {`${bodyText}`}
             </Text>
-          </Stack>
+          </Flex>
         </dd>
       </div>
     </Stack>

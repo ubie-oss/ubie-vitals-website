@@ -1,4 +1,4 @@
-import { Button, Stack } from '@ubie/ubie-ui';
+import { Button, Stack, Flex } from '@ubie/ubie-ui';
 import { useState, useMemo } from 'react';
 import Example from './Example';
 import type { Example as ExampleType } from '@utils/server';
@@ -22,7 +22,7 @@ const ExampleSwitcher: FC<Props> = ({ examples }) => {
   return (
     <>
       <Stack spacing="md" alignItems="normal">
-        <Stack direction="row" spacing="xs">
+        <Flex spacing="xs">
           {examples.map(({ name, url }) => (
             <Button
               size="small"
@@ -35,7 +35,7 @@ const ExampleSwitcher: FC<Props> = ({ examples }) => {
               {name}
             </Button>
           ))}
-        </Stack>
+        </Flex>
 
         {currentExample && <Example example={currentExample} />}
       </Stack>

@@ -1,9 +1,9 @@
-import { Stack } from '@ubie/ubie-ui';
+import { Flex } from '@ubie/ubie-ui';
 import type { FC } from 'react';
 
 const Centralized: FC = () => {
   return (
-    <Stack spacing="md" direction="row" justifyContent="center" alignItems="center">
+    <Flex spacing="md" justifyContent="center" alignItems="center">
       <span>
         Words
         <br />
@@ -17,7 +17,7 @@ const Centralized: FC = () => {
         <br />
         text
       </span>
-    </Stack>
+    </Flex>
   );
 };
 

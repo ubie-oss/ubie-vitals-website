@@ -1,11 +1,11 @@
-import { Text, Stack } from '@ubie/ubie-ui';
+import { Text, Flex } from '@ubie/ubie-ui';
 import type { FC } from 'react';
 
 const Tag: FC = () => {
   const tagText = '循環器内科';
 
   return (
-    <Stack spacing="md" direction="row" alignItems="center">
+    <Flex spacing="md" alignItems="center">
       <Text type="tag" size="sm">
         sm
         <br />
@@ -21,7 +21,7 @@ const Tag: FC = () => {
         <br />
         {`${tagText}`}
       </Text>
-    </Stack>
+    </Flex>
   );
 };
 

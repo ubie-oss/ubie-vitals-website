@@ -2,7 +2,7 @@
 title: 'Stack'
 exampleKey: 'stack'
 layout: '@layouts/ComponentLayout.astro'
-description: '一方向に、一定のリズムで要素を積み上げるレイアウト'
+description: '垂直方向に、一定のリズムで要素を積み上げるレイアウト'
 thumbnail: '/assets/images/components/thumbnail-stack.svg'
 ---
 
@@ -14,10 +14,8 @@ thumbnail: '/assets/images/components/thumbnail-stack.svg'
 
 ## Usage
 
-- デフォルトでは垂直方向にStackします。水平方向にStackしたい場合は`direction='row'`を指定してください
 - Figma上で垂直/水平方向のAuto Layoutが指定されていた場合、`<Stack>`が最適です
 - 後に、子要素が増減したとしても、最小限のコード変更で対応することができます。`<Stack>`の子要素を増やすだけで済みます
-- 子要素の折り返しには対応していないため、`direction='row'`の場合は注意してください。横幅が足りなくなる可能性があります
 
 ## Accessibility
 
