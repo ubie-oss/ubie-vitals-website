@@ -1,4 +1,4 @@
-import { RadioCard, Stack } from '@ubie/ubie-ui';
+import { RadioGroup, RadioCard, Stack } from '@ubie/ubie-ui';
 import { useState, useCallback } from 'react';
 import type { FC, ChangeEventHandler } from 'react';
 
@@ -13,18 +13,20 @@ const Default: FC = () => {
 
   return (
     <Stack spacing="md">
-      {options.map((option) => (
-        <RadioCard
-          name="options"
-          value={option}
-          onChange={onChange}
-          checked={selectedItem === option}
-          id={option}
-          key={option}
-        >
-          {option}
-        </RadioCard>
-      ))}
+      <RadioGroup label="RadioCard Group">
+        {options.map((option) => (
+          <RadioCard
+            name="options"
+            value={option}
+            onChange={onChange}
+            checked={selectedItem === option}
+            id={option}
+            key={option}
+          >
+            {option}
+          </RadioCard>
+        ))}
+      </RadioGroup>
 
       <dl>
         <dt>Values</dt>

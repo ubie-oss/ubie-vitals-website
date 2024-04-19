@@ -1,4 +1,4 @@
-import DesignToken from '@ubie/design-tokens';
+import DesignTokens from '@ubie/design-tokens';
 import styles from './Grid.module.css';
 import type { FC, ReactNode } from 'react';
 
@@ -12,7 +12,7 @@ interface Props {
 const Grid: FC<Props> = ({
   children,
   minimum = '250px',
-  space = DesignToken.size['spacing-lg'].value.toString(),
+  space = DesignTokens.size['spacing-lg'].value.toString(),
   role,
 }) => {
   const cssCariables = {

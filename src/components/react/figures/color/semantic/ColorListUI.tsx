@@ -1,8 +1,8 @@
-import DesignToken from '@ubie/design-tokens';
+import DesignTokens from '@ubie/design-tokens';
 import BaseGrid from './BaseGrid';
 import type { FC } from 'react';
 
-const { color } = DesignToken;
+const { color } = DesignTokens;
 
 const ColorListUI: FC = () => {
   return (
@@ -15,6 +15,10 @@ const ColorListUI: FC = () => {
         {
           token: color['text-sub'],
           description: 'Text Mainに対して副次的なテキスト',
+        },
+        {
+          token: color['border'],
+          description: '区切り線や枠線など各種罫線',
         },
         {
           token: color['text-white'],

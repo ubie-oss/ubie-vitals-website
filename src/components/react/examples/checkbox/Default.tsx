@@ -1,4 +1,4 @@
-import { Checkbox, Stack } from '@ubie/ubie-ui';
+import { CheckboxGroup, Checkbox, Stack } from '@ubie/ubie-ui';
 import { useState, useCallback } from 'react';
 import type { FC, ChangeEventHandler } from 'react';
 
@@ -20,17 +20,19 @@ const Default: FC = () => {
 
   return (
     <Stack spacing="md">
-      {options.map((option) => (
-        <Checkbox
-          name="options"
-          value={option}
-          onChange={onChange}
-          checked={selectedItem.includes(option)}
-          key={option}
-        >
-          {option}
-        </Checkbox>
-      ))}
+      <CheckboxGroup label="Checkbox Group">
+        {options.map((option) => (
+          <Checkbox
+            name="options"
+            value={option}
+            onChange={onChange}
+            checked={selectedItem.includes(option)}
+            key={option}
+          >
+            {option}
+          </Checkbox>
+        ))}
+      </CheckboxGroup>
 
       <dl>
         <dt>Values</dt>

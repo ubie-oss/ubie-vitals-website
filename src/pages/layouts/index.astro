@@ -1,0 +1,108 @@
+---
+import { Image } from 'astro:assets';
+import LinkWithArrow from '@components/astro/LinkWithArrow.astro';
+import Stack from '@components/astro/Stack.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import type { PostData } from '@types';
+
+const allComponentMdx = await Astro.glob('../layouts/**/*.mdx');
+
+const allComponentPostData: PostData[] = allComponentMdx.map((componentMdx) => {
+  return {
+    title: componentMdx.frontmatter.title ? componentMdx.frontmatter.title : '',
+    description: componentMdx.frontmatter.description ? componentMdx.frontmatter.description : '',
+    url: componentMdx.url ? componentMdx.url : '',
+    thumbnail: componentMdx.frontmatter.thumbnail,
+  };
+});
+---
+
+<BaseLayout title="Components" wideFooter>
+  <main class="wrapper">
+    <Stack spacing="xl">
+      <Stack spacing="sm">
+        <h1 class="title">Layouts</h1>
+        <p>複数のコンポーネントを組み合わせて、複雑なレイアウトを構築する実例を紹介します。</p>
+      </Stack>
+      <ul class="list">
+        {
+          allComponentPostData.map((postData) => (
+            <li class="item">
+              {postData.thumbnail && (
+                <Image class="itemThumbnail" src={postData.thumbnail} alt={postData.title} width={560} height={315} />
+              )}
+              <Stack spacing="sm">
+                <p class="itemTitle">{postData.title}</p>
+                <p class="itemDesccription">{postData.description}</p>
+              </Stack>
+
+              <div class="link">
+                <LinkWithArrow expandClickableArea href={postData.url}>
+                  Learn More
+                </LinkWithArrow>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </Stack>
+  </main>
+</BaseLayout>
+
+<style>
+  .wrapper {
+    padding: calc(var(--size-spacing-xxl) + var(--header-height-mobile)) var(--size-spacing-lg) var(--size-spacing-xxl);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @media (width >= 768px) {
+    .wrapper {
+      padding: var(--size-spacing-xxl) var(--size-spacing-xl) var(--size-spacing-xxl);
+    }
+  }
+
+  title {
+    font-size: var(--text-heading-xl-size);
+    line-height: var(--text-heading-xl-line);
+  }
+
+  .list {
+    display: grid;
+
+    /* TODO: If more items are added, make it auto-fit. */
+    grid-template-columns: repeat(auto-fill, minmax(min(375px, 100%), 1fr));
+    gap: var(--size-spacing-xl);
+  }
+
+  .item {
+    /* Limit the area of clickable area expansion for LinkWithArrow */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-spacing-sm);
+    border-radius: var(--radius-md);
+  }
+
+  .itemThumbnail {
+    width: 100%;
+    height: auto;
+    border: 3px solid var(--color-ubie-black-200);
+    border-radius: 8px;
+  }
+
+  .itemTitle {
+    font-size: var(--text-heading-sm-size);
+    font-weight: bold;
+    line-height: var(--text-heading-sm-line);
+  }
+
+  .itemDesccription {
+    font-size: var(--text-body-sm-size);
+    line-height: var(--text-body-sm-line);
+  }
+
+  .link {
+    margin-top: auto;
+  }
+</style>

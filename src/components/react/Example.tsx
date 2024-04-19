@@ -1,6 +1,4 @@
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import CopyButton from './CopyButton';
+import { Code } from './Code';
 import styles from './Example.module.css';
 import type { Example } from '@utils/server';
 import type { FC } from 'react';
@@ -11,12 +9,12 @@ interface Props {
 
 const Example: FC<Props> = ({ example }) => {
   return (
-    <div className={styles.example}>
-      <a className={styles.externalLink} href={example.url} target="_blank" rel="noreferrer">
-        Open Window
-      </a>
-
+    <div>
       <div className={styles.demo}>
+        <a className={styles.externalLink} href={example.url} target="_blank" rel="noreferrer">
+          Open Window
+        </a>
+
         <iframe
           className={styles.demoFrame}
           src={example.url}
@@ -26,17 +24,7 @@ const Example: FC<Props> = ({ example }) => {
       </div>
 
       <div className={styles.code}>
-        <SyntaxHighlighter
-          language="jsx"
-          style={a11yDark}
-          customStyle={{
-            borderRadius: '0',
-            margin: '0',
-          }}
-        >
-          {example.code}
-        </SyntaxHighlighter>
-        <CopyButton className={styles.copy} text={example.code} />
+        <Code lang="tsx">{example.code}</Code>
       </div>
     </div>
   );

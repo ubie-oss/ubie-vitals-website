@@ -1,0 +1,15 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 80px auto 80px auto 80px auto 1fr;
+  gap: var(--size-spacing-sm);
+  align-items: center;
+}
+
+.label {
+  font-size: var(--text-body-md-size);
+  font-weight: bold;
+}
+
+.label:not(:last-child) {
+  margin-right: var(--size-spacing-sm);
+}

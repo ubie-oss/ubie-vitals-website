@@ -1,8 +1,8 @@
-import DesignToken from '@ubie/design-tokens';
+import DesignTokens from '@ubie/design-tokens';
 import BaseGrid from './BaseGrid';
 import type { FC } from 'react';
 
-const { color } = DesignToken;
+const { color } = DesignTokens;
 
 const ColorListAlert: FC = () => {
   return (

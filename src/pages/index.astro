@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import FigureComponents from '@assets/images/top/figure-components.png';
 import FigureIcons from '@assets/images/top/figure-icons.png';
+import FigureLayouts from '@assets/images/top/figure-layouts.png';
 import FigureTokens from '@assets/images/top/figure-tokens.png';
 import LinkCard from '@components/astro/LinkCard.astro';
 import Stack from '@components/astro/Stack.astro';
@@ -32,6 +33,11 @@ import BaseLayout from '@layouts/BaseLayout.astro';
             <p>組み合わせによる、迅速なプロダクト構築をサポートします。コードサンプルと使用方法を紹介します。</p>
           </LinkCard>
 
+          <LinkCard href="/layouts" heading="Layouts">
+            <Image src={FigureLayouts} alt="" slot="image" />
+            <p>複数のコンポーネントを組み合わせて、複雑なレイアウトを構築する実例を紹介します。</p>
+          </LinkCard>
+
           <LinkCard href="/elements/icons" heading="Icons">
             <Image src={FigureIcons} alt="" slot="image" />
             <p>視覚的にユーザーの視認性をサポートするアイコンの一覧です。</p>
@@ -48,7 +54,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
           <p>
             Ubie Vitalsは<a href="https://github.com/ubie-oss/ubie-vitals-website">GitHub</a
             >で管理されています。課題、質問があればIssueをお寄せください。<br />
-             また、Slackチャンネルの#prj-design-productivityでも問い合わせを受け付けています。
+            また、Slackチャンネルの#team-design-productivityでも問い合わせを受け付けています。
           </p>
         </Stack>
       </div>
