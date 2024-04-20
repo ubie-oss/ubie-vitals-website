@@ -18,71 +18,125 @@ const { propsArray } = Astro.props;
   propsArray.length === 0 ? (
     <p>Propsの説明がありません</p>
   ) : (
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Prop Name</th>
-          <th>Type</th>
-          <th>Default</th>
-          <th>required</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        {propsArray.map((prop) => (
+    <div class="tableWrapper">
+      <table class="table">
+        <thead>
           <tr>
-            <td>{prop.name}</td>
-            <td>
-              {Array.isArray(prop.type) ? (
-                prop.type.map((type) => {
-                  return <code>{type}</code>;
-                })
-              ) : (
-                <code>{prop.type}</code>
-              )}
-            </td>
-            <td>
-              <code>{prop.defaultValue || '-'}</code>
-            </td>
-            <td>{prop.required ? 'YES' : 'NO'}</td>
-            <td>{prop.description || '-'}</td>
+            <th>Name</th>
+            <th class="type">Type</th>
+            <th>Default</th>
+            <th>Description</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {propsArray.map((prop) => (
+            <tr>
+              <th scope="row" class="nowrap">
+                {prop.name}
+                {prop.required && <div class="required">required</div>}
+                {!prop.required && !prop.defaultValue && <div class="optional">optional</div>}
+              </th>
+              <td class="type">
+                {Array.isArray(prop.type) ? (
+                  prop.type.map((type, i) => {
+                    return (
+                      <>
+                        {i !== 0 && <span> | </span>}
+                        <code>{type}</code>
+                      </>
+                    );
+                  })
+                ) : (
+                  <code>{prop.type}</code>
+                )}
+              </td>
+              <td>
+                <code>{prop.defaultValue || '-'}</code>
+              </td>
+              <td>{prop.description || '-'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   )
 }
 
 <style>
+  .tableWrapper {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+  }
+
   table {
     width: 100%;
     text-align: left;
-    border-collapse: collapse;
+    vertical-align: top;
   }
 
   thead > tr {
     background-color: var(--color-background-gray);
   }
 
+  tr + tr {
+    border-top: 1px solid var(--color-border);
+  }
+
   th {
-    padding: var(--size-spacing-xs);
     font-size: var(--text-body-sm-size);
     line-height: var(--text-body-sm-tight-line);
     color: var(--color-ubie-black-500);
   }
 
   td {
-    padding: var(--size-spacing-xs);
     font-size: var(--text-body-sm-size);
     line-height: var(--text-body-sm-tight-line);
     word-break: break-word;
   }
 
-  tbody > tr > td:first-child {
-    font-weight: bold;
+  tr > th,
+  tr > td {
+    padding: var(--size-spacing-sm);
+    vertical-align: top;
+    border: none;
   }
 
-  td > code {
+  th.type,
+  td.type {
+    width: 30%;
+  }
+
+  td.type code {
     margin: 3px;
+  }
+
+  td.type code:first-child {
+    margin-left: 0;
+  }
+
+  tbody > tr > th {
+    color: var(--color-text-main);
+  }
+
+  th.nowrap {
+    white-space: nowrap;
+  }
+
+  tbody > tr > td:first-child {
+    font-weight: bold;
+    color: var(--color-alert);
+  }
+
+  .required {
+    font-size: var(--text-note-md-size);
+    line-height: var(--text-note-md-line);
+    color: var(--color-alert);
+  }
+
+  .optional {
+    font-size: var(--text-note-md-size);
+    font-weight: normal;
+    line-height: var(--text-note-md-line);
+    color: var(--color-text-sub);
   }
 </style>

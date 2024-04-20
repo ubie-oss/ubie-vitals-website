@@ -32,7 +32,7 @@ const BaseGrid: FC<Props> = ({ colors }) => (
       </thead>
       <tbody>
         {colors.map((color) => (
-          <tr key={color.token.name}>
+          <tr key={color.token.name} className={styles.row}>
             <th scope="row" className={styles.cell}>
               <div className={styles.colorName}>
                 <span className={styles.colorChip} style={{ backgroundColor: color.token.value }} />
