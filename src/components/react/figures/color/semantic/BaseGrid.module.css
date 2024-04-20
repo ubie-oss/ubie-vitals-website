@@ -1,47 +1,57 @@
 .table {
-    width: 100%;
-    border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
 }
 
 .tableWrapper {
-    width: 100%;
-    overflow-x: auto;
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
 }
 
 .rowHead {
-    background-color: var(--color-background-gray);
+  background-color: var(--color-background-gray);
+}
+
+.row + .row {
+  border-top: 1px solid var(--color-border);
 }
 
 .cellHead {
-    padding: var(--size-spacing-xs) ;
-    font-size: var(--text-body-sm-size);
-    line-height: var(--text-body-sm-tight-line);
-    color: var(--color-ubie-black-500);
-    text-align: left;
+  padding: var(--size-spacing-sm) !important;
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-tight-line);
+  color: var(--color-ubie-black-500);
+  text-align: left;
+  border: none !important;
 }
 
 .cell {
-    padding: var(--size-spacing-xs);
-    font-size: var(--text-body-sm-size);
-    line-height: var(--text-body-sm-tight-line);
-    white-space: nowrap;
+  padding: var(--size-spacing-sm) !important;
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-tight-line);
+  white-space: nowrap;
+  border: none !important;
 }
 
 .cellCopy {
-    white-space: nowrap;
+  padding: var(--size-spacing-sm) !important;
+  white-space: nowrap;
+  border: none !important;
 }
 
 .colorChip {
-    display: inline-flex;
-    width: 30px;
-    height: 19px;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
+  display: inline-flex;
+  width: 30px;
+  height: 19px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
 }
 
 .colorName {
-    display: flex;
-    gap: var(--size-spacing-xs);
-    align-items: center;
-    font-weight: bold;
+  display: flex;
+  gap: var(--size-spacing-xs);
+  align-items: center;
+  font-weight: bold;
 }

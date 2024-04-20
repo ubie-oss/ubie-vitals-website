@@ -14,7 +14,7 @@ interface Props {
 
 const Table: FC<Props> = ({ children }) => (
   <div className={styles.wrapper}>
-    <table>{children}</table>
+    <table className={styles.table}>{children}</table>
   </div>
 );
 
