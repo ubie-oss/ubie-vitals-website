@@ -103,6 +103,11 @@ const GlobalNavigation: FC<Props> = ({ currentPath, allComponentPostData }) => {
                 Icons
               </GlobalNavigationLinkRoot>
             </li>
+            <li>
+              <GlobalNavigationLinkRoot href="/ux-writing" current={isCurrent('/ux-writing')}>
+                UX Writing
+              </GlobalNavigationLinkRoot>
+            </li>
           </ul>
         </div>
       </FocusTrap>
