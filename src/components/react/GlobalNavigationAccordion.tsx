@@ -22,7 +22,7 @@ const GlobalNavigationAccordion: FC<Props> = ({ currentPath, title, titleHref, c
     return currentPath.includes(titleHref);
   });
 
-  // oepnComponentsの状態を反転させる。また、クリックイベントをとめる
+  // openComponentsの状態を反転させる。また、クリックイベントをとめる
   const onClickToggle = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     setOpenDetail(!openDetail);
