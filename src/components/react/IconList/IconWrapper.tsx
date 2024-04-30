@@ -12,27 +12,19 @@ const convertToIconComponentName = (iconName: string) => {
   return `import { ${iconName} } from '@ubie/ubie-icons'`;
 };
 
-const splitUpperCase = (str: string) => {
-  return str.split(/(?=[A-Z])/);
-};
-
 const IconWrapper: FC<Props> = ({ children, index }) => {
   const name = iconNames[index];
 
   if (!name) return null;
 
+  const humanReadableName = name.split(/(?=[A-Z])/).join(' ');
+
   return (
     <div className={styles.wrapper}>
-      <div className={styles.icon} aria-label={`アイコン ${name}`} role="img">
+      <div className={styles.icon} aria-label={`アイコン ${humanReadableName}`} role="img">
         {children}
       </div>
-      <p className={styles.name}>
-        {splitUpperCase(name).map((str, index) => (
-          <span className={styles.word} key={index}>
-            {str}
-          </span>
-        ))}
-      </p>
+      <p className={styles.name}>{humanReadableName}</p>
       <CopyButton label="React" text={convertToIconComponentName(name)} className={styles.copy} />
     </div>
   );

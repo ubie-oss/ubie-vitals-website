@@ -23,6 +23,7 @@
     line-height: var(--text-body-sm-line);
     color: var(--color-text-sub);
     text-align: center;
+    word-wrap: normal;
 }
 
 .copy {
@@ -35,8 +36,4 @@
 .copy:focus,
 .wrapper:hover .copy {
     opacity: 1;
-}
-
-.word {
-    display: inline-block;
 }
