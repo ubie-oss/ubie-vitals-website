@@ -11,6 +11,7 @@ const allComponentPostData: PostData[] = allComponentMdx.map((componentMdx) => {
     title: componentMdx.frontmatter.title ? componentMdx.frontmatter.title : '',
     description: componentMdx.frontmatter.description ? componentMdx.frontmatter.description : '',
     url: componentMdx.url ? componentMdx.url : '',
+    id: componentMdx.url?.split('/').at(-1),
   };
 });
 ---
@@ -29,10 +30,12 @@ const allComponentPostData: PostData[] = allComponentMdx.map((componentMdx) => {
           allComponentPostData.map((postData) => (
             <li class="item">
               <Stack spacing="sm">
-                <p class="itemTitle">{postData.title}</p>
+                <p class="itemTitle" id={postData.id}>
+                  {postData.title}
+                </p>
                 <p class="itemDesccription">{postData.description}</p>
               </Stack>
-              <LinkWithArrow expandClickableArea href={postData.url}>
+              <LinkWithArrow expandClickableArea href={postData.url} ariaDescribedBy={postData.id}>
                 Learn More
               </LinkWithArrow>
             </li>
