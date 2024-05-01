@@ -31,10 +31,16 @@ const ColorChip: FC<Props> = ({ token }) => {
     <div className={styles.outline} aria-describedby={`${token.name}-heading`}>
       <div className={styles.tile} style={{ backgroundColor: token.value }}>
         <p className={styles.textBlack}>
-          A <ColorChipValidationIndicator valid={blackIsValid.AA.normal}></ColorChipValidationIndicator>
+          <span role="img" aria-label="文字色: 黒">
+            A
+          </span>{' '}
+          <ColorChipValidationIndicator valid={blackIsValid.AA.normal}></ColorChipValidationIndicator>
         </p>
         <p className={styles.textWhite}>
-          A <ColorChipValidationIndicator valid={whiteIsValid.AA.normal}></ColorChipValidationIndicator>
+          <span role="img" aria-label="文字色: 白">
+            A
+          </span>{' '}
+          <ColorChipValidationIndicator valid={whiteIsValid.AA.normal}></ColorChipValidationIndicator>
         </p>
       </div>
 
