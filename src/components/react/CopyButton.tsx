@@ -25,24 +25,32 @@ const ButtonCopy: FC<Props> = ({ text, className = '', label, invert }) => {
   };
 
   return (
-    <button
-      type="button"
-      className={clsx([styles.button, { [`${styles.invert}`]: invert }, className])}
-      onClick={handleClick}
-      title={label}
-    >
+    <>
+      <button
+        type="button"
+        className={clsx([styles.button, { [`${styles.invert}`]: invert }, className])}
+        onClick={handleClick}
+        title={label}
+        aria-label={label ? `コピー: ${label}` : 'コピー'}
+      >
+        {copied ? (
+          <span className={styles.icon}>
+            <CheckAIcon />
+          </span>
+        ) : label ? (
+          label
+        ) : (
+          <span className={styles.icon}>
+            <CopyIcon />
+          </span>
+        )}
+      </button>
       {copied ? (
-        <span className={styles.icon} aria-label="コピー">
-          <CheckAIcon />
-        </span>
-      ) : label ? (
-        label
-      ) : (
-        <span className={styles.icon} aria-label="コピー完了">
-          <CopyIcon />
-        </span>
-      )}
-    </button>
+        <div className={clsx('visuallyHidden')} role="status">
+          コピー完了
+        </div>
+      ) : null}
+    </>
   );
 };
 
