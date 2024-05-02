@@ -18,27 +18,27 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 
     <div class="wrapper">
       <Stack spacing="xl">
-        <CardPrinciples />
+        <CardPrinciples id="design-principles" />
 
         <div class="cardList">
-          <LinkCard href="/tokens" heading="Tokens">
+          <LinkCard href="/tokens" heading="Tokens" id="tokens">
             <Image src={FigureTokens} alt="" slot="image" />
             <p>
               タイポグラフィ、カラー、スペーシングなど、デザインの最小単位。ユビー「らしさ」を確保するための基本ルールです。
             </p>
           </LinkCard>
 
-          <LinkCard href="/components" heading="Components">
+          <LinkCard href="/components" heading="Components" id="components">
             <Image src={FigureComponents} alt="" slot="image" />
             <p>組み合わせによる、迅速なプロダクト構築をサポートします。コードサンプルと使用方法を紹介します。</p>
           </LinkCard>
 
-          <LinkCard href="/layouts" heading="Layouts">
+          <LinkCard href="/layouts" heading="Layouts" id="layouts">
             <Image src={FigureLayouts} alt="" slot="image" />
             <p>複数のコンポーネントを組み合わせて、複雑なレイアウトを構築する実例を紹介します。</p>
           </LinkCard>
 
-          <LinkCard href="/elements/icons" heading="Icons">
+          <LinkCard href="/elements/icons" heading="Icons" id="icons">
             <Image src={FigureIcons} alt="" slot="image" />
             <p>視覚的にユーザーの視認性をサポートするアイコンの一覧です。</p>
           </LinkCard>

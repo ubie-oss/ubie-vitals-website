@@ -4,12 +4,13 @@ import { Icon } from 'astro-icon/components';
 interface Props {
   href: string;
   expandClickableArea?: boolean;
+  ariaDescribedBy?: string;
 }
 
-const { href, expandClickableArea = false } = Astro.props;
+const { href, expandClickableArea = false, ariaDescribedBy } = Astro.props;
 ---
 
-<a class:list={['link', { expandClickableArea }]} href={href}>
+<a class:list={['link', { expandClickableArea }]} href={href} aria-describedby={ariaDescribedBy}>
   <slot />
   <Icon class="icon" name="icon-arrow-right" alt="" width="22" height="22" />
 </a>

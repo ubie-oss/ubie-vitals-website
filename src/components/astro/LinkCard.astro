@@ -6,9 +6,10 @@ interface Props {
   href: string;
   heading: string;
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  id?: string;
 }
 
-const { href, heading, as: HeadingElement = 'h2' } = Astro.props;
+const { href, heading, as: HeadingElement = 'h2', id } = Astro.props;
 ---
 
 <section class="linkCard">
@@ -16,11 +17,11 @@ const { href, heading, as: HeadingElement = 'h2' } = Astro.props;
     <div class="linkCardImageWrapper">
       <slot name="image" />
     </div>
-    <HeadingElement class="heading">{heading}</HeadingElement>
+    <HeadingElement class="heading" id={id}>{heading}</HeadingElement>
     <slot />
   </Stack>
 
-  <LinkWithArrow expandClickableArea href={href}>Explore</LinkWithArrow>
+  <LinkWithArrow expandClickableArea href={href} ariaDescribedBy={id}>Explore</LinkWithArrow>
 </section>
 
 <style>

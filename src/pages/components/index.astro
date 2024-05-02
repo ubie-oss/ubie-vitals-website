@@ -13,6 +13,7 @@ const allComponentPostData: PostData[] = allComponentMdx.map((componentMdx) => {
     description: componentMdx.frontmatter.description ? componentMdx.frontmatter.description : '',
     url: componentMdx.url ? componentMdx.url : '',
     thumbnail: componentMdx.frontmatter.thumbnail,
+    id: componentMdx.url?.split('/').at(-1),
   };
 });
 ---
@@ -32,12 +33,14 @@ const allComponentPostData: PostData[] = allComponentMdx.map((componentMdx) => {
                 <Image class="itemThumbnail" src={postData.thumbnail} alt={postData.title} width={560} height={315} />
               )}
               <Stack spacing="sm">
-                <p class="itemTitle">{postData.title}</p>
+                <p class="itemTitle" id={postData.id}>
+                  {postData.title}
+                </p>
                 <p class="itemDesccription">{postData.description}</p>
               </Stack>
 
               <div class="link">
-                <LinkWithArrow expandClickableArea href={postData.url}>
+                <LinkWithArrow expandClickableArea href={postData.url} ariaDescribedBy={postData.id}>
                   Learn More
                 </LinkWithArrow>
               </div>

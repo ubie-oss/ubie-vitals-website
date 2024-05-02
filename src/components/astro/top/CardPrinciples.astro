@@ -3,18 +3,24 @@ import Stack from '@components/astro/Stack.astro';
 import LinkWithArrow from '@components/astro/LinkWithArrow.astro';
 import { Image } from 'astro:assets';
 import FigurePrinciples from '@assets/images/top/figure-principles.svg';
+
+interface Props {
+  id?: string;
+}
+
+const { id } = Astro.props;
 ---
 
 <div class="wrapper">
   <div class="card primary">
     <Stack spacing="lg">
-      <h2 class="cardHeading primary">Design Principles</h2>
+      <h2 class="cardHeading primary" id={id}>Design Principles</h2>
       <p>
         デザイン上において目指すべき指針を言語化したものがDesign Principles（デザイン原則）です。<b
           >誰でも、効率よく、迷わずに</b
         >、Ubieらしい表現をするための基礎です。
       </p>
-      <LinkWithArrow href="/principles" expandClickableArea>Learn More</LinkWithArrow>
+      <LinkWithArrow href="/principles" expandClickableArea ariaDescribedBy={id}>Learn More</LinkWithArrow>
     </Stack>
 
     <div class="imgWrapper">
