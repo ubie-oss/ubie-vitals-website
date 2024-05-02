@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useId } from 'react';
 import TriDown from '@icons/icon-tri-down.svg';
 import style from './GlobalNavigationAccordion.module.css';
 import GlobalNavigationLinkRoot from './GlobalNavigationLinkRoot';
@@ -18,11 +18,13 @@ const normalizePath = (path: string): string => {
 };
 
 const GlobalNavigationAccordion: FC<Props> = ({ currentPath, title, titleHref, children }) => {
+  const detailId = useId();
+
   const [openDetail, setOpenDetail] = useState(() => {
     return currentPath.includes(titleHref);
   });
 
-  // oepnComponentsの状態を反転させる。また、クリックイベントをとめる
+  // openComponentsの状態を反転させる。また、クリックイベントをとめる
   const onClickToggle = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     setOpenDetail(!openDetail);
@@ -33,24 +35,35 @@ const GlobalNavigationAccordion: FC<Props> = ({ currentPath, title, titleHref, c
   }, [currentPath, titleHref]);
 
   return (
-    <details open={openDetail}>
-      <summary className={style.summary}>
+    <div>
+      <div className={style.summary}>
         <GlobalNavigationLinkRoot href={titleHref} current={isCurrent}>
           {title}
-          <button className={style.toggle} type="button" onClick={onClickToggle}>
-            <img
-              className={clsx(style.toggleIcon, { [style.open]: openDetail })}
-              src={TriDown.src}
-              width={24}
-              height={24}
-              alt=""
-            />
-          </button>
         </GlobalNavigationLinkRoot>
-      </summary>
-
-      {children}
-    </details>
+        <button
+          className={style.toggle}
+          type="button"
+          onClick={onClickToggle}
+          aria-expanded={openDetail}
+          aria-controls={detailId}
+        >
+          <img
+            className={clsx(style.toggleIcon, { [style.open]: openDetail })}
+            src={TriDown.src}
+            width={24}
+            height={24}
+            alt="サブメニュー"
+          />
+        </button>
+      </div>
+      <div
+        id={detailId}
+        // 本来であれば !openDetail で "until-found" を指定したい
+        hidden={!openDetail}
+      >
+        {children}
+      </div>
+    </div>
   );
 };
 
