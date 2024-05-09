@@ -20,10 +20,10 @@
     "generate:example": "scaffdog generate example"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.10",
+    "@astrojs/check": "^0.6.0",
     "@astrojs/mdx": "^2.3.1",
     "@astrojs/prism": "^3.1.0",
-    "@astrojs/react": "^3.3.1",
+    "@astrojs/react": "^3.3.2",
     "@astrojs/renderer-react": "^0.5.0",
     "@nanostores/react": "^0.7.2",
     "@types/react": "^18.2.79",
@@ -33,7 +33,7 @@
     "@ubie/ubie-icons": "^0.6.1",
     "@ubie/ubie-ui": "^0.0.17",
     "@unocss/reset": "^0.59.4",
-    "astro": "^4.6.4",
+    "astro": "^4.7.1",
     "astro-icon": "^1.1.0",
     "clsx": "^2.1.1",
     "color-blend": "^4.0.0",
