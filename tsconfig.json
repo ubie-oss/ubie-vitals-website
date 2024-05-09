@@ -20,7 +20,8 @@
     },
     "types": [
       "vitest/importMeta"
-    ]
+    ],
+    "outDir": "dist"
   },
   "paths": { "*": ["@types/*"]}
 }
