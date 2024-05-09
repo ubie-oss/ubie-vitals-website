@@ -14,7 +14,7 @@ const IconExample: FC = () => {
       </Heading>
 
       <div style={{ backgroundColor: 'var(--color-primary)', padding: 'var(--size-spacing-xs)' }}>
-        <Heading as="p" variant="white" whiteIcon={<SetupIcon />}>
+        <Heading as="p" color="white" whiteIcon={<SetupIcon />}>
           スマートフォン問診
         </Heading>
       </div>

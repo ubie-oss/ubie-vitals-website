@@ -7,7 +7,7 @@ questions:
   componentName: What is the component name (e.g., link-button)?
 ---
 
-# `components/react/examples/{{ inputs.componentName }}/Default.tsx`
+# `components/react/examples/{{ inputs.componentName }}/DefaultExample.tsx`
 
 ```typescript
 import { {{ inputs.componentName | pascal }} } from '@ubie/ubie-ui';
@@ -25,7 +25,7 @@ export const DefaultExample: FC = () => {
 
 ```astro
 ---
-import { DefaultExample } from '@components/react/examples/{{ inputs.componentName }}/Default';
+import { DefaultExample } from '@components/react/examples/{{ inputs.componentName }}/DefaultExample';
 import ExampleLayout from '@layouts/ExampleLayout.astro';
 ---
 
@@ -33,8 +33,6 @@ import ExampleLayout from '@layouts/ExampleLayout.astro';
   <DefaultExample client:only="react" />
 </ExampleLayout>
 ```
-
-
 
 # `pages/components/{{ inputs.componentName }}.mdx`
 
@@ -53,6 +51,5 @@ Describe the characteristics of the component. Describe the use cases to which i
 
 ## Usage
 
- Please describe the specific use of the product. Detailed notes on use, code example, etc.
-
+Please describe the specific use of the product. Detailed notes on use, code example, etc.
 ```

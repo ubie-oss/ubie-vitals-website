@@ -4,11 +4,11 @@ import type { FC } from 'react';
 const HasLinkExample: FC = () => {
   return (
     <Stack spacing="md">
-      <Heading as="p" variant="secondary" size="md">
-        スマートフォン問診（secondary）<a href="https://vitals.ubie.life/">Link</a>
+      <Heading as="p" color="main" size="md">
+        スマートフォン問診（main）<a href="https://vitals.ubie.life/">Link</a>
       </Heading>
 
-      <Heading as="p" variant="primary" size="md">
+      <Heading as="p" color="primary" size="md">
         スマートフォン問診（primary）<a href="https://vitals.ubie.life/">Link</a>
       </Heading>
     </Stack>
