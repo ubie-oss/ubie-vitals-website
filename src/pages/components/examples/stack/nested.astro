@@ -1,8 +1,8 @@
 ---
+import NestedExample from '@components/react/examples/stack/NestedExample';
 import ExampleLayout from '@layouts/ExampleLayout.astro';
-import Nested from '@components/react/examples/stack/Nested';
 ---
 
 <ExampleLayout title="Nested Example | Stack">
-  <Nested client:only="react" />
+  <NestedExample client:only="react" />
 </ExampleLayout>
