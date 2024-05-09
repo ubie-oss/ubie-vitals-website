@@ -17,7 +17,7 @@ const outputIconNames = (iconNames, outputPath) => {
 
 console.log('Extracting icon names...');
 
-const iconDir = path.join(__dirname, '../node_modules/@ubie/ubie-icons/dist/esm');
+const iconDir = path.join(__dirname, '../node_modules/@ubie/ubie-icons/dist');
 const iconNames = getIconNames(iconDir);
 const outputPath = path.join(__dirname, '../src/metadata/iconNames.json');
 outputIconNames(iconNames, outputPath);
