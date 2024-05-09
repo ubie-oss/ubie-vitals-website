@@ -26,13 +26,13 @@ export const BaseForm: FC = () => (
 
       <Stack spacing="xs">
         <Label htmlFor="date">受診日（任意）</Label>
-        <Input id="date" type="date" />
+        <Input id="date" type="date" value="" />
         <HelperMessage>2000/1/1以降の日付を入力してください</HelperMessage>
       </Stack>
 
       <RadioGroup label="受診理由（任意）">
         {reasons.map((reason) => (
-          <RadioButton key={reason} value={reason} name="deafult">
+          <RadioButton key={reason} value={reason} name="deafult" checked={false} onChange={() => {}}>
             {reason}
           </RadioButton>
         ))}
@@ -40,7 +40,7 @@ export const BaseForm: FC = () => (
 
       <Stack spacing="xs">
         <Label htmlFor="memo">メモ（任意）</Label>
-        <TextArea id="memo" />
+        <TextArea id="memo" value="" />
       </Stack>
 
       <Button variant="primary" block>

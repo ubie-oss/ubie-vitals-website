@@ -4,6 +4,6 @@ import type { FC } from 'react';
 export const ExampleTextArea: FC = () => (
   <Stack spacing="xs">
     <Label htmlFor="text-area">テキストエリア</Label>
-    <TextArea id="text-area" />
+    <TextArea id="text-area" value="" />
   </Stack>
 );

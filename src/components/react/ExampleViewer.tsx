@@ -1,13 +1,13 @@
 import { Code } from './Code';
-import styles from './Example.module.css';
+import styles from './ExampleViewer.module.css';
 import type { Example } from '@utils/server';
-import type { FC } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
-interface Props {
+type Props = PropsWithChildren<{
   example: Example;
-}
+}>;
 
-const Example: FC<Props> = ({ example }) => {
+const ExampleViewer: FC<Props> = ({ example }) => {
   return (
     <div>
       <div className={styles.demo}>
@@ -30,4 +30,4 @@ const Example: FC<Props> = ({ example }) => {
   );
 };
 
-export default Example;
+export default ExampleViewer;
