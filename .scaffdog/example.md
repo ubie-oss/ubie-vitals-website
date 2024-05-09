@@ -8,20 +8,18 @@ questions:
   exampleName: What is the example name (e.g., with-icon)?
 ---
 
-# `components/react/examples/{{ inputs.exampleKey }}/{{ inputs.exampleName | pascal }}.tsx`
+# `components/react/examples/{{ inputs.exampleKey }}/{{ inputs.exampleName | pascal }}Example.tsx`
 
 ```typescript
 
 import { {{ inputs.exampleKey | pascal }} } from '@ubie/ubie-ui';
 import type { FC } from 'react';
 
-const {{ inputs.exampleName | pascal }}: FC = () => {
+export const {{ inputs.exampleName | pascal }}Example: FC = () => {
   return (
     <{{ inputs.exampleKey | pascal }} />
   );
 };
-
-export default {{ inputs.exampleName | pascal }};
 
 ```
 
@@ -29,12 +27,12 @@ export default {{ inputs.exampleName | pascal }};
 
 ```astro
 ---
+import { {{ inputs.exampleName | pascal }}Example } from '@components/react/examples/{{ inputs.exampleKey }}/{{ inputs.exampleName | pascal }}Example';
 import ExampleLayout from '@layouts/ExampleLayout.astro';
-import {{ inputs.exampleName | pascal }} from '@components/react/examples/{{ inputs.exampleKey }}/{{ inputs.exampleName | pascal }}';
 ---
 
 <ExampleLayout title="{{ inputs.exampleName | pascal }} Example | {{ inputs.exampleKey | pascal }}">
-  <{{ inputs.exampleName | pascal }} client:only="react" />
+  <{{ inputs.exampleName | pascal }}Example client:only="react" />
 </ExampleLayout>
 ```
 
