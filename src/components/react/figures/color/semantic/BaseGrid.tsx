@@ -36,7 +36,7 @@ const BaseGrid: FC<Props> = ({ colors }) => (
             <th scope="row" className={styles.cell}>
               <div className={styles.colorName}>
                 <span className={styles.colorChip} style={{ backgroundColor: color.token.value }} />
-                {convertDisplayName(color.token.name)}
+                {convertDisplayName(color.token.name || '')}
               </div>
             </th>
             <td className={styles.cell}>

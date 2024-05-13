@@ -12,7 +12,7 @@ const { href, expandClickableArea = false, ariaDescribedBy } = Astro.props;
 
 <a class:list={['link', { expandClickableArea }]} href={href} aria-describedby={ariaDescribedBy}>
   <slot />
-  <Icon class="icon" name="icon-arrow-right" alt="" width="22" height="22" />
+  <Icon class="icon" name="icon-arrow-right" title="" width={22} height={22} />
 </a>
 
 <style>

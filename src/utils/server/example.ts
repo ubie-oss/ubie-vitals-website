@@ -40,7 +40,7 @@ export const getAllExample = (exampleKey: string): Example[] => {
   const files = fs.readdirSync(exampleDir);
 
   const examples = files.map((file) => {
-    const filePath = path.join(exapmleComponentDir, toCamelCase(file).replace('.astro', '.tsx'));
+    const filePath = path.join(exapmleComponentDir, toCamelCase(file).replace('.astro', 'Example.tsx'));
     const code = fs.readFileSync(filePath, 'utf-8');
 
     // .astroを外してURLに組み立てる

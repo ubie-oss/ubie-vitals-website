@@ -1,6 +1,6 @@
 import { Button, Stack, Flex } from '@ubie/ubie-ui';
 import { useState, useMemo } from 'react';
-import Example from './Example';
+import ExampleViewer from './ExampleViewer';
 import type { Example as ExampleType } from '@utils/server';
 import type { FC } from 'react';
 
@@ -15,7 +15,7 @@ const ExampleSwitcher: FC<Props> = ({ examples }) => {
 
   const [current, setCurrent] = useState<string>(defaultExampleUrl);
 
-  const currentExample: Example | null = useMemo(() => {
+  const currentExample: ExampleType | null = useMemo(() => {
     return examples.find(({ url }) => url === current) ?? null;
   }, [current]);
 
@@ -37,7 +37,7 @@ const ExampleSwitcher: FC<Props> = ({ examples }) => {
           ))}
         </Flex>
 
-        {currentExample && <Example example={currentExample} />}
+        {currentExample && <ExampleViewer example={currentExample} />}
       </Stack>
     </>
   );
