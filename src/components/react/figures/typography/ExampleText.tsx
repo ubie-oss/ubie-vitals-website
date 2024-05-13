@@ -41,7 +41,7 @@ const ExampleText: FC<Props> = ({ type, size, leading, src, alt, width, height }
       <img src={src} alt={alt} width={width} height={height} />
 
       <p>
-        <code>{text[sizeKey].value}</code> / <code>{text[lineKey].value}</code>
+        <code>{text[sizeKey].value}</code>(<code>{text[sizeKey].attributes.note}</code>) / <code>{text[lineKey].value}</code>
       </p>
 
       <CopyButton text={convertToTypographyCSS(text[sizeKey], text[lineKey])} label="CSS"></CopyButton>
