@@ -94,6 +94,7 @@
   "overrides": {
     "vite": {
       "rollup": "npm:@rollup/wasm-node"
-    }
+    },
+    "@headlessui/react": "<2.0.0"
   }
 }
