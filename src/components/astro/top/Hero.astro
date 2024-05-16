@@ -1,7 +1,7 @@
 ---
+import { LinkButton } from '@ubie/ubie-ui';
 import { Image } from 'astro:assets';
 import LogoCombiningComponents from '@assets/images/top/logo-combining-components.svg';
-import { LinkButton } from '@ubie/ubie-ui';
 ---
 
 <div class="wrapper">
@@ -14,13 +14,13 @@ import { LinkButton } from '@ubie/ubie-ui';
       <div class="leadWrapper">
         <p class="lead">
           To deliver<br />
-           Ubie's products<br />
-           to all users
+          Ubie's products<br />
+          to all users
         </p>
 
         <p class="leadSub">Design Systems for Digital Products</p>
 
-        <div class="buttonWrapper"><LinkButton href="/principles" client:only>Getting Started</LinkButton></div>
+        <div class="buttonWrapper"><LinkButton href="/principles" client:only="react">Getting Started</LinkButton></div>
       </div>
     </div>
   </div>
