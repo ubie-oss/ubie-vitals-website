@@ -13,7 +13,7 @@ const Default: FC = () => {
 
   return (
     <Stack spacing="md">
-      <RadioGroup label="RadioCard Group">
+      <RadioGroup label="RadioCard Group" showRequiredLabel>
         {options.map((option) => (
           <RadioCard
             name="options"

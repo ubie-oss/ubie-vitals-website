@@ -33,6 +33,24 @@ import BaseFormCssRaw from './_BaseForm.module.css?raw';
   <BaseForm />
 </WithCode>
 
+### 必須表記
+
+複雑なフォームでは、明示的に必須であることをフィールドに表示したほうが良いケースがあります。
+`<Label>`、`<CheckboxGroup>`または`<RadioGroup>`は`showRequiredLabel` propで必須表記をラベルに追加できます。
+
+`<input>`要素自体への`reuiqred`属性の追加や、バリデーションは提供しません。必要な場合は別途対応してください。
+
+```jsx
+/* [!code word:showRequiredLabel] */
+<CheckboxGroup label="チェックボックス" showRequiredLabel>
+  {options.map((option) => (
+    <Checkbox key={option} value={option} name="checkbox">
+      {option}
+    </Checkbox>
+  ))}
+</CheckboxGroup>
+```
+
 ### ヘルパーテキスト
 
 入力フィールドへ説明がある場合に使用します`<Stack>`の子、かつ入力フィールドのすぐ下に`<HelperMessage>`を追加してください。

@@ -1,61 +1,61 @@
 .nav {
-    min-width: 16rem;
-    padding: 0 var(--size-spacing-md) var(--size-spacing-sm);
-    overflow: auto;
-    background-color: var(--color-ubie-white);
-    border-right: 1px solid var(--color-ubie-black-100);
+  min-width: 16rem;
+  padding: 0 var(--size-spacing-md) var(--size-spacing-sm);
+  overflow: auto;
+  background-color: var(--color-ubie-white);
+  border-right: 1px solid var(--color-ubie-black-100);
 }
 
 .linkList {
-    display: flex;
-    flex-direction: column;
-    gap: var(--size-spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-spacing-md);
 }
 
 .closeButtonWrapper {
-    margin-bottom: var(--size-spacing-md);
+  margin-bottom: var(--size-spacing-md);
 }
 
 @media (width >= 768px) {
-    .closeButtonWrapper {
-        display: none;
-    }
+  .closeButtonWrapper {
+    display: none;
+  }
 }
 
 .closeButton {
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    color: var(--color-text-main);
-    background-color: transparent;
-    border: none;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  color: var(--color-text-main);
+  background-color: transparent;
+  border: none;
 }
 
-@media(hover:hover) {
-    .closeButton:hover {
-        background-color: var(--color-ubie-black-100);
-    }
+@media (hover: hover) {
+  .closeButton:hover {
+    background-color: var(--color-ubie-black-100);
+  }
 }
 
 .closeButton:active {
-    background-color: var(--color-ubie-black-200);
+  background-color: var(--color-ubie-black-200);
 }
 
 .closeButtonImage {
-    width: 20px;
-    height: auto;
+  width: 20px;
+  height: auto;
 }
 
 .category {
-    margin-top: var(--size-spacing-md);
+  margin-top: var(--size-spacing-md);
 }
 
 .categoryHeading {
-    display: block;
-    padding: var(--size-spacing-xxs) var(--size-spacing-md);
-    font-size: 11px;
-    font-weight: bold;
-    line-height: var(--text-heading-xs-line);
-    color: var(--color-ubie-black-500);
-    letter-spacing: 0.125em;
+  display: block;
+  padding: var(--size-spacing-xxs) var(--size-spacing-md);
+  font-size: 11px;
+  font-weight: bold;
+  line-height: var(--text-heading-xs-line);
+  color: var(--color-ubie-black-500);
+  letter-spacing: 0.125em;
 }

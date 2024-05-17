@@ -1,10 +1,10 @@
 .tag {
-    display: inline-block;
-    padding: var(--size-spacing-xxs) var(--size-spacing-xs);
-    font-size: var(--text-button-sm-size);
-    font-weight: bold;
-    line-height: var(--text-button-sm-line);
-    color: var(--color-ubie-black-700);
-    background-color: var(--color-ubie-white);
-    border-radius: var(--radius-sm);
+  display: inline-block;
+  padding: var(--size-spacing-xxs) var(--size-spacing-xs);
+  font-size: var(--text-button-sm-size);
+  font-weight: bold;
+  line-height: var(--text-button-sm-line);
+  color: var(--color-ubie-black-700);
+  background-color: var(--color-ubie-white);
+  border-radius: var(--radius-sm);
 }

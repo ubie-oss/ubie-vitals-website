@@ -1,23 +1,20 @@
 ---
-title: 'MessageModal'
-exampleKey: 'message-modal'
+title: 'MessageHalfModal'
+exampleKey: 'message-half-modal'
 layout: '@layouts/ComponentLayout.astro'
-description: 'メッセージへユーザーをフォーカスさせるためのダイアログ'
-thumbnail: '/assets/images/components/thumbnail-message-modal.svg'
+description: ''
+thumbnail: '/assets/images/components/thumbnail-message-half-modal.svg'
 ---
-
 import ModalDialogNecessary from '@sharedDocuments/modalDialog/ModalDialogNecessary.md';
 import HeaderText from '@sharedDocuments/modalDialog/HeaderText.md';
-import HeaderTextActionModal from '@sharedDocuments/modalDialog/HeaderTextActionModal.md';
-import ButtonLabel from '@sharedDocuments/modalDialog/ButtonLabel.md';
 import HeaderProps from '@sharedDocuments/modalDialog/HeaderProps.md';
 
 ## Feature
 
-- 確実に読ませたいコンテンツを表示
+- ユーザーに閲覧してほしいコンテンツを表示します
+- [`<MessageModal>`](/components/message-modal)と比べて画面下部に表示されるため、モバイル環境で操作がし易いことが特徴です
 - ユーザーの操作を中断させるため、**アンチパターン**です。利用は熟考してください
   - 条件反射でユーザーが表示されたダイアログを閉じてしまうケースがあります
-- 画面上下を専有してモーダルを表示したい場合は、[`<MessageHalfModal>`](/components/message-half-modal)を利用してください
 
 ## Usage
 

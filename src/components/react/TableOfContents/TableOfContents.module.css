@@ -1,9 +1,9 @@
 .wrapper {
-    position: sticky;
-    top: calc(var(--header-height) + var(--size-spacing-md));
+  position: sticky;
+  top: calc(var(--header-height) + var(--size-spacing-md));
 }
 
 .list {
-    padding-left: 0;
-    margin: 0;
+  padding-left: 0;
+  margin: 0;
 }
