@@ -15,7 +15,9 @@ export const BaseForm: FC = () => (
       </Stack>
 
       <Stack spacing="xs" alignItems="normal">
-        <Label htmlFor="department">受診した診療科</Label>
+        <Label htmlFor="department" showRequiredLabel>
+          受診した診療科
+        </Label>
 
         <Select name="default" id="department">
           {options.map((o) => (
