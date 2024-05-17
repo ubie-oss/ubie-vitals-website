@@ -9,7 +9,16 @@ const { title, description, exampleKey } = frontmatter;
 
 const filePath = buildComponentPath(exampleKey);
 
-const propsArray = extractPropsFromFile(filePath);
+// Add data-* to all components (because the types are too complex to extract)
+const propsArray = [
+  ...extractPropsFromFile(filePath),
+  {
+    name: 'data-*',
+    type: 'string',
+    description: 'Custom data attributes',
+    required: false,
+  },
+];
 
 const examples = getAllExample(exampleKey);
 ---
