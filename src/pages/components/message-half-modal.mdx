@@ -1,0 +1,33 @@
+---
+title: 'MessageHalfModal'
+exampleKey: 'message-half-modal'
+layout: '@layouts/ComponentLayout.astro'
+description: ''
+thumbnail: '/assets/images/components/thumbnail-message-half-modal.svg'
+---
+import ModalDialogNecessary from '@sharedDocuments/modalDialog/ModalDialogNecessary.md';
+import HeaderText from '@sharedDocuments/modalDialog/HeaderText.md';
+import HeaderProps from '@sharedDocuments/modalDialog/HeaderProps.md';
+
+## Feature
+
+- ユーザーに閲覧してほしいコンテンツを表示
+- [`<MessageModal>`](/components/message-modal)と比べて画面下部に表示されるため、モバイル環境で操作がし易い 
+- ユーザーの操作を中断させるため、アンチパターン。利用は熟考して
+  - ユーザーが、条件反射で表示されたダイアログを閉じてしまうケースもある
+
+## Usage
+
+### モーダルダイアログは必要？
+
+<ModalDialogNecessary />
+
+### Header Text
+
+<HeaderText />
+
+コンテンツの確認を促す文言や内容を端的に要約した文言をタイトルに設定します。
+
+### `header` and `aria-labelledby`
+
+<HeaderProps />
