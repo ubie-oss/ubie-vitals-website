@@ -1,42 +1,42 @@
 .link {
-    position: relative;
-    display: block;
-    padding: var(--size-spacing-xs) var(--size-spacing-md);
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: var(--radius-sm);
+  position: relative;
+  display: block;
+  padding: var(--size-spacing-xs) var(--size-spacing-md);
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
 }
 
 .link,
 .link:visited {
-    color: var(--color-ubie-black-700);
+  color: var(--color-ubie-black-700);
 }
 
 @media (hover: hover) {
-    .link:hover {
-        background-color: var(--color-ubie-black-100);
-    }
+  .link:hover {
+    background-color: var(--color-ubie-black-100);
+  }
 }
 
 .link.current {
-    color: var(--color-ubie-black);
-    background-color: var(--color-ubie-blue-100);
+  color: var(--color-ubie-black);
+  background-color: var(--color-ubie-blue-100);
 }
 
 .link.current::before {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    display: inline-block;
-    width: 4px;
-    height: 1.5em;
-    content: '';
-    background-color: var(--color-primary);
-    border-radius: var(--radius-xs);
-    transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: inline-block;
+  width: 4px;
+  height: 1.5em;
+  content: '';
+  background-color: var(--color-primary);
+  border-radius: var(--radius-xs);
+  transform: translateY(-50%);
 }
 
 .link.current:hover,
 .link.current:active {
-    background-color: var(--color-ubie-blue-100);
+  background-color: var(--color-ubie-blue-100);
 }
