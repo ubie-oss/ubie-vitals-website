@@ -4,6 +4,11 @@ import type { FC } from 'react';
 const TextAlignExample: FC = () => {
   return (
     <Stack spacing="md" alignItems="normal">
+      <div style={{ textAlign: 'center' }}>
+        <Heading as="p" size="md">
+          スマートフォン問診（inherit）
+        </Heading>
+      </div>
       <Heading as="p" size="md" textAlign="left">
         スマートフォン問診
       </Heading>
