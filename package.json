@@ -31,7 +31,7 @@
     "@types/react-syntax-highlighter": "^15.5.11",
     "@ubie/design-tokens": "^0.1.4",
     "@ubie/ubie-icons": "^0.6.2",
-    "@ubie/ubie-ui": "^0.0.19",
+    "@ubie/ubie-ui": "^0.0.21",
     "@unocss/reset": "^0.59.4",
     "astro": "^4.7.1",
     "astro-icon": "^1.1.0",
@@ -94,7 +94,6 @@
   "overrides": {
     "vite": {
       "rollup": "npm:@rollup/wasm-node"
-    },
-    "@headlessui/react": "<2.0.0"
+    }
   }
 }
