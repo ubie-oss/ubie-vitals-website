@@ -20,7 +20,7 @@ const Default: FC = () => {
 
   return (
     <Stack spacing="md">
-      <CheckboxGroup label="Checkbox Group">
+      <CheckboxGroup label="Checkbox Group" showRequiredLabel>
         {options.map((option) => (
           <Checkbox
             name="options"
