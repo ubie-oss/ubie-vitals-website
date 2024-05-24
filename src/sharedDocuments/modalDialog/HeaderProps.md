@@ -1,2 +1,4 @@
 - `header` propに渡されたテキストは、[`aria-labelledby`属性](https://developer.mozilla.org/ja/docs/Web/Accessibility/ARIA/Roles/dialog_role)を通してダイアログ自体を説明するラベルとなります。
   - 特にスクリーンリーダーユーザーにとって意味のあるものとなります
+- **`header`propを使わない場合**、モーダルの`ariaLabelledby` prop と見出しとして扱う要素の`id属性`に共通の文字列を指定し紐づけを行ってください
+  - custom headerのExampleを参考にしてください
