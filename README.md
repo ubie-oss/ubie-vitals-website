@@ -32,5 +32,5 @@ Implement the most basic example.
 ### Add Component Example
 
 ```
-npm run generate:example
+npm run generate:page:example
 ```

@@ -17,7 +17,7 @@
     "script:extract-icon-names": "node ./scripts/extractIconNames.js",
     "test": "vitest",
     "generate:page:component": "scaffdog generate pageComponent",
-    "generate:example": "scaffdog generate example"
+    "generate:page:example": "scaffdog generate example"
   },
   "dependencies": {
     "@astrojs/check": "^0.6.0",
