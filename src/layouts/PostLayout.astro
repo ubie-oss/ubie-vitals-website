@@ -11,7 +11,11 @@ const { title, description } = Astro.props.frontmatter;
     <WithTableOfContentsLayout>
       <article>
         <Markdown>
-          <h1>{title}</h1>
+          <div class="heading">
+            <h1>{title}</h1>
+
+            <slot name="headingSide" />
+          </div>
           {description && <p class="description">{description}</p>}
           <slot />
         </Markdown>
@@ -23,5 +27,11 @@ const { title, description } = Astro.props.frontmatter;
 <style>
   .description {
     margin-bottom: var(--size-spacing-xl);
+  }
+
+  .heading {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
   }
 </style>
