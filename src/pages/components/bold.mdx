@@ -1,0 +1,28 @@
+---
+title: 'Bold'
+exampleKey: 'bold'
+layout: '@layouts/ComponentLayout.astro'
+description: 'テキストを太字に'
+thumbnail: '/assets/images/components/thumbnail-bold.png'
+repositoryUrl: 'https://github.com/ubie-oss/ubie-ui/tree/main/src/components/Bold'
+---
+
+## Feature
+
+- テキストを太字にします
+    - それ以外のスタイルは親要素の設定を継承します
+- `<Text>`コンポーネント内部の一部分のみを太字としたい場合に活用できます
+
+## Usage
+
+### セマンティクスをもたせる
+
+デフォルトでは`<span>`としてレンダリングされるため、特別な意味をもちません。見た目を変えるだけです。任意の要素を指定することで、セマンティクスを持たせることができます。
+
+次のケースでは、`<strong>`要素としてレンダリングされます。
+
+```jsx
+<Bold as="strong">警告</Bold>
+````
+
+ただし、セマンティクスと持たせるには各要素のユースケースを理科する必要があります。`as` propで指定できる要素の扱いがわからない場合は、デフォルトの`span`を使用してください。

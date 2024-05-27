@@ -1,0 +1,26 @@
+---
+import GitHubMark from '@assets/images/github-mark.svg';
+import { Image } from 'astro:assets';
+
+interface Props {
+  href: string;
+  targetName: string;
+}
+
+const { href, targetName } = Astro.props;
+---
+
+<a href={href} class="repositoryLink">
+  <Image alt="" src={GitHubMark} aria-hidden="true" width={17} />
+  View on GitHub<span class="visuallyHidden">: {targetName}</span>
+</a>
+
+<style>
+  .repositoryLink {
+    display: inline-flex;
+    gap: var(--size-spacing-xs);
+    align-items: center;
+    font-weight: bold;
+    color: var(--color-text-main);
+  }
+</style>

@@ -1,12 +1,11 @@
 ---
-import { Image } from 'astro:assets';
-import GitHubMark from '@assets/images/github-mark.svg';
 import '@unocss/reset/sanitize/sanitize.css';
 import '@unocss/reset/sanitize/assets.css';
 import '@ubie/design-tokens/dist/tokens.css';
 import '../styles/libs/prism-a11y-dark.css';
 import '@styles/global.css';
 import GlobalHeader from '@components/astro/GlobalHeader.astro';
+import RepositoryLink from '@components/astro/RepositoryLink.astro';
 import WithGlobalNavigation from '@components/react/WithGlobalNavigation';
 import type { PostData } from '@types';
 
@@ -61,10 +60,7 @@ const description =
         <div class:list={['footerInner', { wide: wideFooter }]}>
           © Ubie, Inc.
 
-          <a href="https://github.com/ubie-oss/ubie-vitals-website" class="repositoryLink">
-            <Image src={GitHubMark} alt="GitHub Mark" width={17} />
-            View on GitHub
-          </a>
+          <RepositoryLink href="https://github.com/ubie-oss/ubie-vitals-website" targetName="Ubie Vitals" />
         </div>
       </footer>
     </WithGlobalNavigation>

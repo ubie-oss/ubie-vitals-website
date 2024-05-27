@@ -1,13 +1,21 @@
 ---
 import PropsTable from '@components/astro/PropsTable.astro';
+import RepositoryLink from '@components/astro/RepositoryLink.astro';
 import ExampleSwitcher from '@components/react/ExampleSwitcher';
 import PostLayout from '@layouts/PostLayout.astro';
 import { extractPropsFromFile, getAllExample, buildComponentPath } from '@utils/server';
+import type { MarkdownLayoutProps } from 'astro';
+
+type Props = MarkdownLayoutProps<{
+  title: string;
+  description: string;
+  exampleKey: string;
+  repositoryUrl?: string;
+}>;
 
 const { frontmatter } = Astro.props;
-const { title, description, exampleKey } = frontmatter;
 
-const filePath = buildComponentPath(exampleKey);
+const filePath = buildComponentPath(frontmatter.exampleKey);
 
 // Add data-* to all components (because the types are too complex to extract)
 const propsArray = [
@@ -20,15 +28,23 @@ const propsArray = [
   },
 ];
 
-const examples = getAllExample(exampleKey);
+const examples = getAllExample(frontmatter.exampleKey);
 ---
 
+Z
 <PostLayout
   frontmatter={{
-    title,
-    description,
+    title: frontmatter.title,
+    description: frontmatter.description,
   }}
 >
+  {
+    frontmatter.repositoryUrl && (
+      <span class="repositoryLink" slot="headingSide">
+        <RepositoryLink href={frontmatter.repositoryUrl} targetName="Copmonent" />
+      </span>
+    )
+  }
   <section>
     <h2 id="Example">
       Example<a class="linkHeading" href="#Example"><span class="linkHeadingIcon">#</span></a>
@@ -45,3 +61,11 @@ const examples = getAllExample(exampleKey);
     <slot />
   </section>
 </PostLayout>
+
+<style>
+  .repositoryLink {
+    display: flex;
+    align-items: center;
+    padding-top: 0.1em;
+  }
+</style>
