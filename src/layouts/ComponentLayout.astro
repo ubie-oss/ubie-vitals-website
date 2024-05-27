@@ -1,10 +1,10 @@
 ---
 import PropsTable from '@components/astro/PropsTable.astro';
+import RepositoryLink from '@components/astro/RepositoryLink.astro';
 import ExampleSwitcher from '@components/react/ExampleSwitcher';
 import PostLayout from '@layouts/PostLayout.astro';
 import { extractPropsFromFile, getAllExample, buildComponentPath } from '@utils/server';
 import type { MarkdownLayoutProps } from 'astro';
-import RepositoryLink from '@components/astro/RepositoryLink.astro';
 
 type Props = MarkdownLayoutProps<{
   title: string;
