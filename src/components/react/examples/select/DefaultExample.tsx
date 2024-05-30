@@ -12,7 +12,7 @@ const Default: FC = () => {
   }, []);
 
   return (
-    <Stack spacing="md" alignItems="normal">
+    <Stack spacing="md">
       <Select name="default" value={selectedItem} onChange={onChange}>
         {options.map((o) => (
           <option key={o}>{o}</option>
