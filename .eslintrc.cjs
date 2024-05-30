@@ -53,6 +53,7 @@ module.exports = {
         ],
         'unused-imports/no-unused-imports': 'error',
         'import/no-unresolved': 2,
+        'import/no-named-as-default': 0
     },
     overrides: [
         {
@@ -71,7 +72,7 @@ module.exports = {
                 extraFileExtensions: [".astro"],
             },
             rules: {
-                "react/no-unknown-property": ['error', { ignore: ['class'] }]
+                "react/no-unknown-property": ['error', { ignore: ['class', 'class:list'] }]
             }
         }
     ]

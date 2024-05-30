@@ -19,7 +19,8 @@
       "@store/*": ["src/store/*"],
     },
     "types": [
-      "vitest/importMeta"
+      "vitest/importMeta",
+      "astro/client"
     ],
     "outDir": "dist"
   },
