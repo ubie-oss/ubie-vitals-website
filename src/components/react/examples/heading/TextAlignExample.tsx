@@ -3,7 +3,7 @@ import type { FC } from 'react';
 
 const TextAlignExample: FC = () => {
   return (
-    <Stack spacing="md" alignItems="normal">
+    <Stack spacing="md">
       <div style={{ textAlign: 'center' }}>
         <Heading as="p" size="md">
           スマートフォン問診（inherit）

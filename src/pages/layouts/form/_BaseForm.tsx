@@ -13,13 +13,13 @@ export const BaseForm: FC = () => {
 
   return (
     <div className={styles.container}>
-      <Stack spacing="xl" alignItems="normal">
+      <Stack spacing="xl">
         <Stack spacing="xs">
           <h1 className={styles.heading}>受診の記録を追加</h1>
           <p className={styles.subHeading}>補足の説明</p>
         </Stack>
 
-        <Stack spacing="xs" alignItems="normal">
+        <Stack spacing="xs">
           <Label htmlFor={departmentId} showRequiredLabel>
             受診した診療科
           </Label>

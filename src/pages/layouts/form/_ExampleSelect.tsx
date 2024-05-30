@@ -4,7 +4,7 @@ import type { FC } from 'react';
 const options = ['option1', 'option2', 'option3'];
 
 export const ExampleSelect: FC = () => (
-  <Stack spacing="xs" alignItems="normal">
+  <Stack spacing="xs">
     <Label htmlFor="select">セレクトボックス</Label>
     <Select id="select">
       {options.map((option) => (

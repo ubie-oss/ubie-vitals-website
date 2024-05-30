@@ -19,7 +19,7 @@ type Props = {
 };
 
 export const WithCode: FC<Props> = ({ lang = 'jsx', code, children }) => (
-  <Stack spacing="sm" alignItems="normal" as="figure">
+  <Stack spacing="sm" as="figure">
     <div className={styles.renderBlock}>{children}</div>
 
     {Array.isArray(code) ? <Codes codes={code} /> : <Code lang={lang}>{code}</Code>}
