@@ -1,5 +1,5 @@
-import { Bold } from '@ubie/ubie-ui/font';
 import { Stack } from '@ubie/ubie-ui';
+import { Bold } from '@ubie/ubie-ui/font';
 import type { FC } from 'react';
 
 export const AsVariationsExample: FC = () => {

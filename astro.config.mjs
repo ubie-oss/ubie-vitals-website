@@ -40,5 +40,5 @@ export default defineConfig({
     shikiConfig: {
       transformers: [transformerNotationWordHighlight(), transformerNotationHighlight(), transformerNotationDiff()]
     }
-  }
+  },
 });
