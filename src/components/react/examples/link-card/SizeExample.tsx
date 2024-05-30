@@ -4,7 +4,7 @@ import type { FC } from 'react';
 
 export const SizeExample: FC = () => {
   return (
-    <Stack spacing="md" alignItems="normal">
+    <Stack spacing="md">
       <LinkCard title="見出しテキスト" href="https://vitals.ubie.life/" size="small" />
       <LinkCard title="見出しテキスト" href="https://vitals.ubie.life/" icon={HospitalIcon} size="small" />
       <LinkCard

@@ -21,7 +21,7 @@ const ExampleSwitcher: FC<Props> = ({ examples }) => {
 
   return (
     <>
-      <Stack spacing="md" alignItems="normal">
+      <Stack spacing="md">
         <Flex spacing="xs">
           {examples.map(({ name, url }) => (
             <Button

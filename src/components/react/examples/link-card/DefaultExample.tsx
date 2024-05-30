@@ -3,7 +3,7 @@ import type { FC } from 'react';
 
 const Default: FC = () => {
   return (
-    <Stack spacing="md" alignItems="normal">
+    <Stack spacing="md">
       <LinkCard
         title="タイトル"
         description="これはこのカードの遷移先の説明です。これはこのカードの遷移先の説明です。これはこのカードの遷移先の説明です。これはこのカードの遷移先の説明です。これはこのカードの遷移先の説明です。"
