@@ -6,42 +6,46 @@ description: '視覚的な「手がかり」を提供'
 thumbnail: '/assets/images/components/thumbnail-icon.svg'
 ---
 
+## Feature
+
+- ユーザーの注目を引き、形から連想される意味によってユーザーの理解を助けることができます
+- `@ubie-oss/ubie-icons`に存在するアイコンを使用できます
+  - `@ubie-oss/ubie-icons`を単独で使う場合と比べスタイリングが容易です
+
 ## Usage
 
 アイコンのバリエーションは[Elements/Icons](/elements/icons)を参照してください。
 
-CSS でスタイリングをすることができます:
+### スタイリング
 
-- `font-size` で大きさを変更
-- `color` で色を変更
-
-## Accessibility
-
-### テキスト情報を付与する
-
-`<Icon>` 自体にはテキスト情報が含まれていません。
-そのため、スクリーンリーダーのようなテキストに依存した環境ではアイコンの意味がユーザーに伝わりません。
-`<Icon>` のみを含むボタンを実装した場合、ユーザーには理解できないボタンが提示されてしまうかもしれません。
-
-これを解決するにはアイコンを利用する親要素に `aria-label` や `aria-labelledby` 属性を付与します。テキストによりユーザーに内容を伝達します。
+propを通して可能です。
 
 ```jsx
-<Button aria-lable="閉じる">
-  <CloseAIcon />
-</Button>
+<Icon icon="AlertIcon" color="alert" />
+<Icon icon="UbieIcon" size="2xl" />
 ```
 
-<small>※ `<Icon>` そのものにはテキスト情報を付与しません</small>
+色を指定しない場合は、親要素の`color`の影響を受けます。
+次の場合は、アイコンは`primary`カラーとなります。
 
-`<Icon>` とテキストを併用しても良いでしょう。
+```
+<Color color="primary">
+  <Icon icon="UbieIcon" /> Ubie Vitals
+</Color>
+```
+
+### アイコン単独での使用
+
+基本的には、アイコンはテキストと併用して利用することを推奨します。アイコンの持つ意味が100%ユーザーに伝わるとは限りません。
+
+単独で使用する場合は、`label` propにそのアイコンがどういった意味を持つかを記述してください。
+`label`を使わない場合、支援技術等からはアイコン自体がみえません[^1] 。
+
+[^1]: [Windows NVDAの場合 - ユビー AI 受診相談でほんとうに起きていた怖い話](https://docs.google.com/presentation/d/1phP267dInvtrxTBQhlrxYkoTOTHJbKq6nTD5ljD-xSI/edit#slide=id.g107361d2158_0_136)
 
 ```jsx
-<Button>
-  <CloseAIcon /> 閉じる
-</Button>
+<Icon icon="SetupIcon" label="設定" />
 ```
-
-参考: [ユビー AI 受診相談でほんとうに起きていた怖い話 - アイコンをボタンやリンクに使うときは](https://docs.google.com/presentation/d/1phP267dInvtrxTBQhlrxYkoTOTHJbKq6nTD5ljD-xSI/edit#slide=id.g107361d2158_0_251)
 
 ### コントラストを確保する
 
@@ -59,4 +63,4 @@ WCAG では隣接した色とのコントラスト比を 3:1 以上とするこ�
 - [Elements/Icons](/elements/icons)
 - [ubie-oss/ubie-icons](https://github.com/ubie-oss/ubie-icons)
 - [Figma - Ubie Icons](https://www.figma.com/file/6dWoWbMuEHiVN5qi1ybDAa/Ubie-Icons?type=design&node-id=0%3A1&mode=design&t=yddL2kJ5U8BIO59w-1)
-- [ユビー AI 受診相談でほんとうに起きていた怖い話 - アイコンをボタンやリンクに使うときは](https://docs.google.com/presentation/d/1phP267dInvtrxTBQhlrxYkoTOTHJbKq6nTD5ljD-xSI/edit#slide=id.g107361d2158_0_251)
+- [アイコンをボタンやリンクに使うときは - ユビー AI 受診相談でほんとうに起きていた怖い話](https://docs.google.com/presentation/d/1phP267dInvtrxTBQhlrxYkoTOTHJbKq6nTD5ljD-xSI/edit#slide=id.g107361d2158_0_251)
