@@ -26,11 +26,59 @@
   word-wrap: normal;
 }
 
-.copy {
+.copyOuter {
   position: absolute;
-  top: 0;
-  right: 0;
-  opacity: 0.001;
+  top: 100%;
+  left: 50%;
+  z-index: 1;
+  display: none;
+  width: 115%;
+  translate: -50% 0;
+}
+
+.copyOuter.show {
+  display: block;
+}
+
+.copy {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  isolation: isolate;
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  transform: 0 -100%;
+}
+
+.copy::before {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  display: block;
+  width: 12px;
+  height: calc(tan(60deg) * 12px / 3);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  content: '';
+  background: var(--color-primary);
+  translate: -50% 0;
+}
+
+.copy::after {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  display: block;
+  width: 10px;
+  height: calc(tan(60deg) * 10px / 3 + 1px);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  content: '';
+  background: var(--color-ubie-white);
+  translate: -50% 0;
+}
+
+.copyInner {
+  overflow: hidden;
+  border-radius: var(--radius-md);
 }
 
 .copy:focus,
