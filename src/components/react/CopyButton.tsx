@@ -10,9 +10,10 @@ interface Props {
   className?: string;
   label?: string;
   invert?: boolean;
+  block: boolean;
 }
 
-const ButtonCopy: FC<Props> = ({ text, className = '', label, invert }) => {
+const ButtonCopy: FC<Props> = ({ text, className = '', label, invert, block }) => {
   const [copied, setCopied] = useState(false);
 
   const handleClick = () => {
@@ -28,7 +29,12 @@ const ButtonCopy: FC<Props> = ({ text, className = '', label, invert }) => {
     <>
       <button
         type="button"
-        className={clsx([styles.button, { [`${styles.invert}`]: invert }, className])}
+        className={clsx(
+          styles.button,
+          invert !== undefined ? styles.invert : null,
+          block !== undefined ? styles.block : null,
+          className,
+        )}
         onClick={handleClick}
         title={label}
         aria-label={label ? `コピー: ${label}` : 'コピー'}
