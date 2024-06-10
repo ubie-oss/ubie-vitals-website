@@ -10,7 +10,7 @@ interface Props {
   className?: string;
   label?: string;
   invert?: boolean;
-  block: boolean;
+  block?: boolean;
 }
 
 const ButtonCopy: FC<Props> = ({ text, className = '', label, invert, block }) => {
