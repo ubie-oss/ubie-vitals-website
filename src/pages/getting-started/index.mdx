@@ -1,0 +1,100 @@
+---
+title: 'Ubie Vitalsの始め方'
+layout: '@layouts/PostLayout.astro'
+---
+
+Ubie Vitalsは、Ubieらしいプロダクトを構築するためのガイドラインやツールをまとめたものです。
+これからUbie Vitalsを使い始める方に向けて、各要素の使い方や情報源の場所などを紹介します。
+
+## デザインリソース
+
+Ubie VitalsのデザインリソースはすべてFigmaで管理されています。
+
+- [Ubie UI](https://www.figma.com/design/ejIFAbw12HtoEZXcn01G5C/Ubie-UI)
+- [Design Tokens](https://www.figma.com/design/9LjkKt27YY9LfTK8Cwx08m/Ubie-Design-Tokens)
+- [Icons](https://www.figma.com/design/6dWoWbMuEHiVN5qi1ybDAa/Ubie-Icons)
+
+## 開発リソース
+
+Ubie Vitalsが提供する開発リソースは[GitHub](https://github.com/ubie-oss)でOSSとして公開されています。
+npmパッケージやVS Code拡張、このウェブサイトのソースコードなどが含まれています。
+
+各リソースのインストール方法はGitHubリポジトリを参照してください。
+
+- [Ubie UI](https://github.com/ubie-oss/ubie-ui)
+- [Ubie Icons](https://github.com/ubie-oss/ubie-icons)
+- [Design Tokens](https://github.com/ubie-oss/design-tokens)
+- [Design Tokens for VS Code](https://github.com/ubie-oss/design-tokens-for-vscode)
+- [Chakra UI Theme](https://github.com/ubie-oss/chakra-ui-theme)
+
+### デザイントークンを適用する
+
+1. デザイントークンのパッケージをインストールします。
+
+```bash
+npm install @ubie/design-tokens
+```
+
+2. GlobalなCSSファイルでデザイントークンを読み込みます。これでCSS変数が利用可能になります。
+
+```css
+@import url('../../node_modules/@ubie/design-tokens/dist/tokens.css');
+```
+
+### Ubie UIをインストールする
+
+1. Ubie UIのパッケージをインストールします。
+
+```bash
+npm install @ubie/ubie-ui
+```
+
+2. Reactコンポーネントをインポートします。
+
+```tsx
+import { Button } from '@ubie/ubie-ui';
+import type { FC } from 'react';
+
+const Default: FC = () => {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', gap: '32px', flexWrap: 'wrap' }}>
+      <Button>ボタン</Button>
+      <Button variant="secondary">ボタン</Button>
+      <Button variant="accent">ボタン</Button>
+      <Button variant="alert">ボタン</Button>
+      <Button variant="text">ボタン</Button>
+      <Button variant="textAlert">ボタン</Button>
+    </div>
+  );
+};
+
+export default Default;
+```
+
+各コンポーネントの詳細な使い方はコンポーネント詳細ページを参照してください。
+
+### Ubie Iconsをインストールする
+
+Ubie UIを利用している場合はIconコンポーネント経由でIconを利用できます。
+
+```tsx
+import { Icon } from '@ubie/ubie-ui';
+import type { FC } from 'react';
+
+export const Button: FC = () => {
+  return (
+    <button type="button">
+      <Icon icon="PlusAIcon" />
+      Add Button
+    </button>
+  );
+};
+```
+
+Ubie UIを利用していない場合は、Ubie Iconのパッケージを直接インストールすることも可能です。
+
+```bash
+npm install @ubie/ubie-icons
+```
+
+Reactコンポーネント以外に[SVGファイル](https://github.com/ubie-oss/ubie-icons/tree/main/assets)も利用可能です。詳細はGitHubリポジトリを参照してください。

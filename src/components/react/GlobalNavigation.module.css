@@ -1,6 +1,6 @@
 .nav {
   min-width: 16rem;
-  padding: 0 var(--size-spacing-md) var(--size-spacing-sm);
+  padding: 0 var(--size-spacing-md) var(--size-spacing-lg);
   overflow: auto;
   background-color: var(--color-ubie-white);
   border-right: 1px solid var(--color-ubie-black-100);

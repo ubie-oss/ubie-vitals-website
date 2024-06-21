@@ -36,80 +36,92 @@ const GlobalNavigation: FC<Props> = ({ currentPath, allComponentPostData }) => {
           </div>
           <ul className={styles.linkList}>
             <li>
-              <GlobalNavigationLinkRoot current={isCurrent('/principles')} href="/principles">
-                Principles
+              <GlobalNavigationLinkRoot current={isCurrent('/getting-started')} href="/getting-started">
+                Getting Started
               </GlobalNavigationLinkRoot>
             </li>
-            <li>
-              <GlobalNavigationAccordion title="Tokens" titleHref="/tokens" currentPath={currentPath}>
-                <ul>
-                  <li>
-                    <GlobalNavigationLink current={isCurrent('/tokens/typography')} href="/tokens/typography">
-                      Typography
-                    </GlobalNavigationLink>
-                  </li>
-                  <li>
-                    <GlobalNavigationLink current={isCurrent('/tokens/color/semantic')} href="/tokens/color/semantic">
-                      Semantic Color
-                    </GlobalNavigationLink>
-                  </li>
-                  <li>
-                    <GlobalNavigationLink current={isCurrent('/tokens/color/primitive')} href="/tokens/color/primitive">
-                      Primitive Color
-                    </GlobalNavigationLink>
-                  </li>
-                  <li>
-                    <GlobalNavigationLink current={isCurrent('/tokens/spacing')} href="/tokens/spacing">
-                      Spacing
-                    </GlobalNavigationLink>
-                  </li>
-                  <li>
-                    <GlobalNavigationLink current={isCurrent('/tokens/radius')} href="/tokens/radius">
-                      Radius
-                    </GlobalNavigationLink>
-                  </li>
-                  <li>
-                    <GlobalNavigationLink current={isCurrent('/tokens/for-developers')} href="/tokens/for-developers">
-                      For Developers
-                    </GlobalNavigationLink>
-                  </li>
-                </ul>
-              </GlobalNavigationAccordion>
-            </li>
-            <li>
-              <GlobalNavigationAccordion title="Layouts" titleHref="/layouts" currentPath={currentPath}>
-                <ul>
-                  <li>
-                    <GlobalNavigationLink current={isCurrent('/layouts/form')} href="/layouts/form">
-                      Form
-                    </GlobalNavigationLink>
-                  </li>
-                </ul>
-              </GlobalNavigationAccordion>
-            </li>
-            <li>
-              <GlobalNavigationAccordion title="Components" titleHref="/components" currentPath={currentPath}>
-                <ul>
-                  {allComponentPostData.map((postData) => (
-                    <li key={postData.url}>
-                      <GlobalNavigationLink href={postData.url} current={isCurrent(postData.url)}>
-                        {postData.title}
+            <ul>
+              <li>
+                <GlobalNavigationLinkRoot current={isCurrent('/principles')} href="/principles">
+                  Principles
+                </GlobalNavigationLinkRoot>
+              </li>
+              <li>
+                <GlobalNavigationLinkRoot href="/ux-writing" current={isCurrent('/ux-writing')}>
+                  UX Writing
+                </GlobalNavigationLinkRoot>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <GlobalNavigationAccordion title="Tokens" titleHref="/tokens" currentPath={currentPath}>
+                  <ul>
+                    <li>
+                      <GlobalNavigationLink current={isCurrent('/tokens/typography')} href="/tokens/typography">
+                        Typography
                       </GlobalNavigationLink>
                     </li>
-                  ))}
-                </ul>
-              </GlobalNavigationAccordion>
-            </li>
-            <li>
-              <GlobalNavigationLinkRoot href="/elements/icons" current={isCurrent('/elements/icons')}>
-                Icons
-              </GlobalNavigationLinkRoot>
-            </li>
-            <li>
-              <GlobalNavigationLinkRoot href="/ux-writing" current={isCurrent('/ux-writing')}>
-                UX Writing
-              </GlobalNavigationLinkRoot>
-            </li>
+                    <li>
+                      <GlobalNavigationLink current={isCurrent('/tokens/color/semantic')} href="/tokens/color/semantic">
+                        Semantic Color
+                      </GlobalNavigationLink>
+                    </li>
+                    <li>
+                      <GlobalNavigationLink
+                        current={isCurrent('/tokens/color/primitive')}
+                        href="/tokens/color/primitive"
+                      >
+                        Primitive Color
+                      </GlobalNavigationLink>
+                    </li>
+                    <li>
+                      <GlobalNavigationLink current={isCurrent('/tokens/spacing')} href="/tokens/spacing">
+                        Spacing
+                      </GlobalNavigationLink>
+                    </li>
+                    <li>
+                      <GlobalNavigationLink current={isCurrent('/tokens/radius')} href="/tokens/radius">
+                        Radius
+                      </GlobalNavigationLink>
+                    </li>
+                    <li>
+                      <GlobalNavigationLink current={isCurrent('/tokens/for-developers')} href="/tokens/for-developers">
+                        For Developers
+                      </GlobalNavigationLink>
+                    </li>
+                  </ul>
+                </GlobalNavigationAccordion>
+              </li>
+              <li>
+                <GlobalNavigationAccordion title="Layouts" titleHref="/layouts" currentPath={currentPath}>
+                  <ul>
+                    <li>
+                      <GlobalNavigationLink current={isCurrent('/layouts/form')} href="/layouts/form">
+                        Form
+                      </GlobalNavigationLink>
+                    </li>
+                  </ul>
+                </GlobalNavigationAccordion>
+              </li>
+              <li>
+                <GlobalNavigationAccordion title="Components" titleHref="/components" currentPath={currentPath}>
+                  <ul>
+                    {allComponentPostData.map((postData) => (
+                      <li key={postData.url}>
+                        <GlobalNavigationLink href={postData.url} current={isCurrent(postData.url)}>
+                          {postData.title}
+                        </GlobalNavigationLink>
+                      </li>
+                    ))}
+                  </ul>
+                </GlobalNavigationAccordion>
+              </li>
+              <li>
+                <GlobalNavigationLinkRoot href="/elements/icons" current={isCurrent('/elements/icons')}>
+                  Icons
+                </GlobalNavigationLinkRoot>
+              </li>
+            </ul>
           </ul>
         </div>
       </FocusTrap>

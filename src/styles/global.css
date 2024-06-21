@@ -40,6 +40,10 @@ h6 {
   word-break: auto-phrase;
 }
 
+h1 {
+  font-size: 2.5rem;
+}
+
 code {
   display: inline-block;
   padding: 0.2ch 0.4ch 0.1ch;
