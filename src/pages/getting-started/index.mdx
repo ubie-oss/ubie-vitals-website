@@ -75,26 +75,26 @@ export default Default;
 
 ### Ubie Iconsをインストールする
 
-1. Ubie Iconsのパッケージをインストールします。
-
-```bash
-npm install @ubie/ubie-icons
-```
-
-2. Reactコンポーネントをインポートします。
+Ubie UIを利用している場合はIconコンポーネント経由でIconを利用できます。
 
 ```tsx
-import { PlusAIcon } from '@ubie/ubie-icons';
+import { Icon } from '@ubie/ubie-ui';
 import type { FC } from 'react';
 
 export const Button: FC = () => {
   return (
     <button type="button">
-      <PlusAIcon />
+      <Icon icon="PlusAIcon" />
       Add Button
     </button>
   );
 };
+```
+
+Ubie UIを利用していない場合は、Ubie Iconのパッケージを直接インストールすることも可能です。
+
+```bash
+npm install @ubie/ubie-icons
 ```
 
 Reactコンポーネント以外に[SVGファイル](https://github.com/ubie-oss/ubie-icons/tree/main/assets)も利用可能です。詳細はGitHubリポジトリを参照してください。
