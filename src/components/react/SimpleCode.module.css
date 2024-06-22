@@ -1,0 +1,22 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-spacing-xxs);
+  padding: var(--size-spacing-md);
+  color: var(--color-text-main);
+  background-color: var(--color-background-gray);
+  border-radius: var(--radius-md);
+}
+
+.copy {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.code {
+  overflow: auto;
+  color: var(--color-text-main);
+  white-space: pre-wrap;
+}

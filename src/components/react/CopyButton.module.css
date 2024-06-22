@@ -1,5 +1,6 @@
 .button {
   display: inline-flex;
+  gap: var(--size-spacing-xxs);
   align-items: center;
   justify-content: center;
   min-height: 32px;
@@ -16,6 +17,11 @@
   background-color: transparent;
 }
 
+.button.secondary {
+  color: var(--color-text-main);
+  background-color: transparent;
+}
+
 @media (hover: hover) {
   .button:hover {
     background-color: var(--color-ubie-black-100);
@@ -23,6 +29,10 @@
 
   .button.invert:hover {
     background-color: rgb(255 255 255 / 15%);
+  }
+
+  .button.secondary:hover {
+    color: var(--color-ubie-black-900);
   }
 }
 
