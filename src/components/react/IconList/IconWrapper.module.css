@@ -36,6 +36,7 @@
   line-height: var(--text-body-sm-line);
   color: var(--color-text-sub);
   text-align: center;
+  word-break: break-word;
 }
 
 .modalContent {
