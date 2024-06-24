@@ -1,0 +1,62 @@
+---
+title: 'アクセシビリティ'
+layout: '@layouts/PostLayout.astro'
+---
+
+## アクセシビリティとは
+
+アクセシビリティとは「利用可能な状況の幅広さ」を指します。
+
+デジタルプロダクトやサービスにおけるアクセシビリティは「プロダクトやサービスが多様なニーズのもとで使える度合い」と言えます。
+多くの状況でアクセスできるものはアクセシビリティが高く、逆に特定の状況でしかアクセスできないものはアクセシビリティが低いと表現します。
+
+アクセシビリティが高いWebサービスは、以下のようにユーザーの特性に合った形に変化でき、さまざまな環境で利用できるようになります。
+
+- Webページの色や文字が見えづらい場合でも、OSやブラウザの設定によって配色を変更する、文字サイズを変更するといったように、ユーザー側で上書きできる
+- 画面がまったく見えない場合でも、スクリーンリーダーという支援技術を使うことで、画面上にあるものを音声で読み上げたり点字で表示したりすることでWebページの中身を理解できる
+- マウスやタッチデバイスが使えない場合でも、キーボードのみですべての操作を行える。ほかにも、頭の向きや視線、表情、音声や物理スイッチといったさまざまな操作方法が利用できる
+
+## Ubieの開発方針
+
+我々は「テクノロジーで人々を適切な医療に案内する」というミッションを掲げ、すべての人々が「健康」にアクセスできるプラットフォーム構築を目指しプロダクト開発をしています。
+すべての人々を適切な医療に案内するための土台となるにはアクセシビリティのさらなる改善が必要であり、継続してアクセシビリティの改善に取り組むことが重要です。
+
+Ubieが掲げるアクセシビリティステートメントや対応方針、これまでの取り組みなどについては、コーポレートサイトの[Ubieのアクセシビリティ](https://ubie.life/backup/accessibility)ページで詳しく説明しています。
+
+## ツール
+
+アクセシビリティに取り組む上で役立つツールを紹介します。
+
+### Lint・チェッカー
+
+ユビーの開発では、[markuplit](https://github.com/markuplint/markuplint)と[eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)を利用してコードを静的検査しています。
+
+- [markuplit](https://github.com/markuplint/markuplint)
+- [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)
+
+実際にブラウザに表示された結果をチェックするには[axe](https://www.deque.com/axe/)というツールが便利です。
+[axe DevTools](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd)というChromeの拡張機能や[axe-core](https://github.com/dequelabs/axe-core)というテストツールなどを提供してくれています。
+
+- [axe DevTools](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd)
+- [axe-core](https://github.com/dequelabs/axe-core)
+- [storybook-addon-a11y](https://storybook.js.org/addons/@storybook/addon-a11y)
+
+### Figmaプラグイン
+
+デザイン段階でアクセシビリティをチェックすることで開発時のコストを減らせます。
+特にコントラスト比やタップ領域、見出しの有無などはデザイン段階で確認できるとよいです。
+Figmaプラグインを活用してアクセシビリティをチェックしましょう。
+
+- [axe for Designers](https://www.figma.com/community/plugin/1085612091163821851/axe-for-designers-a-free-accessibility-plugin)：
+- [Stark](https://www.figma.com/community/plugin/732603254453395948/Stark-Accessibility-Tools)
+- [Contrast](https://www.figma.com/community/plugin/748533339900865323/contrast)
+
+## 参考文献
+
+UbieではJIS X 8341-3:2016 適合レベルAAとWCAG 2.2の一部項目への対応を目指し改善活動に取り組んでいます。
+
+各基準の詳細は以下のリンクを参照してください。
+
+- [JIS X 8341-3:2016](https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList?toGnrJISStandardDetailList)
+- [Web Content Accessibility Guidelines (WCAG) 2.2](https://waic.jp/translations/WCAG22/)
+- [WCAG 2.2 日本語訳](https://waic.jp/translations/WCAG22/)
