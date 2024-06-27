@@ -1,0 +1,29 @@
+---
+title: 'ButtonCard'
+exampleKey: 'button-card'
+layout: '@layouts/ComponentLayout.astro'
+description: 'カード状のボタン'
+thumbnail: '/assets/images/components/thumbnail-button-card.svg'
+repositoryUrl: 'https://github.com/ubie-oss/ubie-ui/tree/main/src/components/ButtonCard'
+baseElement: 'button'
+---
+
+## Feature
+
+カード状のボタンです。エリアを専有してゆったりと見せるため、内容の把握がしやすく、操作も容易なUIです。
+
+- アクションや回答の選択に集中させたい
+- モバイル環境で操作しやすいUIを提供したい
+
+などのユースケースが考えられます。
+
+ただし、あくまでボタンです。カード状のリンクが必要な場合は[`<LinkCard>`](/components/link-card)も検討してください。
+
+## Usage
+
+- `type`属性はデフォルト`button`です。フォームの送信ボタンとして使用したい場合は`submit`を指定してください
+
+## Keyboard Interaction
+
+- <kbd>Tab</kbd>キーでフォーカスすることができます
+    - フォーカスした状態で<kbd>Enter</kbd>または<kbd>Space</kbd>キーを押下した場合、マウスクリックと同じ操作が発生します
