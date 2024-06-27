@@ -9,10 +9,10 @@ const Default: FC = () => {
 
   const onChange: ChangeEventHandler<HTMLInputElement> = useCallback(
     (event) => {
-      if (event.target.checked) {
-        setSelectedItem([...selectedItem, event.target.value]);
+      if (event.currentTarget.checked) {
+        setSelectedItem([...selectedItem, event.currentTarget.value]);
       } else {
-        setSelectedItem(selectedItem.filter((item) => item !== event.target.value));
+        setSelectedItem(selectedItem.filter((item) => item !== event.currentTarget.value));
       }
     },
     [selectedItem],
