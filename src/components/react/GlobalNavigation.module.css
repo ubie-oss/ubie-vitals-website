@@ -12,6 +12,12 @@
   gap: var(--size-spacing-md);
 }
 
+.innerList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-spacing-xxs);
+}
+
 .closeButtonWrapper {
   margin-bottom: var(--size-spacing-md);
 }
