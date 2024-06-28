@@ -11,22 +11,22 @@ const TypesExample: FC = () => {
   const [numberValue, setNumberValue] = useState('10');
 
   const onChangeText: ChangeEventHandler<HTMLInputElement> = useCallback((event) => {
-    setTextValue(event.target.value);
+    setTextValue(event.currentTarget.value);
   }, []);
   const onChangeMail: ChangeEventHandler<HTMLInputElement> = useCallback((event) => {
-    setMailValue(event.target.value);
+    setMailValue(event.currentTarget.value);
   }, []);
   const onPasswordValue: ChangeEventHandler<HTMLInputElement> = useCallback((event) => {
-    setPasswordValue(event.target.value);
+    setPasswordValue(event.currentTarget.value);
   }, []);
   const onTelValue: ChangeEventHandler<HTMLInputElement> = useCallback((event) => {
-    setTelValue(event.target.value);
+    setTelValue(event.currentTarget.value);
   }, []);
   const onUrlValue: ChangeEventHandler<HTMLInputElement> = useCallback((event) => {
-    setUrlValue(event.target.value);
+    setUrlValue(event.currentTarget.value);
   }, []);
   const onNumberValue: ChangeEventHandler<HTMLInputElement> = useCallback((event) => {
-    setNumberValue(event.target.value);
+    setNumberValue(event.currentTarget.value);
   }, []);
 
   const labelStyle = { display: 'inline-block', paddingBottom: '8px', fontSize: '13px' };

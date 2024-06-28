@@ -7,12 +7,6 @@ thumbnail: '/assets/images/components/thumbnail-radio-button.svg'
 repositoryUrl: 'https://github.com/ubie-oss/ubie-ui/tree/main/src/components/RadioButton'
 ---
 
-import SelectingFormComponents from '@sharedDocuments/form/SelectingFormComponents.md';
-
-## Feature
-
-<SelectingFormComponents />
-
 ## Usage
 
 - 同じグループとなる項目には、同じ `name` 属性の値を設定します
@@ -28,6 +22,7 @@ import SelectingFormComponents from '@sharedDocuments/form/SelectingFormComponen
   <RadioButton name="condition">良い</RadioButton>
   <RadioButton name="condition">悪い</RadioButton>
 </RadioGroup>
+```
 
 `<RadioButton>` を使用した選択肢が1つのコンテンツとして独立している場合`<section>` 要素で囲んでも良いでしょう。その場合、必ず見出し（`<hx>`） を添えてください。
 
@@ -35,10 +30,16 @@ import SelectingFormComponents from '@sharedDocuments/form/SelectingFormComponen
 <section>
   <h2>本日の体調</h2>
 
-  <RadioButton name="condition">良い</RadioButton>
-  <RadioButton name="condition">悪い</RadioButton>
+  <RadioGroup>
+    <RadioButton name="condition">良い</RadioButton>
+    <RadioButton name="condition">悪い</RadioButton>
+  </RadioGroup>
 </section>
 ```
+
+import SelectingFormComponents from '@sharedDocuments/form/SelectingFormComponents.md';
+
+<SelectingFormComponents />
 
 ## Keyboard Interaction
 

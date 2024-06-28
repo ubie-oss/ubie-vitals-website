@@ -11,6 +11,7 @@ type Props = MarkdownLayoutProps<{
   description: string;
   exampleKey: string;
   repositoryUrl?: string;
+  baseElement?: string;
 }>;
 
 const { frontmatter } = Astro.props;
@@ -55,6 +56,16 @@ const examples = getAllExample(frontmatter.exampleKey);
       <h2 id="Props">
         Props<a class="linkHeading" href="#Props"><span class="linkHeadingIcon">#</span></a>
       </h2>
+
+      {
+        frontmatter.baseElement && (
+          <p class="baseElement">
+            <!-- eslint-disable-next-line -->
+            <code>&lt;{frontmatter.baseElement}&gt;</code>要素をベースにしています。 表にない属性もprop経由で使用できます（<code>className</code>は除く）。
+          </p>
+        )
+      }
+
       <PropsTable propsArray={propsArray} />
     </section>
     <slot />
@@ -66,5 +77,9 @@ const examples = getAllExample(frontmatter.exampleKey);
     display: flex;
     align-items: center;
     padding-top: 0.1em;
+  }
+
+  .baseElement {
+    margin-bottom: var(--size-spacing-md);
   }
 </style>

@@ -7,12 +7,9 @@ thumbnail: '/assets/images/components/thumbnail-select.svg'
 repositoryUrl: 'https://github.com/ubie-oss/ubie-ui/tree/main/src/components/Select'
 ---
 
-import SelectingFormComponents from '@sharedDocuments/form/SelectingFormComponents.md';
 import Label from '@sharedDocuments/form/Label.md';
 
 ## Usage
-
-<SelectingFormComponents />
 
 <Label />
 
@@ -22,6 +19,10 @@ import Label from '@sharedDocuments/form/Label.md';
 選択肢を開いた状態で、押下したキーに準じた選択肢が選択されます（日本語には対応していません）。
 
 できるだけ装飾のない値を`<option>`の`children` propに指定してください。例えば、`【1988】`または`📅1988`ではなく`1988`を`value`の値に指定してください。値の前方に装飾がついている場合、この機能は正しく動作しません。
+
+import SelectingFormComponents from '@sharedDocuments/form/SelectingFormComponents.md';
+
+<SelectingFormComponents />
 
 ## Keyboard Interaction
 

@@ -6,7 +6,7 @@ const DisabledExample: FC = () => {
   const [selectedItem, setSelectedItem] = useState('checked');
 
   const onChange: ChangeEventHandler<HTMLInputElement> = useCallback((event) => {
-    setSelectedItem(event.target.value);
+    setSelectedItem(event.currentTarget.value);
   }, []);
 
   return (
