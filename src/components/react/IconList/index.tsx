@@ -7,15 +7,17 @@ const iconArray = Object.values(icons);
 
 const IconList: FC = () => {
   return (
-    <ul className={styles.list}>
-      {iconArray.map((Icon, index) => (
-        <li key={index}>
-          <IconWrapper index={index}>
-            <Icon />
-          </IconWrapper>
-        </li>
-      ))}
-    </ul>
+    <div>
+      <ul className={styles.list}>
+        {iconArray.map((Icon, index) => (
+          <li key={index}>
+            <IconWrapper index={index}>
+              <Icon />
+            </IconWrapper>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

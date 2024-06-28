@@ -10,10 +10,11 @@ interface Props {
   className?: string;
   label?: string;
   invert?: boolean;
+  secondary?: boolean;
   block?: boolean;
 }
 
-const ButtonCopy: FC<Props> = ({ text, className = '', label, invert, block }) => {
+const ButtonCopy: FC<Props> = ({ text, className = '', label, invert, secondary, block }) => {
   const [copied, setCopied] = useState(false);
 
   const handleClick = () => {
@@ -32,6 +33,7 @@ const ButtonCopy: FC<Props> = ({ text, className = '', label, invert, block }) =
         className={clsx(
           styles.button,
           invert !== undefined ? styles.invert : null,
+          secondary !== undefined ? styles.secondary : null,
           block !== undefined ? styles.block : null,
           className,
         )}
@@ -44,7 +46,12 @@ const ButtonCopy: FC<Props> = ({ text, className = '', label, invert, block }) =
             <CheckAIcon />
           </span>
         ) : label ? (
-          label
+          <>
+            <span className={styles.icon}>
+              <CopyIcon />
+            </span>
+            <span>{label}</span>
+          </>
         ) : (
           <span className={styles.icon}>
             <CopyIcon />

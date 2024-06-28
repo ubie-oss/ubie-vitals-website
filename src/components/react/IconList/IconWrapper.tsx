@@ -1,99 +1,57 @@
-import { Text, Box } from '@ubie/ubie-ui';
-import clsx from 'clsx';
-import { useState, useRef, useCallback, useEffect } from 'react';
+import { Heading, MessageModal, Stack, Text } from '@ubie/ubie-ui';
+import { useState, type FC, type JSX } from 'react';
 import iconNames from '@metadata/iconNames.json';
 import styles from './IconWrapper.module.css';
-import CopyButton from '../CopyButton';
-import type { FC, JSX, FocusEvent } from 'react';
+import { SimpleCode } from '../SimpleCode';
 
 interface Props {
   children: JSX.Element;
   index: number;
 }
 
-const toUbieIconsStatement = (iconName: string): string => {
-  return `import { ${iconName} } from '@ubie/ubie-icons'`;
-};
-
-const toUbieUIStatement = (iconName: string): string => {
-  return `<Icon icon="${iconName}" />`;
-};
-
 const IconWrapper: FC<Props> = ({ children, index }) => {
-  const name = iconNames[index];
+  const [open, setOpen] = useState(false);
 
-  if (!name) return null;
-
-  const humanReadableName = name.split(/(?=[A-Z])/).join(' ');
-
-  const [showCopyBubble, setShowCopyBubble] = useState(false);
-
-  const handleMouseEnter = useCallback(() => {
-    setShowCopyBubble(true);
-  }, []);
-  const handleMouseLeave = useCallback(() => {
-    setShowCopyBubble(false);
-  }, []);
-
-  const handleFocus = useCallback(() => {
-    setShowCopyBubble(true);
-  }, []);
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const handleBlur = (e: FocusEvent) => {
-    if (wrapperRef.current == null) return;
-
-    if (!wrapperRef.current.contains(e.relatedTarget as Node)) {
-      setShowCopyBubble(false);
-    }
+  const toUbieIconsImport = (iconName: string): string => {
+    return `import { ${iconName} } from '@ubie/ubie-icons';`;
   };
 
-  const handleKeyDownEsc = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      setShowCopyBubble(false);
-    }
-  }, []);
-  useEffect(() => {
-    window.addEventListener('keydown', handleKeyDownEsc);
+  const toUbieIconsComponent = (iconName: string): string => {
+    return `<${iconName} />`;
+  };
 
-    return () => {
-      window.removeEventListener('keydown', handleKeyDownEsc);
-    };
-  }, []);
+  const toUbieUIImport = `import { Icon } from '@ubie/ubie-ui';`;
+
+  const toUbieUIComponent = (iconName: string): string => {
+    return `<Icon icon="${iconName}" />`;
+  };
+
+  const name = iconNames[index];
 
   return (
     <>
-      {/* eslint-disable jsx-a11y/no-noninteractive-tabindex */}
-      <div
-        className={styles.wrapper}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        tabIndex={0}
-        ref={wrapperRef}
-      >
-        {/* eslint-enable */}
-        <div className={styles.wrapperInner}>
-          <div className={styles.icon} aria-label={`アイコン ${humanReadableName}`} role="img">
-            {children}
-          </div>
-          <p className={styles.name}>{humanReadableName}</p>
+      <button className={styles.wrapper} type="button" onClick={() => setOpen(true)}>
+        <span className={styles.icon} aria-label={`アイコン ${name}`} role="img">
+          {children}
+        </span>
+        <span className={styles.name}>{name}</span>
+      </button>
+      <MessageModal open={open} onClose={() => setOpen(false)}>
+        <div className={styles.modalContent}>
+          <span className={styles.modalIcon}>{children}</span>
+          <Heading as="h3" size="md">
+            {name}
+          </Heading>
+          <Stack spacing="md">
+            <Text size="sm">Ubie UIを利用している場合：</Text>
+            <SimpleCode>{toUbieUIImport}</SimpleCode>
+            <SimpleCode>{toUbieUIComponent(name)}</SimpleCode>
+            <Text size="sm">Ubie UIを利用していない場合：</Text>
+            <SimpleCode>{toUbieIconsImport(name)}</SimpleCode>
+            <SimpleCode>{toUbieIconsComponent(name)}</SimpleCode>
+          </Stack>
         </div>
-
-        <div className={clsx(styles.copyOuter, showCopyBubble && styles.show)}>
-          <div className={styles.copy}>
-            <div className={styles.copyInner}>
-              <Box pt="xxs" pb="xxs">
-                <Text type="note" size="lg" color="main" bold textAlign="center">
-                  copy
-                </Text>
-              </Box>
-              <CopyButton label="Ubie UI" text={toUbieUIStatement(name)} block />
-              <CopyButton label="Ubie Icons" text={toUbieIconsStatement(name)} block />
-            </div>
-          </div>
-        </div>
-      </div>
+      </MessageModal>
     </>
   );
 };
