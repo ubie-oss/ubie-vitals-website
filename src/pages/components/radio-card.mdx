@@ -14,9 +14,8 @@ import SelectingFormComponents from '@sharedDocuments/form/SelectingFormComponen
 - 選択した後自動で遷移しないタイプのラジオボタン（選択してもなにもおきないボタン）に使用します
 - いわゆる「カード」の形をしています
   - クリック/タップ領域が大きく、比較的操作が容易です
+  - ラベルが読みやすく、選択肢の内容を理解しやすいです
   - その代わり、領域を占有するデメリットも存在します
-
-<SelectingFormComponents />
 
 ## Usage
 
@@ -35,16 +34,21 @@ import SelectingFormComponents from '@sharedDocuments/form/SelectingFormComponen
 </RadioGroup>
 ```
 
-`<RadioCard>` を使用した選択肢が1つのコンテンツとして独立している場合、`<section>` 要素で囲んでも良いでしょう。その場合、必ず見出し（`<hx>`） を添えてください。
+`<RadioGroup>`を使用した選択肢が1つのコンテンツとして独立している場合、見出し（`<hx>`）とセットで使用してもよいでしょう。
+その場合、`label` propは必須ではありません。
 
 ```jsx
 <section>
   <h2>本日の体調</h2>
 
-  <RadioCard name="condition">良い</RadioCard>
-  <RadioCard name="condition">悪い</RadioCard>
+  <RadioGroup>
+    <RadioCard name="condition">良い</RadioCard>
+    <RadioCard name="condition">悪い</RadioCard>
+  </RadioGroup>
 </section>
-``` 
+```
+
+<SelectingFormComponents />
 
 ## Keyboard Interaction
 

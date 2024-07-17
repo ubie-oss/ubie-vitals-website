@@ -6,7 +6,7 @@ const SizeExample: FC = () => {
   const [selectedItem, setSelectedItem] = useState('medium');
 
   const onChange: ChangeEventHandler<HTMLInputElement> = useCallback((event) => {
-    setSelectedItem(event.target.value);
+    setSelectedItem(event.currentTarget.value);
   }, []);
 
   return (

@@ -1,6 +1,6 @@
 .list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(80px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(124px, 100%), 1fr));
   grid-gap: var(--size-spacing-md) var(--size-spacing-lg);
   list-style: none;
 }

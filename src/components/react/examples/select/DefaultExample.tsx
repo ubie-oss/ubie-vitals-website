@@ -8,7 +8,7 @@ const Default: FC = () => {
   const [selectedItem, setSelectedItem] = useState(options[0]);
 
   const onChange: ChangeEventHandler<HTMLSelectElement> = useCallback((event) => {
-    setSelectedItem(event.target.value);
+    setSelectedItem(event.currentTarget.value);
   }, []);
 
   return (

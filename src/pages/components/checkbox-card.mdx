@@ -1,0 +1,58 @@
+---
+title: 'CheckboxCard'
+exampleKey: 'checkbox-card'
+layout: '@layouts/ComponentLayout.astro'
+description: 'カード状のチェックボックス'
+thumbnail: '/assets/images/components/thumbnail-checkbox-card.svg'
+repositoryUrl: 'https://github.com/ubie-oss/ubie-ui/tree/main/src/components/CheckboxCard'
+baseElement: 'input'
+---
+
+## Feature
+
+- 選択した後自動で遷移しないタイプの選択肢（選択してもなにもおきないボタン）に使用します
+- いわゆる「カード」の形をしています
+    - クリック/タップ領域が大きく、比較的操作が容易です
+    - ラベルが読みやすく、選択肢の内容を理解しやすいです
+    - その代わり、領域を占有するデメリットも存在します
+
+## Usage
+
+### 項目をグルーピングし、タイトルをつける
+
+できる限りグルーピングしてラベルをつけてください。選択肢を列挙しただけでは、何を意味する選択肢なのかをユーザーは理解できないかもしれません。
+`<CheckboxGroup>`コンポーネントでまとめ、`label` propを指定し、**`name`属性に同じ値を指定**してください。
+
+```tsx
+<CheckboxGroup label="あてはまるものを選んでください">
+  <CheckboxCard name="symptoms">選択肢A</CheckboxCard>
+  <CheckboxCard name="symptoms">選択肢B</CheckboxCard>
+  <CheckboxCard name="symptoms">選択肢C</CheckboxCard>
+  <CheckboxCard name="symptoms">この中に該当なし</CheckboxCard>
+</RadioGroup>
+```
+
+`<CheckboxGroup>`を使用した選択肢が1つのコンテンツとして独立している場合、見出し（`<hx>`）とセットで使用してもよいでしょう。
+その場合、`label` propは必須ではありません。
+
+```tsx
+<section>
+  <h2>症状を教えて下さい</h2>
+
+    <CheckboxGroup>
+      <CheckboxCard name="symptoms">選択肢A</CheckboxCard>
+      <CheckboxCard name="symptoms">選択肢B</CheckboxCard>
+      <CheckboxCard name="symptoms">選択肢C</CheckboxCard>
+      <CheckboxCard name="symptoms">この中に該当なし</CheckboxCard>
+    </CheckboxGroup>
+</section>
+```
+
+import SelectingFormComponents from '@sharedDocuments/form/SelectingFormComponents.md';
+
+<SelectingFormComponents />
+
+## Keyboard Interaction
+
+- <kbd>Tab</kbd>キーでフォーカスすることができます
+    - フォーカスした状態で、<kbd>Space</kbd>キーを押下することで選択状態を切り替えることができます

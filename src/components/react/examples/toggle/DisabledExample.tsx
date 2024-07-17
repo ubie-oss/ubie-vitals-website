@@ -5,7 +5,7 @@ export const DisabledExample: FC = () => {
   const [isChecked, setIsChecked] = useState<boolean>(false);
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = useCallback((event) => {
-    setIsChecked(event.target.checked);
+    setIsChecked(event.currentTarget.checked);
   }, []);
 
   return <Toggle checked={isChecked} onChange={handleChange} disabled />;

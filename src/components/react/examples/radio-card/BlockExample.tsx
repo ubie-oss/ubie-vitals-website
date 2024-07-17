@@ -8,7 +8,7 @@ const BlockExample: FC = () => {
   const [value, setValue] = useState<string>('option1');
 
   const onChange = useCallback<ChangeEventHandler<HTMLInputElement>>((event) => {
-    setValue(event.target.value);
+    setValue(event.currentTarget.value);
   }, []);
 
   return (

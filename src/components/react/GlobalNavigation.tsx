@@ -40,7 +40,7 @@ const GlobalNavigation: FC<Props> = ({ currentPath, allComponentPostData }) => {
                 Getting Started
               </GlobalNavigationLinkRoot>
             </li>
-            <ul>
+            <ul className={styles.innerList}>
               <li>
                 <GlobalNavigationLinkRoot current={isCurrent('/principles')} href="/principles">
                   Principles
@@ -57,7 +57,7 @@ const GlobalNavigation: FC<Props> = ({ currentPath, allComponentPostData }) => {
                 </GlobalNavigationLinkRoot>
               </li>
             </ul>
-            <ul>
+            <ul className={styles.innerList}>
               <li>
                 <GlobalNavigationAccordion title="Tokens" titleHref="/tokens" currentPath={currentPath}>
                   <ul>
