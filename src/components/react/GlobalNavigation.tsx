@@ -51,6 +51,11 @@ const GlobalNavigation: FC<Props> = ({ currentPath, allComponentPostData }) => {
                   UX Writing
                 </GlobalNavigationLinkRoot>
               </li>
+              <li>
+                <GlobalNavigationLinkRoot href="/accessibility" current={isCurrent('/accessibility')}>
+                  Accessibility
+                </GlobalNavigationLinkRoot>
+              </li>
             </ul>
             <ul className={styles.innerList}>
               <li>
