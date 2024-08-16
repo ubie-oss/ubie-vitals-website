@@ -52,29 +52,6 @@ const BodyExample: FC = () => {
           </Flex>
         </dd>
       </div>
-
-      <div>
-        <dt>Tight Leading</dt>
-        <dd>
-          <Flex spacing="md" alignItems="center">
-            <Text leading="tight" type="body" size="sm">
-              sm
-              <br />
-              {`${bodyText}`}
-            </Text>
-            <Text leading="tight" type="body" size="md">
-              md
-              <br />
-              {`${bodyText}`}
-            </Text>
-            <Text leading="tight" type="body" size="lg">
-              lg
-              <br />
-              {`${bodyText}`}
-            </Text>
-          </Flex>
-        </dd>
-      </div>
     </Stack>
   );
 };

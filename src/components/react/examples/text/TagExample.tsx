@@ -6,11 +6,6 @@ const TagExample: FC = () => {
 
   return (
     <Flex spacing="md" alignItems="center">
-      <Text type="tag" size="sm">
-        sm
-        <br />
-        {`${tagText}`}
-      </Text>
       <Text type="tag" size="md">
         md
         <br />

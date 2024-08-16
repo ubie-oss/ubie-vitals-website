@@ -3,8 +3,8 @@ import type { FC } from 'react';
 
 const TextInTextExample: FC = () => {
   return (
-    <Text type="note" size="lg">
-      <Text as="span" type="note" size="lg" color="alert" bold>
+    <Text type="body" size="md">
+      <Text as="span" type="body" size="md" color="alert" bold>
         Alert:
       </Text>{' '}
       Please fill in all fields
