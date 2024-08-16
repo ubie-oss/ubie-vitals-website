@@ -1,4 +1,5 @@
 import DesignTokens from '@ubie/design-tokens';
+import { Box } from '@ubie/ubie-ui';
 import CopyButton from '@components/react/CopyButton';
 import { convertToTypographyCSS, convertToTypographyReact } from './scripts';
 import type { FC } from 'react';
@@ -38,7 +39,9 @@ const ExampleText: FC<Props> = ({ type, size, leading, src, alt, width, height }
         </p>
       )}
 
-      <img src={src} alt={alt} width={width} height={height} />
+      <Box my="xs">
+        <img src={src} alt={alt} width={width} height={height} />
+      </Box>
 
       <p>
         <code>{text[sizeKey].value}</code>(<code>{text[sizeKey]?.attributes?.note}</code>) /{' '}
