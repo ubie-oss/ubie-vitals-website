@@ -12,17 +12,6 @@ const TagList: FC = () => (
       <li>
         <ExampleText
           type="tag"
-          size="sm"
-          src="/assets/images/figures/typography/example-tag-sm.svg"
-          alt="tag/smでテキストを表示した場合のサンプル"
-          width="200"
-          height="14"
-        />
-      </li>
-
-      <li>
-        <ExampleText
-          type="tag"
           size="md"
           src="/assets/images/figures/typography/example-tag-md.svg"
           alt="tag/mdでテキストを表示した場合のサンプル"
@@ -30,7 +19,6 @@ const TagList: FC = () => (
           height="17"
         />
       </li>
-
       <li>
         <ExampleText
           type="tag"

@@ -15,11 +15,10 @@ const ButtonList: FC = () => (
           size="sm"
           src="/assets/images/figures/typography/example-button-sm.svg"
           alt="button/smでテキストを表示した場合のサンプル"
-          width="147"
-          height="14"
+          width="200"
+          height="18"
         />
       </li>
-
       <li>
         <ExampleText
           type="button"
@@ -30,7 +29,6 @@ const ButtonList: FC = () => (
           height="14"
         />
       </li>
-
       <li>
         <ExampleText
           type="button"

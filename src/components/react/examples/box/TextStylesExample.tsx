@@ -22,22 +22,6 @@ export const TextStylesExample: FC = () => {
         <Box pt="md" pr="md" pb="md" pl="md" radius="md" backgroundColor="gray">
           <p>nested</p>
         </Box>
-
-        <Box
-          pt="md"
-          pr="md"
-          pb="md"
-          pl="md"
-          radius="md"
-          mt="md"
-          backgroundColor="gray"
-          textType="note"
-          textSize="lg"
-          textLeading="tight"
-          textBold={false}
-        >
-          <p>nested. reset styles</p>
-        </Box>
       </Box>
 
       <Box pt="md" pr="md" pb="md" pl="md" radius="md" backgroundColor="gray" mt="xl" textColor="main">
@@ -97,20 +81,6 @@ export const TextStylesExample: FC = () => {
       >
         <p>Body Small Narrow</p>
       </Box>
-      <Box
-        backgroundColor="gray"
-        pt="md"
-        pr="md"
-        pb="md"
-        pl="md"
-        radius="md"
-        mt="md"
-        textType="body"
-        textSize="sm"
-        textLeading="tight"
-      >
-        <p>Body Small Tight</p>
-      </Box>
 
       <Box
         backgroundColor="gray"
@@ -140,20 +110,6 @@ export const TextStylesExample: FC = () => {
       >
         <p>Body Medium Narrow</p>
       </Box>
-      <Box
-        backgroundColor="gray"
-        pt="md"
-        pr="md"
-        pb="md"
-        pl="md"
-        radius="md"
-        mt="md"
-        textType="body"
-        textSize="md"
-        textLeading="tight"
-      >
-        <p>Body Medium Tight</p>
-      </Box>
 
       <Box
         backgroundColor="gray"
@@ -182,153 +138,6 @@ export const TextStylesExample: FC = () => {
         textLeading="narrow"
       >
         <p>Body Large Narrow</p>
-      </Box>
-      <Box
-        backgroundColor="gray"
-        pt="md"
-        pr="md"
-        pb="md"
-        pl="md"
-        radius="md"
-        mt="md"
-        textType="body"
-        textSize="lg"
-        textLeading="tight"
-      >
-        <p>Body Large Tight</p>
-      </Box>
-
-      <Box backgroundColor="gray" pt="md" pr="md" pb="md" pl="md" radius="md" mt="xl" textType="note">
-        <p>Note size & leading default value</p>
-      </Box>
-
-      <Box
-        backgroundColor="gray"
-        pt="md"
-        pr="md"
-        pb="md"
-        pl="md"
-        radius="md"
-        mt="xl"
-        textType="note"
-        textSize="sm"
-        textLeading="default"
-      >
-        <p>Note Small Default</p>
-      </Box>
-      <Box
-        backgroundColor="gray"
-        pt="md"
-        pr="md"
-        pb="md"
-        pl="md"
-        radius="md"
-        mt="md"
-        textType="note"
-        textSize="sm"
-        textLeading="narrow"
-      >
-        <p>Note Small Narrow</p>
-      </Box>
-      <Box
-        backgroundColor="gray"
-        pt="md"
-        pr="md"
-        pb="md"
-        pl="md"
-        radius="md"
-        mt="md"
-        textType="note"
-        textSize="sm"
-        textLeading="tight"
-      >
-        <p>Note Small Tight</p>
-      </Box>
-
-      <Box
-        backgroundColor="gray"
-        pt="md"
-        pr="md"
-        pb="md"
-        pl="md"
-        radius="md"
-        mt="xl"
-        textType="note"
-        textSize="md"
-        textLeading="default"
-      >
-        <p>Note Medium Default</p>
-      </Box>
-      <Box
-        backgroundColor="gray"
-        pt="md"
-        pr="md"
-        pb="md"
-        pl="md"
-        radius="md"
-        mt="md"
-        textType="note"
-        textSize="md"
-        textLeading="narrow"
-      >
-        <p>Note Medium Narrow</p>
-      </Box>
-      <Box
-        backgroundColor="gray"
-        pt="md"
-        pr="md"
-        pb="md"
-        pl="md"
-        radius="md"
-        mt="md"
-        textType="note"
-        textSize="md"
-        textLeading="tight"
-      >
-        <p>Note Medium Tight</p>
-      </Box>
-
-      <Box
-        backgroundColor="gray"
-        pt="md"
-        pr="md"
-        pb="md"
-        pl="md"
-        radius="md"
-        mt="xl"
-        textType="note"
-        textSize="lg"
-        textLeading="default"
-      >
-        <p>Note Large Default</p>
-      </Box>
-      <Box
-        backgroundColor="gray"
-        pt="md"
-        pr="md"
-        pb="md"
-        pl="md"
-        radius="md"
-        mt="md"
-        textType="note"
-        textSize="lg"
-        textLeading="narrow"
-      >
-        <p>Note Large Narrow</p>
-      </Box>
-      <Box
-        backgroundColor="gray"
-        pt="md"
-        pr="md"
-        pb="md"
-        pl="md"
-        radius="md"
-        mt="md"
-        textType="note"
-        textSize="lg"
-        textLeading="tight"
-      >
-        <p>Note Large Tight</p>
       </Box>
 
       <Box backgroundColor="gray" pt="md" pr="md" pb="md" pl="md" radius="md" mt="xl" textAlign="left">

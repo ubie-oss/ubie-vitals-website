@@ -14,7 +14,9 @@ const Default: FC = () => {
       <button type="button" onClick={() => setOpen(true)}>
         Open Modal
       </button>
-      <ActionHalfModal primaryActionLabel="アクション" onPrimaryAction={onClose} open={open} onClose={onClose} />
+      <ActionHalfModal primaryActionLabel="アクション" onPrimaryAction={onClose} open={open} onClose={onClose}>
+        Body
+      </ActionHalfModal>
     </>
   );
 };

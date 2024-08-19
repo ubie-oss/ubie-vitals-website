@@ -13,6 +13,30 @@ const BodyList: FC = () => {
         <li>
           <ExampleText
             type="body"
+            size="xs"
+            src="/assets/images/figures/typography/example-text-body-xs.svg"
+            alt="Body/xsでテキストを表示した場合のサンプル"
+            width="352"
+            height="60"
+          />
+        </li>
+        <li>
+          <ExampleText
+            type="body"
+            size="xs"
+            leading="narrow"
+            src="/assets/images/figures/typography/example-text-body-xs-narrow.svg"
+            alt="Body/xs-narrowでテキストを表示した場合のサンプル"
+            width="348"
+            height="49"
+          />
+        </li>
+      </Grid>
+
+      <Grid minimum="352px" role="list">
+        <li>
+          <ExampleText
+            type="body"
             size="sm"
             src="/assets/images/figures/typography/example-text-body-sm.svg"
             alt="Body/smでテキストを表示した場合のサンプル"
@@ -20,7 +44,6 @@ const BodyList: FC = () => {
             height="96"
           />
         </li>
-
         <li>
           <ExampleText
             type="body"
@@ -30,18 +53,6 @@ const BodyList: FC = () => {
             alt="Body/sm-narrowでテキストを表示した場合のサンプル"
             width="352"
             height="84"
-          />
-        </li>
-
-        <li>
-          <ExampleText
-            type="body"
-            size="sm"
-            leading="tight"
-            src="/assets/images/figures/typography/example-text-body-sm-tight.svg"
-            alt="Body/sm-tightでテキストを表示した場合のサンプル"
-            width="352"
-            height="80"
           />
         </li>
       </Grid>
@@ -57,7 +68,6 @@ const BodyList: FC = () => {
             height="135"
           />
         </li>
-
         <li>
           <ExampleText
             type="body"
@@ -67,18 +77,6 @@ const BodyList: FC = () => {
             alt="Body/md-narrowでテキストを表示した場合のサンプル"
             width="352"
             height="120"
-          />
-        </li>
-
-        <li>
-          <ExampleText
-            type="body"
-            size="md"
-            leading="tight"
-            src="/assets/images/figures/typography/example-text-body-md-tight.svg"
-            alt="Body/md-tightでテキストを表示した場合のサンプル"
-            width="352"
-            height="110"
           />
         </li>
       </Grid>
@@ -94,7 +92,6 @@ const BodyList: FC = () => {
             height="155"
           />
         </li>
-
         <li>
           <ExampleText
             type="body"
@@ -104,18 +101,6 @@ const BodyList: FC = () => {
             alt="Body/lg-narrowでテキストを表示した場合のサンプル"
             width="352"
             height="135"
-          />
-        </li>
-
-        <li>
-          <ExampleText
-            type="body"
-            size="lg"
-            leading="tight"
-            src="/assets/images/figures/typography/example-text-body-lg-tight.svg"
-            alt="Body/lg-tightでテキストを表示した場合のサンプル"
-            width="352"
-            height="125"
           />
         </li>
       </Grid>
