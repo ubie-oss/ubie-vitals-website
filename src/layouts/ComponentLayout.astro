@@ -12,6 +12,7 @@ type Props = MarkdownLayoutProps<{
   exampleKey: string;
   repositoryUrl?: string;
   baseElement?: string;
+  exampleSize?: 'md' | 'lg'
 }>;
 
 const { frontmatter } = Astro.props;
@@ -50,7 +51,7 @@ const examples = getAllExample(frontmatter.exampleKey);
       Example<a class="linkHeading" href="#Example"><span class="linkHeadingIcon">#</span></a>
     </h2>
 
-    <ExampleSwitcher examples={examples} client:only="react" />
+    <ExampleSwitcher size={frontmatter.exampleSize} examples={examples} client:only="react" />
 
     <section>
       <h2 id="Props">

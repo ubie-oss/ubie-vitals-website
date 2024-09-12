@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { Code } from './Code';
 import styles from './ExampleViewer.module.css';
 import type { Example } from '@utils/server';
@@ -5,12 +6,13 @@ import type { FC, PropsWithChildren } from 'react';
 
 type Props = PropsWithChildren<{
   example: Example;
+  size: 'md' | 'lg';
 }>;
 
-const ExampleViewer: FC<Props> = ({ example }) => {
+const ExampleViewer: FC<Props> = ({ example, size = 'md' }) => {
   return (
     <div>
-      <div className={styles.demo}>
+      <div className={clsx(styles.demo, size === 'lg' && styles.lg)}>
         <a className={styles.externalLink} href={example.url} target="_blank" rel="noreferrer">
           Open Window
         </a>
