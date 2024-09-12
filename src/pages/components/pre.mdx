@@ -1,0 +1,27 @@
+---
+title: 'Pre'
+exampleKey: 'pre'
+exampleSize: 'lg'
+layout: '@layouts/ComponentLayout.astro'
+description: 'テキストの折り返しを制御'
+thumbnail: '/assets/images/components/thumbnail-default.svg'
+repositoryUrl: 'https://github.com/ubie-oss/ubie-ui/tree/main/src/components/Pre'
+---
+
+## Feature
+
+- テキストの折り返しを制御します
+- ネイティブの`<pre>`要素と似たような機能を持ちます
+- `<pre>`と違い、フォントのスタイルを変更しません（通常、`<pre>`にはブラウザのデフォルトスタイルが適用されています）
+
+## Usage
+
+`whiteSpace` propはCSSの`white-space`プロパティに該当します。
+
+- **`pre`**: テキストの空白や改行がそのまま表示されます
+- **`pre-wrap`**: `pre`とほぼ同じですが、テキストがコンテナからはみ出る場合に折り返されます
+    - 長い連続する空白が存在した場合、コンテナからはみ出る可能性があります
+- **`pre-line`**: `pre-wrap`とほぼ同じですが、空白が連続した場合は1つにまとめられます
+- **`break-spaces`**: `pre-wrap`とほぼ同じですが、連続する空白がコンテナからはみ出た場合に折り返されます。また、空白が`min-content`や`max-content`などのサイズに影響します。
+
+
