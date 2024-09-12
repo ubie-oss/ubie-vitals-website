@@ -2,7 +2,7 @@ import { MessageHalfModal } from '@ubie/ubie-ui';
 import { type FC, useCallback, useState } from 'react';
 
 export const WithHeroExample: FC = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   const onClose = useCallback(() => {
     setOpen(false);
@@ -14,7 +14,7 @@ export const WithHeroExample: FC = () => {
         Open Modal
       </button>
       <MessageHalfModal
-        header="メッセージ"
+        header="Title"
         hero={
           <img
             src="/assets/images/components/modals/hero-placeholder.svg"

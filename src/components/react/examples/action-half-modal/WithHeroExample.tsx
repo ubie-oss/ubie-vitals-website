@@ -22,6 +22,7 @@ export const WithHeroExample: FC = () => {
             height={315}
           />
         }
+        header="Title"
         primaryActionLabel="Action"
         onPrimaryAction={onClose}
         open={open}
