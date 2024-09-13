@@ -6,9 +6,10 @@ import type { FC } from 'react';
 
 interface Props {
   examples: ExampleType[];
+  size?: 'md' | 'lg';
 }
 
-const ExampleSwitcher: FC<Props> = ({ examples }) => {
+const ExampleSwitcher: FC<Props> = ({ examples, size = 'md' }) => {
   const defaultExampleUrl = useMemo(() => {
     return examples[0].url || '';
   }, [examples]);
@@ -37,7 +38,7 @@ const ExampleSwitcher: FC<Props> = ({ examples }) => {
           ))}
         </Flex>
 
-        {currentExample && <ExampleViewer example={currentExample} />}
+        {currentExample && <ExampleViewer size={size} example={currentExample} />}
       </Stack>
     </>
   );

@@ -5,6 +5,10 @@
   border-radius: var(--radius-sm);
 }
 
+.demo.lg {
+  height: 512px;
+}
+
 .demoFrame {
   width: 100%;
   min-height: 100%;
