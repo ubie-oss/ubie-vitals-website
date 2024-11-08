@@ -61,7 +61,5 @@ const convertKeyLinkButtonToButton = (key: string): string => {
 };
 
 export const buildComponentPath = (exampleKey: string): string => {
-  return `./node_modules/@ubie/ubie-ui/dist/components/${toCamelCase(
-    convertKeyLinkButtonToButton(exampleKey),
-  )}/${toCamelCase(exampleKey)}.d.ts`;
+  return `src/components/${toCamelCase(convertKeyLinkButtonToButton(exampleKey))}/${toCamelCase(exampleKey)}.tsx`;
 };

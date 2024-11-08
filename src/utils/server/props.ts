@@ -1,23 +1,52 @@
-import { parser } from "./parser";
-import type { PropItemType } from "react-docgen-typescript";
+import { default as ubieUiProps } from 'node_modules/@ubie/ubie-ui/dist/props.json';
+import type { PropItemType } from 'react-docgen-typescript';
 
-const extractType = (type: PropItemType) => {
-  if (type.name === "enum") {
-    const values = type.value as { value: string }[];
-    return values.map((value) => value.value);
+const convertMap = {
+  '`fit-content(${CSSLengthPercentage})`': "'fit-content()'",
+  '`var(--${string})`': "'var()'",
+};
+
+const convertType = (type: string) => {
+  if (convertMap[type]) {
+    return convertMap[type];
   }
 
-  return type.name;
+  const match = type.match(/^`\${string}(.*)`$/);
+  if (match) {
+    return `'${match[1]}'`;
+  }
+
+  return type;
+};
+
+const typeObjToValues = (type) => {
+  console.log(type);
+  if (!type.name) {
+    return '';
+  } else if (type.name === 'union') {
+    return type.elements.map((element) => typeObjToValues(element));
+  } else if (type.name === 'signature') {
+    return type.raw;
+  } else if (type.name.startsWith('HTML')) {
+    return 'string';
+  } else if (type.name === 'ReactNode') {
+    return 'ReactNode';
+  } else if (type.name === 'literal') {
+    return convertType(type.value);
+  } else {
+    return convertType(type.name);
+  }
+};
+
+const extractType = (type: PropItemType) => {
+  const values = typeObjToValues(type);
+  return Array.isArray(values) ? values.flat(Infinity) : values;
 };
 
 export const extractPropsFromFile = (filePath: string) => {
-  const docs = parser.parse(filePath);
+  const { props } = ubieUiProps[filePath][0];
 
-  if (docs.length === 0) {
-    return [];
-  }
-
-  const { props } = docs[0];
+  console.dir(props, { depth: null });
 
   const propsArray: {
     name: string;
@@ -25,15 +54,17 @@ export const extractPropsFromFile = (filePath: string) => {
     defaultValue: string | number | null;
     required: boolean;
     description: string;
-  }[] = Object.entries(props).map(([name, propInfo]) => ({
-    name: name,
-    type: extractType(propInfo.type),
-    defaultValue: propInfo.defaultValue
-      ? (propInfo.defaultValue.value as string | number)
-      : null,
-    required: propInfo.required,
-    description: propInfo.description,
-  }));
+  }[] = Object.entries(props).map(([name, propInfo]) => {
+    return {
+      name: name,
+      type: extractType(propInfo.tsType === undefined ? '' : propInfo.tsType),
+      defaultValue: propInfo.defaultValue ? (propInfo.defaultValue.value as string | number) : null,
+      required: propInfo.required,
+      description: propInfo.description,
+    };
+  });
+
+  console.dir(propsArray, { depth: null });
 
   return propsArray;
 };

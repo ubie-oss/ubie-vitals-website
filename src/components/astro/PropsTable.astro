@@ -40,10 +40,9 @@ const { propsArray } = Astro.props;
                 {Array.isArray(prop.type) ? (
                   prop.type.map((type, i) => {
                     return (
-                      <>
-                        {i !== 0 && <span> | </span>}
+                      <div class="typeItem">
                         <code>{type}</code>
-                      </>
+                      </div>
                     );
                   })
                 ) : (
@@ -103,11 +102,7 @@ const { propsArray } = Astro.props;
 
   th.type,
   td.type {
-    width: 30%;
-  }
-
-  td.type code {
-    margin: 3px;
+    white-space: nowrap;
   }
 
   td.type code:first-child {
