@@ -33,3 +33,11 @@ export const BreakPoint = {
   desktop: '768px',
 } as const;
 export type BreakPoint = keyof typeof BreakPoint;
+
+export type Prop = {
+  name: string;
+  type: string | string[];
+  defaultValue?: string;
+  required?: boolean;
+  description?: string;
+};
