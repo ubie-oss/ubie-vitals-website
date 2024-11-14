@@ -5,6 +5,8 @@ import ExampleSwitcher from '@components/react/ExampleSwitcher';
 import PostLayout from '@layouts/PostLayout.astro';
 import { extractPropsFromFile, getAllExample, buildComponentPath } from '@utils/server';
 import type { MarkdownLayoutProps } from 'astro';
+import {unionBy} from 'es-toolkit';
+import type {Prop} from "../types";
 
 type Props = MarkdownLayoutProps<{
   title: string;
@@ -12,23 +14,24 @@ type Props = MarkdownLayoutProps<{
   exampleKey: string;
   repositoryUrl?: string;
   baseElement?: string;
-  exampleSize?: 'md' | 'lg'
+  exampleSize?: 'md' | 'lg',
+  props?: Array<Prop>
 }>;
+
 
 const { frontmatter } = Astro.props;
 
 const filePath = buildComponentPath(frontmatter.exampleKey);
 
 // Add data-* to all components (because the types are too complex to extract)
-const propsArray = [
-  ...extractPropsFromFile(filePath),
-  {
-    name: 'data-*',
-    type: 'string',
-    description: 'Custom data attributes',
-    required: false,
-  },
-];
+const propsArray: Prop[] = [...unionBy(frontmatter.props ? frontmatter.props : [], extractPropsFromFile(filePath),(p) => {
+  return p.name
+}), {
+  name: 'data-*',
+  type: 'string',
+  description: 'Custom data attributes',
+  required: false,
+}];
 
 const examples = getAllExample(frontmatter.exampleKey);
 ---

@@ -1,17 +1,23 @@
 ---
-type Prop = {
-  name: string;
-  type: string | string[];
-  defaultValue: string | number | null;
-  required: boolean;
-  description: string;
-};
+import type { Prop } from '../../types';
+import { valueKeywordMap } from '../../utils/server/props/valueKeywordMap';
+import { convertKeyOrValue } from '../../utils/server/props/convertKeyOrValue';
 
 interface Props {
   propsArray: Prop[];
 }
 
 const { propsArray } = Astro.props;
+
+const normalizedProps = propsArray.map((prop) => {
+  return Object.assign({}, prop, {
+    type: [
+      [prop.type].flat(Infinity).map((t) => {
+        return convertKeyOrValue(t as string);
+      }),
+    ].flat(Infinity),
+  });
+});
 ---
 
 {
@@ -29,7 +35,7 @@ const { propsArray } = Astro.props;
           </tr>
         </thead>
         <tbody>
-          {propsArray.map((prop) => (
+          {normalizedProps.map((prop) => (
             <tr>
               <th scope="row" class="nowrap">
                 {prop.name}
@@ -46,7 +52,7 @@ const { propsArray } = Astro.props;
                     );
                   })
                 ) : (
-                  <code>{prop.type}</code>
+                  <code>{convertKeyOrValue(prop.type)}</code>
                 )}
               </td>
               <td>
@@ -83,13 +89,13 @@ const { propsArray } = Astro.props;
 
   th {
     font-size: var(--text-body-sm-size);
-    line-height: var(--text-body-sm-tight-line);
+    line-height: var(--text-body-sm-narrow-line);
     color: var(--color-ubie-black-500);
   }
 
   td {
     font-size: var(--text-body-sm-size);
-    line-height: var(--text-body-sm-tight-line);
+    line-height: var(--text-body-sm-narrow-line);
     word-break: break-word;
   }
 
