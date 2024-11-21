@@ -1,6 +1,6 @@
-export const valueKeywordMap = new Map<string, Array<string>>();
+export const typeSetKeyword = new Map<string, Array<string>>();
 
-valueKeywordMap.set('{TextColor}', [
+typeSetKeyword.set('{TextColor}', [
   "'main'",
   "'sub'",
   "'link'",
@@ -12,9 +12,9 @@ valueKeywordMap.set('{TextColor}', [
   "'white'",
 ]);
 
-valueKeywordMap.set('{Spacing}', ["'xxs'", "'xs'", "'sm'", "'md'", "'lg'", "'xl'", "'xxl'"]);
+typeSetKeyword.set('{Spacing}', ["'xxs'", "'xs'", "'sm'", "'md'", "'lg'", "'xl'", "'xxl'"]);
 
-valueKeywordMap.set('{BackgroundColor}', [
+typeSetKeyword.set('{BackgroundColor}', [
   "'primary'",
   "'primaryDarken'",
   "'accent'",
@@ -24,7 +24,7 @@ valueKeywordMap.set('{BackgroundColor}', [
   "'white'",
 ]);
 
-valueKeywordMap.set('{Width}', [
+typeSetKeyword.set('{Width}', [
   "'cap'",
   "'ch'",
   "'em'",
@@ -64,7 +64,7 @@ valueKeywordMap.set('{Width}', [
   "'var()'",
 ]);
 
-valueKeywordMap.set('{MaxWidth}', [
+typeSetKeyword.set('{MaxWidth}', [
   "'cap'",
   "'ch'",
   "'em'",
@@ -104,10 +104,10 @@ valueKeywordMap.set('{MaxWidth}', [
   "'var()'",
 ]);
 
-valueKeywordMap.set('{MinWidth}', valueKeywordMap.get('{Width}')!);
+typeSetKeyword.set('{MinWidth}', typeSetKeyword.get('{Width}')!);
 
-valueKeywordMap.set('{Radius}', ["'xs'", "'sm'", "'md'", "'lg'"]);
+typeSetKeyword.set('{Radius}', ["'xs'", "'sm'", "'md'", "'lg'"]);
 
-valueKeywordMap.set('{BodyFontSize}', ["'xs'", "'sm'", "'md'", "'lg'"]);
+typeSetKeyword.set('{BodyFontSize}', ["'xs'", "'sm'", "'md'", "'lg'"]);
 
-valueKeywordMap.set('{BodyLeading}', ["'default'", "'narrow'"]);
+typeSetKeyword.set('{BodyLeading}', ["'default'", "'narrow'"]);
