@@ -1,12 +1,13 @@
 ---
+import {unionBy} from 'es-toolkit';
 import PropsTable from '@components/astro/PropsTable.astro';
 import RepositoryLink from '@components/astro/RepositoryLink.astro';
 import ExampleSwitcher from '@components/react/ExampleSwitcher';
 import PostLayout from '@layouts/PostLayout.astro';
 import { extractPropsFromFile, getAllExample, buildComponentPath } from '@utils/server';
-import type { MarkdownLayoutProps } from 'astro';
-import {unionBy} from 'es-toolkit';
+import {convertTypeSetKeyword} from "../utils/server/props/convertTypeSetKeyword";
 import type {Prop} from "../types";
+import type { MarkdownLayoutProps } from 'astro';
 
 type Props = MarkdownLayoutProps<{
   title: string;
@@ -14,6 +15,7 @@ type Props = MarkdownLayoutProps<{
   exampleKey: string;
   repositoryUrl?: string;
   baseElement?: string;
+  allowClassName?: boolean;
   exampleSize?: 'md' | 'lg',
   props?: Array<Prop>
 }>;
@@ -21,10 +23,19 @@ type Props = MarkdownLayoutProps<{
 
 const { frontmatter } = Astro.props;
 
-const filePath = buildComponentPath(frontmatter.exampleKey);
+const { exampleKey, props = [] } = frontmatter;
+
+const filePath = buildComponentPath(exampleKey);
+
+const convertedProps = props.map(prop => {
+  return {
+    ...prop,
+    type: convertTypeSetKeyword(prop.type)
+  }
+})
 
 // Add data-* to all components (because the types are too complex to extract)
-const propsArray: Prop[] = [...unionBy(frontmatter.props ? frontmatter.props : [], extractPropsFromFile(filePath),(p) => {
+const propsArray: Prop[] = [...unionBy(convertedProps, extractPropsFromFile(filePath),(p) => {
   return p.name
 }), {
   name: 'data-*',
@@ -32,6 +43,9 @@ const propsArray: Prop[] = [...unionBy(frontmatter.props ? frontmatter.props : [
   description: 'Custom data attributes',
   required: false,
 }];
+propsArray.sort((a, b) => {
+  return a.name.localeCompare(b.name);
+})
 
 const examples = getAllExample(frontmatter.exampleKey);
 ---
@@ -65,7 +79,7 @@ const examples = getAllExample(frontmatter.exampleKey);
         frontmatter.baseElement && (
           <p class="baseElement">
             <!-- eslint-disable-next-line -->
-            <code>&lt;{frontmatter.baseElement}&gt;</code>要素をベースにしています。 表にない属性もprop経由で使用できます（<code>className</code>は除く）。
+            <code>&lt;{frontmatter.baseElement}&gt;</code>要素をベースにしています。 表にない属性もprop経由で使用できます{frontmatter.allowClassName ? '' : '（classNameは除く）'}。
           </p>
         )
       }

@@ -1,4 +1,3 @@
-import { BlankLinkIcon, UbieIcon, TrashIcon } from '@ubie/ubie-icons';
 import { Button, Stack } from '@ubie/ubie-ui';
 import type { FC } from 'react';
 
@@ -11,20 +10,20 @@ const WithIconExample: FC = () => {
           <div
             style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', gap: '32px', flexWrap: 'wrap' }}
           >
-            <Button icon={<UbieIcon />}>ボタン</Button>
-            <Button icon={<UbieIcon />} variant="secondary">
+            <Button icon="UbieIcon">ボタン</Button>
+            <Button icon="UbieIcon" variant="secondary">
               ボタン
             </Button>
-            <Button icon={<UbieIcon />} variant="accent">
+            <Button icon="UbieIcon" variant="accent">
               ボタン
             </Button>
-            <Button icon={<UbieIcon />} variant="alert">
+            <Button icon="UbieIcon" variant="alert">
               ボタン
             </Button>
-            <Button icon={<UbieIcon />} variant="text">
+            <Button icon="UbieIcon" variant="text">
               ボタン
             </Button>
-            <Button icon={<TrashIcon />} variant="textAlert">
+            <Button icon="TrashIcon" variant="textAlert">
               ボタン
             </Button>
           </div>
@@ -37,20 +36,20 @@ const WithIconExample: FC = () => {
           <div
             style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', gap: '32px', flexWrap: 'wrap' }}
           >
-            <Button suffixIcon={<BlankLinkIcon />}>ボタン</Button>
-            <Button suffixIcon={<BlankLinkIcon />} variant="secondary">
+            <Button suffixIcon="BlankLinkIcon">ボタン</Button>
+            <Button suffixIcon="BlankLinkIcon" variant="secondary">
               ボタン
             </Button>
-            <Button suffixIcon={<BlankLinkIcon />} variant="accent">
+            <Button suffixIcon="BlankLinkIcon" variant="accent">
               ボタン
             </Button>
-            <Button suffixIcon={<BlankLinkIcon />} variant="alert">
+            <Button suffixIcon="BlankLinkIcon" variant="alert">
               ボタン
             </Button>
-            <Button suffixIcon={<BlankLinkIcon />} variant="text">
+            <Button suffixIcon="BlankLinkIcon" variant="text">
               ボタン
             </Button>
-            <Button suffixIcon={<TrashIcon />} variant="textAlert">
+            <Button suffixIcon="TrashIcon" variant="textAlert">
               ボタン
             </Button>
           </div>
@@ -63,20 +62,20 @@ const WithIconExample: FC = () => {
           <div
             style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', gap: '32px', flexWrap: 'wrap' }}
           >
-            <Button fixedIcon={<BlankLinkIcon />}>ボタン</Button>
-            <Button fixedIcon={<BlankLinkIcon />} variant="secondary">
+            <Button fixedIcon="BlankLinkIcon">ボタン</Button>
+            <Button fixedIcon="BlankLinkIcon" variant="secondary">
               ボタン
             </Button>
-            <Button fixedIcon={<BlankLinkIcon />} variant="accent">
+            <Button fixedIcon="BlankLinkIcon" variant="accent">
               ボタン
             </Button>
-            <Button fixedIcon={<BlankLinkIcon />} variant="alert">
+            <Button fixedIcon="BlankLinkIcon" variant="alert">
               ボタン
             </Button>
-            <Button fixedIcon={<BlankLinkIcon />} variant="text">
+            <Button fixedIcon="BlankLinkIcon" variant="text">
               ボタン
             </Button>
-            <Button fixedIcon={<TrashIcon />} variant="textAlert">
+            <Button fixedIcon="TrashIcon" variant="textAlert">
               ボタン
             </Button>
           </div>

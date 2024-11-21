@@ -5,6 +5,10 @@ layout: '@layouts/ComponentLayout.astro'
 description: 'ユーザーがアクションを実行するためのボタン'
 thumbnail: '/assets/images/components/thumbnail-button.svg'
 repositoryUrl: 'https://github.com/ubie-oss/ubie-ui/tree/main/src/components/Button'
+props:
+- name: "prefixIcon"
+  description: "前方配置のアイコン"
+  type: ["default", "ReactElement", "IconName"]
 ---
 
 import Variant from '@sharedDocuments/button/Variant.md';

@@ -5,6 +5,43 @@ layout: '@layouts/ComponentLayout.astro'
 description: 'Design Systemに則ったTypographyのスタイルを提供'
 thumbnail: '/assets/images/components/thumbnail-text.svg'
 repositoryUrl: 'https://github.com/ubie-oss/ubie-ui/tree/main/src/components/Text'
+props:
+- name: "as"
+  description: "レンダリングされる要素を指定。renderとは違い、HTMLのネイティブ要素に限定\nまた、指定した要素に応じて対応する属性も合わせて使用可能に"
+  type: "HTMLの要素名"
+  defaultValue: "'p'"
+- name: "render"
+  description: "レンダリングされる要素を変更。フレームワークのリンクコンポーネントを想定しています\n指定した場合、colorがデフォルトでlinkになります"
+  type: "ReactElement"
+- name: "children"
+  description: "表示するテキスト\npやdivなどを含めないでください（文法的にNGです）"
+  type: "ReactNode"
+- name: "bold"
+  description: "太字とするかどうか"
+  type: "boolean"
+- name: "textColor"
+  description: "文字色の抽象値"
+  type: "{TextColor}"
+  defaultValue: "'main'"
+- name: "id"
+  description: "HTMLのid属性"
+  type: "string"
+- name: "textAlign"
+  description: "テキストの配置。指定しない場合、親要素の配置を継承"
+  type: ["left" , "center" , "right"]
+- name: "noWrap"
+  description: "領域が狭い場合でも折り返えさない"
+  type: "boolean"
+- name: "type"
+  description: "テキストの種類"
+  type: ["'body'", "'heading'", "'button'", "'tag'"]
+- name: "size"
+  description: "フォントサイズの抽象値"
+  type: "'typeごとの値'"
+- name: "leading"
+  description: "行送りの抽象値（`line-height`）"
+  type: "'typeごとの値'"
+
 ---
 
 ## Feature
