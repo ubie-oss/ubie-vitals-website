@@ -5,6 +5,13 @@ layout: '@layouts/ComponentLayout.astro'
 description: '垂直方向に、一定のリズムで要素を積み上げるレイアウト'
 thumbnail: '/assets/images/components/thumbnail-stack.svg'
 repositoryUrl: 'https://github.com/ubie-oss/ubie-ui/tree/main/src/components/Stack'
+props:
+- name: "spacing"
+  description: "子要素の間隔。指定しない場合は0\nxxs=4px, xs=8px, sm=12px, md=16px, lg=24px, xl=40px, xxl=64px"
+  type: "{Spacing}"
+- name: "gap"
+  description: "spacingのエイリアス（どちらかしか指定できません）\nxxs=4px, xs=8px, sm=12px, md=16px, lg=24px, xl=40px, xxl=64px"
+  type: "{Spacing}"
 ---
 
 ## Feature

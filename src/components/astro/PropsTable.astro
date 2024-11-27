@@ -1,11 +1,8 @@
 ---
-type Prop = {
-  name: string;
-  type: string | string[];
-  defaultValue: string | number | null;
-  required: boolean;
-  description: string;
-};
+import type { Prop } from '../../types';
+import { typeSetKeyword } from '../../utils/server/props/typeSetKeyword';
+import { convertTypeSetKeyword } from '../../utils/server/props/convertTypeSetKeyword';
+import { TypeList } from '../react/props/TypeList';
 
 interface Props {
   propsArray: Prop[];
@@ -37,23 +34,12 @@ const { propsArray } = Astro.props;
                 {!prop.required && !prop.defaultValue && <div class="optional">optional</div>}
               </th>
               <td class="type">
-                {Array.isArray(prop.type) ? (
-                  prop.type.map((type, i) => {
-                    return (
-                      <>
-                        {i !== 0 && <span> | </span>}
-                        <code>{type}</code>
-                      </>
-                    );
-                  })
-                ) : (
-                  <code>{prop.type}</code>
-                )}
+                {Array.isArray(prop.type) ? <TypeList types={prop.type} client:load /> : <code>{prop.type}</code>}
               </td>
               <td>
                 <code>{prop.defaultValue || '-'}</code>
               </td>
-              <td>{prop.description || '-'}</td>
+              <td class="description">{prop.description || '-'}</td>
             </tr>
           ))}
         </tbody>
@@ -84,13 +70,13 @@ const { propsArray } = Astro.props;
 
   th {
     font-size: var(--text-body-sm-size);
-    line-height: var(--text-body-sm-tight-line);
+    line-height: var(--text-body-sm-narrow-line);
     color: var(--color-ubie-black-500);
   }
 
   td {
     font-size: var(--text-body-sm-size);
-    line-height: var(--text-body-sm-tight-line);
+    line-height: var(--text-body-sm-narrow-line);
     word-break: break-word;
   }
 
@@ -103,11 +89,7 @@ const { propsArray } = Astro.props;
 
   th.type,
   td.type {
-    width: 30%;
-  }
-
-  td.type code {
-    margin: 3px;
+    white-space: nowrap;
   }
 
   td.type code:first-child {
@@ -138,5 +120,9 @@ const { propsArray } = Astro.props;
     font-weight: normal;
     line-height: var(--text-note-md-line);
     color: var(--color-text-sub);
+  }
+
+  .description {
+    white-space: pre-line;
   }
 </style>

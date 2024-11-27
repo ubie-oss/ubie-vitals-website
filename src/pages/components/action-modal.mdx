@@ -6,6 +6,13 @@ description: 'ユーザーに確認や操作などを求める場合に使用す
 thumbnail: '/assets/images/components/thumbnail-action-modal.svg'
 repositoryUrl: 'https://github.com/ubie-oss/ubie-ui/tree/main/src/components/ActionModal'
 exampleSize: 'lg'
+props:
+- name: "onSecondaryAction"
+  description: "セカンダリーアクションボタンが実行された場合のコールバック"
+  type: "() => void"
+- name: "secondaryActionLabel"
+  description: "セカンダリーアクションボタンのラベル\nonSecondaryActionが指定されていたら必須"
+  type: "string"
 ---
 
 import ModalDialogNecessary from '@sharedDocuments/modalDialog/ModalDialogNecessary.md';

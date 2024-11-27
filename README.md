@@ -34,3 +34,7 @@ Implement the most basic example.
 ```
 npm run generate:page:example
 ```
+### Component page props
+
+The props are automatically extracted using `react-docgen`. However, complex props cannot be extracted.
+In that case, they can be displayed by describing them in the mdx file frontmatter.prop. By using keywords such as `{TextColor}` and `{Spacing}`, you can omit the description of frequently used values (see src/utils/server/props/typeSetKeyword.ts for details).

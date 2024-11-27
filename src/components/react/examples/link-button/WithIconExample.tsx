@@ -1,4 +1,3 @@
-import { UbieIcon, BlankLinkIcon, TrashIcon } from '@ubie/ubie-icons';
 import { LinkButton, Stack } from '@ubie/ubie-ui';
 import type { FC } from 'react';
 
@@ -12,22 +11,22 @@ const WithIconExample: FC = () => {
           <div
             style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', gap: '32px', flexWrap: 'wrap' }}
           >
-            <LinkButton href="https://vitals.ubie.life/" icon={<UbieIcon />}>
+            <LinkButton href="https://vitals.ubie.life/" icon="UbieIcon">
               ボタン
             </LinkButton>
-            <LinkButton href="https://vitals.ubie.life/" icon={<UbieIcon />} variant="secondary">
+            <LinkButton href="https://vitals.ubie.life/" icon="UbieIcon" variant="secondary">
               ボタン
             </LinkButton>
-            <LinkButton href="https://vitals.ubie.life/" icon={<UbieIcon />} variant="accent">
+            <LinkButton href="https://vitals.ubie.life/" icon="UbieIcon" variant="accent">
               ボタン
             </LinkButton>
-            <LinkButton href="https://vitals.ubie.life/" icon={<UbieIcon />} variant="alert">
+            <LinkButton href="https://vitals.ubie.life/" icon="UbieIcon" variant="alert">
               ボタン
             </LinkButton>
-            <LinkButton href="https://vitals.ubie.life/" icon={<UbieIcon />} variant="text">
+            <LinkButton href="https://vitals.ubie.life/" icon="UbieIcon" variant="text">
               ボタン
             </LinkButton>
-            <LinkButton href="https://vitals.ubie.life/" icon={<TrashIcon />} variant="textAlert">
+            <LinkButton href="https://vitals.ubie.life/" icon="TrashIcon" variant="textAlert">
               ボタン
             </LinkButton>
           </div>
@@ -40,25 +39,25 @@ const WithIconExample: FC = () => {
           <div
             style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', gap: '32px', flexWrap: 'wrap' }}
           >
-            <LinkButton href="https://vitals.ubie.life/" suffixIcon={<BlankLinkIcon />}>
+            <LinkButton href="https://vitals.ubie.life/" suffixIcon="BlankLinkIcon">
               ボタン
             </LinkButton>
-            <LinkButton href="https://vitals.ubie.life/" suffixIcon={<BlankLinkIcon />} variant="secondary">
+            <LinkButton href="https://vitals.ubie.life/" suffixIcon="BlankLinkIcon" variant="secondary">
               ボタン
             </LinkButton>
-            <LinkButton href="https://vitals.ubie.life/" suffixIcon={<BlankLinkIcon />} variant="accent">
+            <LinkButton href="https://vitals.ubie.life/" suffixIcon="BlankLinkIcon" variant="accent">
               ボタン
             </LinkButton>
-            <LinkButton href="https://vitals.ubie.life/" suffixIcon={<BlankLinkIcon />} variant="alert">
+            <LinkButton href="https://vitals.ubie.life/" suffixIcon="BlankLinkIcon" variant="alert">
               ボタン
             </LinkButton>
-            <LinkButton href="https://vitals.ubie.life/" suffixIcon={<BlankLinkIcon />} variant="text">
+            <LinkButton href="https://vitals.ubie.life/" suffixIcon="BlankLinkIcon" variant="text">
               ボタン
             </LinkButton>
-            <LinkButton href="https://vitals.ubie.life/" suffixIcon={<BlankLinkIcon />} variant="textAlert">
+            <LinkButton href="https://vitals.ubie.life/" suffixIcon="BlankLinkIcon" variant="textAlert">
               ボタン
             </LinkButton>
-            <LinkButton href="https://vitals.ubie.life/" suffixIcon={<TrashIcon />} variant="textAlert">
+            <LinkButton href="https://vitals.ubie.life/" suffixIcon="TrashIcon" variant="textAlert">
               ボタン
             </LinkButton>
           </div>
@@ -72,22 +71,22 @@ const WithIconExample: FC = () => {
           <div
             style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', gap: '32px', flexWrap: 'wrap' }}
           >
-            <LinkButton href="https://vitals.ubie.life/" fixedIcon={<BlankLinkIcon />}>
+            <LinkButton href="https://vitals.ubie.life/" fixedIcon="BlankLinkIcon">
               ボタン
             </LinkButton>
-            <LinkButton href="https://vitals.ubie.life/" fixedIcon={<BlankLinkIcon />} variant="secondary">
+            <LinkButton href="https://vitals.ubie.life/" fixedIcon="BlankLinkIcon" variant="secondary">
               ボタン
             </LinkButton>
-            <LinkButton href="https://vitals.ubie.life/" fixedIcon={<BlankLinkIcon />} variant="accent">
+            <LinkButton href="https://vitals.ubie.life/" fixedIcon="BlankLinkIcon" variant="accent">
               ボタン
             </LinkButton>
-            <LinkButton href="https://vitals.ubie.life/" fixedIcon={<BlankLinkIcon />} variant="alert">
+            <LinkButton href="https://vitals.ubie.life/" fixedIcon="BlankLinkIcon" variant="alert">
               ボタン
             </LinkButton>
-            <LinkButton href="https://vitals.ubie.life/" fixedIcon={<BlankLinkIcon />} variant="text">
+            <LinkButton href="https://vitals.ubie.life/" fixedIcon="BlankLinkIcon" variant="text">
               ボタン
             </LinkButton>
-            <LinkButton href="https://vitals.ubie.life/" fixedIcon={<TrashIcon />} variant="textAlert">
+            <LinkButton href="https://vitals.ubie.life/" fixedIcon="TrashIcon" variant="textAlert">
               ボタン
             </LinkButton>
           </div>

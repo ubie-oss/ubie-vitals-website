@@ -22,7 +22,8 @@
       "vitest/importMeta",
       "astro/client"
     ],
-    "outDir": "dist"
+    "outDir": "dist",
+    "resolveJsonModule": true
   },
   "paths": { "*": ["@types/*"]}
 }

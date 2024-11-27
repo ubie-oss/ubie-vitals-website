@@ -6,6 +6,19 @@ layout: '@layouts/ComponentLayout.astro'
 description: '画面の下部を占有する、アクションを実行するためのモーダルダイアログ'
 thumbnail: '/assets/images/components/thumbnail-action-half-modal.svg'
 repositoryUrl: 'https://github.com/ubie-oss/ubie-ui/tree/main/src/components/ActionHalfModal'
+props:
+- name: "onPrimaryAction"
+  description: "プライマリーアクションボタンが実行された場合のコールバック"
+  type: "() => void"
+- name: "primaryActionLabel"
+  description: "プライマリーアクションボタンのラベル\nonPrimaryActionが指定されていたら必須"
+  type: "string"
+- name: "onSecondaryAction"
+  description: "セカンダリーアクションボタンが実行された場合のコールバック"
+  type: "() => void"
+- name: "secondaryActionLabel"
+  description: "セカンダリーアクションボタンのラベル\nonSecondaryActionが指定されていたら必須"
+  type: "string"
 ---
 
 import ModalDialogNecessary from '@sharedDocuments/modalDialog/ModalDialogNecessary.md';
