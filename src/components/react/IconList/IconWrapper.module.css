@@ -31,7 +31,7 @@
 .name {
   padding: 0;
   margin: 0;
-  font-size: var(--text-note-md-size);
+  font-size: var(--text-body-xs-size);
   font-weight: bold;
   line-height: var(--text-body-sm-line);
   color: var(--color-text-sub);

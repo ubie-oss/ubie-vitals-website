@@ -21,7 +21,7 @@
 .cellHead {
   padding: var(--size-spacing-sm) !important;
   font-size: var(--text-body-sm-size);
-  line-height: var(--text-body-sm-tight-line);
+  line-height: var(--text-body-sm-line);
   color: var(--color-ubie-black-500);
   text-align: left;
   border: none !important;
@@ -30,7 +30,7 @@
 .cell {
   padding: var(--size-spacing-sm) !important;
   font-size: var(--text-body-sm-size);
-  line-height: var(--text-body-sm-tight-line);
+  line-height: var(--text-body-sm-line);
   white-space: nowrap;
   border: none !important;
 }
