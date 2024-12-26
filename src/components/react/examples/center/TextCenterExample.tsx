@@ -6,7 +6,7 @@ const TextCenterExample: FC = () => {
     <Center maxWidth="400px" textCenter>
       <p>Text content is centered.</p>
 
-      <div style={{ width: 160, padding: 'var(--size-spacing-md)', backgroundColor: 'var(--color-ubie-black-100)' }}>
+      <div style={{ width: 160, padding: 'var(--size-spacing-md)', backgroundColor: 'var(--color-ubie-black-200)' }}>
         Child element is not centered.
       </div>
     </Center>

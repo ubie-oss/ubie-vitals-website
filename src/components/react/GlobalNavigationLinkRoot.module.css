@@ -9,12 +9,12 @@
 
 .link,
 .link:visited {
-  color: var(--color-ubie-black-700);
+  color: var(--color-ubie-black-900);
 }
 
 @media (hover: hover) {
   .link:hover {
-    background-color: var(--color-ubie-black-100);
+    background-color: var(--color-ubie-black-200);
   }
 }
 

@@ -4,26 +4,21 @@ description: 'セマンティクス（意味）を持つ色'
 layout: '@layouts/PostLayout.astro'
 ---
 
-import ColorListBranding from '@components/react/figures/color/semantic/ColorListBranding';
-import ColorListAlert from '@components/react/figures/color/semantic/ColorListAlert';
-import ColorListUI from '@components/react/figures/color/semantic/ColorListUI';
+import ColorListBackground from '@components/react/figures/color/semantic/ColorListBackground';
+import ColorListBorder from '@components/react/figures/color/semantic/ColorListBorder';
+import ColorListText from '@components/react/figures/color/semantic/ColorListText';
 
 [Primitive Colors](/tokens/color/primitive)にセマンティクスを持たせた色です。
 
-## Branding
+## Text
 
-`Primary` や `Accent` などの色はユビーらしさを体現するカラーです。全体で繰り返し利用することで、ユーザーにプロダクト固有の印象を与えます。
+<ColorListText client:load />
 
-<ColorListBranding client:only="react"/>
+## Background
 
-## Alert
+<ColorListBackground client:load />
 
-ユーザーへ警告を伝える色です。エラーや、不可逆操作への警告などに利用します。
 
-<ColorListAlert client:load />
+## Border
 
-## UI
-
-プリミティブなUI要素に使用します。
-
-<ColorListUI client:load />
+<ColorListBorder client:load />

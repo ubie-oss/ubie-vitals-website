@@ -7,7 +7,7 @@ const ChildrenCenterExample: FC = () => {
       <p>&lt;Center&gt; is 100% width</p>
 
       <Center childrenCenter>
-        <Box backgroundColor="gray" radius="md" pt="md" pr="md" pb="md" pl="md">
+        <Box backgroundColor="black" radius="md" pt="md" pr="md" pb="md" pl="md">
           <p>
             Child elements is centered.
             <br />

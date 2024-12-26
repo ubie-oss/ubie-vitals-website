@@ -8,9 +8,9 @@ const ColorExample: FC = () => (
     <Text color="link">link</Text>
     <Text color="linkSub">linkSub</Text>
     <Text color="disabled">disabled</Text>
-    <Text color="primary">primary</Text>
-    <Text color="accent">accent</Text>
-    <Text color="alert">alert</Text>
+    <Text color="blue">primary</Text>
+    <Text color="pink">accent</Text>
+    <Text color="red">alert</Text>
     <span style={{ background: 'black', padding: '0 0.5em' }}>
       <Text color="white">white</Text>
     </span>

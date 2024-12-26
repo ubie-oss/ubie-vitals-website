@@ -2,7 +2,7 @@
   display: flex;
   gap: var(--size-spacing-md);
   padding: var(--size-spacing-md);
-  background-color: var(--color-background-primary);
+  background-color: var(--color-background-blue);
   border-radius: var(--radius-md);
 }
 

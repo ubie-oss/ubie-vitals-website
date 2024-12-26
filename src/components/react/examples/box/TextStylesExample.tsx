@@ -10,8 +10,8 @@ export const TextStylesExample: FC = () => {
         pb="md"
         pl="md"
         radius="md"
-        backgroundColor="gray"
-        textColor="primary"
+        backgroundColor="black"
+        textColor="blue"
         textBold
         textType="body"
         textSize="lg"
@@ -19,42 +19,42 @@ export const TextStylesExample: FC = () => {
       >
         <p>Text Bold</p>
 
-        <Box pt="md" pr="md" pb="md" pl="md" radius="md" backgroundColor="gray">
+        <Box pt="md" pr="md" pb="md" pl="md" radius="md" backgroundColor="black">
           <p>nested</p>
         </Box>
       </Box>
 
-      <Box pt="md" pr="md" pb="md" pl="md" radius="md" backgroundColor="gray" mt="xl" textColor="main">
+      <Box pt="md" pr="md" pb="md" pl="md" radius="md" backgroundColor="black" mt="xl" textColor="main">
         <p>Color Main</p>
       </Box>
-      <Box pt="md" pr="md" pb="md" pl="md" radius="md" backgroundColor="gray" mt="md" textColor="sub">
+      <Box pt="md" pr="md" pb="md" pl="md" radius="md" backgroundColor="black" mt="md" textColor="sub">
         <p>Color Sub</p>
       </Box>
-      <Box pt="md" pr="md" pb="md" pl="md" radius="md" backgroundColor="gray" mt="md" textColor="link">
+      <Box pt="md" pr="md" pb="md" pl="md" radius="md" backgroundColor="black" mt="md" textColor="link">
         <p>Color Main</p>
       </Box>
-      <Box pt="md" pr="md" pb="md" pl="md" radius="md" backgroundColor="gray" mt="md" textColor="linkSub">
+      <Box pt="md" pr="md" pb="md" pl="md" radius="md" backgroundColor="black" mt="md" textColor="linkSub">
         <p>Color Link Sub</p>
       </Box>
-      <Box pt="md" pr="md" pb="md" pl="md" radius="md" backgroundColor="gray" mt="md" textColor="disabled">
+      <Box pt="md" pr="md" pb="md" pl="md" radius="md" backgroundColor="black" mt="md" textColor="disabled">
         <p>Color Disabled</p>
       </Box>
-      <Box pt="md" pr="md" pb="md" pl="md" radius="md" backgroundColor="gray" mt="md" textColor="primary">
+      <Box pt="md" pr="md" pb="md" pl="md" radius="md" backgroundColor="black" mt="md" textColor="blue">
         <p>Color Primary</p>
       </Box>
-      <Box pt="md" pr="md" pb="md" pl="md" radius="md" backgroundColor="gray" mt="md" textColor="accent">
+      <Box pt="md" pr="md" pb="md" pl="md" radius="md" backgroundColor="black" mt="md" textColor="pink">
         <p>Color Accent</p>
       </Box>
-      <Box pt="md" pr="md" pb="md" pl="md" radius="md" backgroundColor="gray" mt="md" textColor="alert">
+      <Box pt="md" pr="md" pb="md" pl="md" radius="md" backgroundColor="black" mt="md" textColor="red">
         <p>Color Alert</p>
       </Box>
 
-      <Box backgroundColor="gray" pt="md" pr="md" pb="md" pl="md" radius="md" mt="xl" textType="body">
+      <Box backgroundColor="black" pt="md" pr="md" pb="md" pl="md" radius="md" mt="xl" textType="body">
         <p>Body size & leading default value</p>
       </Box>
 
       <Box
-        backgroundColor="gray"
+        backgroundColor="black"
         pt="md"
         pr="md"
         pb="md"
@@ -68,7 +68,7 @@ export const TextStylesExample: FC = () => {
         <p>Body Small Default</p>
       </Box>
       <Box
-        backgroundColor="gray"
+        backgroundColor="black"
         pt="md"
         pr="md"
         pb="md"
@@ -83,7 +83,7 @@ export const TextStylesExample: FC = () => {
       </Box>
 
       <Box
-        backgroundColor="gray"
+        backgroundColor="black"
         pt="md"
         pr="md"
         pb="md"
@@ -97,7 +97,7 @@ export const TextStylesExample: FC = () => {
         <p>Body Medium Default</p>
       </Box>
       <Box
-        backgroundColor="gray"
+        backgroundColor="black"
         pt="md"
         pr="md"
         pb="md"
@@ -112,7 +112,7 @@ export const TextStylesExample: FC = () => {
       </Box>
 
       <Box
-        backgroundColor="gray"
+        backgroundColor="black"
         pt="md"
         pr="md"
         pb="md"
@@ -126,7 +126,7 @@ export const TextStylesExample: FC = () => {
         <p>Body Large Default</p>
       </Box>
       <Box
-        backgroundColor="gray"
+        backgroundColor="black"
         pt="md"
         pr="md"
         pb="md"
@@ -140,17 +140,17 @@ export const TextStylesExample: FC = () => {
         <p>Body Large Narrow</p>
       </Box>
 
-      <Box backgroundColor="gray" pt="md" pr="md" pb="md" pl="md" radius="md" mt="xl" textAlign="left">
+      <Box backgroundColor="black" pt="md" pr="md" pb="md" pl="md" radius="md" mt="xl" textAlign="left">
         <p>Text Left</p>
       </Box>
-      <Box backgroundColor="gray" pt="md" pr="md" pb="md" pl="md" radius="md" mt="md" textAlign="center">
+      <Box backgroundColor="black" pt="md" pr="md" pb="md" pl="md" radius="md" mt="md" textAlign="center">
         <p>Text Center</p>
       </Box>
-      <Box backgroundColor="gray" pt="md" pr="md" pb="md" pl="md" radius="md" mt="md" textAlign="right">
+      <Box backgroundColor="black" pt="md" pr="md" pb="md" pl="md" radius="md" mt="md" textAlign="right">
         <p>Text Right</p>
       </Box>
       <div style={{ textAlign: 'center' }}>
-        <Box backgroundColor="gray" pt="md" pr="md" pb="md" pl="md" radius="md" mt="md">
+        <Box backgroundColor="black" pt="md" pr="md" pb="md" pl="md" radius="md" mt="md">
           <p>Inherit</p>
         </Box>
       </div>

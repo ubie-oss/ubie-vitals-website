@@ -58,7 +58,7 @@
     height: 100dvh;
     padding-top: 0;
     padding-bottom: 0;
-    border-right: 1px solid var(--color-ubie-black-200);
+    border-right: 1px solid var(--color-ubie-black-300);
     box-shadow: none;
   }
 }

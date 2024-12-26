@@ -8,14 +8,6 @@ const ColorsExample: FC = () => {
         スマートフォン問診（main）
       </Heading>
 
-      <Heading as="p" color="primary" size="md">
-        スマートフォン問診（primary）
-      </Heading>
-
-      <Heading as="p" color="accent" size="md">
-        スマートフォン問診（accent）
-      </Heading>
-
       <div style={{ backgroundColor: 'var(--color-primary)', padding: 'var(--size-spacing-xs)' }}>
         <Heading as="p" color="white" size="md">
           スマートフォン問診（white）

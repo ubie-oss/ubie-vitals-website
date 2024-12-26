@@ -4,40 +4,40 @@ import type { FC } from 'react';
 const AppearancesExample: FC = () => {
   return (
     <>
-      <Box backgroundColor="primary" radius="md" pt="md" pb="md" pr="lg" pl="lg">
-        <Text>backgroundColor: primary</Text>
+      <Box backgroundColor="blue" radius="md" pt="md" pb="md" pr="lg" pl="lg">
+        <Text>backgroundColor: blue</Text>
       </Box>
 
-      <Box backgroundColor="primaryDarken" radius="md" pt="md" pb="md" pr="lg" pl="lg" mt="md">
-        <Text>backgroundColor: primaryDarken</Text>
+      <Box backgroundColor="blueDarken" radius="md" pt="md" pb="md" pr="lg" pl="lg" mt="md">
+        <Text>backgroundColor: blueDarken</Text>
       </Box>
 
-      <Box backgroundColor="accent" radius="md" pt="md" pb="md" pr="lg" pl="lg" mt="md">
-        <Text>backgroundColor: accent</Text>
+      <Box backgroundColor="pink" radius="md" pt="md" pb="md" pr="lg" pl="lg" mt="md">
+        <Text>backgroundColor: pink</Text>
       </Box>
 
-      <Box backgroundColor="accentDarken" radius="md" pt="md" pb="md" pr="lg" pl="lg" mt="md">
-        <Text>backgroundColor: accentDarken</Text>
+      <Box backgroundColor="pinkDarken" radius="md" pt="md" pb="md" pr="lg" pl="lg" mt="md">
+        <Text>backgroundColor: pinkDarken</Text>
       </Box>
 
-      <Box backgroundColor="gray" radius="md" pt="md" pb="md" pr="lg" pl="lg" mt="md">
-        <Text>backgroundColor: gray</Text>
+      <Box backgroundColor="black" radius="md" pt="md" pb="md" pr="lg" pl="lg" mt="md">
+        <Text>backgroundColor: black</Text>
       </Box>
 
-      <Box border="gray" radius="md" pt="md" pb="md" pr="lg" pl="lg" mt="md">
-        <Text>border: gray</Text>
+      <Box border="black" radius="md" pt="md" pb="md" pr="lg" pl="lg" mt="md">
+        <Text>border: black</Text>
       </Box>
 
-      <Box border="grayThick" radius="md" pt="md" pb="md" pr="lg" pl="lg" mt="md">
-        <Text>border: grayThick</Text>
+      <Box border="blackThick" radius="md" pt="md" pb="md" pr="lg" pl="lg" mt="md">
+        <Text>border: blackThick</Text>
       </Box>
 
-      <Box border="primary" radius="md" pt="md" pb="md" pr="lg" pl="lg" mt="md">
-        <Text>border: primary</Text>
+      <Box border="blue" radius="md" pt="md" pb="md" pr="lg" pl="lg" mt="md">
+        <Text>border: blue</Text>
       </Box>
 
-      <Box border="primaryThick" radius="md" pt="md" pb="md" pr="lg" pl="lg" mt="md">
-        <Text>border: primaryThcik</Text>
+      <Box border="blueThick" radius="md" pt="md" pb="md" pr="lg" pl="lg" mt="md">
+        <Text>border: blueThcik</Text>
       </Box>
     </>
   );

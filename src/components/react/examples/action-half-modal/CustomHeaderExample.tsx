@@ -17,7 +17,7 @@ export const CustomHeaderExample: FC = () => {
       </button>
       <ActionHalfModal open={open} onClose={onClose}>
         <Center textCenter>
-          <Heading id={headerId} color="primary" size="lg">
+          <Heading id={headerId} size="lg">
             Custom Header
           </Heading>
         </Center>

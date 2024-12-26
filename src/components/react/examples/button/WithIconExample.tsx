@@ -14,9 +14,6 @@ const WithIconExample: FC = () => {
             <Button icon="UbieIcon" variant="secondary">
               ボタン
             </Button>
-            <Button icon="UbieIcon" variant="accent">
-              ボタン
-            </Button>
             <Button icon="UbieIcon" variant="alert">
               ボタン
             </Button>
@@ -40,9 +37,6 @@ const WithIconExample: FC = () => {
             <Button suffixIcon="BlankLinkIcon" variant="secondary">
               ボタン
             </Button>
-            <Button suffixIcon="BlankLinkIcon" variant="accent">
-              ボタン
-            </Button>
             <Button suffixIcon="BlankLinkIcon" variant="alert">
               ボタン
             </Button>
@@ -64,9 +58,6 @@ const WithIconExample: FC = () => {
           >
             <Button fixedIcon="BlankLinkIcon">ボタン</Button>
             <Button fixedIcon="BlankLinkIcon" variant="secondary">
-              ボタン
-            </Button>
-            <Button fixedIcon="BlankLinkIcon" variant="accent">
               ボタン
             </Button>
             <Button fixedIcon="BlankLinkIcon" variant="alert">

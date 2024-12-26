@@ -31,12 +31,12 @@
 
 @media (hover: hover) {
   .toggle:hover {
-    background-color: var(--color-ubie-black-100);
+    background-color: var(--color-ubie-black-200);
   }
 }
 
 .toggle:active {
-  background-color: var(--color-ubie-black-200);
+  background-color: var(--color-ubie-black-300);
 }
 
 .toggleIcon {

@@ -5,7 +5,7 @@
   gap: var(--size-spacing-xxs);
   padding: var(--size-spacing-md);
   color: var(--color-text-main);
-  background-color: var(--color-background-gray);
+  background-color: var(--color-background-black-darken);
   border-radius: var(--radius-md);
 }
 

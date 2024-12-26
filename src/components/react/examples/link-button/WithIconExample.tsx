@@ -17,9 +17,6 @@ const WithIconExample: FC = () => {
             <LinkButton href="https://vitals.ubie.life/" icon="UbieIcon" variant="secondary">
               ボタン
             </LinkButton>
-            <LinkButton href="https://vitals.ubie.life/" icon="UbieIcon" variant="accent">
-              ボタン
-            </LinkButton>
             <LinkButton href="https://vitals.ubie.life/" icon="UbieIcon" variant="alert">
               ボタン
             </LinkButton>
@@ -43,9 +40,6 @@ const WithIconExample: FC = () => {
               ボタン
             </LinkButton>
             <LinkButton href="https://vitals.ubie.life/" suffixIcon="BlankLinkIcon" variant="secondary">
-              ボタン
-            </LinkButton>
-            <LinkButton href="https://vitals.ubie.life/" suffixIcon="BlankLinkIcon" variant="accent">
               ボタン
             </LinkButton>
             <LinkButton href="https://vitals.ubie.life/" suffixIcon="BlankLinkIcon" variant="alert">
@@ -75,9 +69,6 @@ const WithIconExample: FC = () => {
               ボタン
             </LinkButton>
             <LinkButton href="https://vitals.ubie.life/" fixedIcon="BlankLinkIcon" variant="secondary">
-              ボタン
-            </LinkButton>
-            <LinkButton href="https://vitals.ubie.life/" fixedIcon="BlankLinkIcon" variant="accent">
               ボタン
             </LinkButton>
             <LinkButton href="https://vitals.ubie.life/" fixedIcon="BlankLinkIcon" variant="alert">

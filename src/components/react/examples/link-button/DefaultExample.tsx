@@ -8,9 +8,6 @@ const Default: FC = () => {
       <LinkButton href="https://vitals.ubie.life/" variant="secondary">
         ボタン
       </LinkButton>
-      <LinkButton href="https://vitals.ubie.life/" variant="accent">
-        ボタン
-      </LinkButton>
       <LinkButton href="https://vitals.ubie.life/" variant="alert">
         ボタン
       </LinkButton>

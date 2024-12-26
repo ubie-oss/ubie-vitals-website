@@ -15,14 +15,14 @@ export const DefaultExample: FC = () => {
         <Text type="tag" size="lg" bold>
           Gray
         </Text>
-        <Divider border="gray" />
+        <Divider border="black" />
       </Stack>
 
       <Stack spacing="xs">
         <Text type="tag" size="lg" bold>
           Primary
         </Text>
-        <Divider border="primary" />
+        <Divider border="blue" />
       </Stack>
     </Stack>
   );
