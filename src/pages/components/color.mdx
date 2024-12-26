@@ -5,6 +5,11 @@ layout: '@layouts/ComponentLayout.astro'
 description: 'テキストやアイコンの色を変更'
 thumbnail: '/assets/images/components/thumbnail-color.png'
 repositoryUrl: 'https://github.com/ubie-oss/ubie-ui/tree/main/src/components/Color'
+props:
+- name: "color"
+  description: "文字色の抽象値"
+  type: "{TextColor}"
+  defaultValue: "'main'"
 ---
 
 ## Feature
