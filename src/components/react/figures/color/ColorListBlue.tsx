@@ -1,10 +1,8 @@
-import DesignTokens from '@ubie/design-tokens';
+import { extractHueTokens } from '@utils/server/tokens/extractHueTokens.ts';
 import ColorListBase from './ColorListBase';
 import type { FC } from 'react';
 
-const blueTokens = Object.values(DesignTokens.color).filter((c) => {
-  return c.name?.includes('UbieBlue');
-});
+const blueTokens = extractHueTokens('UbieBlue');
 
 const ColorListBlue: FC = () => <ColorListBase tokens={blueTokens}></ColorListBase>;
 

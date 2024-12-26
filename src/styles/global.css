@@ -53,7 +53,7 @@ code {
     monospace;
   font-size: 0.85em;
   line-height: 1.2;
-  color: var(--color-ubie-blue-700);
+  color: var(--color-ubie-blue-800);
 }
 
 /* stylelint-disable-next-line selector-class-pattern */
@@ -141,7 +141,7 @@ kbd {
   font-size: 0.85em;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  border: 2px solid var(--color-ubie-black-500);
+  border: 2px solid var(--color-ubie-black-600);
   border-radius: var(--radius-sm);
 }
 

@@ -9,9 +9,9 @@
   display: block;
   padding: var(--size-spacing-xxs) 0 var(--size-spacing-xxs)
     calc(var(--nest) * var(--size-spacing-xs) + var(--size-spacing-xs));
-  color: var(--color-ubie-black-500);
+  color: var(--color-ubie-black-600);
   text-decoration: none;
-  border-left: 1px solid var(--color-border);
+  border-left: 1px solid var(--color-border-black);
 }
 
 @media (hover: hover) {
@@ -21,7 +21,7 @@
 }
 
 .link:visited {
-  color: var(--color-ubie-black-500);
+  color: var(--color-ubie-black-600);
 }
 
 .link.reading {
@@ -36,7 +36,7 @@
   width: 3px;
   height: 0.75em;
   content: '';
-  background-color: var(--color-ubie-black-900);
+  background-color: var(--color-ubie-black-1000);
   border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
   transform: translateY(-50%);
 }

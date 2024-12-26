@@ -3,7 +3,7 @@ import type { FC } from 'react';
 
 export const DefaultExample: FC = () => {
   return (
-    <Box backgroundColor="primary" radius="md" pt="md" pb="md" pr="lg" pl="lg" mt="md" mb="md">
+    <Box backgroundColor="blue" radius="md" pt="md" pb="md" pr="lg" pl="lg" mt="md" mb="md">
       <Text>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
         industry`&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and

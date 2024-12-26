@@ -8,9 +8,6 @@ const DisabledExample: FC = () => {
       <Button variant="secondary" disabled>
         ボタン
       </Button>
-      <Button variant="accent" disabled>
-        ボタン
-      </Button>
       <Button variant="alert" disabled>
         ボタン
       </Button>

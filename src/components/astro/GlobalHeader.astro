@@ -92,7 +92,7 @@ const { globalNavigationId } = Astro.props;
     width: 100%;
     height: var(--header-height-mobile);
     padding: 0 var(--size-spacing-xs);
-    border-bottom: 1px solid var(--color-ubie-black-200);
+    border-bottom: 1px solid var(--color-ubie-black-300);
     transition: background-color 0.2s ease-in-out;
   }
 
@@ -116,18 +116,18 @@ const { globalNavigationId } = Astro.props;
 
   @media (hover: hover) {
     .openMobileGlobalNavigationButton:hover {
-      background-color: var(--color-ubie-black-100);
+      background-color: var(--color-ubie-black-200);
     }
   }
 
   .openMobileGlobalNavigationButton:active {
-    background-color: var(--color-ubie-black-200);
+    background-color: var(--color-ubie-black-300);
   }
 
   .openMobileGlobalNavigationButton > img {
     width: 28px;
     height: auto;
-    color: var(--color-ubie-black-900);
+    color: var(--color-ubie-black-1000);
   }
 
   @media (width >= 768px) {

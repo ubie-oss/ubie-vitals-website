@@ -4,7 +4,7 @@ import type { FC } from 'react';
 const TextInTextExample: FC = () => {
   return (
     <Text type="body" size="md">
-      <Text as="span" type="body" size="md" color="alert" bold>
+      <Text as="span" type="body" size="md" color="red" bold>
         Alert:
       </Text>{' '}
       Please fill in all fields

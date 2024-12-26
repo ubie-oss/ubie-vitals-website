@@ -6,27 +6,27 @@
   font-size: var(--text-button-md-size);
   font-weight: bold;
   line-height: var(--text-button-md-line);
-  color: var(--color-ubie-black-500);
+  color: var(--color-ubie-black-600);
   text-decoration: none;
   border-radius: var(--radius-sm);
 }
 
 @media (hover: hover) {
   .link:hover {
-    background-color: var(--color-ubie-black-100);
+    background-color: var(--color-ubie-black-200);
   }
 }
 
 .link:active {
-  background-color: var(--color-ubie-black-200);
+  background-color: var(--color-ubie-black-300);
 }
 
 .link:visited {
-  color: var(--color-ubie-black-500);
+  color: var(--color-ubie-black-600);
 }
 
 .link.current {
-  color: var(--color-ubie-black);
+  color: var(--color-ubie-black-1000);
   background-color: var(--color-ubie-blue-100);
 }
 

@@ -4,11 +4,13 @@ description: 'ユビーで扱うColorの、基本となる構成要素'
 layout: '@layouts/PostLayout.astro'
 ---
 
-import ColorListBlue from '@components/react/figures/color/ColorListBlue';
+import ColorListPurple from "@components/react/figures/color/ColorListPurple";import ColorListBlue from '@components/react/figures/color/ColorListBlue';
 import ColorListPink from '@components/react/figures/color/ColorListPink';
 import ColorListRed from '@components/react/figures/color/ColorListRed';
 import ColorListBlack from '@components/react/figures/color/ColorListBlack';
 import ColorListWhite from '@components/react/figures/color/ColorListWhite';
+import ColorListGreen from "@components/react/figures/color/ColorListGreen";
+import ColorListOrange from "@components/react/figures/color/ColorListOrange";
 
 Colorの活用を考える場合、まずは[Semantic Colors](/tokens/color/semantic)を参照してください。
 
@@ -24,6 +26,18 @@ Colorの活用を考える場合、まずは[Semantic Colors](/tokens/color/sema
 ## Pink
 
 <ColorListPink client:load />
+
+## Orange
+
+<ColorListOrange client:load />
+
+## Purple
+
+<ColorListPurple client:load />
+
+## Green
+
+<ColorListGreen client:load />
 
 ## Red
 

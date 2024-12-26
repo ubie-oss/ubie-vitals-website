@@ -24,7 +24,7 @@
 
 @media (hover: hover) {
   .button:hover {
-    background-color: var(--color-ubie-black-100);
+    background-color: var(--color-ubie-black-200);
   }
 
   .button.invert:hover {
@@ -32,12 +32,12 @@
   }
 
   .button.secondary:hover {
-    color: var(--color-ubie-black-900);
+    color: var(--color-ubie-black-1000);
   }
 }
 
 .button:active {
-  background-color: var(--color-ubie-black-200);
+  background-color: var(--color-ubie-black-300);
 }
 
 .button.invert:active {

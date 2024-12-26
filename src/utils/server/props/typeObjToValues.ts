@@ -1,4 +1,5 @@
-import { convertInternalTypeToUnderstandableTypes, type TsTypeDescriptor } from '@utils/server';
+import { convertInternalTypeToUnderstandableTypes } from '@utils/server';
+import type { TsTypeDescriptor } from '@utils/server/props/types.ts';
 
 export const typeObjToValues = (
   type: TsTypeDescriptor,

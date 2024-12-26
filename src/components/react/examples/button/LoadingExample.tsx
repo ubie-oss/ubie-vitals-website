@@ -8,9 +8,6 @@ export const LoadingExample: FC = () => {
       <Button variant="secondary" loading>
         ボタン
       </Button>
-      <Button variant="accent" loading>
-        ボタン
-      </Button>
       <Button variant="alert" loading>
         ボタン
       </Button>

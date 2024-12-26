@@ -4,7 +4,7 @@ import type { FC } from 'react';
 
 const BetweenExample: FC = () => {
   return (
-    <Box pt="xs" pb="xs" pr="md" pl="md" border="gray">
+    <Box pt="xs" pb="xs" pr="md" pl="md" border="black">
       <Flex spacing="md" justifyContent="space-between" alignItems="center">
         <a href="/" aria-label="ロゴ/トップへ">
           <UbieIcon />

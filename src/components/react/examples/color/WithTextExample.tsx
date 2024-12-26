@@ -5,7 +5,7 @@ import type { FC } from 'react';
 export const WithTextExample: FC = () => {
   return (
       <Text type="body" size="lg" color="main">
-        一部だけ<Color color="accent">色を変更</Color>にしたい
+        一部だけ<Color color="pink">色を変更</Color>にしたい
       </Text>
   );
 };
