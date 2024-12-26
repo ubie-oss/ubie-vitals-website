@@ -11,6 +11,11 @@ const BodyExample: FC = () => {
         <dt>Default Leading</dt>
         <dd>
           <Flex spacing="md" alignItems="center">
+            <Text type="body" size="xs">
+              xs
+              <br />
+              {`${bodyText}`}
+            </Text>
             <Text type="body" size="sm">
               sm
               <br />

@@ -8,7 +8,7 @@ const ColorsExample: FC = () => {
         スマートフォン問診（main）
       </Heading>
 
-      <div style={{ backgroundColor: 'var(--color-primary)', padding: 'var(--size-spacing-xs)' }}>
+      <div style={{ backgroundColor: 'var(--color-background-blue-inverse)', padding: 'var(--size-spacing-xs)' }}>
         <Heading as="p" color="white" size="md">
           スマートフォン問診（white）
         </Heading>

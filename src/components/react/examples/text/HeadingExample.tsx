@@ -6,6 +6,11 @@ const HeadingExample: FC = () => {
 
   return (
     <Flex spacing="md" alignItems="center">
+      <Text bold type="heading" size="xxs">
+        xxs
+        <br />
+        {`${headingText}`}
+      </Text>
       <Text bold type="heading" size="xs">
         xs
         <br />
