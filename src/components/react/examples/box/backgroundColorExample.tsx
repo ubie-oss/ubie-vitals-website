@@ -1,7 +1,7 @@
 import { Box, Stack } from '@ubie/ubie-ui';
 import { type FC } from 'react';
 
-const BackgroundColorExample: FC = () => {
+export const BackgroundColorExample: FC = () => {
   return (
     <Stack gap="xs">
       <Box backgroundColor="black" px="sm" py="xs" radius="xs" textType="body" textSize="xs">
@@ -197,5 +197,3 @@ const BackgroundColorExample: FC = () => {
     </Stack>
   );
 };
-
-export default BackgroundColorExample;
