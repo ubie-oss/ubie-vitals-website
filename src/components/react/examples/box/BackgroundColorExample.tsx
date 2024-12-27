@@ -1,5 +1,5 @@
 import { Box, Stack } from '@ubie/ubie-ui';
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 export const BackgroundColorExample: FC = () => {
   return (
