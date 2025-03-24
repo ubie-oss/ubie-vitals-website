@@ -1,5 +1,5 @@
-import { buildComponentPath } from '@utils/server';
 import { unionBy } from 'es-toolkit';
+import { buildComponentPath } from '@utils/server';
 import { convertTypeSetKeyword } from '@utils/server/props/convertTypeSetKeyword';
 import { extractPropsFromFile } from '@utils/server/props/extractPropsFromFile';
 import type { Prop } from '@types';
