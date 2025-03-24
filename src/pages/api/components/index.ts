@@ -1,5 +1,7 @@
-import { getAllExample } from '@utils/server';
+import { buildComponentPath } from '@utils/server';
+import { unionBy } from 'es-toolkit';
 import { convertTypeSetKeyword } from '@utils/server/props/convertTypeSetKeyword';
+import { extractPropsFromFile } from '@utils/server/props/extractPropsFromFile';
 import type { Prop } from '@types';
 import type { APIRoute } from 'astro';
 
@@ -10,6 +12,7 @@ interface MDXModule {
     repositoryUrl?: string;
     thumbnail?: string;
     props?: Prop[];
+    exampleKey?: string;
   };
   rawContent?: () => string;
 }
@@ -22,11 +25,6 @@ interface Component {
   thumbnail?: string;
   apiUrl: string;
   props: Prop[];
-  examples: {
-    name: string;
-    url: string;
-    code: string;
-  }[];
 }
 
 export const GET: APIRoute = async () => {
@@ -44,14 +42,16 @@ export const GET: APIRoute = async () => {
 
         // Propsの取得
         const props = frontmatter.props || [];
+        const filePath = frontmatter.exampleKey ? buildComponentPath(frontmatter.exampleKey) : '';
+
         const convertedProps = props.map((prop: Prop) => ({
           ...prop,
           type: convertTypeSetKeyword(prop.type),
         }));
 
-        // data-*属性を追加
+        // ComponentLayout.astroと同様の処理でpropsを結合
         const propsArray = [
-          ...convertedProps,
+          ...unionBy(convertedProps, extractPropsFromFile(filePath), (p: Prop) => p.name),
           {
             name: 'data-*',
             type: 'string',
@@ -59,9 +59,6 @@ export const GET: APIRoute = async () => {
             required: false,
           },
         ].sort((a, b) => a.name.localeCompare(b.name));
-
-        // Examplesの取得
-        const examples = getAllExample(componentName);
 
         const component: Component = {
           name: componentName,
@@ -71,7 +68,6 @@ export const GET: APIRoute = async () => {
           thumbnail: frontmatter.thumbnail,
           apiUrl: `/api/components/${componentName}`,
           props: propsArray,
-          examples: examples,
         };
 
         return component;
