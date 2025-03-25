@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { unionBy } from 'es-toolkit';
-import { getAllExample, buildComponentPath } from '@utils/server';
+import { getAllExample, buildComponentPath, type Example } from '@utils/server';
 import { convertTypeSetKeyword } from '@utils/server/props/convertTypeSetKeyword';
 import { extractPropsFromFile } from '@utils/server/props/extractPropsFromFile';
 import type { Prop } from '@types';
@@ -44,6 +44,16 @@ const extractUsageSection = (content: string): string => {
   if (!usageMatch) return '';
 
   return usageMatch[1].trim();
+};
+
+type Component = {
+  title: string;
+  description: string;
+  props: Prop[];
+  examples: Example[];
+  repositoryUrl?: string;
+  content: string;
+  usage: string;
 };
 
 export const GET: APIRoute = async ({ params }) => {
@@ -105,7 +115,7 @@ export const GET: APIRoute = async ({ params }) => {
     const usage = extractUsageSection(content);
 
     // レスポンスの構築
-    const response = {
+    const response: Component = {
       title: frontmatter.title,
       description: frontmatter.description,
       props: propsArray,
