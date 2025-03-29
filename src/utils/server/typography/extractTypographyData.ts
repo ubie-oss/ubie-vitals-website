@@ -40,7 +40,7 @@ const createStyleSet = (type: StyleType, size: TypographySize, defaultLineHeight
   const fontSize = FONT_SIZES[type][size as keyof (typeof FONT_SIZES)[typeof type]];
 
   return {
-    name: size,
+    size,
     cssVars: {
       size: `var(--text-${type}-${size}-size)`,
       lineHeight: `var(--text-${type}-${size}-line)`,

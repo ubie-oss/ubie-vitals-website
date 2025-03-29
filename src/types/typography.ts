@@ -43,7 +43,7 @@ export type TypographyData = {
 };
 
 export type TypographyStyleSet = {
-  name: TypographySize;
+  size: TypographySize;
   cssVars: {
     size: string;
     lineHeight: string;
