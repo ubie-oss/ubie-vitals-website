@@ -3,6 +3,7 @@ import CopyButton from '@components/react/CopyButton';
 import Table, { Row, TBody, THead, Cell, HeadCell, HeadRow } from '@components/react/Table';
 import { pascalCaseToCSSVariables } from '@utils/client/css';
 import { getKeys } from '@utils/client/object';
+import { descriptions } from './descriptions';
 import type { FC } from 'react';
 
 const { radius } = DesignTokens;
@@ -19,14 +20,6 @@ const radiusArray = getKeys(radius)
 
 const deletePrefix = (str: string): string => {
   return str.replace(/^spacing-/, '');
-};
-
-const descriptions: { [key in keyof typeof radius]: string } = {
-  md: '40px ＜ 短辺の長さ の場合に使用',
-  full: '角を半円にしたい場合に使用',
-  sm: '24px ＜ 短辺の長さ ≦ 40px の場合に使用',
-  lg: 'LPなどでの装飾で使用',
-  xs: '短辺の長さ ≦ 24px の場合に使用',
 };
 
 const TokenList: FC = () => (
